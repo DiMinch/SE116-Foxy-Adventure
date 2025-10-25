@@ -1,0 +1,205 @@
+[gd_scene load_steps=35 format=3 uid="uid://d0jou4iuydvkg"]
+
+[ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
+[ext_resource type="Texture2D" uid="uid://dnt7n2db610ps" path="res://assets/foxy/fox_hat_blade/fox_atk_1.png" id="2_6cv16"]
+[ext_resource type="Texture2D" uid="uid://bkabwrpxdc7cc" path="res://assets/foxy/fox_hat_blade/fox_atk_2.png" id="3_j4nxn"]
+[ext_resource type="Texture2D" uid="uid://byd3g4nnxwfcq" path="res://assets/foxy/fox_hat_blade/fox_atk_3.png" id="4_28m0y"]
+[ext_resource type="Texture2D" uid="uid://cp2ag6s67gj73" path="res://assets/foxy/fox_hat_blade/fox_defeat_1.png" id="5_uniwh"]
+[ext_resource type="Texture2D" uid="uid://cx3p62gjf57ep" path="res://assets/foxy/fox_hat_blade/fox_defeat_2.png" id="6_iqsei"]
+[ext_resource type="Texture2D" uid="uid://blvo22k8hckk0" path="res://assets/foxy/fox_hat_blade/fox_defeat_3.png" id="7_tffgl"]
+[ext_resource type="Texture2D" uid="uid://bv5er34emc8g1" path="res://assets/foxy/fox_hat_blade/fox_fall_1.png" id="8_pk8ii"]
+[ext_resource type="Texture2D" uid="uid://bh18dgm068hhf" path="res://assets/foxy/fox_hat_blade/fox_hurt_1.png" id="9_5mf0n"]
+[ext_resource type="Texture2D" uid="uid://gg8v11cck4hu" path="res://assets/foxy/fox_hat_blade/fox_hurt_2.png" id="10_4hvnv"]
+[ext_resource type="Texture2D" uid="uid://cbfcke2rlqmtw" path="res://assets/foxy/fox_hat_blade/fox_hurt_3.png" id="11_bbmj2"]
+[ext_resource type="Texture2D" uid="uid://cv1omqfyyi3aj" path="res://assets/foxy/fox_hat_blade/fox_idle_1.png" id="12_kxw46"]
+[ext_resource type="Texture2D" uid="uid://d1wqqv8lwu0w0" path="res://assets/foxy/fox_hat_blade/fox_idle_2.png" id="13_8qxvo"]
+[ext_resource type="Texture2D" uid="uid://cjob2r8khe2fs" path="res://assets/foxy/fox_hat_blade/fox_jump_1.png" id="14_5q8fn"]
+[ext_resource type="Texture2D" uid="uid://dgis3lall2gw3" path="res://assets/foxy/fox_hat_blade/fox_run_1.png" id="15_wva7c"]
+[ext_resource type="Texture2D" uid="uid://cr8a68nw3dww1" path="res://assets/foxy/fox_hat_blade/fox_run_2.png" id="16_7obkq"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/hurt_area_2d.tscn" id="16_8ydkj"]
+[ext_resource type="Texture2D" uid="uid://d0jfmp24jrfcy" path="res://assets/foxy/fox_hat_blade/fox_run_3.png" id="17_vo27k"]
+[ext_resource type="Texture2D" uid="uid://ce35c6mn7dcok" path="res://assets/foxy/fox_hat_blade/fox_run_4.png" id="18_genst"]
+[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/hit_area_2d.tscn" id="20_niom3"]
+[ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/node2d_factory.gd" id="21_28m0y"]
+[ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
+[ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
+[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/player/Blade/Blade.tscn" id="22_iqsei"]
+[ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/player/states/attack.gd" id="27_j4nxn"]
+[ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/player/throw_blade.gd" id="30_tffgl"]
+[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
+[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="40_fjxoa"]
+[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="41_gswnw"]
+[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="42_xcnuv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
+radius = 9.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge24q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6cv16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j4nxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_28m0y")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uniwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqsei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tffgl")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pk8ii")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5mf0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4hvnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bbmj2")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_kxw46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8qxvo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5q8fn")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wva7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7obkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vo27k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_genst")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j4b4"]
+size = Vector2(24, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
+size = Vector2(22, 26)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_wodsf")
+metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -14)
+shape = SubResource("CapsuleShape2D_oul6g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -61)
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_ge24q")
+animation = &"attack"
+
+[node name="HurtArea2d" parent="Direction" instance=ExtResource("16_8ydkj")]
+position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+position = Vector2(-3, -16.5)
+shape = SubResource("RectangleShape2D_3j4b4")
+
+[node name="HitArea2d" parent="Direction" instance=ExtResource("20_niom3")]
+collision_layer = 64
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2d"]
+position = Vector2(20, -13)
+shape = SubResource("RectangleShape2D_ttakn")
+disabled = true
+
+[node name="BladeFactory" type="Marker2D" parent="Direction"]
+script = ExtResource("21_28m0y")
+product_packed_scene = ExtResource("22_iqsei")
+target_container_name = &"Blade"
+target_container_path = NodePath(".")
+metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("39_art4l")
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("40_fjxoa")
+
+[node name="Jump" type="Node" parent="States"]
+script = ExtResource("41_gswnw")
+
+[node name="Fall" type="Node" parent="States"]
+script = ExtResource("42_xcnuv")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("21_yj68g")
+
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("22_ioxgp")
+
+[node name="Attack" type="Node" parent="States"]
+script = ExtResource("27_j4nxn")
+
+[node name="Throw_blade" type="Node" parent="States"]
+script = ExtResource("30_tffgl")
+
+[node name="Blade" parent="." instance=ExtResource("22_iqsei")]
+
+[connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
