@@ -5,9 +5,19 @@ extends BaseCharacter
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
 @export var has_blade: bool = false
+const Constants = preload("res://scripts/Constants.gd")
 
 func _ready() -> void:
 	super._ready()
+	
+	self.max_health = Constants.PLAYER_STATS[Constants.StatKeys.HEALTH]
+	self.movement_speed = Constants.PLAYER_STATS[Constants.StatKeys.MOVEMENT_SPEED]
+	self.jump_speed = Constants.PLAYER_STATS[Constants.StatKeys.JUMP_SPEED]
+	self.gravity = Constants.PLAYER_STATS[Constants.StatKeys.GRAVITY]
+	self.attack_damage = Constants.PLAYER_STATS[Constants.StatKeys.ATTACK_DAMAGE]
+
+	self.health = self.max_health
+	
 	fsm = FSM.new(self, $States, $States/Idle)
 	if has_blade:
 		collected_blade()
