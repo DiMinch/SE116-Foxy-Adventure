@@ -1,9 +1,13 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bfd6n4n3lb3n7"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://bfd6n4n3lb3n7"]
 
-[ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/island/terrain/terrain_32x32.png" id="1_8aago"]
+[ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/island/terrain/terrain_32x32.png" id="1_jsg7g"]
+[ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="2_8l0rs"]
+[ext_resource type="PackedScene" uid="uid://bghk1nocyicg" path="res://levels/objects/tree/palm_tree_2.tscn" id="3_wjftv"]
+[ext_resource type="PackedScene" uid="uid://kgiks45x5kpk" path="res://levels/objects/tree/palm_tree_3.tscn" id="4_p4hc1"]
+[ext_resource type="PackedScene" uid="uid://twbvjqtgwt7x" path="res://levels/objects/spike/spike.tscn" id="5_kxahy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwa2"]
-texture = ExtResource("1_8aago")
+texture = ExtResource("1_jsg7g")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -193,5 +197,12 @@ texture = ExtResource("1_8aago")
 32:9/0 = 0
 33:9/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5cgnx"]
+scenes/1/scene = ExtResource("2_8l0rs")
+scenes/2/scene = ExtResource("3_wjftv")
+scenes/3/scene = ExtResource("4_p4hc1")
+scenes/4/scene = ExtResource("5_kxahy")
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_ejwa2")
+sources/2 = SubResource("TileSetScenesCollectionSource_5cgnx")
