@@ -1,10 +1,16 @@
 class_name PlayerState
 extends FSMState
 
+const RIGHT = "right"
+const LEFT = "left"
+const JUMP = "jump"
+const ATTACK = "attack"
+const THROW = "throw"
+
 #Control moving and changing state to run
 #Return true if moving
 func control_moving() -> bool:
-	var dir: float = Input.get_action_strength("right") - Input.get_action_strength("left")
+	var dir: float = Input.get_action_strength(RIGHT) - Input.get_action_strength(LEFT)
 	var is_moving: bool = abs(dir) > 0.1
 	if is_moving:
 		dir = sign(dir)
@@ -21,7 +27,7 @@ func control_moving() -> bool:
 #Return true if jumping
 func control_jump() -> bool:
 	#If jump is pressed change to jump state and return true
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed(JUMP):
 		obj.jump()
 		change_state(fsm.states.jump)
 		return true
@@ -41,13 +47,12 @@ func take_damage(damage) -> void:
 	
 func control_attack()->bool:
 		
-	if Input.is_action_pressed("attack"):
-		print("hello chung may")
+	if Input.is_action_pressed(ATTACK):
 		change_state(fsm.states.attack)
 		return true
 	return false
 func control_throw()->bool:
-	if Input.is_action_just_pressed("throw"):
+	if Input.is_action_just_pressed(THROW):
 		obj.Throw()
 		#change_state(fsm.states.Throw_blade)
 		return true
