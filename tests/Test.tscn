@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cse8m3ao6w5ao"]
+[gd_scene load_steps=13 format=4 uid="uid://cse8m3ao6w5ao"]
 
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="1_w3aqi"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="2_ok4yu"]
-[ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/palm_tree_1.tscn" id="3_kh2fj"]
-[ext_resource type="TileSet" uid="uid://bfd6n4n3lb3n7" path="res://assets/island/new_tile_set.tres" id="5_n5wxi"]
+[ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="3_kh2fj"]
+[ext_resource type="TileSet" uid="uid://bfd6n4n3lb3n7" path="res://tests/new_tile_set.tres" id="5_n5wxi"]
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="9_pfwq7"]
 [ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/Starfish/Starfish.tscn" id="10_43d8r"]
@@ -108,6 +108,7 @@ position = Vector2(389, 164)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAAGAA4AAgAAAAAAAQAAAA4AAgAAAAAAAQArAA4AAgAAAAAAAQAOAA8AAgAAAAAABAAUAA8AAgAAAAAABAAaAA8AAgAAAAAABAAKAA4AAgAAAAAAAQA=")
 tile_set = ExtResource("5_n5wxi")
 
 [node name="Crab" parent="." instance=ExtResource("9_pfwq7")]
