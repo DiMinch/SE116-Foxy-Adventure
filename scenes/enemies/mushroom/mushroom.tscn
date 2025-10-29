@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://3618lytb7nnv" path="res://assets/monsters/mushroom/mushroom_01.png" id="5_3dip8"]
 [ext_resource type="Texture2D" uid="uid://bqgmklofxv0qi" path="res://assets/monsters/mushroom/mushroom_02.png" id="6_io5uk"]
 [ext_resource type="Texture2D" uid="uid://cghgcxg1pvwd6" path="res://assets/monsters/mushroom/mushroom_03.png" id="7_0xreg"]
-[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/hit_area_2d.tscn" id="8_5qgwy"]
+[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="8_5qgwy"]
 [ext_resource type="Script" uid="uid://b7g18r857thhi" path="res://scenes/enemies/states/run.gd" id="8_qvk1a"]
-[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/hurt_area_2d.tscn" id="9_3dip8"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="9_3dip8"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/mushroom/hurt.gd" id="11_io5uk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_toaug"]

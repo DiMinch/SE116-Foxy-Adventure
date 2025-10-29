@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://d0jou4iuydvkg"]
 
-[ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
+[ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scripts/characters/player.gd" id="1_wodsf"]
 [ext_resource type="Texture2D" uid="uid://dnt7n2db610ps" path="res://assets/foxy/fox_hat_blade/fox_atk_1.png" id="2_6cv16"]
 [ext_resource type="Texture2D" uid="uid://bkabwrpxdc7cc" path="res://assets/foxy/fox_hat_blade/fox_atk_2.png" id="3_j4nxn"]
 [ext_resource type="Texture2D" uid="uid://byd3g4nnxwfcq" path="res://assets/foxy/fox_hat_blade/fox_atk_3.png" id="4_28m0y"]
@@ -16,14 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://cjob2r8khe2fs" path="res://assets/foxy/fox_hat_blade/fox_jump_1.png" id="14_5q8fn"]
 [ext_resource type="Texture2D" uid="uid://dgis3lall2gw3" path="res://assets/foxy/fox_hat_blade/fox_run_1.png" id="15_wva7c"]
 [ext_resource type="Texture2D" uid="uid://cr8a68nw3dww1" path="res://assets/foxy/fox_hat_blade/fox_run_2.png" id="16_7obkq"]
-[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/hurt_area_2d.tscn" id="16_8ydkj"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="16_8ydkj"]
 [ext_resource type="Texture2D" uid="uid://d0jfmp24jrfcy" path="res://assets/foxy/fox_hat_blade/fox_run_3.png" id="17_vo27k"]
 [ext_resource type="Texture2D" uid="uid://ce35c6mn7dcok" path="res://assets/foxy/fox_hat_blade/fox_run_4.png" id="18_genst"]
-[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/hit_area_2d.tscn" id="20_niom3"]
-[ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/node2d_factory.gd" id="21_28m0y"]
+[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="20_niom3"]
+[ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="21_28m0y"]
 [ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
 [ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
-[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/player/Blade/Blade.tscn" id="22_iqsei"]
+[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/player/blade/blade.tscn" id="22_iqsei"]
 [ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/player/states/attack.gd" id="27_j4nxn"]
 [ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/player/throw_blade.gd" id="30_tffgl"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
@@ -32,7 +32,8 @@
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="42_xcnuv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
-radius = 9.0
+radius = 18.0
+height = 40.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ge24q"]
 animations = [{
@@ -123,20 +124,20 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j4b4"]
-size = Vector2(25, 35)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
+radius = 11.5
+height = 36.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
 size = Vector2(22, 26)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 11
 script = ExtResource("1_wodsf")
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -14)
+position = Vector2(-2, -17)
 shape = SubResource("CapsuleShape2D_oul6g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -147,7 +148,7 @@ position = Vector2(1, -61)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_ge24q")
-animation = &"attack"
+animation = &"jump"
 
 [node name="HurtArea2d" parent="Direction" instance=ExtResource("16_8ydkj")]
 position = Vector2(1, 0)
@@ -155,8 +156,8 @@ collision_layer = 4
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
-position = Vector2(-2.5, -16.5)
-shape = SubResource("RectangleShape2D_3j4b4")
+position = Vector2(-3, -15)
+shape = SubResource("CapsuleShape2D_iqsei")
 
 [node name="HitArea2d" parent="Direction" instance=ExtResource("20_niom3")]
 collision_layer = 64
@@ -202,6 +203,7 @@ script = ExtResource("27_j4nxn")
 script = ExtResource("30_tffgl")
 
 [node name="Blade" parent="." instance=ExtResource("22_iqsei")]
+visible = false
 position = Vector2(0, -17)
 
 [connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]

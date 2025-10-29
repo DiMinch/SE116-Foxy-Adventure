@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://xpcinxy6ihd7"]
 
-[ext_resource type="Script" uid="uid://b3jvtdck7uc7w" path="res://scenes/enemies/Starfish/starfish.gd" id="1_vyojd"]
+[ext_resource type="Script" uid="uid://b3jvtdck7uc7w" path="res://scenes/enemies/starfish/starfish.gd" id="1_vyojd"]
 [ext_resource type="Texture2D" uid="uid://div7ykrnkcmbm" path="res://assets/monsters/starfish/starfish_atk_01.png" id="2_f84se"]
 [ext_resource type="Texture2D" uid="uid://b7fyajqfeium5" path="res://assets/monsters/starfish/starfish_atk_02.png" id="3_dy74u"]
 [ext_resource type="Texture2D" uid="uid://kkpwv3jqgs40" path="res://assets/monsters/starfish/starfish_atk_03.png" id="4_vyojd"]
@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://c1k5spj3k7htj" path="res://assets/monsters/starfish/starfish_01.png" id="10_t3hsm"]
 [ext_resource type="Texture2D" uid="uid://cqc7ruwipvqko" path="res://assets/monsters/starfish/starfish_02.png" id="11_jphpb"]
 [ext_resource type="Texture2D" uid="uid://dejbsdoig628p" path="res://assets/monsters/starfish/starfish_03.png" id="12_5jn31"]
-[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/hurt_area_2d.tscn" id="13_pk7g6"]
-[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/hit_area_2d.tscn" id="14_a711p"]
-[ext_resource type="Script" uid="uid://b70kiu47y2vvs" path="res://scenes/enemies/Starfish/detect_player_area_2d.gd" id="15_1buqx"]
-[ext_resource type="Script" uid="uid://r27jf2s7l6l8" path="res://scenes/enemies/Starfish/run.gd" id="15_vyojd"]
-[ext_resource type="Script" uid="uid://cuv7jos77lbga" path="res://scenes/enemies/Starfish/attack.gd" id="16_6had3"]
-[ext_resource type="Script" uid="uid://bwp4xqgfvjwia" path="res://scenes/enemies/Starfish/hurt.gd" id="17_6had3"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="13_pk7g6"]
+[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="14_a711p"]
+[ext_resource type="Script" uid="uid://b70kiu47y2vvs" path="res://scenes/enemies/starfish/detect_player_area_2d.gd" id="15_1buqx"]
+[ext_resource type="Script" uid="uid://r27jf2s7l6l8" path="res://scenes/enemies/starfish/run.gd" id="15_vyojd"]
+[ext_resource type="Script" uid="uid://cuv7jos77lbga" path="res://scenes/enemies/starfish/attack.gd" id="16_6had3"]
+[ext_resource type="Script" uid="uid://bwp4xqgfvjwia" path="res://scenes/enemies/starfish/hurt.gd" id="17_6had3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eau47"]
 animations = [{

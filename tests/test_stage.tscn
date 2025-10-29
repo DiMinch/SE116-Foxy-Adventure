@@ -1,0 +1,187 @@
+[gd_scene load_steps=22 format=4 uid="uid://cwdh2x7mqppdi"]
+
+[ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_40sni"]
+[ext_resource type="TileSet" uid="uid://bcc7whja5kmxb" path="res://assets/terrain/tileset.tres" id="1_o4x03"]
+[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="2_aw0j1"]
+[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/island/background/additional_sky.png" id="3_by1xa"]
+[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="4_h85hr"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="5_4b7u7"]
+[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="6_36xsu"]
+[ext_resource type="Texture2D" uid="uid://cheu53nimdwyt" path="res://assets/island/back_palm_trees/back_palm_tree_regular_01.png" id="7_40sni"]
+[ext_resource type="Texture2D" uid="uid://dt1od2hyke60g" path="res://assets/island/back_palm_trees/back_palm_tree_regular_02.png" id="8_gbs6j"]
+[ext_resource type="Texture2D" uid="uid://frimagh5yfit" path="res://assets/island/back_palm_trees/back_palm_tree_regular_03.png" id="9_c71yv"]
+[ext_resource type="Texture2D" uid="uid://cjcxdxoq8hp4l" path="res://assets/island/back_palm_trees/back_palm_tree_regular_04.png" id="10_un87q"]
+[ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="11_h85hr"]
+[ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/starfish/Starfish.tscn" id="12_4b7u7"]
+[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="13_36xsu"]
+[ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="14_4b7u7"]
+[ext_resource type="PackedScene" uid="uid://bjn2falqd6vhp" path="res://levels/objects/platforms/moving_platform.tscn" id="15_36xsu"]
+
+[sub_resource type="GDScript" id="GDScript_cpvyx"]
+script/source = "extends ParallaxLayer
+
+func _process(delta: float) -> void:
+	motion_offset.x -= delta * 20
+"
+
+[sub_resource type="GDScript" id="GDScript_8s8sm"]
+script/source = "extends Node2D
+
+@export var num_clouds: int = 4
+@export var cloud_textures: Array[Texture2D] = [
+	preload(\"res://assets/island/background/small_cloud_1.png\"),
+	preload(\"res://assets/island/background/small_cloud_2.png\"),
+	preload(\"res://assets/island/background/small_cloud_3.png\"),
+]
+@export var min_speed: float = 10.0
+@export var max_speed: float = 50.0
+@export var area_x: Vector2 = Vector2(-300, 1300)
+@export var area_y: Vector2 = Vector2(-100, 200)
+
+var clouds: Array = []
+var speed = 0
+
+func _ready() -> void:
+	randomize()
+	for i in range(num_clouds):
+		_spawn_cloud()
+
+func _process(delta: float) -> void:
+	for cloud in clouds:
+		cloud.position.x -= speed * delta
+		
+		if cloud.position.x < area_x.x - 100:
+			cloud.position.x = area_x.y + 100
+			cloud.position.y = randf_range(area_y.x, area_y.y)
+			speed = randf_range(min_speed, max_speed)
+
+func _spawn_cloud():
+	var cloud = Sprite2D.new()
+	add_child(cloud)
+	
+	cloud.texture = cloud_textures[randi() % cloud_textures.size()]
+	cloud.position = Vector2(
+		randf_range(area_x.x, area_x.y),
+		randf_range(area_y.x, area_y.y)
+	)
+	speed = randf_range(min_speed, max_speed)
+	clouds.append(cloud)
+"
+
+[sub_resource type="GDScript" id="GDScript_y6x6r"]
+script/source = "extends ParallaxLayer
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrqy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_40sni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gbs6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c71yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_un87q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_40sni"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -100, 0, 0, 0, 0, 0, 100, 0)
+}
+point_count = 2
+
+[node name="Stage2" type="Node2D"]
+script = ExtResource("1_40sni")
+
+[node name="World" type="TileMapLayer" parent="."]
+position = Vector2(127, 129)
+tile_map_data = PackedByteArray("AAD8/wMAAAAAAAQAAAD9/wMAAAABAAQAAAD+/wMAAAABAAQAAAD//wMAAAABAAQAAAAAAAMAAAABAAQAAAABAAMAAAAKAAQAAAACAAMAAAABAAIAAAADAAMAAAABAAIAAAAEAAMAAAAJAAQAAAAFAAMAAAABAAQAAAAGAAMAAAABAAQAAAAHAAMAAAABAAQAAAAIAAMAAAABAAQAAAAJAAMAAAABAAQAAAAKAAMAAAABAAQAAAALAAMAAAABAAQAAAAMAAMAAAACAAQAAAABAAIAAAAAAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAACAAAAAAAGAAAAAAAPAAMAAAAHAAAAAAAMAAQAAAAIAAAAAAACAAAAAAAHAP//AAAEAAAAAAAKAP3/AAAEAAQAAAD8/wIAAQAAAAAAAQABAAEAAQAAAAAAAQAKAAIAAQAAAAAAAQATAAAAAAAAAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAaAAAAAAACAAAAAAAaAAEAAAABAAIAAAAZAAEAAAABAAIAAAAYAAEAAAABAAIAAAAXAAEAAAABAAIAAAAWAAEAAAABAAIAAAAVAAEAAAABAAIAAAAUAAEAAAABAAIAAAATAAEAAAABAAIAAAAbAAEAAgAAAAAAAQAQAP//AAAEAAAAAAAQAAAAAAAEAAEAAAAQAAEAAAAEAAIAAAAPAAAAAwAAAAAAAQA=")
+tile_set = ExtResource("1_o4x03")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -30)
+motion_scale = Vector2(0.001, 0.8)
+motion_mirroring = Vector2(767, 0)
+
+[node name="SkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(417, -11)
+scale = Vector2(26.125, 20.531)
+texture = ExtResource("3_by1xa")
+
+[node name="SeaSkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-2, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h85hr")
+centered = false
+
+[node name="WaterSprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(406, 431)
+scale = Vector2(25.4477, 9.47514)
+texture = ExtResource("5_4b7u7")
+
+[node name="WaterReflect" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+
+[node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-1, -50)
+motion_scale = Vector2(0.001, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_cpvyx")
+
+[node name="BigClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud"]
+position = Vector2(0, 111)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_36xsu")
+centered = false
+
+[node name="CloudManager" type="Node2D" parent="ParallaxBackground/ParallaxLayerCloud"]
+script = SubResource("GDScript_8s8sm")
+
+[node name="TreeParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(1200, 0)
+script = SubResource("GDScript_y6x6r")
+
+[node name="BackPalmTree" type="AnimatedSprite2D" parent="ParallaxBackground/TreeParallaxLayer"]
+position = Vector2(82, 202)
+sprite_frames = SubResource("SpriteFrames_wrqy7")
+frame_progress = 0.880329
+
+[node name="BackPalmTree2" type="AnimatedSprite2D" parent="ParallaxBackground/TreeParallaxLayer"]
+position = Vector2(251, 197)
+sprite_frames = SubResource("SpriteFrames_wrqy7")
+frame_progress = 0.740756
+
+[node name="BackPalmTree3" type="AnimatedSprite2D" parent="ParallaxBackground/TreeParallaxLayer"]
+position = Vector2(489, 196)
+sprite_frames = SubResource("SpriteFrames_wrqy7")
+frame_progress = 0.0914293
+
+[node name="Mushroom" parent="." instance=ExtResource("11_h85hr")]
+position = Vector2(332, 212)
+
+[node name="Starfish" parent="." instance=ExtResource("12_4b7u7")]
+position = Vector2(855, 116)
+
+[node name="Crab" parent="." instance=ExtResource("13_36xsu")]
+position = Vector2(37, 214)
+
+[node name="Door" parent="." instance=ExtResource("14_4b7u7")]
+position = Vector2(261, 194)
+target_stage = "uid://cse8m3ao6w5ao"
+
+[node name="MovingPlatformPath2D" parent="." instance=ExtResource("15_36xsu")]
+position = Vector2(616, 26)
+curve = SubResource("Curve2D_40sni")
+auto_start = false
+
+[node name="Player" parent="." instance=ExtResource("2_aw0j1")]

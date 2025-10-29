@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=4 uid="uid://cse8m3ao6w5ao"]
+[gd_scene load_steps=16 format=4 uid="uid://cse8m3ao6w5ao"]
 
+[ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_43d8r"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="1_w3aqi"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="2_ok4yu"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="3_kh2fj"]
 [ext_resource type="TileSet" uid="uid://bfd6n4n3lb3n7" path="res://tests/new_tile_set.tres" id="5_n5wxi"]
+[ext_resource type="PackedScene" uid="uid://cw41ooeg3pxq1" path="res://levels/objects/checkpoint/checkpoint.tscn" id="8_8a3cw"]
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
-[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="9_pfwq7"]
-[ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/Starfish/Starfish.tscn" id="10_43d8r"]
+[ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="9_43d8r"]
+[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="9_pfwq7"]
+[ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/starfish/Starfish.tscn" id="10_43d8r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
 
@@ -22,10 +25,7 @@ size = Vector2(216, 20)
 size = Vector2(127, 128.488)
 
 [node name="Stage" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_w3aqi")]
-position = Vector2(118, 177)
-collision_layer = 1
+script = ExtResource("1_43d8r")
 
 [node name="World" type="Node2D" parent="."]
 
@@ -119,3 +119,12 @@ position = Vector2(485, 139)
 
 [node name="Starfish" parent="." instance=ExtResource("10_43d8r")]
 position = Vector2(541, 229)
+
+[node name="Door" parent="." instance=ExtResource("9_43d8r")]
+position = Vector2(805, 246)
+target_stage = "uid://cwdh2x7mqppdi"
+
+[node name="Checkpoint" parent="." instance=ExtResource("8_8a3cw")]
+position = Vector2(734, 230)
+
+[node name="Player" parent="." instance=ExtResource("1_w3aqi")]
