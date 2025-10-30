@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://cse8m3ao6w5ao"]
+[gd_scene load_steps=15 format=3 uid="uid://cse8m3ao6w5ao"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_43d8r"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="1_w3aqi"]
+[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_43d8r"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="2_ok4yu"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="3_kh2fj"]
-[ext_resource type="TileSet" uid="uid://bfd6n4n3lb3n7" path="res://tests/new_tile_set.tres" id="5_n5wxi"]
-[ext_resource type="PackedScene" uid="uid://cw41ooeg3pxq1" path="res://levels/objects/checkpoint/checkpoint.tscn" id="8_8a3cw"]
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="9_43d8r"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="9_pfwq7"]
@@ -26,6 +25,10 @@ size = Vector2(127, 128.488)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_43d8r")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(79, 150)
+tile_set = ExtResource("2_43d8r")
 
 [node name="World" type="Node2D" parent="."]
 
@@ -106,11 +109,6 @@ position = Vector2(389, 164)
 
 [node name="Blade" type="Node" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(1, 0)
-tile_map_data = PackedByteArray("AAAGAA4AAgAAAAAAAQAAAA4AAgAAAAAAAQArAA4AAgAAAAAAAQAOAA8AAgAAAAAABAAUAA8AAgAAAAAABAAaAA8AAgAAAAAABAAKAA4AAgAAAAAAAQA=")
-tile_set = ExtResource("5_n5wxi")
-
 [node name="Crab" parent="." instance=ExtResource("9_pfwq7")]
 position = Vector2(289, 168)
 
@@ -124,7 +122,5 @@ position = Vector2(541, 229)
 position = Vector2(805, 246)
 target_stage = "uid://cwdh2x7mqppdi"
 
-[node name="Checkpoint" parent="." instance=ExtResource("8_8a3cw")]
-position = Vector2(734, 230)
-
 [node name="Player" parent="." instance=ExtResource("1_w3aqi")]
+position = Vector2(92, 142)
