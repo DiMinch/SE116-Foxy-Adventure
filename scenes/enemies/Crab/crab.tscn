@@ -60,7 +60,6 @@ size = Vector2(37, 24)
 
 [node name="Crab" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_ep1gc")
 metadata/_custom_type_script = "uid://s4xx82espxdt"
 

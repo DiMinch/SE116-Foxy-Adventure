@@ -22,6 +22,7 @@ func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Idle)
 	if has_blade:
 		collected_blade()
+	GameManager.player = self
 
 func can_attack() -> bool:
 	if fsm.current_state == fsm.states.run or fsm.current_state == fsm.states.idle :
@@ -31,6 +32,17 @@ func can_attack() -> bool:
 func collected_blade() -> void:
 	has_blade = true
 	set_animated_sprite($Direction/BladeAnimatedSprite2D)
+
+func save_state() -> Dictionary:
+	return {
+		"position": [global_position.x, global_position.y]
+	}
+
+func load_state(data: Dictionary) -> void:
+	"""Load player state from checkpoint data"""
+	if data.has("position"):
+		var pos_array = data["position"]
+		global_position = Vector2(pos_array[0], pos_array[1])
 
 func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
 	#if is_invulnerable:

@@ -104,7 +104,6 @@ func load_checkpoint_data() -> void:
 	if not save_data.is_empty():
 		current_checkpoint_id = save_data.get("current_checkpoint_id", "")
 		checkpoint_data = save_data.get("checkpoint_data", {})
-		print(checkpoint_data)
 		print("Checkpoint data loaded from save file")
 
 # Clear all checkpoint data

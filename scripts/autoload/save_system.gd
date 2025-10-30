@@ -6,7 +6,7 @@ const SAVE_FILE = "user://checkpoint_save.dat"
 
 # Save checkpoint data to file
 func save_checkpoint_data(data: Dictionary) -> void:
-	# save checkpoint data to save file
+	#TODO: save checkpoint data to save file
 	var file = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
 	if file == null:
 		push_error("Failed to open save file for writing: %s" % SAVE_FILE)
@@ -18,7 +18,7 @@ func save_checkpoint_data(data: Dictionary) -> void:
 
 # Load checkpoint data from file
 func load_checkpoint_data() -> Dictionary:
-	# load checkpoint data from save file
+	#TODO: load checkpoint data from save file
 	if not has_save_file():
 		print("No checkpoint save file found.")
 		return {}
