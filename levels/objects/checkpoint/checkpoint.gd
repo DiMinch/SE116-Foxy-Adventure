@@ -20,7 +20,8 @@ func  activate_visual_only() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		activate()
+		await activate()
+	$AnimatedSprite2D.play("idle")
 
 func activate() -> void:
 	if is_activated:

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="[SE116 - Team 6] Foxy Adventure"
-run/main_scene="uid://dvcvw61th0a7e"
+run/main_scene="uid://eusw5htc6cbg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://cr1040f2pbjl1"
 

@@ -183,6 +183,7 @@ target_stage = "uid://dvcvw61th0a7e"
 [node name="MovingPlatformPath2D" parent="." instance=ExtResource("15_36xsu")]
 position = Vector2(616, 26)
 curve = SubResource("Curve2D_40sni")
+move_speed = 0.0
 auto_start = false
 
 [node name="Player" parent="." instance=ExtResource("2_aw0j1")]
