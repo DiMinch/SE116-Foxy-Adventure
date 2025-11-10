@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="1_7qdfy"]
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_c0mbb"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="2_ikntj"]
-[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="3_2a1ow"]
+[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="3_2a1ow"]
 [ext_resource type="PackedScene" uid="uid://bjn2falqd6vhp" path="res://levels/objects/platforms/moving_platform.tscn" id="4_ikntj"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="5_lkatd"]
 [ext_resource type="PackedScene" uid="uid://cw41ooeg3pxq1" path="res://levels/objects/checkpoint/checkpoint.tscn" id="6_c0mbb"]

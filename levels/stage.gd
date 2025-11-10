@@ -1,4 +1,5 @@
 extends Node
+class_name Stage
 
 func _enter_tree() -> void:
 	# Handle portal spawning first
