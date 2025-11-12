@@ -9,6 +9,7 @@ var is_invulnerable: bool = false
 @export var has_blade: bool = false
 
 func _ready() -> void:
+	add_to_group("player")
 	super._ready()
 	
 	self.max_health = PlayerConstants.PLAYER_STATS[EnumKeys.PlayerKeys.HEALTH]

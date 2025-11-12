@@ -2,6 +2,7 @@ extends PlayerState
 
 func _enter() -> void:
 	#Change animation to jump
+	
 	obj.change_animation("jump")
 	pass
 
