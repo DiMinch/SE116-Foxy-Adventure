@@ -1,3 +1,57 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
+.import/
+.export/
+.cache/
+.editor/
+
+# Exported builds (bỏ qua các file sau khi export game)
+*.exe
+*.app
+*.apk
+*.aab
+*.xcodeproj
+*.zip
+*.tar.gz
+*.pck
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.old
+*.orig
+
+# Godot editor metadata
+project_metadata.cfg
+project.godot.tmp
+
+# Android build folder (nếu dùng xuất Android)
+android/build/
+android/.gradle/
+android/.idea/
+android/local.properties
+
+# iOS export folder
+ios/build/
+ios/.idea/
+ios/.xcodeproj
+ios/.xcworkspace
+ios/Pods/
+
+# VSCode / JetBrains IDEs
+.vscode/
+.idea/
+
+# Godot Mono (C#) specific ignores
+.mono/
+data_*/
+mono_crash.*
+
+# Godot 4 Web export
+web/export/
