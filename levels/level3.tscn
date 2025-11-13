@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dai7e3meplndn"]
+[gd_scene load_steps=15 format=4 uid="uid://dai7e3meplndn"]
 
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="1_0fm5q"]
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_mf7v1"]
@@ -7,17 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="4_1xfnq"]
 [ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/starfish/Starfish.tscn" id="5_cpie4"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="6_1xfnq"]
-[ext_resource type="PackedScene" uid="uid://bjn2falqd6vhp" path="res://levels/objects/platforms/moving_platform.tscn" id="6_udvx3"]
+[ext_resource type="PackedScene" uid="uid://cayiakok1l7fj" path="res://levels/objects/platforms/moving_platform.tscn" id="8_7trqu"]
 [ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/island/background/additional_sky.png" id="8_cpuyl"]
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="9_mf7v1"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="10_7trqu"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="11_o0ax4"]
-
-[sub_resource type="Curve2D" id="Curve2D_1xfnq"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 2, -167)
-}
-point_count = 2
 
 [sub_resource type="GDScript" id="GDScript_nq7ub"]
 script/source = "extends ParallaxLayer
@@ -83,6 +77,14 @@ position = Vector2(-144, -48)
 [node name="Door" parent="." instance=ExtResource("3_udvx3")]
 position = Vector2(3410, -1407)
 
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="MovingPlatform" parent="Objects" instance=ExtResource("8_7trqu")]
+position = Vector2(1421, -489)
+
+[node name="MovingPlatform2" parent="Objects" instance=ExtResource("8_7trqu")]
+position = Vector2(3206, -1192)
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Mushroom" parent="Enemies" instance=ExtResource("4_1xfnq")]
@@ -106,16 +108,9 @@ position = Vector2(1931, -914)
 [node name="Crab2" parent="Enemies" instance=ExtResource("6_1xfnq")]
 position = Vector2(2996, -1205)
 
-[node name="MovingPlatformPath2D" parent="." instance=ExtResource("6_udvx3")]
-position = Vector2(1392, -517)
-curve = SubResource("Curve2D_1xfnq")
-
-[node name="MovingPlatformPath2D2" parent="." instance=ExtResource("6_udvx3")]
-position = Vector2(3213, -1234)
-curve = SubResource("Curve2D_1xfnq")
-
 [node name="Player" parent="." instance=ExtResource("2_cpie4")]
-position = Vector2(-122, -146)
+position = Vector2(-131, -86)
+slide_on_ceiling = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
