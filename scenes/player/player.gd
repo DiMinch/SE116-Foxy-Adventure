@@ -3,9 +3,11 @@ extends BaseCharacter
 
 @export var blade_speed:float =300
 @onready var blade_factory := $Direction/BladeFactory
+@onready var onHurt := $Direction/HurtArea2D
 
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
+@export var invulnerable_time := 2.0
 @export var has_blade: bool = false
 
 func _ready() -> void:
@@ -45,12 +47,6 @@ func load_state(data: Dictionary) -> void:
 		var pos_array = data["position"]
 		global_position = Vector2(pos_array[0], pos_array[1])
 
-func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
-	#if is_invulnerable:
-	#	return # đang miễn nhiễm
-	print("helo cac ban")
-	fsm.current_state.take_damage(_damage)
-	_start_invulnerability(2.0)
  
 func Throw()->void:
 
@@ -59,9 +55,36 @@ func Throw()->void:
 	var blade_velocity:=Vector2(blade_speed*direction,0.0)
 	
 	Blade.apply_impulse(blade_velocity)
-func _start_invulnerability(duration: float) -> void:
+
+func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
+	if is_invulnerable:
+		return
+	fsm.current_state.take_damage(_damage)
+
+func start_invulnerability():
 	is_invulnerable = true
-	# đổi màu player để thấy hiệu ứng bị thương
-	await get_tree().create_timer(duration).timeout
+	onHurt.monitoring = false
+	
+	_blink_effect()
+	await get_tree().create_timer(invulnerable_time).timeout
 	is_invulnerable = false
- # trở lại bình thường
+	_stop_blink_effect()
+	
+	await get_tree().process_frame
+	onHurt.monitoring = true
+
+func _blink_effect():
+	var sprite = _next_animated_sprite
+	var tween = create_tween()
+	tween.set_loops()
+	tween.tween_property(sprite, "modulate:a", 0.3, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
+	sprite.set_meta("blink_tween", tween)
+
+func _stop_blink_effect():
+	var sprite = _next_animated_sprite
+	if sprite.has_meta("blink_tween"):
+		var tween = sprite.get_meta("blink_tween")
+		tween.kill()
+		sprite.remove_meta("blink_tween")
+		sprite.modulate.a = 1.0
