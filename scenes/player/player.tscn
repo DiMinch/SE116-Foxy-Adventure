@@ -45,9 +45,8 @@
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="41_gswnw"]
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="42_xcnuv"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
-radius = 16.0
-height = 38.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqsei"]
+size = Vector2(30, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ge24q"]
 animations = [{
@@ -225,12 +224,13 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+slide_on_ceiling = false
 script = ExtResource("1_wodsf")
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -17)
-shape = SubResource("CapsuleShape2D_oul6g")
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_iqsei")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -61)

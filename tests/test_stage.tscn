@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cwdh2x7mqppdi"]
+[gd_scene load_steps=22 format=4 uid="uid://cwdh2x7mqppdi"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_40sni"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="2_aw0j1"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/starfish/Starfish.tscn" id="12_4b7u7"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="13_36xsu"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="14_4b7u7"]
-[ext_resource type="PackedScene" uid="uid://bjn2falqd6vhp" path="res://levels/objects/platforms/moving_platform.tscn" id="15_36xsu"]
+[ext_resource type="PackedScene" uid="uid://cayiakok1l7fj" path="res://levels/objects/platforms/moving_platform.tscn" id="15_36xsu"]
 [ext_resource type="PackedScene" uid="uid://cw41ooeg3pxq1" path="res://levels/objects/checkpoint/checkpoint.tscn" id="17_gbs6j"]
 
 [sub_resource type="GDScript" id="GDScript_cpvyx"]
@@ -92,12 +92,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="Curve2D" id="Curve2D_40sni"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -100, 0, 0, 0, 0, 0, 100, 0)
-}
-point_count = 2
 
 [node name="Stage2" type="Node2D"]
 script = ExtResource("1_40sni")
@@ -180,14 +174,12 @@ position = Vector2(37, 214)
 position = Vector2(261, 194)
 target_stage = "uid://dvcvw61th0a7e"
 
-[node name="MovingPlatformPath2D" parent="." instance=ExtResource("15_36xsu")]
-position = Vector2(616, 26)
-curve = SubResource("Curve2D_40sni")
-move_speed = 0.0
-auto_start = false
-
 [node name="Player" parent="." instance=ExtResource("2_aw0j1")]
 position = Vector2(176, 133)
 
 [node name="Checkpoint" parent="." instance=ExtResource("17_gbs6j")]
 position = Vector2(366, 83)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("15_36xsu")]
+position = Vector2(540, 44)
+direction = "Horizontal"
