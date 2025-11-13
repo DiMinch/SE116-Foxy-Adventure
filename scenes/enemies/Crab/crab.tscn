@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://pe3jgo1h8wlq"]
 
-[ext_resource type="Script" uid="uid://crwnv5esc6llw" path="res://scenes/enemies/crab/crab.gd" id="1_ep1gc"]
+[ext_resource type="Script" uid="uid://crwnv5esc6llw" path="res://scenes/enemies/Crab/crab.gd" id="1_ep1gc"]
 [ext_resource type="Texture2D" uid="uid://fii540ugfj5n" path="res://assets/foxy/fox_hat/fox_defeat_3.png" id="2_dhdpt"]
 [ext_resource type="Texture2D" uid="uid://bheixrcxv5gb4" path="res://assets/monsters/crab/crab_hurt_01.png" id="2_ewkck"]
 [ext_resource type="Texture2D" uid="uid://boxmc12qq7a8a" path="res://assets/monsters/crab/crab_hurt_02.png" id="3_ep1gc"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="7_dhdpt"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="8_b1gr1"]
 [ext_resource type="Script" uid="uid://b7g18r857thhi" path="res://scenes/enemies/states/run.gd" id="8_phqbf"]
-[ext_resource type="Script" uid="uid://cgf7dpugq584a" path="res://scenes/enemies/crab/hurt.gd" id="10_rl4in"]
-[ext_resource type="Script" uid="uid://dxbbk38i7qj7a" path="res://scenes/enemies/crab/node.gd" id="11_dhdpt"]
+[ext_resource type="Script" uid="uid://cgf7dpugq584a" path="res://scenes/enemies/Crab/hurt.gd" id="10_rl4in"]
+[ext_resource type="Script" uid="uid://dxbbk38i7qj7a" path="res://scenes/enemies/Crab/node.gd" id="11_dhdpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gen76"]
 size = Vector2(29, 17)

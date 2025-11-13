@@ -49,7 +49,8 @@ func take_damage(damage) -> void:
 func control_attack()->bool:
 		
 	if Input.is_action_pressed(ATTACK):
-		change_state(fsm.states.attack)
+		if obj.has_blade==true:
+			change_state(fsm.states.attack)
 		return true
 	return false
 func control_throw()->bool:
