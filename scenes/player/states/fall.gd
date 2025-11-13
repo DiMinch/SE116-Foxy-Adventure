@@ -1,8 +1,10 @@
 extends PlayerState
 
+const FALL = "fall"
+
 func _enter() -> void:
 	#Change animation to fall
-	obj.change_animation("fall")
+	obj.change_animation(FALL)
 	pass
 
 func _update(_delta: float) -> void:

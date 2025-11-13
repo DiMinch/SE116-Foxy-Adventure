@@ -7,6 +7,8 @@ extends BaseCharacter
 
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
+var fall_start_y: float = 0.0
+var was_on_floor: bool = false
 @export var invulnerable_time := 2.0
 @export var has_blade: bool = false
 
@@ -26,6 +28,10 @@ func _ready() -> void:
 	if has_blade:
 		collected_blade()
 	GameManager.player = self
+
+func _physics_process(delta: float) -> void:
+	_check_fall_damage()
+	super._physics_process(delta)
 
 func can_attack() -> bool:
 	if fsm.current_state == fsm.states.run or fsm.current_state == fsm.states.idle :
@@ -88,3 +94,19 @@ func _stop_blink_effect():
 		tween.kill()
 		sprite.remove_meta("blink_tween")
 		sprite.modulate.a = 1.0
+
+func _check_fall_damage() -> void:
+	var on_floor_now = is_on_floor()
+	if not on_floor_now and was_on_floor:
+		fall_start_y = global_position.y
+	if on_floor_now and not was_on_floor:
+		var fall_distance = global_position.y - fall_start_y
+		var threshold = PlayerConstants.PLAYER_STATS[EnumKeys.PlayerKeys.FALL_DAMAGE_SPEED]
+		var max_damage = PlayerConstants.PLAYER_STATS[EnumKeys.PlayerKeys.FALL_DAMAGE_MAX]
+		if fall_distance > threshold and not is_invulnerable:
+			var damage = min(max_damage, (fall_distance - threshold) / 5.0)
+			print("⚠️ Player mất ", damage, " máu do rơi từ độ cao ", fall_distance)
+			fsm.change_state(fsm.states.hurt)
+			fsm.current_state.take_damage(damage)
+	fall_start_y = 0.0 if on_floor_now else fall_start_y
+	was_on_floor = on_floor_now
