@@ -6,8 +6,10 @@ var stats_y := -250
 const INVINCIBLE_DURATION := 2.0
 const BLINK_INTERVAL := 0.1
 
+const HURT = "hurt"
+
 func _enter() -> void:
-	obj.change_animation("hurt")
+	obj.change_animation(HURT)
 	# Knockback
 	obj.velocity.y = stats_x
 	obj.velocity.x = stats_y * sign(obj.velocity.x)

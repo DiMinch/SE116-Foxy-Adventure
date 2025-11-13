@@ -86,7 +86,7 @@ position = Vector2(998, 52)
 position = Vector2(2468, -57)
 
 [node name="Player" parent="." instance=ExtResource("3_ua5ty")]
-position = Vector2(-5, 94)
+position = Vector2(47, -542)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

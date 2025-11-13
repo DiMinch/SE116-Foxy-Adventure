@@ -6,7 +6,9 @@ enum PlayerKeys {
 	JUMP_SPEED, 
 	GRAVITY, 
 	ATTACK_SPEED, 
-	ATTACK_DAMAGE 
+	ATTACK_DAMAGE,
+	FALL_DAMAGE_SPEED,
+	FALL_DAMAGE_MAX
 }
 
 enum EnemyKeys {
