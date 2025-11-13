@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ko4rnci3koo" path="res://assets/foxy/fox_hat/fox_jump_1.png" id="32_0ncpa"]
 [ext_resource type="Texture2D" uid="uid://cseha0dkj5lfj" path="res://assets/foxy/fox_hat/fox_run_1.png" id="34_ln3h3"]
 [ext_resource type="Texture2D" uid="uid://3g5hdrfwcd2c" path="res://assets/foxy/fox_hat/fox_run_2.png" id="35_uygh0"]
-[ext_resource type="Texture2D" uid="uid://cg0s41812vukj" path="res://assets/foxy/fox_hat/fox_run_3.png" id="36_t1aof"]
+[ext_resource type="Texture2D" uid="uid://cg0s41812vukj" path="res://assets/foxy/fox_hat/fox_run.png" id="36_t1aof"]
 [ext_resource type="Texture2D" uid="uid://8u26ji11yaua" path="res://assets/foxy/fox_hat/fox_run_4.png" id="37_w8qe1"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="40_fjxoa"]
@@ -243,20 +243,20 @@ position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_ge24q")
 animation = &"jump"
 
-[node name="HurtArea2d" parent="Direction" instance=ExtResource("16_8ydkj")]
+[node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
 position = Vector2(1, 0)
 collision_layer = 4
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-3, -15)
 shape = SubResource("CapsuleShape2D_iqsei")
 
-[node name="HitArea2d" parent="Direction" instance=ExtResource("20_niom3")]
+[node name="HitArea2D" parent="Direction" instance=ExtResource("20_niom3")]
 collision_layer = 64
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
 position = Vector2(20, -13)
 shape = SubResource("RectangleShape2D_ttakn")
 disabled = true
@@ -304,4 +304,4 @@ script = ExtResource("30_tffgl")
 visible = false
 position = Vector2(0, -17)
 
-[connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

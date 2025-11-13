@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://eusw5htc6cbg"]
+[gd_scene load_steps=14 format=4 uid="uid://eusw5htc6cbg"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_omn1t"]
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="1_sjb42"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="7_f7u7y"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="8_jq2cn"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="10_lf3p4"]
-[ext_resource type="PackedScene" uid="uid://8twm0vuhy7cp" path="res://assets/items/blade_item/Blade_Item.tscn" id="11_yydhl"]
-[ext_resource type="PackedScene" uid="uid://cvv06808wlvnc" path="res://scenes/drop out to platform/drop_out_platform.tscn" id="12_bekh1"]
 [ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/Starfish/Starfish.tscn" id="13_8bcou"]
 
 [sub_resource type="GDScript" id="GDScript_w7ck5"]
@@ -132,12 +130,6 @@ script = SubResource("GDScript_2nn5w")
 
 [node name="Crab" parent="." instance=ExtResource("10_lf3p4")]
 position = Vector2(138, 83)
-
-[node name="BladeItem" parent="." instance=ExtResource("11_yydhl")]
-position = Vector2(-94, 86)
-
-[node name="DropOutPlatform" parent="." instance=ExtResource("12_bekh1")]
-position = Vector2(-423, 264)
 
 [node name="Starfish" parent="." instance=ExtResource("13_8bcou")]
 position = Vector2(329, 51)
