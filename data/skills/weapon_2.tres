@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://xd6c1bwlnf04"]
+
+[ext_resource type="Texture2D" uid="uid://cokgf4s6s3xg6" path="res://assets/monsters/pelican/pelican_bullet.png" id="1_0k712"]
+[ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_r80do"]
+[ext_resource type="Resource" uid="uid://co8lt0bqcw34j" path="res://data/weapons/blade.tres" id="2_psnch"]
+
+[resource]
+script = ExtResource("1_r80do")
+skill_id = &"weapon_2"
+skill_name = "Weapon 2"
+description = "Mở slot weapon số 2, có thể dùng luân phiên."
+icon = ExtResource("1_0k712")
+tier = 1
+cost = 2
+type = "W"
+max_level = 1
+prerequisites = []
+default_unlocked = null
+weapon_to_unlock = ExtResource("2_psnch")
+metadata/_custom_type_script = "uid://bbdv8flk4k6ew"
