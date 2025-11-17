@@ -1,10 +1,5 @@
 class_name EnumKeys
 
-enum EnemyType
-{
-	PELICAN
-}
-
 enum PlayerKeys {
 	HEALTH, 
 	MOVEMENT_SPEED, 
