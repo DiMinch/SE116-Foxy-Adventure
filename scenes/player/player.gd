@@ -12,6 +12,12 @@ var was_on_floor: bool = false
 @export var invulnerable_time := 2.0
 @export var has_blade: bool = false
 
+# Buff of glow bush variables
+var active_speed_buff: bool = false
+var active_stealth_buff: bool = false
+var active_heal_buff: bool = false
+var current_speed_multiplier: float = 1.0
+
 func _ready() -> void:
 	add_to_group("player")
 	super._ready()
@@ -30,8 +36,13 @@ func _ready() -> void:
 	GameManager.player = self
 
 func _physics_process(delta: float) -> void:
+	if active_speed_buff:
+		movement_speed *= current_speed_multiplier
 	_check_fall_damage()
 	super._physics_process(delta)
+	if active_speed_buff:
+		# Reset after calculating
+		movement_speed /= current_speed_multiplier
 
 func can_attack() -> bool:
 	if fsm.current_state == fsm.states.run or fsm.current_state == fsm.states.idle :
@@ -110,3 +121,31 @@ func _check_fall_damage() -> void:
 			fsm.current_state.take_damage(damage)
 	fall_start_y = 0.0 if on_floor_now else fall_start_y
 	was_on_floor = on_floor_now
+
+# Buff of glow bush functions
+func apply_speed_buff(multiplier: float) -> void:
+	print("Glow bush speed started")
+	if active_speed_buff: 
+		return
+	active_speed_buff = true
+	current_speed_multiplier = multiplier
+
+func remove_speed_buff() -> void:
+	active_speed_buff = false
+	current_speed_multiplier = 1.0
+
+func apply_stealth_buff() -> void:
+	print("Glow bush stealth")
+	active_stealth_buff = true
+
+func remove_stealth_buff() -> void:
+	active_stealth_buff = false
+
+func start_heal_buff(source_bush: GlowingBush) -> void:
+	print("Glow bush heal started")
+	if active_heal_buff:
+		return
+	active_heal_buff = true
+
+func remove_heal_buff() -> void:
+	active_heal_buff = false

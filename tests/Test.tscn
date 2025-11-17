@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cse8m3ao6w5ao"]
+[gd_scene load_steps=16 format=3 uid="uid://cse8m3ao6w5ao"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_43d8r"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="1_w3aqi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="9_43d8r"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="9_pfwq7"]
+[ext_resource type="PackedScene" uid="uid://bd0m3hr2fbmmk" path="res://levels/objects/glow_bush/glow_bush.tscn" id="10_2cifh"]
 [ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/Starfish/Starfish.tscn" id="10_43d8r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
@@ -124,3 +125,6 @@ target_stage = "uid://cwdh2x7mqppdi"
 
 [node name="Player" parent="." instance=ExtResource("1_w3aqi")]
 position = Vector2(92, 142)
+
+[node name="GlowBush" parent="." instance=ExtResource("10_2cifh")]
+position = Vector2(41, 227)

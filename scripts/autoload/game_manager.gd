@@ -12,7 +12,7 @@ var player: Player = null
 func _ready() -> void:
 	# Load checkpoint data when game starts
 	load_checkpoint_data()
-	
+	randomize()
 	pass
 
 #change stage by path and target portal name
