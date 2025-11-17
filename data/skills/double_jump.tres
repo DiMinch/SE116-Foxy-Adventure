@@ -13,6 +13,6 @@ tier = 1
 cost = 2
 type = "U"
 max_level = 1
-prerequisites = ["weapon_1", "weapon_2"]
+prerequisites = ["weapon_1"]
 default_unlocked = false
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"
