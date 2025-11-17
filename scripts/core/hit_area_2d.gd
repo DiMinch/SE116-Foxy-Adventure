@@ -20,3 +20,7 @@ func hit(hurt_area):
 func _on_area_entered(area):
 	hit(area)
 	hitted.emit(area)
+
+
+func _on_hitted(area: Variant) -> void:
+	pass # Replace with function body.
