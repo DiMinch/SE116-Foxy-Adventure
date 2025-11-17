@@ -46,7 +46,7 @@
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="42_xcnuv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqsei"]
-size = Vector2(30, 33)
+size = Vector2(25, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ge24q"]
 animations = [{
@@ -138,8 +138,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
-radius = 15.0
-height = 36.0
+radius = 16.0
+height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
 size = Vector2(22, 26)
@@ -229,7 +229,7 @@ script = ExtResource("1_wodsf")
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -15.5)
+position = Vector2(-1.5, -14)
 shape = SubResource("RectangleShape2D_iqsei")
 
 [node name="Camera2D" type="Camera2D" parent="."]
