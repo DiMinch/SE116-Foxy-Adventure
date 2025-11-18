@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_crte6"]
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="1_py88r"]
-[ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="2_g1dg4"]
-[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_s1bpp"]
+[ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/characters/enemies/mushroom/mushroom.tscn" id="2_g1dg4"]
+[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="3_s1bpp"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="4_76ugp"]
-[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="5_g1dg4"]
+[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/characters/enemies/Crab/crab.tscn" id="5_g1dg4"]
 [ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/island/background/additional_sky.png" id="6_55gdq"]
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="7_crte6"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="8_hq01p"]

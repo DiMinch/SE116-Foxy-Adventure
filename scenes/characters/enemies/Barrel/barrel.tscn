@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://86tw5wmdnbc4"]
 
-[ext_resource type="Script" uid="uid://ju1egbeufwdo" path="res://scenes/enemies/Barrel/barrel.gd" id="1_ytd36"]
+[ext_resource type="Script" uid="uid://ju1egbeufwdo" path="res://scenes/characters/enemies/Barrel/barrel.gd" id="1_ytd36"]
 [ext_resource type="Texture2D" uid="uid://ch0hp25m7evv1" path="res://assets/monsters/barrel/barrel_hurt_01.png" id="2_5r3rq"]
 [ext_resource type="Texture2D" uid="uid://ckjp4ccybo5i6" path="res://assets/monsters/barrel/barrel_hurt_02.png" id="3_g06c0"]
 [ext_resource type="Texture2D" uid="uid://dfnk2rp7cs1vg" path="res://assets/monsters/barrel/barrel_01.png" id="4_hiur0"]
@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://c2c1sjpl4vgrq" path="res://assets/monsters/barrel/barrel_atk_04.png" id="9_7q3ux"]
 [ext_resource type="Texture2D" uid="uid://b564c7jpiwbh0" path="res://assets/monsters/barrel/barrel_atk_05.png" id="10_wpi75"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="11_kdm2j"]
-[ext_resource type="PackedScene" uid="uid://dc5tes2lxwao5" path="res://scenes/enemies/Barrel/barrel_bullet.tscn" id="12_5r3rq"]
+[ext_resource type="PackedScene" uid="uid://dc5tes2lxwao5" path="res://scenes/characters/enemies/Barrel/barrel_bullet.tscn" id="12_5r3rq"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="12_jgjiv"]
-[ext_resource type="Script" uid="uid://drghr3ycqml5q" path="res://scenes/enemies/Barrel/idle.gd" id="13_7dgof"]
-[ext_resource type="Script" uid="uid://cl23eidiikdgv" path="res://scenes/enemies/Barrel/shoot.gd" id="14_tofd5"]
-[ext_resource type="Script" uid="uid://dnnfdynmv03dq" path="res://scenes/enemies/Barrel/hurt.gd" id="15_iw0i4"]
+[ext_resource type="Script" uid="uid://drghr3ycqml5q" path="res://scenes/characters/enemies/Barrel/idle.gd" id="13_7dgof"]
+[ext_resource type="Script" uid="uid://cl23eidiikdgv" path="res://scenes/characters/enemies/Barrel/shoot.gd" id="14_tofd5"]
+[ext_resource type="Script" uid="uid://dnnfdynmv03dq" path="res://scenes/characters/enemies/Barrel/hurt.gd" id="15_iw0i4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72a2k"]
 animations = [{

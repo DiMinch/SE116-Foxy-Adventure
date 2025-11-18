@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://ltxwp2u8glo8"]
 
-[ext_resource type="Script" uid="uid://cfcd6bbx50t1b" path="res://scenes/enemies/spear/spear.gd" id="1_th4i0"]
+[ext_resource type="Script" uid="uid://cfcd6bbx50t1b" path="res://scenes/characters/enemies/spear/spear.gd" id="1_th4i0"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="2_cwe63"]
 [ext_resource type="Texture2D" uid="uid://vb11bwh1a8hi" path="res://assets/monsters/spear/spear_9.png" id="3_ng4rs"]
 [ext_resource type="Texture2D" uid="uid://10mby5anfv6y" path="res://assets/monsters/spear/spear_10.png" id="4_unj3c"]
@@ -21,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://c0b0bhrnsarcm" path="res://assets/monsters/spear/spear_3.png" id="19_iyg6c"]
 [ext_resource type="Texture2D" uid="uid://cmhirt3wx3rkq" path="res://assets/monsters/spear/spear_4.png" id="20_aey26"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="21_g1bps"]
-[ext_resource type="Script" uid="uid://8ppe0mhj6i2v" path="res://scenes/enemies/spear/idle.gd" id="22_k3sq8"]
-[ext_resource type="Script" uid="uid://caqbascyww3no" path="res://scenes/enemies/spear/run.gd" id="23_q4xu0"]
-[ext_resource type="Script" uid="uid://bc1yimsercqg2" path="res://scenes/enemies/spear/attack.gd" id="24_yc6h4"]
-[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/enemies/spear/hurt.gd" id="25_12byc"]
+[ext_resource type="Script" uid="uid://8ppe0mhj6i2v" path="res://scenes/characters/enemies/spear/idle.gd" id="22_k3sq8"]
+[ext_resource type="Script" uid="uid://caqbascyww3no" path="res://scenes/characters/enemies/spear/run.gd" id="23_q4xu0"]
+[ext_resource type="Script" uid="uid://bc1yimsercqg2" path="res://scenes/characters/enemies/spear/attack.gd" id="24_yc6h4"]
+[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/characters/enemies/spear/hurt.gd" id="25_12byc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8eyj"]
 size = Vector2(13, 30)

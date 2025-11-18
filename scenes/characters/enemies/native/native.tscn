@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dmhy6uiu3m6qb"]
 
-[ext_resource type="Script" uid="uid://y5l1mvysh22g" path="res://scenes/enemies/native/native.gd" id="1_pe3bm"]
+[ext_resource type="Script" uid="uid://y5l1mvysh22g" path="res://scenes/characters/enemies/native/native.gd" id="1_pe3bm"]
 [ext_resource type="Texture2D" uid="uid://brwe7dhbehxvr" path="res://assets/monsters/native/native_8.png" id="2_1461y"]
 [ext_resource type="Texture2D" uid="uid://dpeckl5jow80t" path="res://assets/monsters/native/native_9.png" id="3_d4u6i"]
 [ext_resource type="Texture2D" uid="uid://cyl7g00mtm1d2" path="res://assets/monsters/native/native_10.png" id="4_rpxsc"]
@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dishgdu3ttrfb" path="res://assets/monsters/native/native_5.png" id="12_o2ypj"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="13_ln74m"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="14_x4alf"]
-[ext_resource type="Script" uid="uid://bwbpimr1hnna3" path="res://scenes/enemies/native/run.gd" id="15_5aqtg"]
-[ext_resource type="PackedScene" uid="uid://ckopvoukwn82s" path="res://scenes/enemies/native/coconut.tscn" id="15_1461y"]
-[ext_resource type="Script" uid="uid://b0ih6rf0eu1ok" path="res://scenes/enemies/native/attack.gd" id="16_gtspd"]
-[ext_resource type="Script" uid="uid://cg78wrb6lv2q" path="res://scenes/enemies/native/hurt.gd" id="17_n86f2"]
+[ext_resource type="Script" uid="uid://bwbpimr1hnna3" path="res://scenes/characters/enemies/native/run.gd" id="15_5aqtg"]
+[ext_resource type="PackedScene" uid="uid://ckopvoukwn82s" path="res://scenes/characters/enemies/native/coconut.tscn" id="15_1461y"]
+[ext_resource type="Script" uid="uid://b0ih6rf0eu1ok" path="res://scenes/characters/enemies/native/attack.gd" id="16_gtspd"]
+[ext_resource type="Script" uid="uid://cg78wrb6lv2q" path="res://scenes/characters/enemies/native/hurt.gd" id="17_n86f2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kn7eo"]
 animations = [{

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciedqnjh53j5u"]
 
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="1_34a7w"]
-[ext_resource type="Script" uid="uid://c1era14g3jsqf" path="res://scenes/ui/skilltree/skill_node.gd" id="2_g6asy"]
+[ext_resource type="Script" uid="uid://c1era14g3jsqf" path="res://scenes/UI/skilltree/skill_node.gd" id="2_g6asy"]
 [ext_resource type="Resource" uid="uid://b3auoc4elcn3j" path="res://data/skills/double_jump.tres" id="3_7or4u"]
 
 [node name="SkillNode" type="TextureButton"]

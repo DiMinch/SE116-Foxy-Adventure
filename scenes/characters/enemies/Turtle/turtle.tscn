@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dn3a7knx6ld0t"]
 
-[ext_resource type="Script" uid="uid://beyfewxe4fg4e" path="res://scenes/enemies/Turtle/turtle.gd" id="1_3xsye"]
+[ext_resource type="Script" uid="uid://beyfewxe4fg4e" path="res://scenes/characters/enemies/Turtle/turtle.gd" id="1_3xsye"]
 [ext_resource type="Texture2D" uid="uid://dlj776gx12cyt" path="res://assets/monsters/turtle/turtle_blue_01.png" id="2_ttgbu"]
 [ext_resource type="Texture2D" uid="uid://b3kdaawt5fksa" path="res://assets/monsters/turtle/turtle_blue_02.png" id="3_8py4k"]
 [ext_resource type="Texture2D" uid="uid://vip534rthk0" path="res://assets/monsters/turtle/turtle_blue_03.png" id="4_3tpwr"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c68ghrsqlqvkj" path="res://assets/monsters/turtle/turtle_blue_walk_01.png" id="7_75qw4"]
 [ext_resource type="Texture2D" uid="uid://dlb8h7ibkodp8" path="res://assets/monsters/turtle/turtle_blue_walk_02.png" id="8_cvcit"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="9_g5ys5"]
-[ext_resource type="Script" uid="uid://bxgbgd1plvcwq" path="res://scenes/enemies/Turtle/run.gd" id="10_qbokc"]
-[ext_resource type="Script" uid="uid://doirwlb7sbrbc" path="res://scenes/enemies/Turtle/into_shell.gd" id="11_r4cnp"]
+[ext_resource type="Script" uid="uid://bxgbgd1plvcwq" path="res://scenes/characters/enemies/Turtle/run.gd" id="10_qbokc"]
+[ext_resource type="Script" uid="uid://doirwlb7sbrbc" path="res://scenes/characters/enemies/Turtle/into_shell.gd" id="11_r4cnp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rb3tl"]
 animations = [{

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://c2rtdki2wb8yc"]
 
-[ext_resource type="Script" uid="uid://de4kwyl1p0yl2" path="res://scenes/enemies/pelican/pelican.gd" id="1_noiek"]
+[ext_resource type="Script" uid="uid://de4kwyl1p0yl2" path="res://scenes/characters/enemies/pelican/pelican.gd" id="1_noiek"]
 [ext_resource type="Resource" uid="uid://00im54rsdpqr" path="res://data/enemys/pelican/pelican.tres" id="2_i42oo"]
 [ext_resource type="Texture2D" uid="uid://bva0rmdfqkllp" path="res://assets/monsters/pelican/pelican_atk_01.png" id="2_uckb8"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="2_vr358"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dw761f534hsq" path="res://assets/monsters/pelican/pelican_03.png" id="7_6861i"]
 [ext_resource type="Texture2D" uid="uid://b3ewkkxgxwo45" path="res://assets/monsters/pelican/pelican_04.png" id="8_jaktw"]
 [ext_resource type="Script" uid="uid://csu2b21cwchqw" path="res://scripts/core/hurt_area_2d.gd" id="10_xvggs"]
-[ext_resource type="Script" uid="uid://ub10tdqa3kgp" path="res://scenes/enemies/pelican/states/fly.gd" id="11_2wr8p"]
-[ext_resource type="PackedScene" uid="uid://6kyg0fbsmyks" path="res://scenes/enemies/pelican/weapon/pelican_bullet.tscn" id="12_7fm61"]
-[ext_resource type="Script" uid="uid://4n67oeeuvjxj" path="res://scenes/enemies/pelican/states/attack.gd" id="12_i42oo"]
+[ext_resource type="Script" uid="uid://ub10tdqa3kgp" path="res://scenes/characters/enemies/pelican/states/fly.gd" id="11_2wr8p"]
+[ext_resource type="PackedScene" uid="uid://6kyg0fbsmyks" path="res://scenes/characters/enemies/pelican/weapon/pelican_bullet.tscn" id="12_7fm61"]
+[ext_resource type="Script" uid="uid://4n67oeeuvjxj" path="res://scenes/characters/enemies/pelican/states/attack.gd" id="12_i42oo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uckb8"]
 size = Vector2(34, 21)

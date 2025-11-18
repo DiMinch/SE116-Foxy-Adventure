@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://6kyg0fbsmyks"]
 
-[ext_resource type="Script" uid="uid://cg53rcq2g64ro" path="res://scenes/enemies/pelican/weapon/pelican_bullet.gd" id="1_bpvq2"]
+[ext_resource type="Script" uid="uid://cg53rcq2g64ro" path="res://scenes/characters/enemies/pelican/weapon/pelican_bullet.gd" id="1_bpvq2"]
 [ext_resource type="Texture2D" uid="uid://cokgf4s6s3xg6" path="res://assets/monsters/pelican/pelican_bullet.png" id="1_gsg00"]
 [ext_resource type="Script" uid="uid://cwad6p4ebrsex" path="res://scripts/core/hit_area_2d.gd" id="2_bpvq2"]
 [ext_resource type="Resource" uid="uid://cddydpt3nvisn" path="res://data/enemys/pelican/pelican_bullet.tres" id="2_itrh5"]
