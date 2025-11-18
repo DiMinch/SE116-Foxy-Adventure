@@ -1,0 +1,129 @@
+[gd_scene load_steps=22 format=3 uid="uid://dmhy6uiu3m6qb"]
+
+[ext_resource type="Script" uid="uid://y5l1mvysh22g" path="res://scenes/enemies/native/native.gd" id="1_pe3bm"]
+[ext_resource type="Texture2D" uid="uid://brwe7dhbehxvr" path="res://assets/monsters/native/native_8.png" id="2_1461y"]
+[ext_resource type="Texture2D" uid="uid://dpeckl5jow80t" path="res://assets/monsters/native/native_9.png" id="3_d4u6i"]
+[ext_resource type="Texture2D" uid="uid://cyl7g00mtm1d2" path="res://assets/monsters/native/native_10.png" id="4_rpxsc"]
+[ext_resource type="Texture2D" uid="uid://dntsrjss2iy7s" path="res://assets/monsters/native/native_11.png" id="5_mflj3"]
+[ext_resource type="Texture2D" uid="uid://bkftcn4cvkymi" path="res://assets/monsters/native/native_6.png" id="6_o8aiu"]
+[ext_resource type="Texture2D" uid="uid://dy7h644bxromn" path="res://assets/monsters/native/native_7.png" id="7_i1fqc"]
+[ext_resource type="Texture2D" uid="uid://crths4peavjj4" path="res://assets/monsters/native/native_1.png" id="8_4wv6r"]
+[ext_resource type="Texture2D" uid="uid://dfcjgmsl7tbci" path="res://assets/monsters/native/native_2.png" id="9_nraa6"]
+[ext_resource type="Texture2D" uid="uid://ben21t6nk0qqi" path="res://assets/monsters/native/native_3.png" id="10_gwcqi"]
+[ext_resource type="Texture2D" uid="uid://cmldbppvptuka" path="res://assets/monsters/native/native_4.png" id="11_tglhi"]
+[ext_resource type="Texture2D" uid="uid://dishgdu3ttrfb" path="res://assets/monsters/native/native_5.png" id="12_o2ypj"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="13_ln74m"]
+[ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="14_x4alf"]
+[ext_resource type="Script" uid="uid://bwbpimr1hnna3" path="res://scenes/enemies/native/run.gd" id="15_5aqtg"]
+[ext_resource type="PackedScene" uid="uid://ckopvoukwn82s" path="res://scenes/enemies/native/coconut.tscn" id="15_1461y"]
+[ext_resource type="Script" uid="uid://b0ih6rf0eu1ok" path="res://scenes/enemies/native/attack.gd" id="16_gtspd"]
+[ext_resource type="Script" uid="uid://cg78wrb6lv2q" path="res://scenes/enemies/native/hurt.gd" id="17_n86f2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kn7eo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1461y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d4u6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rpxsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mflj3")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o8aiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i1fqc")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4wv6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nraa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gwcqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tglhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o2ypj")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20un1"]
+size = Vector2(41, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sc63"]
+size = Vector2(35, 21)
+
+[node name="Native" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_pe3bm")
+metadata/_custom_type_script = "uid://s4xx82espxdt"
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+position = Vector2(0, 31)
+sprite_frames = SubResource("SpriteFrames_kn7eo")
+animation = &"attack"
+
+[node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
+position = Vector2(0, 20)
+target_position = Vector2(30, 0)
+
+[node name="DownRayCast2D" type="RayCast2D" parent="Direction"]
+position = Vector2(15, 28)
+target_position = Vector2(0, 22)
+
+[node name="HurtArea2d" parent="Direction" instance=ExtResource("13_ln74m")]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+position = Vector2(-0.5, 28.5)
+shape = SubResource("RectangleShape2D_20un1")
+
+[node name="Node2DFactory" type="Marker2D" parent="Direction"]
+script = ExtResource("14_x4alf")
+product_packed_scene = ExtResource("15_1461y")
+target_container_name = &"coconut"
+target_container_path = NodePath(".")
+metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 29.5)
+shape = SubResource("RectangleShape2D_5sc63")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("15_5aqtg")
+
+[node name="Attack" type="Node" parent="States"]
+script = ExtResource("16_gtspd")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("17_n86f2")
+
+[connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
