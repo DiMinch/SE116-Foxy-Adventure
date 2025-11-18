@@ -1,0 +1,170 @@
+[gd_scene load_steps=30 format=3 uid="uid://ltxwp2u8glo8"]
+
+[ext_resource type="Script" uid="uid://cfcd6bbx50t1b" path="res://scenes/enemies/spear/spear.gd" id="1_th4i0"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="2_cwe63"]
+[ext_resource type="Texture2D" uid="uid://vb11bwh1a8hi" path="res://assets/monsters/spear/spear_9.png" id="3_ng4rs"]
+[ext_resource type="Texture2D" uid="uid://10mby5anfv6y" path="res://assets/monsters/spear/spear_10.png" id="4_unj3c"]
+[ext_resource type="Texture2D" uid="uid://cq5q8plfomacm" path="res://assets/monsters/spear/spear_11.png" id="5_jm3be"]
+[ext_resource type="Texture2D" uid="uid://dqjye6ctd0nh0" path="res://assets/monsters/spear/spear_12.png" id="6_gq0df"]
+[ext_resource type="Texture2D" uid="uid://cxf7n1718clnu" path="res://assets/monsters/spear/spear_13.png" id="7_rhi0b"]
+[ext_resource type="Texture2D" uid="uid://xphkq75e5dm" path="res://assets/monsters/spear/spear_14.png" id="8_ubhkv"]
+[ext_resource type="Texture2D" uid="uid://d2bnpn8u1dp42" path="res://assets/monsters/spear/spear_15.png" id="9_xs8d1"]
+[ext_resource type="Texture2D" uid="uid://c2tnab7aa6sqd" path="res://assets/monsters/spear/spear_16.png" id="10_aioak"]
+[ext_resource type="Texture2D" uid="uid://c8w8b2rwpdb58" path="res://assets/monsters/spear/spear_17.png" id="11_sfgu2"]
+[ext_resource type="Texture2D" uid="uid://bhfk66b6kbuxj" path="res://assets/monsters/spear/spear_18.png" id="12_0s3r3"]
+[ext_resource type="Texture2D" uid="uid://bpho5jws2xwfo" path="res://assets/monsters/spear/spear_5.png" id="13_bpkjb"]
+[ext_resource type="Texture2D" uid="uid://bd5wrvmuwc5w4" path="res://assets/monsters/spear/spear_6.png" id="14_tv53x"]
+[ext_resource type="Texture2D" uid="uid://be8f676qnv3yq" path="res://assets/monsters/spear/spear_7.png" id="15_pi7hj"]
+[ext_resource type="Texture2D" uid="uid://dil7cowhv3sf0" path="res://assets/monsters/spear/spear_8.png" id="16_v5n4s"]
+[ext_resource type="Texture2D" uid="uid://c2mphf5mg8cog" path="res://assets/monsters/spear/spear_1.png" id="17_e1pxx"]
+[ext_resource type="Texture2D" uid="uid://b5dm2bt1a6tt5" path="res://assets/monsters/spear/spear_2.png" id="18_d6xk5"]
+[ext_resource type="Texture2D" uid="uid://c0b0bhrnsarcm" path="res://assets/monsters/spear/spear_3.png" id="19_iyg6c"]
+[ext_resource type="Texture2D" uid="uid://cmhirt3wx3rkq" path="res://assets/monsters/spear/spear_4.png" id="20_aey26"]
+[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="21_g1bps"]
+[ext_resource type="Script" uid="uid://8ppe0mhj6i2v" path="res://scenes/enemies/spear/idle.gd" id="22_k3sq8"]
+[ext_resource type="Script" uid="uid://caqbascyww3no" path="res://scenes/enemies/spear/run.gd" id="23_q4xu0"]
+[ext_resource type="Script" uid="uid://bc1yimsercqg2" path="res://scenes/enemies/spear/attack.gd" id="24_yc6h4"]
+[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/enemies/spear/hurt.gd" id="25_12byc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8eyj"]
+size = Vector2(13, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afuvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ng4rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_unj3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jm3be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gq0df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rhi0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ubhkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xs8d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aioak")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_sfgu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0s3r3")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_bpkjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tv53x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pi7hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v5n4s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_e1pxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_d6xk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_iyg6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_aey26")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01tig"]
+size = Vector2(23, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k1tf"]
+size = Vector2(40, 31)
+
+[node name="Spear" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_th4i0")
+metadata/_custom_type_script = "uid://s4xx82espxdt"
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="HurtArea2d" parent="Direction" instance=ExtResource("2_cwe63")]
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+position = Vector2(-14.5, 3)
+shape = SubResource("RectangleShape2D_o8eyj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+sprite_frames = SubResource("SpriteFrames_afuvu")
+animation = &"attack"
+frame = 4
+frame_progress = 0.18686591
+
+[node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
+target_position = Vector2(46, -1)
+
+[node name="DownRayCast2D" type="RayCast2D" parent="Direction"]
+position = Vector2(19, 0)
+target_position = Vector2(0, 26)
+
+[node name="HitArea2d" parent="Direction" instance=ExtResource("21_g1bps")]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2d"]
+position = Vector2(22.5, 4)
+shape = SubResource("RectangleShape2D_01tig")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 2.5)
+shape = SubResource("RectangleShape2D_0k1tf")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("22_k3sq8")
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("23_q4xu0")
+
+[node name="Attack" type="Node" parent="States"]
+script = ExtResource("24_yc6h4")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("25_12byc")
+
+[connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
