@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://d0jou4iuydvkg"]
 
-[ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
+[ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/characters/player/player.gd" id="1_wodsf"]
 [ext_resource type="Texture2D" uid="uid://dnt7n2db610ps" path="res://assets/foxy/fox_hat_blade/fox_atk_1.png" id="2_6cv16"]
 [ext_resource type="Texture2D" uid="uid://bkabwrpxdc7cc" path="res://assets/foxy/fox_hat_blade/fox_atk_2.png" id="3_j4nxn"]
 [ext_resource type="Texture2D" uid="uid://byd3g4nnxwfcq" path="res://assets/foxy/fox_hat_blade/fox_atk_3.png" id="4_28m0y"]
@@ -21,29 +21,29 @@
 [ext_resource type="Texture2D" uid="uid://ce35c6mn7dcok" path="res://assets/foxy/fox_hat_blade/fox_run_4.png" id="18_genst"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="20_niom3"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="21_28m0y"]
-[ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
-[ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
-[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/player/Blade/Blade.tscn" id="22_iqsei"]
+[ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/characters/player/states/hurt.gd" id="21_yj68g"]
+[ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/characters/player/states/dead.gd" id="22_ioxgp"]
+[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/characters/player/Blade/Blade.tscn" id="22_iqsei"]
 [ext_resource type="Texture2D" uid="uid://m4di78taixns" path="res://assets/foxy/fox_hat/fox_defeat_1.png" id="23_rw8a5"]
 [ext_resource type="Texture2D" uid="uid://b6jgthsrynctr" path="res://assets/foxy/fox_hat/fox_defeat_2.png" id="24_iwuka"]
 [ext_resource type="Texture2D" uid="uid://fii540ugfj5n" path="res://assets/foxy/fox_hat/fox_defeat_3.png" id="25_hyqqp"]
 [ext_resource type="Texture2D" uid="uid://6gko14qsmmw4" path="res://assets/foxy/fox_hat/fox_fall_1.png" id="26_ds1xl"]
 [ext_resource type="Texture2D" uid="uid://yom7r0j05to2" path="res://assets/foxy/fox_hat/fox_hurt_1.png" id="27_1u1sw"]
-[ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/player/states/attack.gd" id="27_j4nxn"]
+[ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/characters/player/states/attack.gd" id="27_j4nxn"]
 [ext_resource type="Texture2D" uid="uid://ck8edmupc3gra" path="res://assets/foxy/fox_hat/fox_hurt_2.png" id="28_2t3bg"]
 [ext_resource type="Texture2D" uid="uid://bqh3qhrimo17x" path="res://assets/foxy/fox_hat/fox_hurt_3.png" id="29_jrbya"]
 [ext_resource type="Texture2D" uid="uid://b2iyrbygs0b7c" path="res://assets/foxy/fox_hat/fox_idle_1.png" id="30_ahqnk"]
-[ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/player/throw_blade.gd" id="30_tffgl"]
+[ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/characters/player/throw_blade.gd" id="30_tffgl"]
 [ext_resource type="Texture2D" uid="uid://c8uke6n7xj17g" path="res://assets/foxy/fox_hat/fox_idle_2.png" id="31_vb1ce"]
 [ext_resource type="Texture2D" uid="uid://b7ko4rnci3koo" path="res://assets/foxy/fox_hat/fox_jump_1.png" id="32_0ncpa"]
 [ext_resource type="Texture2D" uid="uid://cseha0dkj5lfj" path="res://assets/foxy/fox_hat/fox_run_1.png" id="34_ln3h3"]
 [ext_resource type="Texture2D" uid="uid://3g5hdrfwcd2c" path="res://assets/foxy/fox_hat/fox_run_2.png" id="35_uygh0"]
 [ext_resource type="Texture2D" uid="uid://cg0s41812vukj" path="res://assets/foxy/fox_hat/fox_run_3.png" id="36_t1aof"]
 [ext_resource type="Texture2D" uid="uid://8u26ji11yaua" path="res://assets/foxy/fox_hat/fox_run_4.png" id="37_w8qe1"]
-[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
-[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="40_fjxoa"]
-[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="41_gswnw"]
-[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="42_xcnuv"]
+[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/characters/player/states/idle.gd" id="39_art4l"]
+[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/characters/player/states/run.gd" id="40_fjxoa"]
+[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/characters/player/states/jump.gd" id="41_gswnw"]
+[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/characters/player/states/fall.gd" id="42_xcnuv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqsei"]
 size = Vector2(25, 30)
@@ -137,13 +137,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
-radius = 16.0
-height = 40.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
-size = Vector2(22, 26)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_hdvrm"]
 animations = [{
 "frames": [{
@@ -222,6 +215,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
+radius = 16.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
+size = Vector2(22, 26)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 slide_on_ceiling = false
@@ -242,6 +242,11 @@ visible = false
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_ge24q")
 animation = &"jump"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_hdvrm")
+animation = &"run"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
 position = Vector2(1, 0)
@@ -268,11 +273,6 @@ product_packed_scene = ExtResource("22_iqsei")
 target_container_name = &"Blade"
 target_container_path = NodePath(".")
 metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
-position = Vector2(0, -12)
-sprite_frames = SubResource("SpriteFrames_hdvrm")
-animation = &"run"
 
 [node name="States" type="Node" parent="."]
 

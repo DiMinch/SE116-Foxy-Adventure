@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://daai7noxusesy"]
 
-[ext_resource type="Script" uid="uid://daqhjshkj4gmn" path="res://scenes/enemies/mushroom/mushroom.gd" id="1_ysheg"]
+[ext_resource type="Script" uid="uid://daqhjshkj4gmn" path="res://scenes/characters/enemies/mushroom/mushroom.gd" id="1_ysheg"]
 [ext_resource type="Texture2D" uid="uid://cnffiueq84mw3" path="res://assets/monsters/mushroom/mushroom_hurt_01.png" id="2_k0mc2"]
 [ext_resource type="Texture2D" uid="uid://dx008fsd6muo7" path="res://assets/monsters/mushroom/mushroom_hurt_02.png" id="3_hdtqn"]
 [ext_resource type="Texture2D" uid="uid://dnlagy1ygfmpg" path="res://assets/monsters/mushroom/mushroom_hurt_03.png" id="4_5qgwy"]
@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bqgmklofxv0qi" path="res://assets/monsters/mushroom/mushroom_02.png" id="6_io5uk"]
 [ext_resource type="Texture2D" uid="uid://cghgcxg1pvwd6" path="res://assets/monsters/mushroom/mushroom_03.png" id="7_0xreg"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="8_5qgwy"]
-[ext_resource type="Script" uid="uid://b7g18r857thhi" path="res://scenes/enemies/states/run.gd" id="8_qvk1a"]
+[ext_resource type="Script" uid="uid://b7g18r857thhi" path="res://scenes/characters/enemies/states/run.gd" id="8_qvk1a"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/core/hurt_area_2d.tscn" id="9_3dip8"]
-[ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/mushroom/hurt.gd" id="11_io5uk"]
+[ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/characters/enemies/mushroom/hurt.gd" id="11_io5uk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_toaug"]
 animations = [{

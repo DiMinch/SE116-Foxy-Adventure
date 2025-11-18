@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6h2kdx3u18fq"]
 
-[ext_resource type="Script" uid="uid://dxv1b8oslgbmm" path="res://scenes/ui/skilltree/skilltree.gd" id="1_6jabl"]
-[ext_resource type="PackedScene" uid="uid://ciedqnjh53j5u" path="res://scenes/ui/skilltree/skillnode.tscn" id="1_c1uv7"]
+[ext_resource type="Script" uid="uid://dxv1b8oslgbmm" path="res://scenes/UI/skilltree/skilltree.gd" id="1_6jabl"]
+[ext_resource type="PackedScene" uid="uid://ciedqnjh53j5u" path="res://scenes/UI/skilltree/skillnode.tscn" id="1_c1uv7"]
 [ext_resource type="Resource" uid="uid://doguvkkvepna0" path="res://data/skills/weapon_1.tres" id="2_c1uv7"]
 [ext_resource type="Resource" uid="uid://xd6c1bwlnf04" path="res://data/skills/weapon_2.tres" id="3_raaid"]
 [ext_resource type="Resource" uid="uid://bvptym0nrnx0n" path="res://data/skills/block.tres" id="4_f6l73"]
 [ext_resource type="Resource" uid="uid://d3mk81tc2ox4g" path="res://data/skills/dash.tres" id="5_tni7a"]
-[ext_resource type="Script" uid="uid://jcd23h7qg4nk" path="res://scenes/ui/skilltree/control.gd" id="8_2vxbh"]
+[ext_resource type="Script" uid="uid://jcd23h7qg4nk" path="res://scenes/UI/skilltree/control.gd" id="8_2vxbh"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3

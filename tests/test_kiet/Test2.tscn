@@ -4,9 +4,9 @@
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_1ama6"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="3_5bf0o"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="4_0hjcb"]
-[ext_resource type="PackedScene" uid="uid://c2rtdki2wb8yc" path="res://scenes/enemies/pelican/pelican.tscn" id="7_1duck"]
+[ext_resource type="PackedScene" uid="uid://c2rtdki2wb8yc" path="res://scenes/characters/enemies/pelican/pelican.tscn" id="7_1duck"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="8_ac8y7"]
-[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="9_7mofw"]
+[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="9_7mofw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
 
