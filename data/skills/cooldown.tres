@@ -15,6 +15,6 @@ cost = 4
 type = "W"
 max_level = 1
 prerequisites = ["invulnerable", "ultimate"]
-default_unlocked = true
+default_unlocked = false
 weapon_to_unlock = ExtResource("3_5oaf5")
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

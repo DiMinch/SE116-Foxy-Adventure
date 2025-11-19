@@ -15,6 +15,6 @@ cost = 4
 type = "W"
 max_level = 1
 prerequisites = ["wall_movement"]
-default_unlocked = true
+default_unlocked = false
 weapon_to_unlock = ExtResource("3_kl75v")
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

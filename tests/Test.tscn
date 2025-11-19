@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="3_kh2fj"]
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="9_43d8r"]
-[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/crab/crab.tscn" id="9_pfwq7"]
-[ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/starfish/Starfish.tscn" id="10_43d8r"]
+[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="9_pfwq7"]
+[ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/Starfish/Starfish.tscn" id="10_43d8r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
 

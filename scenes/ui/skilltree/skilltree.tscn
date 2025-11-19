@@ -17,12 +17,13 @@
 [node name="ScrollContainer" type="ScrollContainer"]
 clip_contents = false
 offset_right = 479.0
-offset_bottom = 268.0
+offset_bottom = 266.0
 
 [node name="SkillTree" type="Control" parent="."]
 custom_minimum_size = Vector2(675, 265)
 layout_direction = 2
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 script = ExtResource("1_6jabl")
 unlocked_color = Color(1, 0.960784, 0.313726, 1)
@@ -57,6 +58,7 @@ offset_bottom = 229.0
 skill_data = ExtResource("5_tni7a")
 
 [node name="weapon_2" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 304.0
 offset_top = 97.0
 offset_right = 368.0
@@ -64,6 +66,7 @@ offset_bottom = 152.0
 skill_data = ExtResource("3_raaid")
 
 [node name="weapon_plus" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 203.0
 offset_top = 15.0
 offset_right = 267.0
@@ -71,12 +74,14 @@ offset_bottom = 70.0
 skill_data = ExtResource("7_fk5hs")
 
 [node name="double_jump" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 173.0
 offset_right = 176.0
 offset_bottom = 228.0
 
 [node name="passive" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 15.0
 offset_right = 176.0
@@ -87,6 +92,7 @@ skill_data = ExtResource("8_jm5j5")
 anchors_preset = 0
 
 [node name="wall_movement" parent="SkillTree/stage2" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 98.0
 offset_right = 475.0
@@ -94,6 +100,7 @@ offset_bottom = 153.0
 skill_data = ExtResource("9_ktfco")
 
 [node name="ultimate" parent="SkillTree/stage2" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 498.0
 offset_top = 20.0
 offset_right = 562.0
@@ -101,6 +108,7 @@ offset_bottom = 75.0
 skill_data = ExtResource("10_dkhgi")
 
 [node name="invulnerable" parent="SkillTree/stage2" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 499.0
 offset_top = 180.0
 offset_right = 563.0
@@ -108,15 +116,16 @@ offset_bottom = 235.0
 skill_data = ExtResource("11_nulkm")
 
 [node name="cooldown" parent="SkillTree/stage2" instance=ExtResource("1_c1uv7")]
+layout_mode = 0
 offset_left = 581.0
 offset_top = 96.0
 offset_right = 645.0
 offset_bottom = 151.0
 skill_data = ExtResource("12_7yw85")
 
-[node name="TooltipLayer" type="CanvasLayer" parent="SkillTree"]
+[node name="TooltipLayer" type="CanvasLayer" parent="."]
 
-[node name="SkillTooltip" type="Control" parent="SkillTree/TooltipLayer"]
+[node name="SkillTooltip" type="Control" parent="TooltipLayer"]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -132,7 +141,7 @@ scale = Vector2(0.470158, 0.817944)
 mouse_filter = 2
 script = ExtResource("8_2vxbh")
 
-[node name="Panel" type="Panel" parent="SkillTree/TooltipLayer/SkillTooltip"]
+[node name="Panel" type="Panel" parent="TooltipLayer/SkillTooltip"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,7 +150,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.01887, 1)
 
-[node name="InfoLabel" type="RichTextLabel" parent="SkillTree/TooltipLayer/SkillTooltip/Panel"]
+[node name="InfoLabel" type="RichTextLabel" parent="TooltipLayer/SkillTooltip/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

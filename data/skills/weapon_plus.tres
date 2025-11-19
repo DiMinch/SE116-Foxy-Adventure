@@ -15,6 +15,6 @@ cost = 2
 type = "W"
 max_level = 1
 prerequisites = ["passive"]
-default_unlocked = true
+default_unlocked = false
 weapon_to_unlock = ExtResource("3_lmk5a")
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"
