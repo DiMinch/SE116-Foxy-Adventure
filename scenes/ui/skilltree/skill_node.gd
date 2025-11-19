@@ -4,9 +4,10 @@ class_name SkillNode
 @export var skill_data: SkillData
 @onready var panel: Panel = $Panel
 @onready var label: Label = $MarginContainer/Label
-@onready var tooltip := get_tree().root.get_node("SkillTree/TooltipLayer/SkillTooltip")
+@onready var tooltip := get_tree().root.get_node("ScrollContainer/TooltipLayer/SkillTooltip")
 
 func _ready():
+	self.mouse_filter = Control.MOUSE_FILTER_STOP
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	PlayerData.skill_unlocked.connect(update_visuals)
@@ -38,7 +39,7 @@ func update_visuals():
 			panel.modulate = Color(0.5, 0.5, 0.5, 0.5)
 
 func _on_pressed():
-	print("Clicked", skill_data.skill_id)
+	print("Clicked ", skill_data.skill_id)
 	if skill_data and PlayerData.can_upgrade(skill_data):
 		PlayerData.upgrade_skill(skill_data)
 		update_visuals()
