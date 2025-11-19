@@ -1,14 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://cse8m3ao6w5ao"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_43d8r"]
-[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="1_w3aqi"]
+[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="1_w3aqi"]
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_43d8r"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="2_ok4yu"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="3_kh2fj"]
-[ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
+[ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/characters/enemies/mushroom/mushroom.tscn" id="8_lg0vp"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="9_43d8r"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/enemies/Crab/crab.tscn" id="9_pfwq7"]
 [ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/enemies/Starfish/Starfish.tscn" id="10_43d8r"]
+[ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/characters/enemies/Crab/crab.tscn" id="9_pfwq7"]
+[ext_resource type="PackedScene" uid="uid://xpcinxy6ihd7" path="res://scenes/characters/enemies/Starfish/Starfish.tscn" id="10_43d8r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
 
