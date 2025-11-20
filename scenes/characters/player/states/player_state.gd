@@ -7,6 +7,9 @@ const JUMP = "jump"
 const ATTACK = "attack"
 const THROW = "throw"
 
+const BLOCK = "block" 
+const DASH = "dash"
+
 #Control moving and changing state to run
 #Return true if moving
 func control_moving() -> bool:
@@ -28,9 +31,39 @@ func control_moving() -> bool:
 func control_jump() -> bool:
 	
 	#If jump is pressed change to jump state and return true
-	if Input.is_action_just_pressed(JUMP):
+	#if Input.is_action_just_pressed(JUMP):
+		#obj.jump()
+		#change_state(fsm.states.jump)
+		#return true
+	#return false
+	
+	# Double jump
+	if Input.is_action_just_pressed(JUMP) and obj.current_jumps < obj.max_jumps:
 		obj.jump()
+		obj.current_jumps += 1
 		change_state(fsm.states.jump)
+		print("Jumped ", obj.current_jumps)
+		return true
+	return false
+	
+# Function to control skills
+func control_utility_skills() -> bool:
+	if obj.can_dash and Input.is_action_just_pressed(DASH):
+		#change_state(fsm.states.dash) 
+		print("Dashed")
+		return true
+		
+	if obj.can_block and Input.is_action_pressed(BLOCK):
+		#change_state(fsm.states.block)
+		print("Blocked")
+		return true
+		 
+	return false
+
+func check_wall_movement() -> bool:
+	if obj.can_wall_move and obj.is_on_wall():
+		change_state(fsm.states.wall_slide)
+		print("Wall slide") 
 		return true
 	return false
 

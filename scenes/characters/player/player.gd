@@ -12,6 +12,13 @@ var was_on_floor: bool = false
 @export var invulnerable_time := 2.0
 @export var has_blade: bool = false
 
+## Skill states
+var max_jumps: int = 1
+var current_jumps: int = 0 
+var can_block: bool = false
+var can_dash: bool = false
+var can_wall_move: bool = false
+
 func _ready() -> void:
 	add_to_group("player")
 	super._ready()
@@ -28,9 +35,16 @@ func _ready() -> void:
 	if has_blade:
 		collected_blade()
 	GameManager.player = self
+	
+	update_abilities()
+	print("Block ", can_block)
+	print("Dash ", can_dash)
+	print("Wall move ", can_wall_move)
 
 func _physics_process(delta: float) -> void:
 	_check_fall_damage()
+	if is_on_floor():
+		current_jumps = 0
 	super._physics_process(delta)
 
 func can_attack() -> bool:
@@ -110,3 +124,12 @@ func _check_fall_damage() -> void:
 			fsm.current_state.take_damage(damage)
 	fall_start_y = 0.0 if on_floor_now else fall_start_y
 	was_on_floor = on_floor_now
+	
+## Check if skill is available
+func update_abilities() -> void:
+	max_jumps = 1
+	if PlayerData.has_skill("double_jump"):
+		max_jumps = 2
+	can_block = PlayerData.has_skill("block")
+	can_dash = PlayerData.has_skill("dash")
+	can_wall_move = PlayerData.has_skill("wall_movement")

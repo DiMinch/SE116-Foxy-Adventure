@@ -1,4 +1,4 @@
-extends "res://scenes/enemies/states/run.gd"
+extends "res://scenes/characters/enemies/states/run.gd"
 func _update(_delta):
 	super._update(_delta)
 	if obj.found_player:
