@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd0m3hr2fbmmk"]
+
+[ext_resource type="Script" uid="uid://b8m6jhny1e6pi" path="res://levels/objects/glow_bush/glow_bush.gd" id="1_ig2yl"]
+[ext_resource type="Texture2D" uid="uid://getm5kr68qwe" path="res://assets/island/front_palm_trees/front_palm_tree_top_01.png" id="2_dae7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vard6"]
+size = Vector2(46, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj305"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"glowing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dae7q")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"withered",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmd0b"]
+
+[node name="GlowBush" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ig2yl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_vard6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oj305")
+animation = &"normal"
+
+[node name="Fireflies" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hmd0b")
+
+[node name="BuffTimer" type="Timer" parent="."]
+
+[node name="HealTimer" type="Timer" parent="."]
