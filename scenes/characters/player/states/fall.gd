@@ -9,7 +9,9 @@ func _enter() -> void:
 	pass
 
 func _update(_delta: float) -> void:
+  control_swap_weapon()
 	control_jump()
+  
 	#Control moving
 	var is_moving: bool = control_moving()
 	#If on floor change to idle if not moving and not jumping

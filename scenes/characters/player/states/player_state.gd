@@ -6,6 +6,7 @@ const LEFT = "left"
 const JUMP = "jump"
 const ATTACK = "attack"
 const THROW = "throw"
+const SWAP = "swap"
 
 const BLOCK = "block" 
 const DASH = "dash"
@@ -93,7 +94,7 @@ func take_damage(damage) -> void:
 func control_attack()->bool:
 		
 	if Input.is_action_pressed(ATTACK):
-		if obj.has_blade==true:
+		if obj.has_weapon==true:
 			change_state(fsm.states.attack)
 		return true
 	return false
@@ -101,5 +102,11 @@ func control_throw()->bool:
 	if Input.is_action_just_pressed(THROW):
 		obj.Throw()
 		#change_state(fsm.states.Throw_blade)
+		return true
+	return false
+
+func control_swap_weapon() -> bool:
+	if Input.is_action_just_pressed(SWAP):
+		obj.equip_slot(1 - obj.current_slot_index)
 		return true
 	return false

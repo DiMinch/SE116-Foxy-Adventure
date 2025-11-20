@@ -15,4 +15,5 @@ type = "U"
 max_level = 1
 prerequisites = ["wall_movement"]
 default_unlocked = false
+target_weapon_name = ""
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"
