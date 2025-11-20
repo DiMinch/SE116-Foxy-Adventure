@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="MeleeData" load_steps=6 format=3 uid="uid://caprsarj7awm7"]
+
+[ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_23sov"]
+[ext_resource type="Texture2D" uid="uid://cpb4wgmvkk3w2" path="res://assets/foxy/blade/blade_anim_3.png" id="1_hq2x0"]
+[ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapon/melee.gd" id="2_hq2x0"]
+[ext_resource type="SpriteFrames" uid="uid://dbh2ohleryovk" path="res://scenes/characters/player/anima/spear.tres" id="4_wipgh"]
+
+[sub_resource type="Resource" id="Resource_mkper"]
+script = ExtResource("1_23sov")
+metadata/_custom_type_script = "uid://clbkm1lviu1tl"
+
+[resource]
+script = ExtResource("2_hq2x0")
+passivebasic = [1.0, 1.1, 1.2]
+passiveplus = [1.0, 1.1, 1.2, 1.3, 1.4]
+weapon_name = "Spear"
+icon = ExtResource("1_hq2x0")
+attack = 150
+range = Vector2(50, 20)
+attack_speed = 80
+fly_speed = 0
+type = "W"
+type_method_attack = "Melee"
+passive = "COMBO 3 hit (x1, x1.1, x1.2)"
+ultimate = "Lướt và đâm thương về phía trước 1 đoạn"
+cooldown = 20.0
+ultimate_attack = 300
+ultimate_range = Vector2(100, 20)
+timer = 1
+skin = ExtResource("4_wipgh")
+attack_behavior = SubResource("Resource_mkper")
+metadata/_custom_type_script = "uid://bmcmaiyw6twcf"

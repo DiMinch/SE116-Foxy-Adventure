@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://crwc13s6ph7wh"]
+
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="1_k7yw8"]
+[ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/characters/player/anima/normal.tres" id="2_rbd7m"]
+
+[resource]
+script = ExtResource("1_k7yw8")
+weapon_name = "none"
+attack = 0
+range = Vector2(0, 0)
+attack_speed = 0
+fly_speed = 0
+type = ""
+passive = ""
+ultimate = ""
+cooldown = 0.0
+ultimate_attack = 0
+ultimate_range = Vector2(0, 0)
+skin = ExtResource("2_rbd7m")
+metadata/_custom_type_script = "uid://crb5ppa6t5gns"

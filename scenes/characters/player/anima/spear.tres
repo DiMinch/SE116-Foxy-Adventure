@@ -1,0 +1,119 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://dbh2ohleryovk"]
+
+[ext_resource type="Texture2D" uid="uid://vb11bwh1a8hi" path="res://assets/monsters/spear/spear_9.png" id="1_gxrp2"]
+[ext_resource type="Texture2D" uid="uid://10mby5anfv6y" path="res://assets/monsters/spear/spear_10.png" id="2_1qv2c"]
+[ext_resource type="Texture2D" uid="uid://cq5q8plfomacm" path="res://assets/monsters/spear/spear_11.png" id="3_76uo0"]
+[ext_resource type="Texture2D" uid="uid://dqjye6ctd0nh0" path="res://assets/monsters/spear/spear_12.png" id="4_i7rnr"]
+[ext_resource type="Texture2D" uid="uid://cxf7n1718clnu" path="res://assets/monsters/spear/spear_13.png" id="5_aawya"]
+[ext_resource type="Texture2D" uid="uid://xphkq75e5dm" path="res://assets/monsters/spear/spear_14.png" id="6_csjix"]
+[ext_resource type="Texture2D" uid="uid://d2bnpn8u1dp42" path="res://assets/monsters/spear/spear_15.png" id="7_36ste"]
+[ext_resource type="Texture2D" uid="uid://c2tnab7aa6sqd" path="res://assets/monsters/spear/spear_16.png" id="8_72nhk"]
+[ext_resource type="Texture2D" uid="uid://c8w8b2rwpdb58" path="res://assets/monsters/spear/spear_17.png" id="9_5qbdc"]
+[ext_resource type="Texture2D" uid="uid://bhfk66b6kbuxj" path="res://assets/monsters/spear/spear_18.png" id="10_kxfey"]
+[ext_resource type="Texture2D" uid="uid://bpho5jws2xwfo" path="res://assets/monsters/spear/spear_5.png" id="11_iudqf"]
+[ext_resource type="Texture2D" uid="uid://bd5wrvmuwc5w4" path="res://assets/monsters/spear/spear_6.png" id="12_wfrxi"]
+[ext_resource type="Texture2D" uid="uid://be8f676qnv3yq" path="res://assets/monsters/spear/spear_7.png" id="13_af4l2"]
+[ext_resource type="Texture2D" uid="uid://dil7cowhv3sf0" path="res://assets/monsters/spear/spear_8.png" id="14_1uhaf"]
+[ext_resource type="Texture2D" uid="uid://c2mphf5mg8cog" path="res://assets/monsters/spear/spear_1.png" id="15_hpek7"]
+[ext_resource type="Texture2D" uid="uid://b5dm2bt1a6tt5" path="res://assets/monsters/spear/spear_2.png" id="16_bcomw"]
+[ext_resource type="Texture2D" uid="uid://c0b0bhrnsarcm" path="res://assets/monsters/spear/spear_3.png" id="17_1pai5"]
+[ext_resource type="Texture2D" uid="uid://cmhirt3wx3rkq" path="res://assets/monsters/spear/spear_4.png" id="18_wbhuw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gxrp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1qv2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_76uo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i7rnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aawya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_csjix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_36ste")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_72nhk")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i7rnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aawya")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5qbdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kxfey")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_iudqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wfrxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_af4l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1uhaf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i7rnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aawya")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_hpek7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bcomw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1pai5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wbhuw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

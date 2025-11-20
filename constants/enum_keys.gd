@@ -27,3 +27,11 @@ enum EnemyKeys {
 	ATTACK_SPEED,
 	ATTACK_DAMAGE
 }
+
+enum WeaponType
+{
+	BLADE,
+	SPEAR,
+	SHURIKEN,
+	BOOMERANG
+}

@@ -6,6 +6,7 @@ func _enter() -> void:
 	pass
 
 func _update(_delta: float):
+	control_swap_weapon()
 	#Control jump
 	control_attack()
 	if control_jump():

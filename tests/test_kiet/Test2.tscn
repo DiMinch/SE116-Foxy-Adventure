@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhrnqki2qmxfn"]
+[gd_scene load_steps=14 format=3 uid="uid://bhrnqki2qmxfn"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_btjcs"]
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_1ama6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="4_0hjcb"]
 [ext_resource type="PackedScene" uid="uid://c2rtdki2wb8yc" path="res://scenes/characters/enemies/pelican/pelican.tscn" id="7_1duck"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="8_ac8y7"]
+[ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/characters/enemies/mushroom/mushroom.tscn" id="8_nnv0g"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="9_7mofw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
@@ -112,20 +113,21 @@ position = Vector2(805, 246)
 target_stage = "uid://cwdh2x7mqppdi"
 
 [node name="Player" parent="." instance=ExtResource("9_7mofw")]
-position = Vector2(612, 142)
+position = Vector2(433, 171)
 
 [node name="Pelican" parent="." instance=ExtResource("7_1duck")]
 position = Vector2(208, 166)
-bullet_speed = 0.0
-sight = 100
-spike = 0
-movement_range = 200
-flight_height = 0
-appear_duration = 0.0
-spike_interval = 0.0
-movement_speed = 200.0
-direction = 1
-attack_damage = 1
-max_health = 3
 
 [node name="Bullets" type="Node" parent="."]
+
+[node name="Mushroom" parent="." instance=ExtResource("8_nnv0g")]
+position = Vector2(706, 233)
+
+[node name="Mushroom2" parent="." instance=ExtResource("8_nnv0g")]
+position = Vector2(307, 218)
+
+[node name="Mushroom4" parent="." instance=ExtResource("8_nnv0g")]
+position = Vector2(340, 135)
+
+[node name="Mushroom3" parent="." instance=ExtResource("8_nnv0g")]
+position = Vector2(123, 215)
