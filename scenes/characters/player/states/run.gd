@@ -7,6 +7,7 @@ func _enter() -> void:
 
 func _update(_delta: float):
 	#Control jump
+	control_utility_skills()
 	control_attack()
 	if control_jump():
 		return

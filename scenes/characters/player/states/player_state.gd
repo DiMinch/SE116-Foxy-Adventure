@@ -15,6 +15,13 @@ const DASH = "dash"
 func control_moving() -> bool:
 	var dir: float = Input.get_action_strength(RIGHT) - Input.get_action_strength(LEFT)
 	var is_moving: bool = abs(dir) > 0.1
+	if obj.is_on_wall() and not obj.is_on_floor():
+		if dir != 0.0 and sign(dir) != obj.direction:
+			obj.is_push_out_wall = true
+			obj.flag_push=true
+			obj.turn_around()
+	
+		
 	if is_moving:
 		dir = sign(dir)
 		obj.change_direction(dir)
@@ -38,7 +45,7 @@ func control_jump() -> bool:
 	#return false
 	
 	# Double jump
-	if Input.is_action_just_pressed(JUMP) and obj.current_jumps < obj.max_jumps:
+	if Input.is_action_just_pressed(JUMP) and (obj.current_jumps < obj.max_jumps or (obj.is_on_wall() and obj.can_wall_move)):
 		obj.jump()
 		obj.current_jumps += 1
 		change_state(fsm.states.jump)
@@ -48,13 +55,17 @@ func control_jump() -> bool:
 	
 # Function to control skills
 func control_utility_skills() -> bool:
-	if obj.can_dash and Input.is_action_just_pressed(DASH):
+	if obj.can_dash and Input.is_action_just_pressed(DASH) and obj.is_count_downt_dash:
 		#change_state(fsm.states.dash) 
+		obj.is_count_downt_dash=false
+		change_state(fsm.states.dash)
 		print("Dashed")
 		return true
 		
-	if obj.can_block and Input.is_action_pressed(BLOCK):
+	if obj.can_block and Input.is_action_pressed(BLOCK) and obj.is_count_downt_block:
 		#change_state(fsm.states.block)
+		obj.is_count_downt_block=false
+		change_state(fsm.states.block)
 		print("Blocked")
 		return true
 		 
