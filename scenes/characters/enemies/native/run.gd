@@ -1,4 +1,4 @@
-extends "res://scenes/enemies/states/run.gd"
+extends "res://scenes/characters/player/states/run.gd"
 
 const MapScene = "Stage"
 const strPlayer = "Player"
