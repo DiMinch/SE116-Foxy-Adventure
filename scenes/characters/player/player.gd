@@ -57,11 +57,11 @@ func _ready() -> void:
 	else:
 		print("New Game: Loading loadout from PlayerData...")
 		load_loadout_from_names(PlayerData.current_loadout)
-	GameManager.player = self
-  update_abilities()
+	update_abilities()
 	print("Block ", can_block)
 	print("Dash ", can_dash)
 	print("Wall move ", can_wall_move)
+	GameManager.player = self
 
 func update_abilities() -> void:
 	max_jumps = 1
