@@ -16,12 +16,14 @@
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/characters/player/states/run.gd" id="40_fjxoa"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/characters/player/states/jump.gd" id="41_gswnw"]
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/characters/player/states/fall.gd" id="42_xcnuv"]
+[ext_resource type="Script" uid="uid://b1vcfs5ygcykv" path="res://scenes/characters/player/dash.gd" id="45_kghjy"]
+[ext_resource type="Script" uid="uid://bcbpp7lh2wg8a" path="res://scenes/characters/player/block.gd" id="46_72eiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqsei"]
 size = Vector2(25, 30)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
-radius = 16.0
+radius = 15.0
 height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
@@ -29,6 +31,9 @@ size = Vector2(25, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykrpk"]
 size = Vector2(50, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kghjy"]
+size = Vector2(4, 29)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -91,6 +96,13 @@ position = Vector2(39, -13)
 shape = SubResource("RectangleShape2D_ykrpk")
 disabled = true
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Direction"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/StaticBody2D"]
+position = Vector2(19, -16.5)
+shape = SubResource("RectangleShape2D_kghjy")
+disabled = true
+
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" type="Node" parent="States"]
@@ -116,6 +128,12 @@ script = ExtResource("27_j4nxn")
 
 [node name="Throw_blade" type="Node" parent="States"]
 script = ExtResource("30_tffgl")
+
+[node name="Dash" type="Node" parent="States"]
+script = ExtResource("45_kghjy")
+
+[node name="Block" type="Node" parent="States"]
+script = ExtResource("46_72eiu")
 
 [node name="Blade" parent="." instance=ExtResource("22_iqsei")]
 visible = false

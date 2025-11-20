@@ -1,6 +1,19 @@
 class_name Player
 extends BaseCharacter
 
+#bien xu ly Dash, Block, double_jump, slide on wall, jump on wall
+@export var is_count_downt_dash =true 
+@export var is_count_downt_block =true 
+@export var WALL_SLIDE_SPEED =20
+@export var speed_push=150
+@export var is_push_out_wall=false
+@export var flag_push =false
+@export var dash_speed = 50
+var timer_dash=10
+var ok_tmp_dash=true
+var timer_block=10
+var ok_tmp_block=true
+
 @export var blade_speed:float = 300
 @onready var projectile_factory := $Direction/FireFactory
 @onready var onHurt := $Direction/HurtArea2D
@@ -25,6 +38,15 @@ var weapon_levels: Array[int] = [0, 0]
 var current_slot_index: int = 0
 var current_weapon_data: WeaponData
 
+## Skill states
+var max_jumps: int = 1
+var current_jumps: int = 0 
+var can_block: bool = false
+var can_dash: bool = false
+var can_wall_move: bool = false
+
+
+
 func _ready() -> void:
 	add_to_group("player")
 	super._ready()
@@ -36,9 +58,43 @@ func _ready() -> void:
 		print("New Game: Loading loadout from PlayerData...")
 		load_loadout_from_names(PlayerData.current_loadout)
 	GameManager.player = self
+  update_abilities()
+	print("Block ", can_block)
+	print("Dash ", can_dash)
+	print("Wall move ", can_wall_move)
+
+func update_abilities() -> void:
+	max_jumps = 1
+	if PlayerData.has_skill("double_jump"):
+		max_jumps = 2
+	can_block = PlayerData.has_skill("block")
+	can_dash = PlayerData.has_skill("dash")
+	can_wall_move = PlayerData.has_skill("wall_movement")
 
 func _physics_process(delta: float) -> void:
+	#dash
+	if is_count_downt_dash==false and ok_tmp_dash==true:
+		timer_dash=0
+		ok_tmp_dash=false
+	timer_dash+=delta
+	if timer_dash >=10:
+		timer_dash=10
+		is_count_downt_dash=true
+		ok_tmp_dash=true
+	#block
+	if is_count_downt_block==false and ok_tmp_block==true:
+		timer_block=0
+		ok_tmp_block=false
+	timer_block+=delta
+	if timer_block >=10:
+		timer_block=10
+		is_count_downt_block=true
+		ok_tmp_block=true
+		
+		
 	_check_fall_damage()
+	if is_on_floor():
+		current_jumps = 0
 	super._physics_process(delta)
 
 func _init_stats():
@@ -124,7 +180,6 @@ func _configure_hitbox_shape(type: String):
 		"Spear": spear_shape.set_deferred("disabled", false)
 		"Boomerang": current_weapon_data.attack_behavior.set_boomerang(self)
 
-
 func can_attack() -> bool:
 	if fsm.current_state == fsm.states.run or fsm.current_state == fsm.states.idle :
 		return true
@@ -203,7 +258,6 @@ func _check_fall_damage() -> void:
 	fall_start_y = 0.0 if on_floor_now else fall_start_y
 	was_on_floor = on_floor_now
 
-
 func load_data_weapon(data: WeaponData) -> void:
 	self.attack_damage = data.attack
 	self.attack_speed = data.attack_speed
@@ -228,4 +282,3 @@ func _update_hitbox(data_weapon: MeleeData) -> void:
 	melee_hitbox.set_basic_damage(data_weapon.attack)
 	melee_hitbox.set_damage_by_basic(data_weapon.passivebasic)
 	melee_hitbox.set_damage_by_plus(data_weapon.passiveplus)
-	#melee_hitbox.set_type_passive(data_weapon.)
