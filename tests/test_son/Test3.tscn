@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cph0y6a2h70bh"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_qiupm"]
-[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_r5k83"]
+[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://scenes/characters/enemies/pelican/tile_set.tres" id="2_r5k83"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="3_nw4qe"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="5_14s4q"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="6_5h5bn"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://dvcvw61th0a7e"]
 
-[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="1_7qdfy"]
+[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://scenes/characters/enemies/pelican/tile_set.tres" id="1_7qdfy"]
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_c0mbb"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="2_ikntj"]
 [ext_resource type="PackedScene" uid="uid://pe3jgo1h8wlq" path="res://scenes/characters/enemies/Crab/crab.tscn" id="3_2a1ow"]
