@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="5_21lkn"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="6_im0iu"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="7_efk67"]
-[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://scenes/characters/enemies/pelican/tile_set.tres" id="17_b8ghs"]
+[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="17_b8ghs"]
 
 [sub_resource type="GDScript" id="GDScript_w7ck5"]
 script/source = "extends ParallaxLayer
