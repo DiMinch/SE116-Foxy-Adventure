@@ -13,6 +13,8 @@ var timer_dash=10
 var ok_tmp_dash=true
 var timer_block=10
 var ok_tmp_block=true
+var base_movement_speed: float = 0.0 # Lưu trữ tốc độ ban đầu
+
 
 @export var blade_speed:float = 300
 @onready var projectile_factory := $Direction/FireFactory
@@ -51,6 +53,24 @@ func _ready() -> void:
 	add_to_group("player")
 	super._ready()
 	_init_stats()
+
+	# Khởi tạo GameManager.player = self ở cuối
+	GameManager.player = self
+	
+	# === LƯU TỐC ĐỘ GỐC SAU KHI INIT STATS ===
+	base_movement_speed = self.movement_speed
+	
+	# === SỬA BƯỚC KẾT NỐI TÍN HIỆU (TÌM NỀN TẢNG KẾT NỐI TỐT HƠN) ===
+	var inventory_system_node = get_tree().root.find_child("InventorySystem", true, false)
+	
+	if inventory_system_node:
+		# Kiểm tra xem kết nối đã được thiết lập chưa trước khi kết nối
+		if not inventory_system_node.health_restored.is_connected(restore_health):
+			inventory_system_node.health_restored.connect(restore_health)
+			print("Player: KẾT NỐI HỒI MÁU THÀNH CÔNG.")
+	else:
+		print("Player: LỖI! Không tìm thấy node InventorySystem để kết nối tín hiệu.")
+	# =======================================================
 	
 	if GameManager.has_checkpoint():
 		print("Player waiting for checkpoint data...")
@@ -61,7 +81,7 @@ func _ready() -> void:
 	print("Block ", can_block)
 	print("Dash ", can_dash)
 	print("Wall move ", can_wall_move)
-	GameManager.player = self
+	# GameManager.player = self # Đã gán ở trên
 
 func update_abilities() -> void:
 	max_jumps = 1
@@ -262,6 +282,17 @@ func load_data_weapon(data: WeaponData) -> void:
 	self.attack_damage = data.attack
 	self.attack_speed = data.attack_speed
 
+func speed_up(amount: float, duration: float) -> void:
+	# 1. Tăng tốc độ
+	self.movement_speed = base_movement_speed * amount
+	print("Tốc độ tăng thêm: ", amount, ". Tốc độ hiện tại: ", self.movement_speed)
+	
+	# 2. Đặt Timer để hoàn tác
+	await get_tree().create_timer(duration).timeout
+	
+	# 3. Hoàn tác tốc độ
+	self.movement_speed = base_movement_speed
+	print("Hiệu ứng Speed Up kết thúc. Tốc độ trở lại: ", self.movement_speed)
 
 func _on_frame_changed():
 	if animated_sprite.animation == "attack":
@@ -282,3 +313,6 @@ func _update_hitbox(data_weapon: MeleeData) -> void:
 	melee_hitbox.set_basic_damage(data_weapon.attack)
 	melee_hitbox.set_damage_by_basic(data_weapon.passivebasic)
 	melee_hitbox.set_damage_by_plus(data_weapon.passiveplus)
+func restore_health(amount: int) -> void:
+	self.health = min(self.health + amount, PlayerConstants.PLAYER_STATS[EnumKeys.PlayerKeys.HEALTH])
+	print("HP hiện tại: ", health, "/", PlayerConstants.PLAYER_STATS[EnumKeys.PlayerKeys.HEALTH])
