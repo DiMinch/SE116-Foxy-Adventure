@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cph0y6a2h70bh"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_qiupm"]
-[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_r5k83"]
+[ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://tile_set.tres" id="2_r5k83"]
 [ext_resource type="Texture2D" uid="uid://dujd4nuly466a" path="res://icon.svg" id="3_nw4qe"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="5_14s4q"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="6_5h5bn"]
@@ -48,7 +48,7 @@ position = Vector2(421.5, 255)
 shape = SubResource("RectangleShape2D_kh2fj")
 
 [node name="Icon2" type="Sprite2D" parent="World"]
-position = Vector2(270.24997, 47.000008)
+position = Vector2(270.25, 47)
 scale = Vector2(1.70703, 0.171875)
 texture = ExtResource("3_nw4qe")
 
@@ -58,7 +58,7 @@ scale = Vector2(0.585813, 5.81818)
 physics_material_override = SubResource("PhysicsMaterial_ok4yu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Icon2/StaticBody2D"]
-position = Vector2(344, 189.99998)
+position = Vector2(344, 190)
 shape = SubResource("RectangleShape2D_np4on")
 
 [node name="Icon3" type="Sprite2D" parent="World"]
