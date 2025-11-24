@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/core/hit_area_2d.tscn" id="3_vefl5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02ywo"]
-radius = 3.1622777
+radius = 3.16228
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_82m0n"]
 radius = 4.0
