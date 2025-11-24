@@ -1,4 +1,4 @@
-extends "res://scenes/enemies/states/run.gd"
+extends "res://scenes/characters/enemies/states/run.gd"
 
 var _timer: float = 3.0   # chạy 3 giây rồi chui vào mai
 
