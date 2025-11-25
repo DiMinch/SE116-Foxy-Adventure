@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://c03a3nn75s4pk"]
+
+[ext_resource type="Script" uid="uid://idsvs4w27i55" path="res://scenes/characters/player/boomerang/boomerang.gd" id="1_qp5wd"]
+[ext_resource type="Script" uid="uid://cwad6p4ebrsex" path="res://scripts/core/hit_area_2d.gd" id="2_pp6ym"]
+[ext_resource type="Texture2D" uid="uid://cokgf4s6s3xg6" path="res://assets/monsters/pelican/pelican_bullet.png" id="3_fljis"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qp5wd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0pqu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbd7v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hb6sv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fljis")
+}],
+"loop": true,
+"name": &"play",
+"speed": 5.0
+}]
+
+[node name="Boomerang" type="RigidBody2D"]
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_qp5wd")
+gravity_scale = 0.0
+script = ExtResource("1_qp5wd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y0pqu")
+
+[node name="HitArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("2_pp6ym")
+metadata/_custom_type_script = "uid://cwad6p4ebrsex"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
+shape = SubResource("CircleShape2D_dbd7v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hb6sv")
+animation = &"play"

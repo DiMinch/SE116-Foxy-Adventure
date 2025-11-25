@@ -9,8 +9,12 @@ class_name WeaponData
 @export var attack_speed: int
 @export var fly_speed: int
 @export var type: String # Blade, Spear, Shuriken, Boomerang
+@export var type_method_attack: String #Melee
 @export_multiline var passive: String
 @export_multiline var ultimate: String
 @export var cooldown: float
 @export var ultimate_attack: int
 @export var ultimate_range: Vector2
+@export var timer: int
+@export var skin: SpriteFrames
+@export var attack_behavior: AttackBehavior

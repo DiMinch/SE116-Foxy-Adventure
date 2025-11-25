@@ -1,20 +1,32 @@
-[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://co8lt0bqcw34j"]
+[gd_resource type="Resource" script_class="MeleeData" load_steps=6 format=3 uid="uid://dkxudnx38pk1e"]
 
-[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="1_knprl"]
-[ext_resource type="Texture2D" uid="uid://d0s8rm2fj4wef" path="res://assets/foxy/blade/blade_anim_1.png" id="1_qcg77"]
+[ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapon/melee.gd" id="1_a118g"]
+[ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_tigi4"]
+[ext_resource type="Texture2D" uid="uid://d0s8rm2fj4wef" path="res://assets/foxy/blade/blade_anim_1.png" id="1_ub7cd"]
+[ext_resource type="SpriteFrames" uid="uid://cchshj6ljuypn" path="res://scenes/characters/player/anima/blade.tres" id="4_3m72n"]
+
+[sub_resource type="Resource" id="Resource_hofll"]
+script = ExtResource("1_tigi4")
+metadata/_custom_type_script = "uid://clbkm1lviu1tl"
 
 [resource]
-script = ExtResource("1_knprl")
+script = ExtResource("1_a118g")
+passivebasic = [1.0, 1.2, 1.4]
+passiveplus = [1.0, 1.2, 1.4, 1.4, 1.4]
 weapon_name = "Blade"
-icon = ExtResource("1_qcg77")
+icon = ExtResource("1_ub7cd")
 attack = 100
 range = Vector2(25, 25)
 attack_speed = 100
-fly_speed = 200
-type = "Blade"
+fly_speed = 0
+type = "W"
+type_method_attack = "Melee"
 passive = "COMBO 3 hit (x1, x1.2, x1.4)"
 ultimate = "Chém liên tục 6 kiếm khí trong 2s"
 cooldown = 40.0
 ultimate_attack = 100
 ultimate_range = Vector2(80, 50)
-metadata/_custom_type_script = "uid://crb5ppa6t5gns"
+timer = 2
+skin = ExtResource("4_3m72n")
+attack_behavior = SubResource("Resource_hofll")
+metadata/_custom_type_script = "uid://bmcmaiyw6twcf"

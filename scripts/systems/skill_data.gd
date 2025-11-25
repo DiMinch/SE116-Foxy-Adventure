@@ -14,3 +14,6 @@ class_name SkillData
 @export var default_unlocked: bool = false
 
 @export var weapon_to_unlock: WeaponData
+
+@export_group("Weapon Upgrade")
+@export var target_weapon_name: String = ""

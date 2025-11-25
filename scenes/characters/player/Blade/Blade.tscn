@@ -70,7 +70,7 @@ animations = [{
 radius = 8.06226
 
 [node name="Blade" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 9
 physics_material_override = SubResource("PhysicsMaterial_ygjfq")
 gravity_scale = 0.0
@@ -84,7 +84,7 @@ sprite_frames = SubResource("SpriteFrames_3c0c3")
 animation = &"throw"
 
 [node name="HitArea2d" parent="." instance=ExtResource("11_oylbf")]
-collision_layer = 64
+collision_layer = 0
 collision_mask = 144
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitArea2d"]

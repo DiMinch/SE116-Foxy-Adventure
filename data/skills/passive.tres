@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bpho5jws2xwfo" path="res://assets/monsters/spear/spear_5.png" id="1_7b0op"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_wbdqx"]
-[ext_resource type="Resource" uid="uid://co8lt0bqcw34j" path="res://data/weapons/blade.tres" id="2_h1b77"]
+[ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="2_h1b77"]
 
 [resource]
 script = ExtResource("1_wbdqx")
@@ -14,7 +14,8 @@ tier = 1
 cost = 2
 type = "W"
 max_level = 1
-prerequisites = ["weapon_1"]
+prerequisites = ["Blade"]
 default_unlocked = false
 weapon_to_unlock = ExtResource("2_h1b77")
+target_weapon_name = ""
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

@@ -1,19 +1,18 @@
 [gd_scene load_steps=14 format=3 uid="uid://c6h2kdx3u18fq"]
 
-[ext_resource type="Script" uid="uid://dxv1b8oslgbmm" path="res://scenes/UI/skilltree/skilltree.gd" id="1_6jabl"]
-[ext_resource type="PackedScene" uid="uid://ciedqnjh53j5u" path="res://scenes/UI/skilltree/skillnode.tscn" id="1_c1uv7"]
-[ext_resource type="Resource" uid="uid://doguvkkvepna0" path="res://data/skills/weapon_1.tres" id="2_c1uv7"]
-[ext_resource type="Resource" uid="uid://xd6c1bwlnf04" path="res://data/skills/weapon_2.tres" id="3_raaid"]
+[ext_resource type="Script" uid="uid://dxv1b8oslgbmm" path="res://scenes/ui/skilltree/skilltree.gd" id="1_6jabl"]
+[ext_resource type="PackedScene" uid="uid://ciedqnjh53j5u" path="res://scenes/ui/skilltree/skillnode.tscn" id="1_c1uv7"]
+[ext_resource type="Resource" uid="uid://doguvkkvepna0" path="res://data/skills/blade.tres" id="2_c1uv7"]
+[ext_resource type="Resource" uid="uid://xd6c1bwlnf04" path="res://data/skills/spear.tres" id="3_raaid"]
 [ext_resource type="Resource" uid="uid://bvptym0nrnx0n" path="res://data/skills/block.tres" id="4_f6l73"]
 [ext_resource type="Resource" uid="uid://d3mk81tc2ox4g" path="res://data/skills/dash.tres" id="5_tni7a"]
-[ext_resource type="Resource" uid="uid://dohbrictlftlh" path="res://data/skills/weapon_plus.tres" id="7_fk5hs"]
+[ext_resource type="Resource" uid="uid://dohbrictlftlh" path="res://data/skills/blade_plus.tres" id="7_fk5hs"]
 [ext_resource type="Script" uid="uid://jcd23h7qg4nk" path="res://scenes/ui/skilltree/control.gd" id="8_2vxbh"]
 [ext_resource type="Resource" uid="uid://btjfg06lqdg6o" path="res://data/skills/passive.tres" id="8_jm5j5"]
 [ext_resource type="Resource" uid="uid://civltnpindj77" path="res://data/skills/wall_movement.tres" id="9_ktfco"]
 [ext_resource type="Resource" uid="uid://cwfafnbls503p" path="res://data/skills/ultimate.tres" id="10_dkhgi"]
 [ext_resource type="Resource" uid="uid://bm3c80g54vp66" path="res://data/skills/invulnerable.tres" id="11_nulkm"]
 [ext_resource type="Resource" uid="uid://m0evddljpims" path="res://data/skills/cooldown.tres" id="12_7yw85"]
-[ext_resource type="Script" uid="uid://jcd23h7qg4nk" path="res://scenes/UI/skilltree/control.gd" id="8_2vxbh"]
 
 [node name="ScrollContainer" type="ScrollContainer"]
 clip_contents = false
@@ -32,7 +31,7 @@ unlocked_color = Color(1, 0.960784, 0.313726, 1)
 [node name="stage1" type="Control" parent="SkillTree"]
 anchors_preset = 0
 
-[node name="weapon_1" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
+[node name="Blade" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
 layout_mode = 1
 offset_left = 8.0
 offset_top = 98.0
@@ -58,7 +57,7 @@ offset_right = 267.0
 offset_bottom = 229.0
 skill_data = ExtResource("5_tni7a")
 
-[node name="weapon_2" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
+[node name="Spear" parent="SkillTree/stage1" instance=ExtResource("1_c1uv7")]
 layout_mode = 0
 offset_left = 304.0
 offset_top = 97.0

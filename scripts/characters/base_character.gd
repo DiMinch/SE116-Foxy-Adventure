@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var direction: int = 1
 
 @export var attack_damage: int = 1
+@export var attack_speed: int = 100
 @export var max_health: int = 3
 var health: int = max_health
 
@@ -20,6 +21,7 @@ var animated_sprite: AnimatedSprite2D = null
 var _next_animation = null
 var _next_direction: int = 1
 var _next_animated_sprite: AnimatedSprite2D = null
+var _next_sprite_frames: SpriteFrames = null
 
 func _ready() -> void:
 	set_animated_sprite($Direction/AnimatedSprite2D)
@@ -83,6 +85,9 @@ func get_animation_name() -> String:
 func set_animated_sprite(new_animated_sprite: AnimatedSprite2D) -> void:
 	_next_animated_sprite = new_animated_sprite
 
+func set_sprite_frame(new_sprite_frame: SpriteFrames) -> void:
+	_next_sprite_frames = new_sprite_frame
+
 # Check if the animation or animated sprite has changed and play the new animation
 func _check_changed_animation() -> void:
 	var need_play: bool = false
@@ -95,6 +100,13 @@ func _check_changed_animation() -> void:
 		animated_sprite = _next_animated_sprite
 		animated_sprite.show()
 		need_play = true
+	
+	if _next_sprite_frames != null:
+		if animated_sprite != null and animated_sprite.sprite_frames != _next_sprite_frames:
+			animated_sprite.sprite_frames = _next_sprite_frames
+			need_play = true
+		_next_sprite_frames = null
+	
 	if need_play:
 		if animated_sprite != null and current_animation != null:
 			animated_sprite.play(current_animation)

@@ -2,19 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://d0s8rm2fj4wef" path="res://assets/foxy/blade/blade_anim_1.png" id="1_a7d78"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_y75em"]
-[ext_resource type="Resource" uid="uid://co8lt0bqcw34j" path="res://data/weapons/blade.tres" id="3_86523"]
+[ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="3_86523"]
 
 [resource]
 script = ExtResource("1_y75em")
-skill_id = &"weapon_1"
-skill_name = "Weapon 1"
+skill_id = &"Blade"
+skill_name = "Blade"
 description = "Mở khóa vũ khí Blade."
 icon = ExtResource("1_a7d78")
 tier = 1
 cost = 2
 type = "W"
 max_level = 1
-prerequisites = [""]
+prerequisites = []
 default_unlocked = true
 weapon_to_unlock = ExtResource("3_86523")
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

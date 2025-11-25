@@ -1,6 +1,7 @@
 extends EnemyState
 func _enter()->void:
 	obj.change_animation("run")
+
 func _update(delta):
 	obj.velocity.x=obj.direction*150
 	

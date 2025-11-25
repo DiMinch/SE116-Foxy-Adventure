@@ -10,6 +10,7 @@ var player_coins: int = 0
 var unlocked_skills: Dictionary = {}
 var unlocked_weapons: Dictionary = {}
 var weapon_table: Dictionary = {}
+var current_loadout: Array[String] = ["", ""]
 
 func _ready():
 	_load_all_weapons()
@@ -48,6 +49,8 @@ func upgrade_skill(skill_data: SkillData):
 	unlocked_skills[skill_data.skill_id] = unlocked_skills.get(skill_data.skill_id, 0) + 1
 	if skill_data.type == "W" and skill_data.weapon_to_unlock:
 		var w = skill_data.weapon_to_unlock
+		if skill_data.target_weapon_name == w.weapon_name:
+			unlocked_skills[skill_data.target_weapon_name] = unlocked_skills.get(skill_data.target_weapon_name, 0) + 1
 		unlocked_weapons[w.weapon_name] = true
 		weapon_unlocked.emit(w.weapon_name)
 	coins_changed.emit(player_coins)
@@ -68,7 +71,8 @@ func save_upgrades():
 	var save_data = {
 		"coins": player_coins,
 		"skills": unlocked_skills,
-		"weapons": unlocked_weapons
+		"weapons": unlocked_weapons,
+		"loadout": current_loadout
 	}
 	var file = FileAccess.open(UPGRADE_SAVE_FILE, FileAccess.WRITE)
 	if file:
@@ -95,12 +99,15 @@ func load_upgrades():
 	player_coins = data.get("coins", 0)
 	unlocked_skills = data.get("skills", {})
 	unlocked_weapons = data.get("weapons", {})
+	var raw_loadout = data.get("loadout", ["", ""])
+	current_loadout.assign(raw_loadout)
 	var converted = {}
 	for wname in unlocked_weapons.keys():
 		if weapon_table.has(wname):
 			converted[wname] = true
 	unlocked_weapons = converted
 	coins_changed.emit(player_coins)
+	
 
 func load_all_skill_resources() -> Array:
 	var skills = []
@@ -116,3 +123,9 @@ func load_all_skill_resources() -> Array:
 			file_name = dir.get_next()
 		dir.list_dir_end()
 	return skills
+
+func set_loadout_slot(slot_index: int, weapon_name: String):
+	if slot_index < 0 or slot_index >= 2: return
+	
+	current_loadout[slot_index] = weapon_name
+	save_upgrades()
