@@ -4,10 +4,10 @@
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="2_vp6pq"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_66nwl"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="4_t5gjd"]
-[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/island/background/additional_sky.png" id="5_1oekh"]
-[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="6_d4v0i"]
-[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="7_upukb"]
-[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="8_y18d6"]
+[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/platform/island/background/additional_sky.png" id="5_1oekh"]
+[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/platform/island/background/bg_image.png" id="6_d4v0i"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/platform/island/background/additional_water.png" id="7_upukb"]
+[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="8_y18d6"]
 [ext_resource type="PackedScene" uid="uid://cayiakok1l7fj" path="res://levels/objects/platforms/moving_platform.tscn" id="9_vp6pq"]
 
 [sub_resource type="GDScript" id="GDScript_w7ck5"]
@@ -22,9 +22,9 @@ script/source = "extends Node2D
 
 @export var num_clouds: int = 4
 @export var cloud_textures: Array[Texture2D] = [
-	preload(\"res://assets/island/background/small_cloud_1.png\"),
-	preload(\"res://assets/island/background/small_cloud_2.png\"),
-	preload(\"res://assets/island/background/small_cloud_3.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_1.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_2.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_3.png\"),
 ]
 @export var min_speed: float = 10.0
 @export var max_speed: float = 50.0

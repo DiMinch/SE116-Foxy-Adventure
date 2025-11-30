@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca24523pyquga"
-path="res://.godot/imported/opening.png-63f00acb486b95e6129296b256663182.ctex"
+path="res://.godot/imported/opening.png-0484ac4063fcb21ecd633d2721eb13b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/door/opening.png"
-dest_files=["res://.godot/imported/opening.png-63f00acb486b95e6129296b256663182.ctex"]
+source_file="res://assets/platform/island/door/opening.png"
+dest_files=["res://.godot/imported/opening.png-0484ac4063fcb21ecd633d2721eb13b4.ctex"]
 
 [params]
 

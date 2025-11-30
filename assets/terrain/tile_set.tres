@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://bl0drplk1yq1x"]
+[gd_resource type="TileSet" load_steps=30 format=3 uid="uid://bl0drplk1yq1x"]
 
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/terrain/terrain_32x32.png" id="1_cvmva"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="2_cx6lm"]
@@ -14,10 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://df0ime6muy7s4" path="res://assets/terrain/rock_terrain_32x32.png" id="10_h0chw"]
 [ext_resource type="PackedScene" uid="uid://86tw5wmdnbc4" path="res://scenes/characters/enemies/Barrel/barrel.tscn" id="11_aywd0"]
 [ext_resource type="PackedScene" uid="uid://dmhy6uiu3m6qb" path="res://scenes/characters/enemies/native/native.tscn" id="12_c0wlp"]
+[ext_resource type="PackedScene" uid="uid://dn3a7knx6ld0t" path="res://scenes/characters/enemies/Turtle/turtle.tscn" id="13_kglpt"]
+[ext_resource type="PackedScene" uid="uid://ltxwp2u8glo8" path="res://scenes/characters/enemies/spear/spear.tscn" id="14_ykn4t"]
 [ext_resource type="PackedScene" uid="uid://etjasl5llyv8" path="res://scenes/collectibles/coin.tscn" id="15_otibl"]
-[ext_resource type="PackedScene" path="res://scenes/collectibles/chest.tscn" id="16_80mfx"]
+[ext_resource type="PackedScene" uid="uid://c2rtdki2wb8yc" path="res://scenes/characters/enemies/pelican/pelican.tscn" id="15_u7gpn"]
+[ext_resource type="PackedScene" uid="uid://friti3ylycub" path="res://scenes/collectibles/chest.tscn" id="16_80mfx"]
 [ext_resource type="PackedScene" uid="uid://c0mq5r7x4ymsn" path="res://scenes/collectibles/speed_up.tscn" id="17_jty1d"]
-[ext_resource type="PackedScene" path="res://scenes/collectibles/key.tscn" id="18_jwjmv"]
+[ext_resource type="PackedScene" uid="uid://bkefjm4spp2ff" path="res://scenes/collectibles/key.tscn" id="18_jwjmv"]
 [ext_resource type="PackedScene" uid="uid://xs1i687b2est" path="res://scenes/collectibles/fruit.tscn" id="19_80mfx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0ni4"]
@@ -419,6 +422,9 @@ scenes/2/scene = ExtResource("7_eguld")
 scenes/3/scene = ExtResource("8_77yb8")
 scenes/4/scene = ExtResource("11_aywd0")
 scenes/5/scene = ExtResource("12_c0wlp")
+scenes/6/scene = ExtResource("13_kglpt")
+scenes/7/scene = ExtResource("14_ykn4t")
+scenes/8/scene = ExtResource("15_u7gpn")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cgf0i"]
 resource_name = "moving_platform"
