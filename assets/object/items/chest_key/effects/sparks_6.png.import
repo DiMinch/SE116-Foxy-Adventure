@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6xb2g4ohjx71"
-path="res://.godot/imported/sparks_6.png-6621be61fa8c088665448f050eaf06b1.ctex"
+path="res://.godot/imported/sparks_6.png-5cbd60207317a4a327ec164faa0c01f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/chest_key/effects/sparks_6.png"
-dest_files=["res://.godot/imported/sparks_6.png-6621be61fa8c088665448f050eaf06b1.ctex"]
+source_file="res://assets/object/items/chest_key/effects/sparks_6.png"
+dest_files=["res://.godot/imported/sparks_6.png-5cbd60207317a4a327ec164faa0c01f3.ctex"]
 
 [params]
 

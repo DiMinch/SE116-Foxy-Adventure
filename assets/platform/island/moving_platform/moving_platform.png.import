@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn23ps3jhu4ru"
-path="res://.godot/imported/moving_platform.png-d8938f61e9cad8753b03b9fda82d89be.ctex"
+path="res://.godot/imported/moving_platform.png-7a5df69201271e7bc30c7bf4eaff8094.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/moving_platform/moving_platform.png"
-dest_files=["res://.godot/imported/moving_platform.png-d8938f61e9cad8753b03b9fda82d89be.ctex"]
+source_file="res://assets/platform/island/moving_platform/moving_platform.png"
+dest_files=["res://.godot/imported/moving_platform.png-7a5df69201271e7bc30c7bf4eaff8094.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crflavbexmqg2"
-path="res://.godot/imported/boat_body.png-185744b7c8be072915bc79f5698a1965.ctex"
+path="res://.godot/imported/boat_body.png-862c91a65a545ec934122bfc1aea740c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/boat/boat_body.png"
-dest_files=["res://.godot/imported/boat_body.png-185744b7c8be072915bc79f5698a1965.ctex"]
+source_file="res://assets/platform/island/boat/boat_body.png"
+dest_files=["res://.godot/imported/boat_body.png-862c91a65a545ec934122bfc1aea740c.ctex"]
 
 [params]
 

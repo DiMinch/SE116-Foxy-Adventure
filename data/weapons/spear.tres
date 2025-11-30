@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MeleeData" load_steps=6 format=3 uid="uid://caprsarj7awm7"]
 
 [ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_23sov"]
-[ext_resource type="Texture2D" uid="uid://cpb4wgmvkk3w2" path="res://assets/foxy/blade/blade_anim_3.png" id="1_hq2x0"]
+[ext_resource type="Texture2D" uid="uid://31g3xoelewph" path="res://assets/foxy/spear/spear.png" id="2_23sov"]
 [ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapon/melee.gd" id="2_hq2x0"]
 [ext_resource type="SpriteFrames" uid="uid://dbh2ohleryovk" path="res://scenes/characters/player/anima/spear.tres" id="4_wipgh"]
 
@@ -14,11 +14,10 @@ script = ExtResource("2_hq2x0")
 passivebasic = [1.0, 1.1, 1.2]
 passiveplus = [1.0, 1.1, 1.2, 1.3, 1.4]
 weapon_name = "Spear"
-icon = ExtResource("1_hq2x0")
+icon = ExtResource("2_23sov")
 attack = 150
 range = Vector2(50, 20)
 attack_speed = 80
-fly_speed = 0
 type = "W"
 type_method_attack = "Melee"
 passive = "COMBO 3 hit (x1, x1.1, x1.2)"
