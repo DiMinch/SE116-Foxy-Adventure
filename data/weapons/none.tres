@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://crwc13s6ph7wh"]
 
 [ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="1_k7yw8"]
-[ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/characters/player/anima/normal.tres" id="2_rbd7m"]
+[ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/player/animation/normal.tres" id="2_rbd7m"]
 
 [resource]
 script = ExtResource("1_k7yw8")

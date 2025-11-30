@@ -1,0 +1,23 @@
+extends Resource
+class_name EnumKeys
+
+enum PlayerKeys {
+	HEALTH,
+	MOVEMENT_SPEED,
+	JUMP_SPEED,
+	GRAVITY,
+	ATTACK_SPEED,
+	ATTACK_DAMAGE
+}
+
+enum EnemyKeys {
+	HEALTH,
+	SIGHT,
+	SPIKE,
+	MOVEMENT_SPEED,
+	MOVEMENT_RANGE,
+	JUMP_SPEED,
+	GRAVITY,
+	ATTACK_SPEED,
+	ATTACK_DAMAGE,
+}
