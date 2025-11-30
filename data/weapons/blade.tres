@@ -18,6 +18,7 @@ icon = ExtResource("1_ub7cd")
 attack = 100
 range = Vector2(25, 25)
 attack_speed = 100
+fly_speed = 0
 type = "W"
 type_method_attack = "Melee"
 passive = "COMBO 3 hit (x1, x1.2, x1.4)"

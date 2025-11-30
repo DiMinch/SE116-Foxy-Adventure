@@ -17,10 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dn3a7knx6ld0t" path="res://scenes/characters/enemies/Turtle/turtle.tscn" id="13_kglpt"]
 [ext_resource type="PackedScene" uid="uid://ltxwp2u8glo8" path="res://scenes/characters/enemies/spear/spear.tscn" id="14_ykn4t"]
 [ext_resource type="PackedScene" uid="uid://etjasl5llyv8" path="res://scenes/collectibles/coin.tscn" id="15_otibl"]
-<<<<<<< HEAD
-=======
 [ext_resource type="PackedScene" uid="uid://c2rtdki2wb8yc" path="res://scenes/characters/enemies/pelican/pelican.tscn" id="15_u7gpn"]
->>>>>>> 55ab6d8e15fa2e26455813f10d23c2904758c061
 [ext_resource type="PackedScene" uid="uid://friti3ylycub" path="res://scenes/collectibles/chest.tscn" id="16_80mfx"]
 [ext_resource type="PackedScene" uid="uid://c0mq5r7x4ymsn" path="res://scenes/collectibles/speed_up.tscn" id="17_jty1d"]
 [ext_resource type="PackedScene" uid="uid://bkefjm4spp2ff" path="res://scenes/collectibles/key.tscn" id="18_jwjmv"]

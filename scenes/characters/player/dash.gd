@@ -2,7 +2,7 @@ extends PlayerState
 
 @export var _timer=0
 func _enter() -> void:
-	obj.change_animation('dash')
+	#obj.change_animation('dash')
 	_timer=0
 	pass
 	
