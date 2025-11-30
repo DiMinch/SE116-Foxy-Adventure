@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ltxwp2u8glo8" path="res://scenes/characters/enemies/spear/spear.tscn" id="8_f0ylc"]
 [ext_resource type="PackedScene" uid="uid://dmhy6uiu3m6qb" path="res://scenes/characters/enemies/native/native.tscn" id="9_n123t"]
 [ext_resource type="PackedScene" uid="uid://dn3a7knx6ld0t" path="res://scenes/characters/enemies/Turtle/turtle.tscn" id="10_1otl6"]
-[ext_resource type="PackedScene" uid="uid://8twm0vuhy7cp" path="res://assets/items/blade_item/Blade_Item.tscn" id="11_1otl6"]
+[ext_resource type="PackedScene" uid="uid://8twm0vuhy7cp" path="res://assets/object/items/blade_item/Blade_Item.tscn" id="11_1otl6"]
 [ext_resource type="PackedScene" uid="uid://86tw5wmdnbc4" path="res://scenes/characters/enemies/Barrel/barrel.tscn" id="11_qgild"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
@@ -122,7 +122,7 @@ position = Vector2(396, 225)
 position = Vector2(7, 230)
 
 [node name="Spear" parent="." instance=ExtResource("8_f0ylc")]
-position = Vector2(500, 62)
+position = Vector2(215, 207)
 
 [node name="Native" parent="." instance=ExtResource("9_n123t")]
 position = Vector2(201, 39)
