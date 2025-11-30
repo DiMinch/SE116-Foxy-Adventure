@@ -2,21 +2,19 @@ class_name BaseCharacter
 extends CharacterBody2D
 
 ## Base character class that provides common functionality for all characters
-
+@export var max_health: int = 3
 @export var movement_speed: float = 200.0
+@export var jump_speed: float = 320.0
 @export var gravity: float = 700.0
-@export var direction: int = 1
-
 @export var attack_damage: int = 1
 @export var attack_speed: int = 100
-@export var max_health: int = 3
+@export var direction: int = 1
 var health: int = max_health
 
-
-var jump_speed: float = 320.0
 var fsm: FSM = null
 var current_animation = null
 var animated_sprite: AnimatedSprite2D = null
+var stats: Stats = null
 
 var _next_animation = null
 var _next_direction: int = 1
@@ -25,11 +23,13 @@ var _next_sprite_frames: SpriteFrames = null
 
 func _ready() -> void:
 	set_animated_sprite($Direction/AnimatedSprite2D)
+	_ensure_stats_component()
+	_init_stats()
 
 func _physics_process(delta: float) -> void:
 	# Animation
 	_check_changed_animation()
-
+	# FSM
 	if fsm != null:
 		fsm._update(delta)
 	# Movement
@@ -37,11 +37,23 @@ func _physics_process(delta: float) -> void:
 	# Direction
 	_check_changed_direction()
 
-
 func _update_movement(delta: float) -> void:
 	velocity.y += gravity * delta
 	move_and_slide()
+
+func _ensure_stats_component():
+	if get_node_or_null("Stats"):
+		stats = $Stats
+	else:
+		stats = Stats.new()
+		add_child(stats)
+		stats.name = "Stats"
+
+func _init_stats() -> void:
 	pass
+
+func get_stat(key):
+	return stats.get_stat(key)
 
 func turn_around() -> void:
 	if _next_direction != direction:
@@ -60,8 +72,11 @@ func turn_left() -> void:
 func turn_right() -> void:
 	_next_direction = 1
 
+func get_jump_speed() -> float:
+	return jump_speed
+
 func jump() -> void:
-	velocity.y = -jump_speed
+	velocity.y = -get_jump_speed()
 
 func stop_move() -> void:
 	velocity.x = 0

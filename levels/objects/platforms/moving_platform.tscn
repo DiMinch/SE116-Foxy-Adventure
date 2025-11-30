@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bn23ps3jhu4ru" path="res://assets/island/moving_platform/moving_platform.png" id="1_4jgm3"]
 [ext_resource type="Script" uid="uid://bt0g3e6a33vqq" path="res://levels/objects/platforms/moving_platform.gd" id="1_wh5gd"]
-[ext_resource type="Script" uid="uid://nvuabioddqmj" path="res://scripts/core/interactive_area_2d.gd" id="2_wh5gd"]
+[ext_resource type="Script" uid="uid://nvuabioddqmj" path="res://scripts/collision/interactive_area_2d.gd" id="2_wh5gd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjlqd"]
 size = Vector2(84, 8)

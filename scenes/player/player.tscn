@@ -1,0 +1,144 @@
+[gd_scene load_steps=24 format=3 uid="uid://d0jou4iuydvkg"]
+
+[ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
+[ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/boomerang.tres" id="2_ykrpk"]
+[ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/player/animation/normal.tres" id="3_i1nod"]
+[ext_resource type="Script" uid="uid://c4cp5p23xlrh7" path="res://scripts/factories/player_factory/node2d_player_factory.gd" id="5_i1nod"]
+[ext_resource type="Script" uid="uid://b2ekl120ho1ol" path="res://scripts/collision/hit_box_player/hit_area_2d_player.gd" id="8_i1nod"]
+[ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="16_8ydkj"]
+[ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="20_niom3"]
+[ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
+[ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
+[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/weapons/blade/blade.tscn" id="22_iqsei"]
+[ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/player/states/attack.gd" id="27_j4nxn"]
+[ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/player/ultility_skills/throw_blade.gd" id="30_tffgl"]
+[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
+[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="40_fjxoa"]
+[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="41_gswnw"]
+[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="42_xcnuv"]
+[ext_resource type="Script" uid="uid://b1vcfs5ygcykv" path="res://scenes/player/ultility_skills/dash.gd" id="45_kghjy"]
+[ext_resource type="Script" uid="uid://bcbpp7lh2wg8a" path="res://scenes/player/ultility_skills/block.gd" id="46_72eiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqsei"]
+size = Vector2(25, 30)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
+radius = 15.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
+size = Vector2(25, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykrpk"]
+size = Vector2(50, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kghjy"]
+size = Vector2(4, 29)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+slide_on_ceiling = false
+script = ExtResource("1_wodsf")
+metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -14)
+shape = SubResource("RectangleShape2D_iqsei")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -52)
+zoom = Vector2(1.2, 1.2)
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="BladeAnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+visible = false
+position = Vector2(0, -11)
+sprite_frames = ExtResource("2_ykrpk")
+animation = &"attack"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+position = Vector2(0, -12)
+sprite_frames = ExtResource("3_i1nod")
+animation = &"idle"
+
+[node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
+position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
+position = Vector2(-3, -15)
+shape = SubResource("CapsuleShape2D_iqsei")
+
+[node name="FireFactory" type="Marker2D" parent="Direction"]
+position = Vector2(1, -16)
+script = ExtResource("5_i1nod")
+metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
+
+[node name="HitArea2D" parent="Direction" instance=ExtResource("20_niom3")]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("8_i1nod")
+stat_damage = 1
+basic_damage = 1
+current_index_damage = 0
+typepassive = false
+_passivebasic = []
+_passiveplus = []
+
+[node name="Blade" type="CollisionShape2D" parent="Direction/HitArea2D"]
+position = Vector2(26, -13)
+shape = SubResource("RectangleShape2D_ttakn")
+disabled = true
+
+[node name="Spear" type="CollisionShape2D" parent="Direction/HitArea2D"]
+position = Vector2(39, -13)
+shape = SubResource("RectangleShape2D_ykrpk")
+disabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Direction"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/StaticBody2D"]
+position = Vector2(19, -16.5)
+shape = SubResource("RectangleShape2D_kghjy")
+disabled = true
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("39_art4l")
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("40_fjxoa")
+
+[node name="Jump" type="Node" parent="States"]
+script = ExtResource("41_gswnw")
+
+[node name="Fall" type="Node" parent="States"]
+script = ExtResource("42_xcnuv")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("21_yj68g")
+
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("22_ioxgp")
+
+[node name="Attack" type="Node" parent="States"]
+script = ExtResource("27_j4nxn")
+
+[node name="Throw_blade" type="Node" parent="States"]
+script = ExtResource("30_tffgl")
+
+[node name="Dash" type="Node" parent="States"]
+script = ExtResource("45_kghjy")
+
+[node name="Block" type="Node" parent="States"]
+script = ExtResource("46_72eiu")
+
+[node name="Blade" parent="." instance=ExtResource("22_iqsei")]
+visible = false
+position = Vector2(0, -17)
+
+[connection signal="frame_changed" from="Direction/AnimatedSprite2D" to="." method="_on_frame_changed"]
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

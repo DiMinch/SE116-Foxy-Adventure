@@ -5,7 +5,7 @@ class_name WeaponData
 @export var weapon_name: String
 @export var icon: Texture
 @export var attack: int
-@export var range: Vector2
+@export var attack_range: Vector2
 @export var attack_speed: int
 @export var fly_speed: int
 @export var type: String # Blade, Spear, Shuriken, Boomerang

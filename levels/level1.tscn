@@ -1,64 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://eusw5htc6cbg"]
+[gd_scene load_steps=6 format=4 uid="uid://eusw5htc6cbg"]
 
-[ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://levels/stage.gd" id="1_omn1t"]
+[ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_omn1t"]
 [ext_resource type="TileSet" uid="uid://bl0drplk1yq1x" path="res://assets/terrain/tile_set.tres" id="1_sjb42"]
-[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/characters/player/player.tscn" id="3_ua5ty"]
+[ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="4_ua5ty"]
-[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/island/background/additional_sky.png" id="5_bekh1"]
-[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="6_8bcou"]
-[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="7_f7u7y"]
-[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="8_jq2cn"]
-
-[sub_resource type="GDScript" id="GDScript_w7ck5"]
-script/source = "extends ParallaxLayer
-
-func _process(delta: float) -> void:
-	motion_offset.x -= delta * 20
-"
-
-[sub_resource type="GDScript" id="GDScript_2nn5w"]
-script/source = "extends Node2D
-
-@export var num_clouds: int = 4
-@export var cloud_textures: Array[Texture2D] = [
-	preload(\"res://assets/island/background/small_cloud_1.png\"),
-	preload(\"res://assets/island/background/small_cloud_2.png\"),
-	preload(\"res://assets/island/background/small_cloud_3.png\"),
-]
-@export var min_speed: float = 10.0
-@export var max_speed: float = 50.0
-@export var area_x: Vector2 = Vector2(-300, 1300)
-@export var area_y: Vector2 = Vector2(-100, 200)
-
-var clouds: Array = []
-var speed = 0
-
-func _ready() -> void:
-	randomize()
-	for i in range(num_clouds):
-		_spawn_cloud()
-
-func _process(delta: float) -> void:
-	for cloud in clouds:
-		cloud.position.x -= speed * delta
-		
-		if cloud.position.x < area_x.x - 100:
-			cloud.position.x = area_x.y + 100
-			cloud.position.y = randf_range(area_y.x, area_y.y)
-			speed = randf_range(min_speed, max_speed)
-
-func _spawn_cloud():
-	var cloud = Sprite2D.new()
-	add_child(cloud)
-	
-	cloud.texture = cloud_textures[randi() % cloud_textures.size()]
-	cloud.position = Vector2(
-		randf_range(area_x.x, area_x.y),
-		randf_range(area_y.x, area_y.y)
-	)
-	speed = randf_range(min_speed, max_speed)
-	clouds.append(cloud)
-"
+[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="5_61w3m"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_omn1t")
@@ -79,42 +25,4 @@ target_door = "Begin"
 [node name="Player" parent="." instance=ExtResource("3_ua5ty")]
 position = Vector2(2175, -1464)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, -30)
-motion_scale = Vector2(0.001, 0.8)
-motion_mirroring = Vector2(767, 0)
-
-[node name="SkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(417, -11)
-scale = Vector2(26.125, 20.531)
-texture = ExtResource("5_bekh1")
-
-[node name="SeaSkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-2, 36)
-scale = Vector2(2, 2)
-texture = ExtResource("6_8bcou")
-centered = false
-
-[node name="WaterSprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(406, 431)
-scale = Vector2(25.4477, 9.47514)
-texture = ExtResource("7_f7u7y")
-
-[node name="WaterReflect" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-
-[node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1, -50)
-motion_scale = Vector2(0.001, 0.8)
-motion_mirroring = Vector2(510, 0)
-script = SubResource("GDScript_w7ck5")
-
-[node name="BigClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud"]
-position = Vector2(0, 111)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("8_jq2cn")
-centered = false
-
-[node name="CloudManager" type="Node2D" parent="ParallaxBackground/ParallaxLayerCloud"]
-script = SubResource("GDScript_2nn5w")
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_61w3m")]

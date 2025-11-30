@@ -12,18 +12,18 @@ func execute_action(player: Player, weapon_data: WeaponData) -> void:
 	
 	speed = weapon_data.fly_speed
 	damage = weapon_data.attack
-	max_range = weapon_data.range.x
+	max_range = int(weapon_data.range.x)
 	dir = Vector2(player.direction, 0)
-
+	
 	if player.weapon_levels[player.current_slot_index] == 1:
 		var projectile = player.projectile_factory.create(weapon_data.projectile_scene)
-
+		
 		if projectile:
 			if projectile.has_method("setup"):
 				projectile.setup(dir, speed, damage, max_range, null)
 	elif player.weapon_levels[player.current_slot_index] == 2:
 		var projectile = player.projectile_factory.create(weapon_data.projectile_scene)
-
+		
 		if projectile:
 			if projectile.has_method("setup"):
 				projectile.setup(dir, speed, damage, max_range, weapon_data.effect_bpassive)

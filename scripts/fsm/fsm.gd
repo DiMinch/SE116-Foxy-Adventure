@@ -20,7 +20,6 @@ func _init(target_obj: Node, states_parent_node: Node, initial_state: FSMState, 
 	_next_state = initial_state
 	default_state = initial_state
 
-
 func _set_states_parent_node(parent_node: Node) -> void:
 	if debug:
 		print("Found ", parent_node.get_child_count(), " states")
@@ -35,24 +34,22 @@ func _set_states_parent_node(parent_node: Node) -> void:
 		state_node.fsm = self
 		state_node.obj = self.obj
 
-
 func change_state(new_state: FSMState) -> void:
 	if new_state == null:
 		if debug:
 			print("Warning: Trying to change to null state")
 		return
-
+	
 	if new_state == current_state:
 		if debug:
 			print("Warning: Trying to change to same state")
 		return
-
+	
 	if not states.has(new_state.name.to_lower()):
 		if debug:
 			print("Warning: State ", new_state.name, " not found in states")
 		return
 	_next_state = new_state
-
 
 func _update(delta: float) -> void:
 	if _next_state != current_state:

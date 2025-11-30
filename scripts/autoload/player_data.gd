@@ -107,7 +107,6 @@ func load_upgrades():
 			converted[wname] = true
 	unlocked_weapons = converted
 	coins_changed.emit(player_coins)
-	
 
 func load_all_skill_resources() -> Array:
 	var skills = []

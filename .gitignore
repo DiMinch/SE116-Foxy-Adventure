@@ -55,3 +55,6 @@ mono_crash.*
 
 # Godot 4 Web export
 web/export/
+
+# Personal Test Scenes
+personal_test/

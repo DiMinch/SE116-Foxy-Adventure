@@ -22,20 +22,20 @@ func load_checkpoint_data() -> Dictionary:
 	if not has_save_file():
 		print("No checkpoint save file found.")
 		return {}
-
+	
 	var file = FileAccess.open(SAVE_FILE, FileAccess.READ)
 	if file == null:
 		push_error("Failed to open save file for reading: %s" % SAVE_FILE)
 		return {}
-
+	
 	var data = file.get_var()
 	file.close()
-
+	
 	# Check valid data
 	if typeof(data) != TYPE_DICTIONARY:
 		push_warning("Invalid checkpoint data format in save file.")
 		return {}
-
+	
 	print("Checkpoint data loaded successfully.")
 	return data
 

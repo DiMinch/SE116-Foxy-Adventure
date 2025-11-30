@@ -16,42 +16,36 @@ func _ready() -> void:
 	inventory_system = InvetorySystem.new()
 	add_child(inventory_system)
 
-	pass
-
 #change stage by path and target portal name
 func change_stage(stage_path: String, _target_portal_name: String = "") -> void:
 	target_portal_name = _target_portal_name
 	#change scene to stage path
 	get_tree().change_scene_to_file(stage_path)
 
-
 #call from dialogic
-func call_from_dialogic(msg:String = ""):
+func call_from_dialogic(msg: String = ""):
 	#Dialogic.VAR["PlayerScore"] = 30
 	print("Call from dialogic " + msg)
-
 
 #respawn at portal or door
 func respawn_at_portal() -> bool:
 	if not target_portal_name.is_empty():
 		player.global_position = current_stage.find_child(target_portal_name).global_position
 		GameManager.target_portal_name = ""
-		true
+		return true
 	return false
-
 
 # Checkpoint system functions
 func save_checkpoint(checkpoint_id: String) -> void:
 	current_checkpoint_id = checkpoint_id
 	var player_state_dict: Dictionary = player.save_state()
 	checkpoint_data[checkpoint_id] = {
-		"player_state":player_state_dict,
+		"player_state": player_state_dict,
 		"stage_path": current_stage.scene_file_path,
 		"health": player.health,
-		"has_blade": player.has_blade
+		#"has_blade": player.has_blade
 	}
 	print("Checkpoint saved: ", checkpoint_id)
-
 
 func load_checkpoint(checkpoint_id: String) -> Dictionary:
 	if checkpoint_id in checkpoint_data:
@@ -74,12 +68,12 @@ func respawn_at_checkpoint() -> void:
 	
 	if current_stage.scene_file_path != checkpoint_stage and not checkpoint_stage.is_empty():
 		return
-		
+	
 	# Can change stage if different but not implemented yet to test
 	#	change_stage(checkpoint_stage, "")
 	#	# Wait for scene to load
 	#	await get_tree().process_frame
-
+	
 	if player != null:
 		var player_state: Dictionary = checkpoint_info.get("player_state")
 		if player_state == null:
