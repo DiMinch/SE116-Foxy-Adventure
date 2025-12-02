@@ -16,6 +16,7 @@ func _ready():
 	_load_all_weapons()
 	load_upgrades()
 	# For Alpha Test
+	await get_tree().process_frame
 	generate_full_meta()
 
 func _load_all_weapons():

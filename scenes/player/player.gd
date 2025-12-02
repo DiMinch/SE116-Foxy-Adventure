@@ -132,7 +132,6 @@ func apply_weapon_data(data: WeaponData):
 	if data == null:
 		print("Tay không")
 		return
-	print(data)
 	
 	if data.skin:
 		if data.weapon_name != "None":

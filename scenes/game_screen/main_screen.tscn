@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://oaubt4ncrqj"]
+[gd_scene load_steps=17 format=3 uid="uid://oaubt4ncrqj"]
 
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_lccoy"]
 [ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_ftbm5"]
@@ -19,26 +19,8 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/game_screen/select_level_screen.tscn\")
 "
 
-[sub_resource type="FontFile" id="FontFile_v60yx"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_78pgj"]
 line_spacing = 0.0
-font = SubResource("FontFile_v60yx")
 font_size = 18
 font_color = Color(3.657937e-06, 0.5043966, 0.5043967, 1)
 outline_size = 2

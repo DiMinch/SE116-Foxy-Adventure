@@ -25,9 +25,9 @@ script/source = "extends Node2D
 
 @export var num_clouds: int = 4
 @export var cloud_textures: Array[Texture2D] = [
-	preload(\"res://assets/island/background/small_cloud_1.png\"),
-	preload(\"res://assets/island/background/small_cloud_2.png\"),
-	preload(\"res://assets/island/background/small_cloud_3.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_1.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_2.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_3.png\"),
 ]
 @export var min_speed: float = 10.0
 @export var max_speed: float = 50.0

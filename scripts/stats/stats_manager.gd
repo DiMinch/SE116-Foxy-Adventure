@@ -32,5 +32,4 @@ func get_player_stats() -> Dictionary:
 	return player_stats.duplicate(true)
 
 func get_enemy_stats(enemy_type: String) -> Dictionary:
-	print(enemy_type, " Stats: ", enemy_stats[enemy_type])
 	return enemy_stats.get(enemy_type, {}).duplicate(true)
