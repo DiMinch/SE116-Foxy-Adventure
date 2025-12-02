@@ -73,3 +73,13 @@ func _unhandled_input(event):
 
 			get_viewport().set_input_as_handled()
 			queue_redraw()
+
+func hide_popup():
+	get_parent().queue_free()
+
+func _on_overlay_color_rect_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		hide_popup() # Replace with function body.
+
+func _on_close_texture_button_pressed() -> void:
+	hide_popup()

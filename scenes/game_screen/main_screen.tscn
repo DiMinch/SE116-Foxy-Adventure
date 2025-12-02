@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://oaubt4ncrqj"]
+[gd_scene load_steps=18 format=3 uid="uid://oaubt4ncrqj"]
 
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_lccoy"]
 [ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_ftbm5"]
@@ -7,15 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://d8ral5jbs4h7" path="res://assets/ui/wood_paper/Big Banner/3.png" id="5_n1kf1"]
 [ext_resource type="Texture2D" uid="uid://gq04foo27tgf" path="res://assets/ui/wood_paper/Big Banner/32.png" id="6_q7ijo"]
 [ext_resource type="Texture2D" uid="uid://b73y5u4vdn6hl" path="res://assets/ui/wood_paper/Big Banner/4.png" id="7_8gdh3"]
+[ext_resource type="Texture2D" uid="uid://dtr2vpd02i7fr" path="res://assets/ui/wood_paper/Big Banner/5.png" id="8_7baon"]
 [ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_cqicu"]
 [ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_8okfs"]
 [ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ftbm5"]
+[ext_resource type="Texture2D" uid="uid://r72ep26vlic0" path="res://assets/ui/wood_paper/Small Text/Small Icons/18.png" id="12_34qkg"]
 
 [sub_resource type="GDScript" id="GDScript_ftbm5"]
 script/source = "extends Control
 
-func _on_button_pressed() -> void:
+var skill_tree_scene: PackedScene = preload(\"res://scenes/ui/skill_tree/skilltree.tscn\")
+
+func _on_game_start_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/game_screen/select_level_screen.tscn\")
+
+func _on_skill_tree_pressed() -> void:
+	var skill_tree_ui = skill_tree_scene.instantiate()
+	get_parent().add_child(skill_tree_ui)
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_78pgj"]
@@ -155,6 +163,7 @@ offset_top = -32.0
 offset_right = 32.0
 grow_vertical = 0
 scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_7baon")
 
 [node name="Bottom" type="TextureRect" parent="Banner"]
 layout_mode = 1
@@ -207,7 +216,7 @@ horizontal_alignment = 1
 position = Vector2(343, 172)
 scale = Vector2(-1, 1)
 
-[node name="Button" type="Button" parent="."]
+[node name="GameStart" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -229,4 +238,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_34qkg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mqab0")
 text = "Game Start"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="SkillTree" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 185.0
+offset_right = 140.0
+offset_bottom = 205.0
+texture_normal = ExtResource("12_34qkg")
+texture_pressed = ExtResource("12_34qkg")
+texture_hover = ExtResource("12_34qkg")
+texture_disabled = ExtResource("12_34qkg")
+texture_focused = ExtResource("12_34qkg")
+stretch_mode = 0
+
+[connection signal="pressed" from="GameStart" to="." method="_on_game_start_pressed"]
+[connection signal="pressed" from="SkillTree" to="." method="_on_skill_tree_pressed"]

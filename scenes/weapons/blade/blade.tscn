@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://cv1ptqtd2cq50"]
 
 [ext_resource type="Script" uid="uid://dl1y385x74ne3" path="res://scenes/weapons/blade/blade.gd" id="1_01g6a"]
-[ext_resource type="Texture2D" uid="uid://d0s8rm2fj4wef" path="res://assets/weapons/blade/blade_anim_1.png" id="2_djylb"]
-[ext_resource type="Texture2D" uid="uid://bfgelm7h8ouvo" path="res://assets/weapons/blade/blade_anim_2.png" id="3_ixqae"]
-[ext_resource type="Texture2D" uid="uid://cpb4wgmvkk3w2" path="res://assets/weapons/blade/blade_anim_3.png" id="4_y5ej8"]
-[ext_resource type="Texture2D" uid="uid://bnm1ol1ugbdsv" path="res://assets/weapons/blade/blade_anim_4.png" id="5_e03nq"]
-[ext_resource type="Texture2D" uid="uid://yv4h8w5hpcyx" path="res://assets/weapons/blade/blade_anim_5.png" id="6_wvtim"]
-[ext_resource type="Texture2D" uid="uid://b0vj30ng1nbql" path="res://assets/weapons/blade/blade_target_1.png" id="7_ros1g"]
-[ext_resource type="Texture2D" uid="uid://bkip8smslh06" path="res://assets/weapons/blade/blade_target_2.png" id="8_cf4m8"]
-[ext_resource type="Texture2D" uid="uid://d2rh0qqgmaqir" path="res://assets/weapons/blade/blade_target_3.png" id="9_pv2ba"]
-[ext_resource type="Texture2D" uid="uid://baucskhqdceas" path="res://assets/weapons/blade/blade_target_4.png" id="10_l63gt"]
-[ext_resource type="Texture2D" uid="uid://bng34woae2g8q" path="res://assets/weapons/blade/blade_throw_1.png" id="11_s6b41"]
+[ext_resource type="Texture2D" uid="uid://dxkcgo463majk" path="res://assets/weapons/blade/blade_anim_1.png" id="2_djylb"]
+[ext_resource type="Texture2D" uid="uid://dbtcdfkaqrxq" path="res://assets/weapons/blade/blade_anim_2.png" id="3_ixqae"]
+[ext_resource type="Texture2D" uid="uid://w24ct457ugun" path="res://assets/weapons/blade/blade_anim_3.png" id="4_y5ej8"]
+[ext_resource type="Texture2D" uid="uid://cmonhecf0cfqx" path="res://assets/weapons/blade/blade_anim_4.png" id="5_e03nq"]
+[ext_resource type="Texture2D" uid="uid://dyhchq65wvmy0" path="res://assets/weapons/blade/blade_anim_5.png" id="6_wvtim"]
+[ext_resource type="Texture2D" uid="uid://ib2ja37yx65r" path="res://assets/weapons/blade/blade_target_1.png" id="7_ros1g"]
+[ext_resource type="Texture2D" uid="uid://c2nhirpjtsmff" path="res://assets/weapons/blade/blade_target_2.png" id="8_cf4m8"]
+[ext_resource type="Texture2D" uid="uid://bah32pild3dx5" path="res://assets/weapons/blade/blade_target_3.png" id="9_pv2ba"]
+[ext_resource type="Texture2D" uid="uid://bs5vi8olv0ouf" path="res://assets/weapons/blade/blade_target_4.png" id="10_l63gt"]
+[ext_resource type="Texture2D" uid="uid://c3uq71rul8d81" path="res://assets/weapons/blade/blade_throw_1.png" id="11_s6b41"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="12_xbc3v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygjfq"]
@@ -37,7 +37,7 @@ animations = [{
 "texture": ExtResource("6_wvtim")
 }],
 "loop": true,
-"name": &"anim",
+"name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
@@ -81,7 +81,7 @@ shape = SubResource("CircleShape2D_g3xqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3c0c3")
-animation = &"anim"
+frame_progress = 0.86946577
 
 [node name="HitArea2D" parent="." instance=ExtResource("12_xbc3v")]
 collision_layer = 0

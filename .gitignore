@@ -58,3 +58,9 @@ web/export/
 
 # Personal Test Scenes
 personal_test/
+
+# Godot-specific
+export_presets.cfg
+
+# Imported resources (Godot 4)
+*.import
