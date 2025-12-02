@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://lbaqamwa7in4"]
+[gd_scene load_steps=17 format=4 uid="uid://lbaqamwa7in4"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_dm5g0"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_vp6pq"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/platform/island/background/additional_water.png" id="7_upukb"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="8_y18d6"]
 [ext_resource type="PackedScene" uid="uid://cayiakok1l7fj" path="res://levels/objects/platforms/moving_platform.tscn" id="9_vp6pq"]
+[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="10_t5gjd"]
+[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="11_1oekh"]
 
 [sub_resource type="GDScript" id="GDScript_w7ck5"]
 script/source = "extends ParallaxLayer
@@ -60,6 +62,20 @@ func _spawn_cloud():
 	speed = randf_range(min_speed, max_speed)
 	clouds.append(cloud)
 "
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4v0i"]
+texture = ExtResource("10_t5gjd")
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upukb"]
+texture = ExtResource("10_t5gjd")
+texture_margin_bottom = 1.0
+modulate_color = Color(1, 1, 0, 0.23137255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y18d6"]
+texture = ExtResource("10_t5gjd")
+texture_margin_bottom = 1.0
+modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_dm5g0")
@@ -125,3 +141,20 @@ script = SubResource("GDScript_2nn5w")
 [node name="MovingPlatform" parent="." instance=ExtResource("9_vp6pq")]
 position = Vector2(2805, 242)
 path_length = 600.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TurnBack" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d4v0i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_upukb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y18d6")
+icon = ExtResource("11_1oekh")
+icon_alignment = 1

@@ -1,10 +1,26 @@
-[gd_scene load_steps=6 format=4 uid="uid://eusw5htc6cbg"]
+[gd_scene load_steps=11 format=4 uid="uid://eusw5htc6cbg"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_omn1t"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="1_sjb42"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="4_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="5_61w3m"]
+[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="6_8hd6v"]
+[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="7_045es"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omn1t"]
+texture = ExtResource("6_8hd6v")
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lf3p4"]
+texture = ExtResource("6_8hd6v")
+texture_margin_bottom = 1.0
+modulate_color = Color(1, 1, 0, 0.23137255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hd6v"]
+texture = ExtResource("6_8hd6v")
+texture_margin_bottom = 1.0
+modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_omn1t")
@@ -28,3 +44,20 @@ target_door = "Begin"
 position = Vector2(2175, -1464)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_61w3m")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TurnBack" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_omn1t")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lf3p4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8hd6v")
+icon = ExtResource("7_045es")
+icon_alignment = 1

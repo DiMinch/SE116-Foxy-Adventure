@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dai7e3meplndn"]
+[gd_scene load_steps=17 format=4 uid="uid://dai7e3meplndn"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="2_cpie4"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/platform/island/background/additional_sky.png" id="8_cpuyl"]
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/platform/island/background/bg_image.png" id="9_mf7v1"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/platform/island/background/additional_water.png" id="10_7trqu"]
+[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="10_cpuyl"]
+[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="11_mf7v1"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="11_o0ax4"]
 
 [sub_resource type="GDScript" id="GDScript_nq7ub"]
@@ -60,6 +62,20 @@ func _spawn_cloud():
 	speed = randf_range(min_speed, max_speed)
 	clouds.append(cloud)
 "
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7trqu"]
+texture = ExtResource("10_cpuyl")
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o0ax4"]
+texture = ExtResource("10_cpuyl")
+texture_margin_bottom = 1.0
+modulate_color = Color(1, 1, 0, 0.23137255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nq7ub"]
+texture = ExtResource("10_cpuyl")
+texture_margin_bottom = 1.0
+modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 position = Vector2(1371, 307)
@@ -148,3 +164,20 @@ position = Vector2(-73.99994, -1058.0001)
 scale = Vector2(1.2, 1.0322447)
 texture = ExtResource("11_o0ax4")
 centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TurnBack" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_7trqu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o0ax4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nq7ub")
+icon = ExtResource("11_mf7v1")
+icon_alignment = 1

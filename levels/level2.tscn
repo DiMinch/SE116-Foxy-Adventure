@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://desinyrehvlky"]
+[gd_scene load_steps=18 format=4 uid="uid://desinyrehvlky"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_crte6"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_crte6"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/platform/island/background/bg_image.png" id="7_crte6"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/platform/island/background/additional_water.png" id="8_hq01p"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="9_fjysh"]
+[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="11_fjysh"]
+[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="12_bcewn"]
 [ext_resource type="PackedScene" uid="uid://friti3ylycub" path="res://levels/objects/chest/chest.tscn" id="20_hfi3b"]
 [ext_resource type="PackedScene" uid="uid://etjasl5llyv8" path="res://scenes/collectibles/coin/coin.tscn" id="21_75exu"]
 
@@ -61,6 +63,20 @@ func _spawn_cloud():
 	speed = randf_range(min_speed, max_speed)
 	clouds.append(cloud)
 "
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mfmt"]
+texture = ExtResource("11_fjysh")
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qegch"]
+texture = ExtResource("11_fjysh")
+texture_margin_bottom = 1.0
+modulate_color = Color(1, 1, 0, 0.23137255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jai45"]
+texture = ExtResource("11_fjysh")
+texture_margin_bottom = 1.0
+modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_crte6")
@@ -127,3 +143,20 @@ position = Vector2(352, 76)
 
 [node name="Coin" parent="." instance=ExtResource("21_75exu")]
 position = Vector2(173, 86)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TurnBack" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6mfmt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qegch")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jai45")
+icon = ExtResource("12_bcewn")
+icon_alignment = 1
