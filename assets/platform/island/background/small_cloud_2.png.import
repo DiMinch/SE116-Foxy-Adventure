@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/platform/island/background/small_cloud_2.png.import
-uid="uid://1t3pkyls8wyt"
+uid="uid://fwa0l34gl31m"
 path="res://.godot/imported/small_cloud_2.png-2f865f7149ca3946f5e41d4e26c05117.ctex"
-========
-uid="uid://cg0s41812vukj"
-path="res://.godot/imported/fox_run_3.png-f72d941090b0d717dc45f7162f595ab3.ctex"
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_run_3.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/platform/island/background/small_cloud_2.png.import
 source_file="res://assets/platform/island/background/small_cloud_2.png"
 dest_files=["res://.godot/imported/small_cloud_2.png-2f865f7149ca3946f5e41d4e26c05117.ctex"]
-========
-source_file="res://assets/foxy/hp100/fox_hat/fox_run_3.png"
-dest_files=["res://.godot/imported/fox_run_3.png-f72d941090b0d717dc45f7162f595ab3.ctex"]
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_run_3.png.import
 
 [params]
 

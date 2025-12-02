@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/platform/sea/background/Background3.png.import
 uid="uid://dfsagvd74fsqq"
 path="res://.godot/imported/Background3.png-3de142389ace23a6e9a8be44414749fc.ctex"
-========
-uid="uid://bkabwrpxdc7cc"
-path="res://.godot/imported/fox_atk_2.png-7f414fa9b51086d540590b7fb7852610.ctex"
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_atk_2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/platform/sea/background/Background3.png.import
 source_file="res://assets/platform/sea/background/Background3.png"
 dest_files=["res://.godot/imported/Background3.png-3de142389ace23a6e9a8be44414749fc.ctex"]
-========
-source_file="res://assets/foxy/hp100/fox_hat_blade/fox_atk_2.png"
-dest_files=["res://.godot/imported/fox_atk_2.png-7f414fa9b51086d540590b7fb7852610.ctex"]
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_atk_2.png.import
 
 [params]
 

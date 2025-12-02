@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Small Text/Small Text/21.png.import
 uid="uid://c0olkevakil3g"
 path="res://.godot/imported/21.png-65580156d98a076752a5a6f0c3847628.ctex"
-========
-uid="uid://bqh3qhrimo17x"
-path="res://.godot/imported/fox_hurt_3.png-09248749a5ca165aba87174cf601c215.ctex"
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_hurt_3.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Small Text/Small Text/21.png.import
 source_file="res://assets/ui/wood_paper/Small Text/Small Text/21.png"
 dest_files=["res://.godot/imported/21.png-65580156d98a076752a5a6f0c3847628.ctex"]
-========
-source_file="res://assets/foxy/hp100/fox_hat/fox_hurt_3.png"
-dest_files=["res://.godot/imported/fox_hurt_3.png-09248749a5ca165aba87174cf601c215.ctex"]
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_hurt_3.png.import
 
 [params]
 

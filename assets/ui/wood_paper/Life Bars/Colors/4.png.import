@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Life Bars/Colors/4.png.import
 uid="uid://ta7fn3bu0bsf"
 path="res://.godot/imported/4.png-9ddb47fcec4557b638a135f898c956c0.ctex"
-========
-uid="uid://bjjki67boygyj"
-path="res://.godot/imported/7.png-a970e2aabfd41ec486a470da6a5eb7e5.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/effect_key/7.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Life Bars/Colors/4.png.import
 source_file="res://assets/ui/wood_paper/Life Bars/Colors/4.png"
 dest_files=["res://.godot/imported/4.png-9ddb47fcec4557b638a135f898c956c0.ctex"]
-========
-source_file="res://assets/object/items/effect_key/7.png"
-dest_files=["res://.godot/imported/7.png-a970e2aabfd41ec486a470da6a5eb7e5.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/effect_key/7.png.import
 
 [params]
 

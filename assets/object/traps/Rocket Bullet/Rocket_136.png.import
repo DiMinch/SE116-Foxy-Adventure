@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/traps/Rocket Bullet/Rocket_136.png.import
 uid="uid://l3keik5xkjv3"
 path="res://.godot/imported/Rocket_136.png-3aaf5cf0216e5d7433eb127dd9b26960.ctex"
-========
-uid="uid://d0jfmp24jrfcy"
-path="res://.godot/imported/fox_run_3.png-6e96a4982d7dffb2959559eefbef06ad.ctex"
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_run_3.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/traps/Rocket Bullet/Rocket_136.png.import
 source_file="res://assets/object/traps/Rocket Bullet/Rocket_136.png"
 dest_files=["res://.godot/imported/Rocket_136.png-3aaf5cf0216e5d7433eb127dd9b26960.ctex"]
-========
-source_file="res://assets/foxy/hp100/fox_hat_blade/fox_run_3.png"
-dest_files=["res://.godot/imported/fox_run_3.png-6e96a4982d7dffb2959559eefbef06ad.ctex"]
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_run_3.png.import
 
 [params]
 

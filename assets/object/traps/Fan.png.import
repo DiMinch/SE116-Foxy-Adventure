@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/traps/Fan.png.import
 uid="uid://10sjxgcoi1pg"
 path="res://.godot/imported/Fan.png-a31dc38f619dc77b307b4248533cbf37.ctex"
-========
-uid="uid://cvlk6y42qmydp"
-path="res://.godot/imported/blade.png-756cb38fd6e826ab5d712745da587e81.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/blade.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/traps/Fan.png.import
 source_file="res://assets/object/traps/Fan.png"
 dest_files=["res://.godot/imported/Fan.png-a31dc38f619dc77b307b4248533cbf37.ctex"]
-========
-source_file="res://assets/object/items/blade.png"
-dest_files=["res://.godot/imported/blade.png-756cb38fd6e826ab5d712745da587e81.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/blade.png.import
 
 [params]
 

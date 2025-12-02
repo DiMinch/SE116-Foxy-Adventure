@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/traps/Be_Xich.png.import
 uid="uid://dtdkp1gna60lc"
 path="res://.godot/imported/Be_Xich.png-c00774de18dee2a8c991bfe02fb4410f.ctex"
-========
-uid="uid://cg0s41812vukj"
-path="res://.godot/imported/fox_run.png-2c96d00418ca1df5d401b991af028a15.ctex"
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_run.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/traps/Be_Xich.png.import
 source_file="res://assets/object/traps/Be_Xich.png"
 dest_files=["res://.godot/imported/Be_Xich.png-c00774de18dee2a8c991bfe02fb4410f.ctex"]
-========
-source_file="res://assets/foxy/hp100/fox_hat/fox_run.png"
-dest_files=["res://.godot/imported/fox_run.png-2c96d00418ca1df5d401b991af028a15.ctex"]
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_run.png.import
 
 [params]
 

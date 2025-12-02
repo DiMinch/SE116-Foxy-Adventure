@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Big Banner/13.png.import
 uid="uid://y1asoet54bwn"
 path="res://.godot/imported/13.png-31c06310480f1b884b57182b4acbba03.ctex"
-========
-uid="uid://b1tbo5tpcavu0"
-path="res://.godot/imported/flag_0.png-74588cb884ce660a5b0aac526aae405b.ctex"
->>>>>>>> remotes/origin/main:assets/platform/island/flag/flag_0.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Big Banner/13.png.import
 source_file="res://assets/ui/wood_paper/Big Banner/13.png"
 dest_files=["res://.godot/imported/13.png-31c06310480f1b884b57182b4acbba03.ctex"]
-========
-source_file="res://assets/platform/island/flag/flag_0.png"
-dest_files=["res://.godot/imported/flag_0.png-74588cb884ce660a5b0aac526aae405b.ctex"]
->>>>>>>> remotes/origin/main:assets/platform/island/flag/flag_0.png.import
 
 [params]
 

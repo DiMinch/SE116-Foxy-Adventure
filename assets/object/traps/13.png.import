@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/traps/13.png.import
 uid="uid://0gmoaa5f50n"
 path="res://.godot/imported/13.png-f3431ab2cccdb032fbf62b22169f8389.ctex"
-========
-uid="uid://g6knpxl51v8a"
-path="res://.godot/imported/coin.png-9f8f8cae89679178f04c70d1d329e5c6.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/coin.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/traps/13.png.import
 source_file="res://assets/object/traps/13.png"
 dest_files=["res://.godot/imported/13.png-f3431ab2cccdb032fbf62b22169f8389.ctex"]
-========
-source_file="res://assets/object/items/coin.png"
-dest_files=["res://.godot/imported/coin.png-9f8f8cae89679178f04c70d1d329e5c6.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/coin.png.import
 
 [params]
 

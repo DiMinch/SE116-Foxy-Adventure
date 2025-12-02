@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Sliders/2.png.import
 uid="uid://bydmv15swvovd"
 path="res://.godot/imported/2.png-0ff87e06d333c07f7deab985f8cad1af.ctex"
-========
-uid="uid://bu1taabc0xvwd"
-path="res://.godot/imported/4.png-9020941bbe5c601625974a2c6d7fae78.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/effect_key/4.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Sliders/2.png.import
 source_file="res://assets/ui/wood_paper/Sliders/2.png"
 dest_files=["res://.godot/imported/2.png-0ff87e06d333c07f7deab985f8cad1af.ctex"]
-========
-source_file="res://assets/object/items/effect_key/4.png"
-dest_files=["res://.godot/imported/4.png-9020941bbe5c601625974a2c6d7fae78.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/effect_key/4.png.import
 
 [params]
 

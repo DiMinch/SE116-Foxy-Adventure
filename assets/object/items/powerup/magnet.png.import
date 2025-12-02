@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/items/powerup/magnet.png.import
 uid="uid://bm5bk1mqyrox3"
 path="res://.godot/imported/magnet.png-6da873b14c315de22943dccfe61442aa.ctex"
-========
-uid="uid://bmd77x85tmtfr"
-path="res://.godot/imported/magnet.png-f69f472cda746370f0a9040a59c99edc.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/magnet.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/items/powerup/magnet.png.import
 source_file="res://assets/object/items/powerup/magnet.png"
 dest_files=["res://.godot/imported/magnet.png-6da873b14c315de22943dccfe61442aa.ctex"]
-========
-source_file="res://assets/object/items/magnet.png"
-dest_files=["res://.godot/imported/magnet.png-f69f472cda746370f0a9040a59c99edc.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/magnet.png.import
 
 [params]
 

@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Big Text/10.png.import
 uid="uid://cel3dmsde8js5"
 path="res://.godot/imported/10.png-9a5d5b8a800340df4398c8e2f65826c6.ctex"
-========
-uid="uid://pxrey8mg5td"
-path="res://.godot/imported/key_5.png-78e4c4607cd593536757e420b22701ca.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/chest_key/key_5.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Big Text/10.png.import
 source_file="res://assets/ui/wood_paper/Big Text/10.png"
 dest_files=["res://.godot/imported/10.png-9a5d5b8a800340df4398c8e2f65826c6.ctex"]
-========
-source_file="res://assets/object/items/chest_key/key_5.png"
-dest_files=["res://.godot/imported/key_5.png-78e4c4607cd593536757e420b22701ca.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/chest_key/key_5.png.import
 
 [params]
 

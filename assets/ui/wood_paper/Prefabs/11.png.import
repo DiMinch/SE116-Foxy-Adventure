@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Prefabs/11.png.import
 uid="uid://wub2h2q5uuy1"
 path="res://.godot/imported/11.png-fab990ac0bc72525d3e6584623203107.ctex"
-========
-uid="uid://d2r558ku2q0n2"
-path="res://.godot/imported/11.png-a76acddb033625bdc1f1e2cd24bffe6f.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/effect_key/11.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Prefabs/11.png.import
 source_file="res://assets/ui/wood_paper/Prefabs/11.png"
 dest_files=["res://.godot/imported/11.png-fab990ac0bc72525d3e6584623203107.ctex"]
-========
-source_file="res://assets/object/items/effect_key/11.png"
-dest_files=["res://.godot/imported/11.png-a76acddb033625bdc1f1e2cd24bffe6f.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/effect_key/11.png.import
 
 [params]
 

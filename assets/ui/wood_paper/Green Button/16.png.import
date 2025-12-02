@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/ui/wood_paper/Green Button/16.png.import
 uid="uid://beyh72og68bya"
 path="res://.godot/imported/16.png-45e7b4bd1fb8c0af67933fa8ce8f64b3.ctex"
-========
-uid="uid://btnwd6wmuxmda"
-path="res://.godot/imported/chest_open_01.png-38d6760e65bb38d57dad4c6c24bc69d7.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/chest/chest_open_01.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/ui/wood_paper/Green Button/16.png.import
 source_file="res://assets/ui/wood_paper/Green Button/16.png"
 dest_files=["res://.godot/imported/16.png-45e7b4bd1fb8c0af67933fa8ce8f64b3.ctex"]
-========
-source_file="res://assets/object/items/chest/chest_open_01.png"
-dest_files=["res://.godot/imported/chest_open_01.png-38d6760e65bb38d57dad4c6c24bc69d7.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/chest/chest_open_01.png.import
 
 [params]
 

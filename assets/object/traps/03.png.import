@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/traps/03.png.import
 uid="uid://k7po31g7tlj1"
 path="res://.godot/imported/03.png-3dee37723817d68da39b78584d9238d3.ctex"
-========
-uid="uid://b42njkkioyyaw"
-path="res://.godot/imported/ruby.png-40e9b204bee8b5d7408c8e1b0ae90af3.ctex"
->>>>>>>> remotes/origin/main:assets/object/items/ruby.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/traps/03.png.import
 source_file="res://assets/object/traps/03.png"
 dest_files=["res://.godot/imported/03.png-3dee37723817d68da39b78584d9238d3.ctex"]
-========
-source_file="res://assets/object/items/ruby.png"
-dest_files=["res://.godot/imported/ruby.png-40e9b204bee8b5d7408c8e1b0ae90af3.ctex"]
->>>>>>>> remotes/origin/main:assets/object/items/ruby.png.import
 
 [params]
 

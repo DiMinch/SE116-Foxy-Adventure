@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/object/traps/Moving Platfrom_A.png.import
 uid="uid://pjbotabcogh"
 path="res://.godot/imported/Moving Platfrom_A.png-8fb86fd747665ec3e37c8bad4adbac51.ctex"
-========
-uid="uid://yom7r0j05to2"
-path="res://.godot/imported/fox_hurt_1.png-b778b907dd8506effdf6fec4ab8f5511.ctex"
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_hurt_1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/object/traps/Moving Platfrom_A.png.import
 source_file="res://assets/object/traps/Moving Platfrom_A.png"
 dest_files=["res://.godot/imported/Moving Platfrom_A.png-8fb86fd747665ec3e37c8bad4adbac51.ctex"]
-========
-source_file="res://assets/foxy/hp100/fox_hat/fox_hurt_1.png"
-dest_files=["res://.godot/imported/fox_hurt_1.png-b778b907dd8506effdf6fec4ab8f5511.ctex"]
->>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_hurt_1.png.import
 
 [params]
 

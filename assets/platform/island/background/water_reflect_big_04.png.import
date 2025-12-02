@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/platform/island/background/water_reflect_big_04.png.import
-uid="uid://c5ur36rqix0vh"
+uid="uid://cnespda8ve4nq"
 path="res://.godot/imported/water_reflect_big_04.png-e28923656eb4e6f358a3b7b3c351c320.ctex"
-========
-uid="uid://cgcdjra1u5fyv"
-path="res://.godot/imported/23.png-541a2b77e26198deea35b6d99a62a95a.ctex"
->>>>>>>> remotes/origin/main:assets/object/traps/23.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/platform/island/background/water_reflect_big_04.png.import
 source_file="res://assets/platform/island/background/water_reflect_big_04.png"
 dest_files=["res://.godot/imported/water_reflect_big_04.png-e28923656eb4e6f358a3b7b3c351c320.ctex"]
-========
-source_file="res://assets/object/traps/23.png"
-dest_files=["res://.godot/imported/23.png-541a2b77e26198deea35b6d99a62a95a.ctex"]
->>>>>>>> remotes/origin/main:assets/object/traps/23.png.import
 
 [params]
 
