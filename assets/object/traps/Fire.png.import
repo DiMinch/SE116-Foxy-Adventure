@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/traps/Fire.png.import
 uid="uid://cn3c5o37vvb0l"
 path="res://.godot/imported/Fire.png-0afb8205a71c1347853f58436182b6fa.ctex"
+========
+uid="uid://gg8v11cck4hu"
+path="res://.godot/imported/fox_hurt_2.png-75277c0cba4f69bdf6f846994016f085.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_hurt_2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/traps/Fire.png.import
 source_file="res://assets/object/traps/Fire.png"
 dest_files=["res://.godot/imported/Fire.png-0afb8205a71c1347853f58436182b6fa.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_hat_blade/fox_hurt_2.png"
+dest_files=["res://.godot/imported/fox_hurt_2.png-75277c0cba4f69bdf6f846994016f085.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_hurt_2.png.import
 
 [params]
 

@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/traps/04.png.import
 uid="uid://gojr5rca0npv"
 path="res://.godot/imported/04.png-8b27c2d20c9feda7f8d7bc1caa88ee27.ctex"
+========
+uid="uid://1vx1hri751li"
+path="res://.godot/imported/key.png-bba9ae702b00a66973a4e4c5f39f5dde.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/key.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/traps/04.png.import
 source_file="res://assets/object/traps/04.png"
 dest_files=["res://.godot/imported/04.png-8b27c2d20c9feda7f8d7bc1caa88ee27.ctex"]
+========
+source_file="res://assets/object/items/key.png"
+dest_files=["res://.godot/imported/key.png-bba9ae702b00a66973a4e4c5f39f5dde.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/key.png.import
 
 [params]
 

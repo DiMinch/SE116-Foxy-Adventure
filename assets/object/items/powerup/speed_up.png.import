@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/items/powerup/speed_up.png.import
 uid="uid://cnfnalbbeqvcg"
 path="res://.godot/imported/speed_up.png-24598cf1f32f33367c37c7159efe0246.ctex"
+========
+uid="uid://dr4ph35m45enf"
+path="res://.godot/imported/speed_up.png-734bceecb13dfd5c84c0c8d25aa3f4c8.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/speed_up.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/items/powerup/speed_up.png.import
 source_file="res://assets/object/items/powerup/speed_up.png"
 dest_files=["res://.godot/imported/speed_up.png-24598cf1f32f33367c37c7159efe0246.ctex"]
+========
+source_file="res://assets/object/items/speed_up.png"
+dest_files=["res://.godot/imported/speed_up.png-734bceecb13dfd5c84c0c8d25aa3f4c8.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/speed_up.png.import
 
 [params]
 

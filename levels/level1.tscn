@@ -4,9 +4,10 @@
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="1_sjb42"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="4_ua5ty"]
-[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="5_61w3m"]
-[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="6_8hd6v"]
-[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="7_045es"]
+[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/platform/island/background/additional_sky.png" id="5_bekh1"]
+[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/platform/island/background/bg_image.png" id="6_8bcou"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/platform/island/background/additional_water.png" id="7_f7u7y"]
+[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="8_jq2cn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omn1t"]
 texture = ExtResource("6_8hd6v")
@@ -21,6 +22,47 @@ modulate_color = Color(1, 1, 0, 0.23137255)
 texture = ExtResource("6_8hd6v")
 texture_margin_bottom = 1.0
 modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
+
+@export var num_clouds: int = 4
+@export var cloud_textures: Array[Texture2D] = [
+	preload(\"res://assets/platform/island/background/small_cloud_1.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_2.png\"),
+	preload(\"res://assets/platform/island/background/small_cloud_3.png\"),
+]
+@export var min_speed: float = 10.0
+@export var max_speed: float = 50.0
+@export var area_x: Vector2 = Vector2(-300, 1300)
+@export var area_y: Vector2 = Vector2(-100, 200)
+
+var clouds: Array = []
+var speed = 0
+
+func _ready() -> void:
+	randomize()
+	for i in range(num_clouds):
+		_spawn_cloud()
+
+func _process(delta: float) -> void:
+	for cloud in clouds:
+		cloud.position.x -= speed * delta
+		
+		if cloud.position.x < area_x.x - 100:
+			cloud.position.x = area_x.y + 100
+			cloud.position.y = randf_range(area_y.x, area_y.y)
+			speed = randf_range(min_speed, max_speed)
+
+func _spawn_cloud():
+	var cloud = Sprite2D.new()
+	add_child(cloud)
+	
+	cloud.texture = cloud_textures[randi() % cloud_textures.size()]
+	cloud.position = Vector2(
+		randf_range(area_x.x, area_x.y),
+		randf_range(area_y.x, area_y.y)
+	)
+	speed = randf_range(min_speed, max_speed)
+	clouds.append(cloud)
+"
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_omn1t")

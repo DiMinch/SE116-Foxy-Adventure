@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/items/key/effects/sparks_3.png.import
 uid="uid://cv3obk0xsrfhj"
 path="res://.godot/imported/sparks_3.png-4eb496349d10d5d42ed5a7128ac7fa17.ctex"
+========
+uid="uid://c2gxhfpqtwmx2"
+path="res://.godot/imported/sparks_3.png-8fe52d8019ec626bf59c565613098d22.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/effects/sparks_3.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/items/key/effects/sparks_3.png.import
 source_file="res://assets/object/items/key/effects/sparks_3.png"
 dest_files=["res://.godot/imported/sparks_3.png-4eb496349d10d5d42ed5a7128ac7fa17.ctex"]
+========
+source_file="res://assets/object/items/chest_key/effects/sparks_3.png"
+dest_files=["res://.godot/imported/sparks_3.png-8fe52d8019ec626bf59c565613098d22.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/effects/sparks_3.png.import
 
 [params]
 

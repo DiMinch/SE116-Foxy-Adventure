@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30/fox_hit_3.png.import
 uid="uid://bij01i1v7nb15"
 path="res://.godot/imported/fox_hit_3.png-19a5c86af461cd6c1953fc0b63ee3ad4.ctex"
+========
+uid="uid://demu2xt523bpp"
+path="res://.godot/imported/fox_walk_4.png-a186ee56a88baf96deddf9a415cb1df0.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_blade/fox_walk_4.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30/fox_hit_3.png.import
 source_file="res://assets/foxy/hp30/fox_hp30/fox_hit_3.png"
 dest_files=["res://.godot/imported/fox_hit_3.png-19a5c86af461cd6c1953fc0b63ee3ad4.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_blade/fox_walk_4.png"
+dest_files=["res://.godot/imported/fox_walk_4.png-a186ee56a88baf96deddf9a415cb1df0.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_blade/fox_walk_4.png.import
 
 [params]
 

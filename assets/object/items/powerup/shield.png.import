@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/items/powerup/shield.png.import
 uid="uid://bvy6c70x4in3c"
 path="res://.godot/imported/shield.png-92e3b887a72db90287ce28cd4cf9ec2b.ctex"
+========
+uid="uid://c3iks12fkcij0"
+path="res://.godot/imported/shield.png-f069b44c225ad529fe5ec19f167c6426.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/shield.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/items/powerup/shield.png.import
 source_file="res://assets/object/items/powerup/shield.png"
 dest_files=["res://.godot/imported/shield.png-92e3b887a72db90287ce28cd4cf9ec2b.ctex"]
+========
+source_file="res://assets/object/items/shield.png"
+dest_files=["res://.godot/imported/shield.png-f069b44c225ad529fe5ec19f167c6426.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/shield.png.import
 
 [params]
 

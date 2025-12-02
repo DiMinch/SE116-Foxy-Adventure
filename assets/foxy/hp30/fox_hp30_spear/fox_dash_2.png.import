@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30_spear/fox_dash_2.png.import
 uid="uid://c003nuqgx228j"
 path="res://.godot/imported/fox_dash_2.png-320b5ec75d192e6ba7af8db944c4b01c.ctex"
+========
+uid="uid://bbyp5bhmvl18k"
+path="res://.godot/imported/sparks_10.png-ec767bd7d45f5c573c3a2d871fd448ab.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/effects/sparks_10.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30_spear/fox_dash_2.png.import
 source_file="res://assets/foxy/hp30/fox_hp30_spear/fox_dash_2.png"
 dest_files=["res://.godot/imported/fox_dash_2.png-320b5ec75d192e6ba7af8db944c4b01c.ctex"]
+========
+source_file="res://assets/object/items/chest_key/effects/sparks_10.png"
+dest_files=["res://.godot/imported/sparks_10.png-ec767bd7d45f5c573c3a2d871fd448ab.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/effects/sparks_10.png.import
 
 [params]
 

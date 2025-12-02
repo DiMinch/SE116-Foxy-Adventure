@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/items/key/key_7.png.import
 uid="uid://rptmxtguf3pe"
 path="res://.godot/imported/key_7.png-c390482827d2c3f7397f5492eaa53666.ctex"
+========
+uid="uid://swh0ghj4frxg"
+path="res://.godot/imported/key_7.png-1e5a96fd28ce34ac132a920471771035.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/key_7.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/items/key/key_7.png.import
 source_file="res://assets/object/items/key/key_7.png"
 dest_files=["res://.godot/imported/key_7.png-c390482827d2c3f7397f5492eaa53666.ctex"]
+========
+source_file="res://assets/object/items/chest_key/key_7.png"
+dest_files=["res://.godot/imported/key_7.png-1e5a96fd28ce34ac132a920471771035.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/key_7.png.import
 
 [params]
 

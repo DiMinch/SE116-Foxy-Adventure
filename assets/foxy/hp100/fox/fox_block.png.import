@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/foxy/hp100/fox/fox_block.png.import
 uid="uid://icamoyoqdi3"
 path="res://.godot/imported/fox_block.png-ae75636a1586ebf51cb344f1536fbf98.ctex"
+========
+uid="uid://cseha0dkj5lfj"
+path="res://.godot/imported/fox_run_1.png-fb23e36e2b7ebded687ced426a423b71.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_run_1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp100/fox/fox_block.png.import
 source_file="res://assets/foxy/hp100/fox/fox_block.png"
 dest_files=["res://.godot/imported/fox_block.png-ae75636a1586ebf51cb344f1536fbf98.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_hat/fox_run_1.png"
+dest_files=["res://.godot/imported/fox_run_1.png-fb23e36e2b7ebded687ced426a423b71.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_run_1.png.import
 
 [params]
 

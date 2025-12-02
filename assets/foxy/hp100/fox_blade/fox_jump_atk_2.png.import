@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/foxy/hp100/fox_blade/fox_jump_atk_2.png.import
 uid="uid://b5osykxnmehb3"
 path="res://.godot/imported/fox_jump_atk_2.png-cc7bb4d6f84db7b924b38a5fb67e6db1.ctex"
+========
+uid="uid://c8k8kn11ppnjp"
+path="res://.godot/imported/fox_jump_atk_2.png-8a8182fa899befd7a0811c8083597e0e.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_jump_atk_2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp100/fox_blade/fox_jump_atk_2.png.import
 source_file="res://assets/foxy/hp100/fox_blade/fox_jump_atk_2.png"
 dest_files=["res://.godot/imported/fox_jump_atk_2.png-cc7bb4d6f84db7b924b38a5fb67e6db1.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_hat_blade/fox_jump_atk_2.png"
+dest_files=["res://.godot/imported/fox_jump_atk_2.png-8a8182fa899befd7a0811c8083597e0e.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat_blade/fox_jump_atk_2.png.import
 
 [params]
 

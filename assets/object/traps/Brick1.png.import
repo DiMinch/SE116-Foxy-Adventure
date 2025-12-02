@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/traps/Brick1.png.import
 uid="uid://ok8gldh6idw5"
 path="res://.godot/imported/Brick1.png-eb1d1280efe711f7b863e23e7395ba05.ctex"
+========
+uid="uid://df4l74rtb4kql"
+path="res://.godot/imported/flag_1.png-a349b00d74d7e4a60bb398ef70ff8d51.ctex"
+>>>>>>>> remotes/origin/main:assets/platform/island/flag/flag_1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/traps/Brick1.png.import
 source_file="res://assets/object/traps/Brick1.png"
 dest_files=["res://.godot/imported/Brick1.png-eb1d1280efe711f7b863e23e7395ba05.ctex"]
+========
+source_file="res://assets/platform/island/flag/flag_1.png"
+dest_files=["res://.godot/imported/flag_1.png-a349b00d74d7e4a60bb398ef70ff8d51.ctex"]
+>>>>>>>> remotes/origin/main:assets/platform/island/flag/flag_1.png.import
 
 [params]
 

@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/ui/wood_paper/Big Banner/5.png.import
 uid="uid://dtr2vpd02i7fr"
 path="res://.godot/imported/5.png-af2dcc9f2aab6086fea2ddb26cefe5af.ctex"
+========
+uid="uid://b8cmyb3ws5o0m"
+path="res://.godot/imported/5.png-3129db3f4af6332263d1da0f951be051.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/effect_key/5.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/ui/wood_paper/Big Banner/5.png.import
 source_file="res://assets/ui/wood_paper/Big Banner/5.png"
 dest_files=["res://.godot/imported/5.png-af2dcc9f2aab6086fea2ddb26cefe5af.ctex"]
+========
+source_file="res://assets/object/items/effect_key/5.png"
+dest_files=["res://.godot/imported/5.png-3129db3f4af6332263d1da0f951be051.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/effect_key/5.png.import
 
 [params]
 

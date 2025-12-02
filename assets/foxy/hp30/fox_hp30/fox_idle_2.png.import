@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30/fox_idle_2.png.import
 uid="uid://cdiupfoo5xr6u"
 path="res://.godot/imported/fox_idle_2.png-41781a0c1aed51e4bb4e41b64e610c59.ctex"
+========
+uid="uid://c8uke6n7xj17g"
+path="res://.godot/imported/fox_idle_2.png-226e665e28148ee87f4a863fec574d1f.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_idle_2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30/fox_idle_2.png.import
 source_file="res://assets/foxy/hp30/fox_hp30/fox_idle_2.png"
 dest_files=["res://.godot/imported/fox_idle_2.png-41781a0c1aed51e4bb4e41b64e610c59.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_hat/fox_idle_2.png"
+dest_files=["res://.godot/imported/fox_idle_2.png-226e665e28148ee87f4a863fec574d1f.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_idle_2.png.import
 
 [params]
 

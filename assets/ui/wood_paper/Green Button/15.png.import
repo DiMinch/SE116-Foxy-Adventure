@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/ui/wood_paper/Green Button/15.png.import
 uid="uid://b3svhhs4jag61"
 path="res://.godot/imported/15.png-b96fea1f2da39211b0d05a75955f3933.ctex"
+========
+uid="uid://c1v7dwqfuk5qx"
+path="res://.godot/imported/flag_03.png-7b32b0a803aaa52a5214ba4b7602824c.ctex"
+>>>>>>>> remotes/origin/main:assets/platform/island/flag/flag_03.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/ui/wood_paper/Green Button/15.png.import
 source_file="res://assets/ui/wood_paper/Green Button/15.png"
 dest_files=["res://.godot/imported/15.png-b96fea1f2da39211b0d05a75955f3933.ctex"]
+========
+source_file="res://assets/platform/island/flag/flag_03.png"
+dest_files=["res://.godot/imported/flag_03.png-7b32b0a803aaa52a5214ba4b7602824c.ctex"]
+>>>>>>>> remotes/origin/main:assets/platform/island/flag/flag_03.png.import
 
 [params]
 

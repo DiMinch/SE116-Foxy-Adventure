@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30/fox_defeat_3.png.import
 uid="uid://cm35jxqst3tye"
 path="res://.godot/imported/fox_defeat_3.png-967512c6570d374b0a0a9f9e2c1aa841.ctex"
+========
+uid="uid://fii540ugfj5n"
+path="res://.godot/imported/fox_defeat_3.png-3514dd2ab311cee65aaf3015e0910a4f.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_defeat_3.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp30/fox_hp30/fox_defeat_3.png.import
 source_file="res://assets/foxy/hp30/fox_hp30/fox_defeat_3.png"
 dest_files=["res://.godot/imported/fox_defeat_3.png-967512c6570d374b0a0a9f9e2c1aa841.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_hat/fox_defeat_3.png"
+dest_files=["res://.godot/imported/fox_defeat_3.png-3514dd2ab311cee65aaf3015e0910a4f.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_hat/fox_defeat_3.png.import
 
 [params]
 

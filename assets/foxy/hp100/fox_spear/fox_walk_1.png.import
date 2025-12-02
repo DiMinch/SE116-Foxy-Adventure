@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kon6uno2dy0g"
+<<<<<<<< HEAD:assets/foxy/hp100/fox_spear/fox_walk_1.png.import
 path="res://.godot/imported/fox_walk_1.png-8a9e33c5835c9de56124633f594c30b4.ctex"
+========
+path="res://.godot/imported/fox_walk_1.png-9e81470e2c25b2df84c2126f0011706f.ctex"
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_blade/fox_walk_1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/foxy/hp100/fox_spear/fox_walk_1.png.import
 source_file="res://assets/foxy/hp100/fox_spear/fox_walk_1.png"
 dest_files=["res://.godot/imported/fox_walk_1.png-8a9e33c5835c9de56124633f594c30b4.ctex"]
+========
+source_file="res://assets/foxy/hp100/fox_blade/fox_walk_1.png"
+dest_files=["res://.godot/imported/fox_walk_1.png-9e81470e2c25b2df84c2126f0011706f.ctex"]
+>>>>>>>> remotes/origin/main:assets/foxy/hp100/fox_blade/fox_walk_1.png.import
 
 [params]
 

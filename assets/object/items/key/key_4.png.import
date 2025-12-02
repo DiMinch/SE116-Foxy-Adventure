@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/object/items/key/key_4.png.import
 uid="uid://bydt6m71m2mbk"
 path="res://.godot/imported/key_4.png-c2886c23eba161170f5c553f55f19858.ctex"
+========
+uid="uid://c1lbwpipvhma0"
+path="res://.godot/imported/key_4.png-31c75eff153528207b2edad5978add1a.ctex"
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/key_4.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/object/items/key/key_4.png.import
 source_file="res://assets/object/items/key/key_4.png"
 dest_files=["res://.godot/imported/key_4.png-c2886c23eba161170f5c553f55f19858.ctex"]
+========
+source_file="res://assets/object/items/chest_key/key_4.png"
+dest_files=["res://.godot/imported/key_4.png-31c75eff153528207b2edad5978add1a.ctex"]
+>>>>>>>> remotes/origin/main:assets/object/items/chest_key/key_4.png.import
 
 [params]
 

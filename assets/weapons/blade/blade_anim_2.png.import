@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:assets/weapons/blade/blade_anim_2.png.import
 uid="uid://dbtcdfkaqrxq"
 path="res://.godot/imported/blade_anim_2.png-3cbfc8eadf8210658f95e1de8e3e580c.ctex"
+========
+uid="uid://bnhs8dmkujao1"
+path="res://.godot/imported/8.png-33cce717281c7957294efc356ef1dda9.ctex"
+>>>>>>>> remotes/origin/main:assets/ui/wood_paper/Big Banner/8.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:assets/weapons/blade/blade_anim_2.png.import
 source_file="res://assets/weapons/blade/blade_anim_2.png"
 dest_files=["res://.godot/imported/blade_anim_2.png-3cbfc8eadf8210658f95e1de8e3e580c.ctex"]
+========
+source_file="res://assets/ui/wood_paper/Big Banner/8.png"
+dest_files=["res://.godot/imported/8.png-33cce717281c7957294efc356ef1dda9.ctex"]
+>>>>>>>> remotes/origin/main:assets/ui/wood_paper/Big Banner/8.png.import
 
 [params]
 
