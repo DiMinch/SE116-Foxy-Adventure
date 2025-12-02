@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://25boeu2q21q7"]
+
+[ext_resource type="Script" uid="uid://0sprpci7l8uu" path="res://scenes/collectibles/fruits/fruit.gd" id="1_g4tuu"]
+[ext_resource type="Texture2D" uid="uid://cvt2mpg3c3wh8" path="res://assets/object/items/fruits/apple.png" id="2_tg05s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sqeu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g31qm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tg05s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Apple" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_g4tuu")
+value = 50
+metadata/_custom_type_script = "uid://0sprpci7l8uu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5sqeu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g31qm")
+frame_progress = 0.2329457

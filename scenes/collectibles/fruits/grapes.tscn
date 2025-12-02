@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://xs1i687b2est"]
+
+[ext_resource type="Script" uid="uid://0sprpci7l8uu" path="res://scenes/collectibles/fruits/fruit.gd" id="1_yv0hk"]
+[ext_resource type="Texture2D" uid="uid://cm7llm666n5b2" path="res://assets/object/items/fruits/grape.png" id="2_shw7k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sqeu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g31qm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_shw7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Grapes" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_yv0hk")
+fruit_type = "Grapes"
+powerup_type = "Speed"
+metadata/_custom_type_script = "uid://0sprpci7l8uu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5sqeu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g31qm")
+frame_progress = 0.2329457

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ShurikenData" load_steps=7 format=3 uid="uid://bjylauwcv3j2v"]
 
 [ext_resource type="Script" uid="uid://c0my7neusokav" path="res://scenes/combats/weapons/attack_boomerang.gd" id="1_7vtpn"]
-[ext_resource type="Texture2D" uid="uid://cokgf4s6s3xg6" path="res://assets/monsters/pelican/pelican_bullet.png" id="2_0pfc5"]
+[ext_resource type="Texture2D" uid="uid://cammf7j6s26ao" path="res://assets/weapons/boomerang/boomerang.png" id="2_7vtpn"]
 [ext_resource type="PackedScene" uid="uid://c03a3nn75s4pk" path="res://scenes/weapons/boomerang/boomerang.tscn" id="3_kb75h"]
 [ext_resource type="Script" uid="uid://3klmka3qldx1" path="res://scripts/systems/weapons/projectile.gd" id="4_e3t87"]
 [ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/boomerang.tres" id="5_fciug"]
@@ -17,7 +17,7 @@ projectile_scene = ExtResource("3_kb75h")
 attack_passive = 100
 fly_speed_passive = 200
 weapon_name = "Boomerang"
-icon = ExtResource("2_0pfc5")
+icon = ExtResource("2_7vtpn")
 attack = 80
 fly_speed = 150
 type = "W"

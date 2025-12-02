@@ -15,6 +15,8 @@ var current_loadout: Array[String] = ["", ""]
 func _ready():
 	_load_all_weapons()
 	load_upgrades()
+	# For Alpha Test
+	generate_full_meta()
 
 func _load_all_weapons():
 	var dir = DirAccess.open("res://data/weapons")
@@ -128,3 +130,27 @@ func set_loadout_slot(slot_index: int, weapon_name: String):
 	
 	current_loadout[slot_index] = weapon_name
 	save_upgrades()
+
+func generate_full_meta():
+	player_coins = 99999
+	# Unlock all skills
+	unlocked_skills = {}
+	var all_skills = load_all_skill_resources()
+	for skill in all_skills:
+		unlocked_skills[skill.skill_id] = skill.max_level
+	# Unlock all weapons
+	unlocked_weapons = {}
+	for weapon_name in weapon_table.keys():
+		unlocked_weapons[weapon_name] = true
+	
+	# Loadout default: Blade, Spear
+	current_loadout = ["Blade", "Spear"]
+	# Update UI
+	coins_changed.emit(player_coins)
+	for skill in all_skills:
+		skill_unlocked.emit(skill.skill_id)
+	for wn in unlocked_weapons.keys():
+		weapon_unlocked.emit(wn)
+	# Save meta
+	save_upgrades()
+	print("[META] Generated FULL META: all skills & weapons unlocked!")

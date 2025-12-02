@@ -14,5 +14,10 @@ func collect() -> void:
 	if coins_reward > 0:
 		GameManager.inventory_system.add_consumable("coins", coins_reward)
 	# Apply power-up
-	GameManager.player.collect_powerup("speed_up")
+	if fruit_type == "Apple":
+		GameManager.player.restore_health(value)
+	if fruit_type == "Grapes":
+		GameManager.player.collect_powerup("speed_up")
+	if fruit_type == "Strawberry":
+		GameManager.player.collect_powerup("high_jump")
 	queue_free()

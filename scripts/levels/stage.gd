@@ -8,8 +8,11 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	fade_in_screen()
 	
-	if not GameManager.respawn_at_portal():
-		GameManager.respawn_at_checkpoint()
+	if GameManager.respawn_at_portal():
+		return
+	if GameManager.respawn_at_checkpoint():
+		return
+	GameManager.respawn_at_begin()
 
 func fade_in_screen() -> void:
 	var fade_layer = get_tree().root.get_node_or_null("FadeLayer")

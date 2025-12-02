@@ -53,35 +53,37 @@ func load_checkpoint(checkpoint_id: String) -> Dictionary:
 	return {}
 
 #respawn at checkpoint
-func respawn_at_checkpoint() -> void:
+func respawn_at_checkpoint() -> bool:
 	if current_checkpoint_id.is_empty():
 		print("No checkpoint available")
-		return
+		return false
 	
 	var checkpoint_info = checkpoint_data.get(current_checkpoint_id, {})
 	if checkpoint_info.is_empty():
 		print("Checkpoint data not found")
-		return
+		return false
 	
 	# Load the stage if different
 	var checkpoint_stage = checkpoint_info.get("stage_path", "")
 	
 	if current_stage.scene_file_path != checkpoint_stage and not checkpoint_stage.is_empty():
-		return
+		return false
 	
 	# Can change stage if different but not implemented yet to test
 	#	change_stage(checkpoint_stage, "")
 	#	# Wait for scene to load
 	#	await get_tree().process_frame
 	
-	if player != null:
-		var player_state: Dictionary = checkpoint_info.get("player_state")
-		if player_state == null:
-			return
-		player.load_state(player_state)
-		print("Player respawned at checkpoint: ", current_checkpoint_id)
-	else:
+	if player == null:
 		print("Player not found for respawn")
+		return false
+	
+	var player_state: Dictionary = checkpoint_info.get("player_state")
+	if player_state == null:
+		return false
+	player.load_state(player_state)
+	print("Player respawned at checkpoint: ", current_checkpoint_id)
+	return true
 
 #check if there is a checkpoint
 func has_checkpoint() -> bool:
@@ -109,3 +111,21 @@ func clear_checkpoint_data() -> void:
 	checkpoint_data.clear()
 	SaveSystem.delete_save_file()
 	print("All checkpoint data cleared")
+
+func respawn_at_begin() -> bool:
+	if player == null:
+		print("Player not found")
+		return false
+	
+	if current_stage == null:
+		print("Current stage not set")
+		return false
+	
+	var begin_node = current_stage.find_child("Begin", true, false)
+	if begin_node == null:
+		print("Begin node not found in this stage")
+		return false
+	
+	player.global_position = begin_node.global_position
+	print("Player respawned at Begin")
+	return true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0jou4iuydvkg"]
+[gd_scene load_steps=23 format=3 uid="uid://d0jou4iuydvkg"]
 
 [ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
 [ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/boomerang.tres" id="2_ykrpk"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="20_niom3"]
 [ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
 [ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
-[ext_resource type="PackedScene" uid="uid://cv1ptqtd2cq50" path="res://scenes/weapons/blade/blade.tscn" id="22_iqsei"]
 [ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/player/states/attack.gd" id="27_j4nxn"]
 [ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/player/ultility_skills/throw_blade.gd" id="30_tffgl"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
@@ -55,12 +54,12 @@ zoom = Vector2(1.2, 1.2)
 visible = false
 position = Vector2(0, -11)
 sprite_frames = ExtResource("2_ykrpk")
-animation = &"attack"
+animation = &"jump_atk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(0, -12)
 sprite_frames = ExtResource("3_i1nod")
-animation = &"idle"
+animation = &"jump"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
 position = Vector2(1, 0)
@@ -135,10 +134,6 @@ script = ExtResource("45_kghjy")
 
 [node name="Block" type="Node" parent="States"]
 script = ExtResource("46_72eiu")
-
-[node name="Blade" parent="." instance=ExtResource("22_iqsei")]
-visible = false
-position = Vector2(0, -17)
 
 [connection signal="frame_changed" from="Direction/AnimatedSprite2D" to="." method="_on_frame_changed"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

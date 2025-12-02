@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapons/melee.gd" id="1_a118g"]
 [ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_tigi4"]
-[ext_resource type="Texture2D" uid="uid://d0s8rm2fj4wef" path="res://assets/weapons/blade/blade_anim_1.png" id="1_ub7cd"]
+[ext_resource type="Texture2D" uid="uid://dxkcgo463majk" path="res://assets/weapons/blade/blade_anim_1.png" id="1_ub7cd"]
 [ext_resource type="SpriteFrames" uid="uid://cchshj6ljuypn" path="res://scenes/player/animation/blade.tres" id="4_3m72n"]
 
 [sub_resource type="Resource" id="Resource_hofll"]

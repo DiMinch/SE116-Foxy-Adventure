@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://bl0drplk1yq1x"]
+[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://b7b7mx8uru2eh"]
 
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/terrain/terrain_32x32.png" id="1_cvmva"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="2_cx6lm"]
@@ -20,7 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://etjasl5llyv8" path="res://scenes/collectibles/coin/coin.tscn" id="15_otibl"]
 [ext_resource type="PackedScene" uid="uid://friti3ylycub" path="res://levels/objects/chest/chest.tscn" id="16_80mfx"]
 [ext_resource type="PackedScene" uid="uid://bkefjm4spp2ff" path="res://scenes/collectibles/key/key.tscn" id="18_jwjmv"]
-[ext_resource type="PackedScene" uid="uid://xs1i687b2est" path="res://scenes/collectibles/fruits/fruit.tscn" id="19_80mfx"]
+[ext_resource type="PackedScene" uid="uid://xs1i687b2est" path="res://scenes/collectibles/fruits/grapes.tscn" id="21_ykn4t"]
+[ext_resource type="PackedScene" uid="uid://25boeu2q21q7" path="res://scenes/collectibles/fruits/apple.tscn" id="22_u7gpn"]
+[ext_resource type="PackedScene" uid="uid://dmd053cx1mj0o" path="res://scenes/collectibles/strawberry.tscn" id="23_paxt8"]
+[ext_resource type="PackedScene" uid="uid://cvv06808wlvnc" path="res://scenes/objects/drop out to platform/drop_out_platform.tscn" id="24_u7gpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0ni4"]
 texture = ExtResource("1_cvmva")
@@ -812,7 +815,13 @@ resource_name = "collectibles"
 scenes/1/scene = ExtResource("15_otibl")
 scenes/2/scene = ExtResource("16_80mfx")
 scenes/3/scene = ExtResource("18_jwjmv")
-scenes/4/scene = ExtResource("19_80mfx")
+scenes/4/scene = ExtResource("21_ykn4t")
+scenes/5/scene = ExtResource("22_u7gpn")
+scenes/6/scene = ExtResource("23_paxt8")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_paxt8"]
+resource_name = "drop_out"
+scenes/1/scene = ExtResource("24_u7gpn")
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -830,3 +839,4 @@ sources/4 = SubResource("TileSetScenesCollectionSource_cgf0i")
 sources/3 = SubResource("TileSetScenesCollectionSource_pevmp")
 sources/5 = SubResource("TileSetAtlasSource_0ynux")
 sources/6 = SubResource("TileSetScenesCollectionSource_wivr1")
+sources/7 = SubResource("TileSetScenesCollectionSource_paxt8")

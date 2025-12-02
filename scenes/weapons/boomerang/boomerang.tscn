@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://idsvs4w27i55" path="res://scenes/weapons/boomerang/boomerang.gd" id="1_qp5wd"]
 [ext_resource type="Script" uid="uid://cwad6p4ebrsex" path="res://scripts/collision/hit_area_2d.gd" id="2_pp6ym"]
-[ext_resource type="Texture2D" uid="uid://cokgf4s6s3xg6" path="res://assets/monsters/pelican/pelican_bullet.png" id="3_fljis"]
+[ext_resource type="Texture2D" uid="uid://cammf7j6s26ao" path="res://assets/weapons/boomerang/boomerang.png" id="3_qp5wd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qp5wd"]
 
@@ -14,7 +14,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fljis")
+"texture": ExtResource("3_qp5wd")
 }],
 "loop": true,
 "name": &"play",
