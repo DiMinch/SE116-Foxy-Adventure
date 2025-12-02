@@ -87,7 +87,7 @@ tile_map_data = PackedByteArray("AAD+//f/AAABAAAAAAD+//j/AAABAAIAAAD///f/AAABAAA
 tile_set = ExtResource("2_vp6pq")
 
 [node name="Begin" type="Node2D" parent="."]
-position = Vector2(2490, 551)
+position = Vector2(2151, 562)
 
 [node name="Door" parent="." instance=ExtResource("3_66nwl")]
 position = Vector2(1444, 1409)
@@ -95,7 +95,9 @@ target_stage = "uid://bwh41hvmhtcb6"
 target_door = "Begin"
 
 [node name="Player" parent="." instance=ExtResource("4_t5gjd")]
-position = Vector2(2564, 554)
+position = Vector2(2562, 573)
+
+[node name="Bullets" type="Node2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

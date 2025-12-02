@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://oaubt4ncrqj"]
+[gd_scene load_steps=16 format=3 uid="uid://oaubt4ncrqj"]
 
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_lccoy"]
 [ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_ftbm5"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d8ral5jbs4h7" path="res://assets/ui/wood_paper/Big Banner/3.png" id="5_n1kf1"]
 [ext_resource type="Texture2D" uid="uid://gq04foo27tgf" path="res://assets/ui/wood_paper/Big Banner/32.png" id="6_q7ijo"]
 [ext_resource type="Texture2D" uid="uid://b73y5u4vdn6hl" path="res://assets/ui/wood_paper/Big Banner/4.png" id="7_8gdh3"]
-[ext_resource type="Texture2D" uid="uid://dtr2vpd02i7fr" path="res://assets/ui/wood_paper/Big Banner/5.png" id="8_7baon"]
 [ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_cqicu"]
 [ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_8okfs"]
 [ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ftbm5"]
@@ -156,7 +155,6 @@ offset_top = -32.0
 offset_right = 32.0
 grow_vertical = 0
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("8_7baon")
 
 [node name="Bottom" type="TextureRect" parent="Banner"]
 layout_mode = 1

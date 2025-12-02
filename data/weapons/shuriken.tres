@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cltyfnoum75uu" path="res://scenes/weapons/shuriken/shuriken.tscn" id="2_j70qi"]
 [ext_resource type="Script" uid="uid://3klmka3qldx1" path="res://scripts/systems/weapons/projectile.gd" id="3_e37jy"]
 [ext_resource type="Texture2D" uid="uid://dd2xrx7wcdk8o" path="res://assets/weapons/shuriken/shuriken.png" id="3_jk2w8"]
-[ext_resource type="SpriteFrames" uid="uid://bac1wbtgwhm6a" path="res://scenes/player/animation/shuriken.tres" id="4_jk2w8"]
+[ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/projectile.tres" id="6_e37jy"]
 
 [sub_resource type="Resource" id="Resource_e37jy"]
 script = ExtResource("1_j70qi")
@@ -34,6 +34,6 @@ cooldown = 30.0
 ultimate_attack = 100
 ultimate_range = Vector2(300, 50)
 timer = 3
-skin = ExtResource("4_jk2w8")
+skin = ExtResource("6_e37jy")
 attack_behavior = SubResource("Resource_e37jy")
 metadata/_custom_type_script = "uid://3klmka3qldx1"

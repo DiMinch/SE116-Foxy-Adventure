@@ -8,5 +8,5 @@ id = "high_jump"
 display_name = "High jump"
 description = "Nhảy cao x2"
 duration = 3.0
-jump_multiplier = 2.5
+jump_multiplier = 1.5
 metadata/_custom_type_script = "uid://bi224x34bsap8"

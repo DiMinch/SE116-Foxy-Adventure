@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://civltnpindj77"]
 
-[ext_resource type="Texture2D" uid="uid://cr1040f2pbjl1" path="res://icon-foxy.svg" id="1_ysaui"]
+[ext_resource type="Texture2D" uid="uid://jsyv82thtasa" path="res://assets/foxy/hp100/fox_hp100/fox_jump_2.png" id="1_ysaui"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_h753i"]
 
 [resource]
@@ -11,9 +11,5 @@ description = "Học được Wall Slide và Wall Jump."
 icon = ExtResource("1_ysaui")
 tier = 2
 cost = 4
-type = "U"
-max_level = 1
 prerequisites = ["Spear"]
-default_unlocked = false
-target_weapon_name = ""
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

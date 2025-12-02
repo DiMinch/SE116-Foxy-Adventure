@@ -95,6 +95,8 @@ position = Vector2(10850, -1119)
 target_stage = "uid://dai7e3meplndn"
 target_door = "Begin"
 
+[node name="Bullets" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("3_s1bpp")]
 position = Vector2(167, 0)
 

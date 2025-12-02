@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://d0jou4iuydvkg"]
 
 [ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
-[ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/boomerang.tres" id="2_ykrpk"]
+[ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/projectile.tres" id="2_ykrpk"]
 [ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/player/animation/normal.tres" id="3_i1nod"]
 [ext_resource type="Script" uid="uid://c4cp5p23xlrh7" path="res://scripts/factories/player_factory/node2d_player_factory.gd" id="5_i1nod"]
 [ext_resource type="Script" uid="uid://b2ekl120ho1ol" path="res://scripts/collision/hit_box_player/hit_area_2d_player.gd" id="8_i1nod"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://b3auoc4elcn3j"]
 
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_3cfnb"]
-[ext_resource type="Texture2D" uid="uid://cr1040f2pbjl1" path="res://icon-foxy.svg" id="1_kpni2"]
+[ext_resource type="Texture2D" uid="uid://nr5vkw785odp" path="res://assets/foxy/hp100/fox_hp100/fox_jump_1.png" id="1_kpni2"]
 
 [resource]
 script = ExtResource("1_3cfnb")
@@ -9,11 +9,5 @@ skill_id = &"double_jump"
 skill_name = "Double Jump"
 description = "Học được Double Jump để nhảy hai lần."
 icon = ExtResource("1_kpni2")
-tier = 1
-cost = 2
-type = "U"
-max_level = 1
 prerequisites = ["Blade"]
-default_unlocked = false
-target_weapon_name = ""
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

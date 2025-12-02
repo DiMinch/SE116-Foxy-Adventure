@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bkefjm4spp2ff" path="res://scenes/collectibles/key/key.tscn" id="18_jwjmv"]
 [ext_resource type="PackedScene" uid="uid://xs1i687b2est" path="res://scenes/collectibles/fruits/grapes.tscn" id="21_ykn4t"]
 [ext_resource type="PackedScene" uid="uid://25boeu2q21q7" path="res://scenes/collectibles/fruits/apple.tscn" id="22_u7gpn"]
-[ext_resource type="PackedScene" uid="uid://dmd053cx1mj0o" path="res://scenes/collectibles/strawberry.tscn" id="23_paxt8"]
+[ext_resource type="PackedScene" uid="uid://dmd053cx1mj0o" path="res://scenes/collectibles/fruits/strawberry.tscn" id="23_u7gpn"]
 [ext_resource type="PackedScene" uid="uid://cvv06808wlvnc" path="res://scenes/objects/drop out to platform/drop_out_platform.tscn" id="24_u7gpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0ni4"]
@@ -817,7 +817,7 @@ scenes/2/scene = ExtResource("16_80mfx")
 scenes/3/scene = ExtResource("18_jwjmv")
 scenes/4/scene = ExtResource("21_ykn4t")
 scenes/5/scene = ExtResource("22_u7gpn")
-scenes/6/scene = ExtResource("23_paxt8")
+scenes/6/scene = ExtResource("23_u7gpn")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_paxt8"]
 resource_name = "drop_out"

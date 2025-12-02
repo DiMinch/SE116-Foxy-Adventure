@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cammf7j6s26ao" path="res://assets/weapons/boomerang/boomerang.png" id="2_7vtpn"]
 [ext_resource type="PackedScene" uid="uid://c03a3nn75s4pk" path="res://scenes/weapons/boomerang/boomerang.tscn" id="3_kb75h"]
 [ext_resource type="Script" uid="uid://3klmka3qldx1" path="res://scripts/systems/weapons/projectile.gd" id="4_e3t87"]
-[ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/boomerang.tres" id="5_fciug"]
+[ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/projectile.tres" id="5_fciug"]
 
 [sub_resource type="Resource" id="Resource_eem5x"]
 script = ExtResource("1_7vtpn")

@@ -85,11 +85,14 @@ tile_map_data = PackedByteArray("AAAAANf/BQABAAAAAAAAANj/BQABAAIAAAABANf/BQABAAA
 tile_set = ExtResource("17_b8ghs")
 
 [node name="Begin" type="Node2D" parent="."]
+position = Vector2(220, -1348)
 
 [node name="Door" parent="." instance=ExtResource("2_b8ghs")]
 position = Vector2(5950, 321)
 target_stage = "uid://lbaqamwa7in4"
 target_door = "Begin"
+
+[node name="Bullets" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("3_lrvx3")]
 position = Vector2(109, -1357)

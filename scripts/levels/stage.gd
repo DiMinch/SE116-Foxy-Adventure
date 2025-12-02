@@ -9,7 +9,8 @@ func _enter_tree() -> void:
 	
 func _ready() -> void:
 	fade_in_screen()
-	turn_back_button.pressed.connect(_on_turn_back_pressed)
+	if turn_back_button:
+		turn_back_button.pressed.connect(_on_turn_back_pressed)
 	
 	if GameManager.respawn_at_portal():
 		return

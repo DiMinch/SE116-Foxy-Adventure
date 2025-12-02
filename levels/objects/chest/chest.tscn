@@ -1,22 +1,23 @@
-[gd_scene load_steps=20 format=3 uid="uid://friti3ylycub"]
+[gd_scene load_steps=21 format=3 uid="uid://friti3ylycub"]
 
 [ext_resource type="Script" uid="uid://dnxscc2ke3di0" path="res://levels/objects/chest/chest.gd" id="1_vthut"]
-[ext_resource type="Texture2D" uid="uid://bidl5brkimhxo" path="res://assets/items/chest/chest_close_01.png" id="2_vthut"]
-[ext_resource type="Texture2D" uid="uid://bjcqjfm23puad" path="res://assets/items/chest/chest_close_02.png" id="3_dynor"]
-[ext_resource type="Texture2D" uid="uid://dqrogefu4p788" path="res://assets/items/chest/chest_close_03.png" id="4_biidr"]
-[ext_resource type="Texture2D" uid="uid://b25cckde0264v" path="res://assets/items/chest/chest_gold_close_01.png" id="5_u0u1y"]
-[ext_resource type="Texture2D" uid="uid://typ8dtg6b2o4" path="res://assets/items/chest/chest_gold_close_03.png" id="6_c2h8u"]
-[ext_resource type="Texture2D" uid="uid://duwk5x5pje1x" path="res://assets/items/chest/chest_gold_close_04.png" id="7_c5bqo"]
-[ext_resource type="Texture2D" uid="uid://btnwd6wmuxmda" path="res://assets/items/chest/chest_open_01.png" id="8_3esxp"]
-[ext_resource type="Texture2D" uid="uid://dkn0i1fahffwr" path="res://assets/items/chest/chest_open_02.png" id="9_3xfqe"]
-[ext_resource type="Texture2D" uid="uid://br8hwwry0gxvd" path="res://assets/items/chest/chest_open_03.png" id="10_uvh8c"]
-[ext_resource type="Texture2D" uid="uid://b67b2vn864ieo" path="res://assets/items/chest/chest_open_04.png" id="11_jxgyg"]
-[ext_resource type="Texture2D" uid="uid://bwcclik4ny1ry" path="res://assets/items/chest/chest_open_05.png" id="12_vl7on"]
-[ext_resource type="Texture2D" uid="uid://c1oe2ajw3hwdp" path="res://assets/items/chest/chest_gold_open_01.png" id="13_k37k2"]
-[ext_resource type="Texture2D" uid="uid://cc8424juwfrr0" path="res://assets/items/chest/chest_gold_open_02.png" id="14_ukud5"]
-[ext_resource type="Texture2D" uid="uid://db1k53jjooxc0" path="res://assets/items/chest/chest_gold_open_03.png" id="15_vcptk"]
-[ext_resource type="Texture2D" uid="uid://c4m2ji6v3v1sj" path="res://assets/items/chest/chest_gold_open_04.png" id="16_qwe0n"]
-[ext_resource type="Texture2D" uid="uid://rklpp03vtdqy" path="res://assets/items/chest/chest_gold_open_05.png" id="17_55jp6"]
+[ext_resource type="Texture2D" uid="uid://cddlnsxrb1chx" path="res://assets/platform/island/chest/chest_close_01.png" id="2_vthut"]
+[ext_resource type="Texture2D" uid="uid://18bu0b84cj4x" path="res://assets/platform/island/chest/chest_close_02.png" id="3_dynor"]
+[ext_resource type="Texture2D" uid="uid://d1cgx7squ2gj8" path="res://assets/platform/island/chest/chest_close_03.png" id="4_k4wii"]
+[ext_resource type="Texture2D" uid="uid://owoa1jqb3vff" path="res://assets/platform/island/chest/chest_gold_close_01.png" id="5_u0u1y"]
+[ext_resource type="Texture2D" uid="uid://cbdrhttvvlile" path="res://assets/platform/island/chest/chest_gold_close_03.png" id="6_c2h8u"]
+[ext_resource type="Texture2D" uid="uid://bb1upx8lqm16l" path="res://assets/platform/island/chest/chest_gold_close_02.png" id="6_rbucc"]
+[ext_resource type="Texture2D" uid="uid://cb6vqrwbjdarw" path="res://assets/platform/island/chest/chest_gold_close_04.png" id="7_c5bqo"]
+[ext_resource type="Texture2D" uid="uid://bjc678phswdr2" path="res://assets/platform/island/chest/chest_open_01.png" id="8_3esxp"]
+[ext_resource type="Texture2D" uid="uid://cmsi6i3seg7c6" path="res://assets/platform/island/chest/chest_open_02.png" id="10_i8iab"]
+[ext_resource type="Texture2D" uid="uid://8yctidm74apg" path="res://assets/platform/island/chest/chest_open_03.png" id="10_uvh8c"]
+[ext_resource type="Texture2D" uid="uid://d1lern30h6207" path="res://assets/platform/island/chest/chest_open_04.png" id="11_jxgyg"]
+[ext_resource type="Texture2D" uid="uid://64kiykro3vua" path="res://assets/platform/island/chest/chest_open_05.png" id="12_vl7on"]
+[ext_resource type="Texture2D" uid="uid://u65p88eimo85" path="res://assets/platform/island/chest/chest_gold_open_01.png" id="13_k37k2"]
+[ext_resource type="Texture2D" uid="uid://dd23cqm4xb2mx" path="res://assets/platform/island/chest/chest_gold_open_02.png" id="14_ukud5"]
+[ext_resource type="Texture2D" uid="uid://c7uj4inlcvukq" path="res://assets/platform/island/chest/chest_gold_open_03.png" id="15_vcptk"]
+[ext_resource type="Texture2D" uid="uid://dtq22hh0sus5e" path="res://assets/platform/island/chest/chest_gold_open_04.png" id="16_qwe0n"]
+[ext_resource type="Texture2D" uid="uid://c1d41cgddqah4" path="res://assets/platform/island/chest/chest_gold_open_05.png" id="17_55jp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1mxs"]
 size = Vector2(35, 34)
@@ -31,7 +32,7 @@ animations = [{
 "texture": ExtResource("3_dynor")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_biidr")
+"texture": ExtResource("4_k4wii")
 }],
 "loop": true,
 "name": &"close",
@@ -42,7 +43,7 @@ animations = [{
 "texture": ExtResource("5_u0u1y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_u0u1y")
+"texture": ExtResource("6_rbucc")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_c2h8u")
@@ -59,7 +60,7 @@ animations = [{
 "texture": ExtResource("8_3esxp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_3xfqe")
+"texture": ExtResource("10_i8iab")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_uvh8c")
@@ -106,4 +107,4 @@ shape = SubResource("RectangleShape2D_e1mxs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_keo3p")
-animation = &"open"
+animation = &"open_has_gold"
