@@ -1,7 +1,7 @@
 extends Area2D
 class_name Checkpoint
 
-signal  checkpoint_activated(checkpoint_id: String)
+signal checkpoint_activated(checkpoint_id: String)
 
 @export var checkpoint_id: String = ""
 
@@ -15,20 +15,25 @@ func _ready() -> void:
 	if GameManager.current_checkpoint_id == checkpoint_id:
 		activate_visual_only()
 
-func  activate_visual_only() -> void:
+func activate_visual_only() -> void:
 	is_activated = true
+	$AnimatedSprite2D.play("idle")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		await activate()
-	$AnimatedSprite2D.play("idle")
+		activate()
 
 func activate() -> void:
 	if is_activated:
 		return
 	is_activated = true
 	$AnimatedSprite2D.play("active")
+	# Save checkpoint
 	GameManager.save_checkpoint(checkpoint_id)
 	GameManager.save_checkpoint_data()
 	checkpoint_activated.emit(checkpoint_id)
 	print("Checkpoint activated: ", checkpoint_id)
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "active":
+		$AnimatedSprite2D.play("idle")

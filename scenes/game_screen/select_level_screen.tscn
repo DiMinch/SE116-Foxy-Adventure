@@ -1,0 +1,283 @@
+[gd_scene load_steps=17 format=3 uid="uid://c0swi1nn4x6a7"]
+
+[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_mjl6i"]
+[ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_0wfy5"]
+[ext_resource type="Texture2D" uid="uid://deeogsjwe2fv" path="res://assets/ui/wood_paper/Big Banner/31.png" id="3_bl280"]
+[ext_resource type="Texture2D" uid="uid://d0cv55qn87xdo" path="res://assets/ui/wood_paper/Big Banner/2.png" id="4_ucmd2"]
+[ext_resource type="Texture2D" uid="uid://d8ral5jbs4h7" path="res://assets/ui/wood_paper/Big Banner/3.png" id="5_43wf0"]
+[ext_resource type="Texture2D" uid="uid://gq04foo27tgf" path="res://assets/ui/wood_paper/Big Banner/32.png" id="6_4ekdx"]
+[ext_resource type="Texture2D" uid="uid://b73y5u4vdn6hl" path="res://assets/ui/wood_paper/Big Banner/4.png" id="7_qu10r"]
+[ext_resource type="Texture2D" uid="uid://dtr2vpd02i7fr" path="res://assets/ui/wood_paper/Big Banner/5.png" id="8_jxpmf"]
+[ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_dvh2u"]
+[ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_i84yh"]
+[ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ujsgk"]
+[ext_resource type="Texture2D" uid="uid://6jxh3u2185ov" path="res://assets/ui/wood_paper/Small Text/Small Icons/5.png" id="12_0wfy5"]
+[ext_resource type="Texture2D" uid="uid://dwdjuruo8iq3q" path="res://assets/ui/wood_paper/Small Text/Small Icons/17.png" id="13_bl280"]
+
+[sub_resource type="GDScript" id="GDScript_mjl6i"]
+script/source = "extends Control
+
+@onready var grid := $GridContainer
+
+var levels := [
+	{ \"name\": \"Level 1\", \"scene\": \"res://levels/level1.tscn\" },
+	{ \"name\": \"Level 2\", \"scene\": \"res://levels/level2.tscn\" },
+	{ \"name\": \"Level 3\", \"scene\": \"res://levels/level3.tscn\" },
+	{ \"name\": \"Level 4\", \"scene\": \"res://levels/level4.tscn\" },
+	{ \"name\": \"Level 5\", \"scene\": \"res://levels/level5.tscn\" },
+	{ \"name\": \"Level 6\", \"scene\": \"res://levels/level6.tscn\" }
+]
+
+func _ready() -> void:
+	create_level_buttons()
+
+func create_level_buttons() -> void:
+	for level in levels:
+		var btn := SelectButton.new()
+		btn.text = level.name
+		btn.scene = level.scene
+		grid.add_child(btn)
+
+func _on_close_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/game_screen/main_screen.tscn\")
+
+
+func _on_equip_texture_button_pressed() -> void:
+	var choose_weapons = preload(\"res://scenes/ui/choose_weapons/choose_weapons.tscn\").instantiate()
+	add_child(choose_weapons)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_4m22o"]
+line_spacing = 0.0
+font_size = 18
+font_color = Color(0, 0.38431373, 0.6784314, 1)
+outline_size = 2
+outline_color = Color(0.8217887, 0.82178867, 0.82178867, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ucmd2"]
+line_spacing = 0.0
+font_size = 12
+font_color = Color(0.86343604, 5.318448e-06, 7.70092e-07, 1)
+
+[node name="SelectLevelScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_mjl6i")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_mjl6i")]
+
+[node name="Banner" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -125.0
+offset_right = 225.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopLeft" type="TextureRect" parent="Banner"]
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_0wfy5")
+
+[node name="Top" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.0
+offset_right = -145.0
+offset_bottom = 32.0
+grow_horizontal = 2
+scale = Vector2(11.6, 1.5)
+texture = ExtResource("3_bl280")
+
+[node name="TopRight" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_ucmd2")
+
+[node name="Left" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -77.0
+offset_right = 32.0
+offset_bottom = -45.0
+grow_vertical = 2
+scale = Vector2(1.5, 5.3)
+texture = ExtResource("5_43wf0")
+
+[node name="Center" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -77.0
+offset_right = -146.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(11.6, 5.3)
+texture = ExtResource("6_4ekdx")
+
+[node name="Right" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -77.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.5, 5.3)
+texture = ExtResource("7_qu10r")
+
+[node name="BottomLeft" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.99997
+offset_right = 32.0
+offset_bottom = -0.9999695
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_jxpmf")
+
+[node name="Bottom" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -33.0
+offset_right = -145.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(11.6, 1.5)
+texture = ExtResource("9_dvh2u")
+
+[node name="BottomRight" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.99997
+offset_top = -33.000015
+offset_right = 3.0517578e-05
+offset_bottom = -1.0000153
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_i84yh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 70.0
+offset_right = 61.0
+offset_bottom = 95.0
+grow_horizontal = 2
+text = "CHOOSE LEVEL"
+label_settings = SubResource("LabelSettings_4m22o")
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("11_ujsgk")]
+position = Vector2(403, 182)
+scale = Vector2(-1.5, 1.5)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CloseTextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_top = 50.0
+offset_right = -27.0
+offset_bottom = 70.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("12_0wfy5")
+texture_pressed = ExtResource("12_0wfy5")
+texture_hover = ExtResource("12_0wfy5")
+texture_disabled = ExtResource("12_0wfy5")
+texture_focused = ExtResource("12_0wfy5")
+stretch_mode = 0
+
+[node name="EquipTextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -55.0
+offset_right = 70.0
+offset_bottom = -37.0
+grow_vertical = 0
+texture_normal = ExtResource("13_bl280")
+texture_pressed = ExtResource("13_bl280")
+texture_hover = ExtResource("13_bl280")
+texture_disabled = ExtResource("13_bl280")
+texture_focused = ExtResource("13_bl280")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/EquipTextureButton"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 2.0
+offset_right = 91.0
+offset_bottom = 25.0
+text = "Chọn vũ khí"
+label_settings = SubResource("LabelSettings_ucmd2")
+
+[connection signal="pressed" from="CanvasLayer/CloseTextureButton" to="." method="_on_close_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EquipTextureButton" to="." method="_on_equip_texture_button_pressed"]

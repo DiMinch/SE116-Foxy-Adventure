@@ -1,0 +1,106 @@
+[gd_scene load_steps=23 format=3 uid="uid://bkefjm4spp2ff"]
+
+[ext_resource type="Script" uid="uid://cgcq6tykvr85k" path="res://scenes/collectibles/key/key.gd" id="1_l04oq"]
+[ext_resource type="Texture2D" uid="uid://vtedebv18ni7" path="res://assets/object/items/key/key_1.png" id="2_65s1p"]
+[ext_resource type="Texture2D" uid="uid://blxl7l5b55pk0" path="res://assets/object/items/key/key_2.png" id="3_laqlj"]
+[ext_resource type="Texture2D" uid="uid://bgk6t40gfhr4j" path="res://assets/object/items/key/key_3.png" id="4_f7q87"]
+[ext_resource type="Texture2D" uid="uid://bydt6m71m2mbk" path="res://assets/object/items/key/key_4.png" id="5_sto4o"]
+[ext_resource type="Texture2D" uid="uid://cxbqepc0htiwn" path="res://assets/object/items/key/key_5.png" id="6_pbyji"]
+[ext_resource type="Texture2D" uid="uid://bwd0anffsukcb" path="res://assets/object/items/key/key_6.png" id="7_mw8df"]
+[ext_resource type="Texture2D" uid="uid://rptmxtguf3pe" path="res://assets/object/items/key/key_7.png" id="8_kqmkn"]
+[ext_resource type="Texture2D" uid="uid://bhpagiadvrfrw" path="res://assets/object/items/key/key_8.png" id="9_yq1xy"]
+[ext_resource type="Texture2D" uid="uid://d0ci5ba0tj05k" path="res://assets/object/items/key/effects/sparks_1.png" id="10_ar06u"]
+[ext_resource type="Texture2D" uid="uid://vrwroje2hp15" path="res://assets/object/items/key/effects/sparks_2.png" id="11_cmg5j"]
+[ext_resource type="Texture2D" uid="uid://cv3obk0xsrfhj" path="res://assets/object/items/key/effects/sparks_3.png" id="12_ruol3"]
+[ext_resource type="Texture2D" uid="uid://b1fcrs0gy04h" path="res://assets/object/items/key/effects/sparks_4.png" id="13_ot3le"]
+[ext_resource type="Texture2D" uid="uid://btqukoegxoked" path="res://assets/object/items/key/effects/sparks_5.png" id="14_5rpi1"]
+[ext_resource type="Texture2D" uid="uid://brodxu2x4ryhl" path="res://assets/object/items/key/effects/sparks_6.png" id="15_7sb45"]
+[ext_resource type="Texture2D" uid="uid://mpytl08054la" path="res://assets/object/items/key/effects/sparks_7.png" id="16_kvfch"]
+[ext_resource type="Texture2D" uid="uid://ddkinj2elkfks" path="res://assets/object/items/key/effects/sparks_8.png" id="17_o6ipn"]
+[ext_resource type="Texture2D" uid="uid://bdsaruplvj1ik" path="res://assets/object/items/key/effects/sparks_9.png" id="18_t2dox"]
+[ext_resource type="Texture2D" uid="uid://dmo15173e8ug" path="res://assets/object/items/key/effects/sparks_10.png" id="19_x3uyv"]
+[ext_resource type="Texture2D" uid="uid://da0yytmnugk27" path="res://assets/object/items/key/effects/sparks_11.png" id="20_il4dm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is7hb"]
+size = Vector2(20, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1loy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_65s1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_laqlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f7q87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sto4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pbyji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mw8df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kqmkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yq1xy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ar06u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cmg5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ruol3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ot3le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5rpi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7sb45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kvfch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_o6ipn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t2dox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_x3uyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_il4dm")
+}],
+"loop": false,
+"name": &"pick",
+"speed": 5.0
+}]
+
+[node name="Key" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_l04oq")
+metadata/_custom_type_script = "uid://c3fl6ufpjdlcr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_is7hb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1loy7")

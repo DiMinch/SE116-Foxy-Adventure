@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cah2bdbw1aq5m"
-path="res://.godot/imported/closing.png-55d710b3a79c0d1ef2da82ef8d381df0.ctex"
+path="res://.godot/imported/closing.png-0f57aef45eb2bf5c3e07fbef40dc68a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/door/closing.png"
-dest_files=["res://.godot/imported/closing.png-55d710b3a79c0d1ef2da82ef8d381df0.ctex"]
+source_file="res://assets/platform/island/door/closing.png"
+dest_files=["res://.godot/imported/closing.png-0f57aef45eb2bf5c3e07fbef40dc68a4.ctex"]
 
 [params]
 

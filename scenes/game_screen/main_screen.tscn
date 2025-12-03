@@ -1,0 +1,255 @@
+[gd_scene load_steps=18 format=3 uid="uid://oaubt4ncrqj"]
+
+[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_lccoy"]
+[ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_ftbm5"]
+[ext_resource type="Texture2D" uid="uid://deeogsjwe2fv" path="res://assets/ui/wood_paper/Big Banner/31.png" id="3_34qkg"]
+[ext_resource type="Texture2D" uid="uid://d0cv55qn87xdo" path="res://assets/ui/wood_paper/Big Banner/2.png" id="4_mqab0"]
+[ext_resource type="Texture2D" uid="uid://d8ral5jbs4h7" path="res://assets/ui/wood_paper/Big Banner/3.png" id="5_n1kf1"]
+[ext_resource type="Texture2D" uid="uid://gq04foo27tgf" path="res://assets/ui/wood_paper/Big Banner/32.png" id="6_q7ijo"]
+[ext_resource type="Texture2D" uid="uid://b73y5u4vdn6hl" path="res://assets/ui/wood_paper/Big Banner/4.png" id="7_8gdh3"]
+[ext_resource type="Texture2D" uid="uid://dtr2vpd02i7fr" path="res://assets/ui/wood_paper/Big Banner/5.png" id="8_7baon"]
+[ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_cqicu"]
+[ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_8okfs"]
+[ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ftbm5"]
+[ext_resource type="Texture2D" uid="uid://r72ep26vlic0" path="res://assets/ui/wood_paper/Small Text/Small Icons/18.png" id="12_34qkg"]
+
+[sub_resource type="GDScript" id="GDScript_ftbm5"]
+script/source = "extends Control
+
+var skill_tree_scene: PackedScene = preload(\"res://scenes/ui/skill_tree/skilltree.tscn\")
+
+func _on_game_start_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/game_screen/select_level_screen.tscn\")
+
+func _on_skill_tree_pressed() -> void:
+	var skill_tree_ui = skill_tree_scene.instantiate()
+	get_parent().add_child(skill_tree_ui)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_78pgj"]
+line_spacing = 0.0
+font_size = 18
+font_color = Color(3.657937e-06, 0.5043966, 0.5043967, 1)
+outline_size = 2
+outline_color = Color(0.8217887, 0.82178867, 0.82178867, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftbm5"]
+bg_color = Color(1, 1, 0.70980394, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34qkg"]
+bg_color = Color(1, 1, 0.5411765, 1)
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqab0"]
+bg_color = Color(1, 1, 0.5254902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ftbm5")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_lccoy")]
+
+[node name="Banner" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopLeft" type="TextureRect" parent="Banner"]
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_ftbm5")
+
+[node name="Top" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.99998
+offset_right = -79.99998
+offset_bottom = 32.0
+grow_horizontal = 2
+scale = Vector2(7.2, 1.2)
+texture = ExtResource("3_34qkg")
+
+[node name="TopRight" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_mqab0")
+
+[node name="Left" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -62.0
+offset_right = 32.0
+offset_bottom = -30.0
+grow_vertical = 2
+scale = Vector2(1.2, 4.1)
+texture = ExtResource("5_n1kf1")
+
+[node name="Center" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.999985
+offset_top = -63.0
+offset_right = -79.999985
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.2, 4.1)
+texture = ExtResource("6_q7ijo")
+
+[node name="Right" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -62.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.2, 4.1)
+texture = ExtResource("7_8gdh3")
+
+[node name="BottomLeft" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_7baon")
+
+[node name="Bottom" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -32.0
+offset_right = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(7.2, 1.2)
+texture = ExtResource("9_cqicu")
+
+[node name="BottomRight" type="TextureRect" parent="Banner"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_8okfs")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -55.0
+offset_right = 79.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FOXY ADVENTURER
+MỘT GIẤC MƠ"
+label_settings = SubResource("LabelSettings_78pgj")
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("11_ftbm5")]
+position = Vector2(343, 172)
+scale = Vector2(-1, 1)
+
+[node name="GameStart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 15.0
+offset_right = 48.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.82191056, 2.623126e-06, 7.70092e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0.51025575, 0.44386888, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftbm5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34qkg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mqab0")
+text = "Game Start"
+
+[node name="SkillTree" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 185.0
+offset_right = 140.0
+offset_bottom = 205.0
+texture_normal = ExtResource("12_34qkg")
+texture_pressed = ExtResource("12_34qkg")
+texture_hover = ExtResource("12_34qkg")
+texture_disabled = ExtResource("12_34qkg")
+texture_focused = ExtResource("12_34qkg")
+stretch_mode = 0
+
+[connection signal="pressed" from="GameStart" to="." method="_on_game_start_pressed"]
+[connection signal="pressed" from="SkillTree" to="." method="_on_skill_tree_pressed"]

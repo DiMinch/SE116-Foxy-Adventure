@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m5yds3bm8pou"
-path="res://.godot/imported/big_clouds.png-5dab607614147613986b90f7083901a3.ctex"
+path="res://.godot/imported/big_clouds.png-e0377380203b143c55eb8d779532e7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/background/big_clouds.png"
-dest_files=["res://.godot/imported/big_clouds.png-5dab607614147613986b90f7083901a3.ctex"]
+source_file="res://assets/platform/island/background/big_clouds.png"
+dest_files=["res://.godot/imported/big_clouds.png-e0377380203b143c55eb8d779532e7d7.ctex"]
 
 [params]
 

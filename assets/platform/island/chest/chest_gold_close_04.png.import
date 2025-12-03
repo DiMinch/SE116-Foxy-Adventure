@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duwk5x5pje1x"
-path="res://.godot/imported/chest_gold_close_04.png-5fcbbcb1d566fc30aca00b135accc505.ctex"
+uid="uid://cb6vqrwbjdarw"
+path="res://.godot/imported/chest_gold_close_04.png-8e34a6248d655760b2b316e92035d618.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/chest/chest_gold_close_04.png"
-dest_files=["res://.godot/imported/chest_gold_close_04.png-5fcbbcb1d566fc30aca00b135accc505.ctex"]
+source_file="res://assets/platform/island/chest/chest_gold_close_04.png"
+dest_files=["res://.godot/imported/chest_gold_close_04.png-8e34a6248d655760b2b316e92035d618.ctex"]
 
 [params]
 

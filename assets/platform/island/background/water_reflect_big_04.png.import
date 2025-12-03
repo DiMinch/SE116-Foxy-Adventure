@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ur36rqix0vh"
-path="res://.godot/imported/water_reflect_big_04.png-f858ecb20dd7f1faa09850d0788dbccf.ctex"
+uid="uid://cnespda8ve4nq"
+path="res://.godot/imported/water_reflect_big_04.png-e28923656eb4e6f358a3b7b3c351c320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/background/water_reflect_big_04.png"
-dest_files=["res://.godot/imported/water_reflect_big_04.png-f858ecb20dd7f1faa09850d0788dbccf.ctex"]
+source_file="res://assets/platform/island/background/water_reflect_big_04.png"
+dest_files=["res://.godot/imported/water_reflect_big_04.png-e28923656eb4e6f358a3b7b3c351c320.ctex"]
 
 [params]
 

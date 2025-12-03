@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ij5yrv77jvm6"]
+
+[ext_resource type="Texture2D" uid="uid://c3k7842sg3rwa" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_idle_1.png" id="1_xdko2"]
+[ext_resource type="Texture2D" uid="uid://dw4fq8i3e2cwx" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_idle_2.png" id="2_paisk"]
+
+[sub_resource type="GDScript" id="GDScript_xdko2"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	$AnimatedSprite2D.play(\"idle\")
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75s7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xdko2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_paisk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+script = SubResource("GDScript_xdko2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_75s7f")
+animation = &"idle"

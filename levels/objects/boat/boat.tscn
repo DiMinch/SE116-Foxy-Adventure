@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bv2po7d5rema6" path="res://assets/island/boat/boat_sail_4.png" id="4_kc5hd"]
 [ext_resource type="Texture2D" uid="uid://cbrqqsfiyiei0" path="res://assets/island/boat/boat_sail_5.png" id="5_5ayfn"]
 [ext_resource type="Texture2D" uid="uid://crflavbexmqg2" path="res://assets/island/boat/boat_body.png" id="6_fotra"]
-[ext_resource type="Script" uid="uid://nvuabioddqmj" path="res://scripts/core/interactive_area_2d.gd" id="8_kc5hd"]
+[ext_resource type="Script" uid="uid://nvuabioddqmj" path="res://scripts/collision/interactive_area_2d.gd" id="8_kc5hd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ayfn"]
 size = Vector2(84, 20)

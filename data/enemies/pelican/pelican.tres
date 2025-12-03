@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PelicanData" load_steps=2 format=3 uid="uid://00im54rsdpqr"]
+
+[ext_resource type="Script" uid="uid://yoy1upaiawdn" path="res://scripts/systems/enemies/pelican/pelican_data.gd" id="1_m6f81"]
+
+[resource]
+script = ExtResource("1_m6f81")
+appear_duration = 100.0
+name = "Pelican"
+spike = 120
+attack_speed = 0.0
+attack_damage = 0
+metadata/_custom_type_script = "uid://yoy1upaiawdn"

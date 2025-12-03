@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://btjfg06lqdg6o"]
 
-[ext_resource type="Texture2D" uid="uid://bpho5jws2xwfo" path="res://assets/monsters/spear/spear_5.png" id="1_7b0op"]
+[ext_resource type="Texture2D" uid="uid://ph3bn25itl3o" path="res://assets/foxy/hp100/fox_hp100/fox_idle_1.png" id="1_7b0op"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_wbdqx"]
 [ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="2_h1b77"]
 
@@ -10,12 +10,7 @@ skill_id = &"passive"
 skill_name = "Nội tại"
 description = "Học được kỹ năng nội tại tăng sức mạnh."
 icon = ExtResource("1_7b0op")
-tier = 1
-cost = 2
 type = "W"
-max_level = 1
 prerequisites = ["Blade"]
-default_unlocked = false
 weapon_to_unlock = ExtResource("2_h1b77")
-target_weapon_name = ""
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"
