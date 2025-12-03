@@ -64,7 +64,10 @@ func _ready() -> void:
 		print("Player waiting for checkpoint data...")
 	else:
 		print("New Game: Loading loadout from PlayerData...")
-		load_loadout_from_names(PlayerData.current_loadout)
+	print(PlayerData.current_loadout)
+	load_loadout_from_names(PlayerData.current_loadout)
+	# For Alpha Test
+	load_loadout()
 	# Update Abilities
 	update_abilities()
 	print("Block: ", can_block)
@@ -93,6 +96,7 @@ func update_abilities() -> void:
 	can_wall_move = PlayerData.has_skill("wall_movement")
 
 func load_loadout_from_names(weapon_names: Array):
+	print("[DEBUG] Load loadout from: ", weapon_names)
 	for i in range(2):
 		weapon_slots[i] = null
 		if i < weapon_names.size():
@@ -309,3 +313,11 @@ func restore_health(amount: int) -> void:
 
 func collect_powerup(powerup_id: String) -> void:
 	decorator_manager.apply_powerup(powerup_id)
+
+# === ALPHA TEST ===
+func load_loadout():
+	weapon_slots = [
+		load("res://data/weapons/blade.tres"),
+		load("res://data/weapons/spear.tres")
+	]
+	equip_slot(0)

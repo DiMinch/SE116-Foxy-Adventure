@@ -55,9 +55,9 @@ func upgrade_skill(skill_data: SkillData):
 			unlocked_skills[skill_data.target_weapon_name] = unlocked_skills.get(skill_data.target_weapon_name, 0) + 1
 		unlocked_weapons[w.weapon_name] = true
 		weapon_unlocked.emit(w.weapon_name)
+	save_upgrades()
 	coins_changed.emit(player_coins)
 	skill_unlocked.emit(skill_data.skill_id)
-	save_upgrades()
 
 func _set_new_game_defaults():
 	player_coins = 20
@@ -95,6 +95,7 @@ func load_upgrades():
 		_set_new_game_defaults()
 		return
 	var data = JSON.parse_string(json_string)
+	print("Player Data (Skill tree): ", data)
 	if data == null:
 		_set_new_game_defaults()
 		return
@@ -102,6 +103,8 @@ func load_upgrades():
 	unlocked_skills = data.get("skills", {})
 	unlocked_weapons = data.get("weapons", {})
 	var raw_loadout = data.get("loadout", ["", ""])
+	
+	print("raw_loadout: ", raw_loadout)
 	current_loadout.assign(raw_loadout)
 	var converted = {}
 	for wname in unlocked_weapons.keys():

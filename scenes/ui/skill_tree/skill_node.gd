@@ -39,10 +39,12 @@ func update_visuals():
 			panel.modulate = Color(0.5, 0.5, 0.5, 0.5)
 
 func _on_pressed():
-	print("Clicked ", skill_data.skill_id)
 	if skill_data and PlayerData.can_upgrade(skill_data):
 		PlayerData.upgrade_skill(skill_data)
 		update_visuals()
+	# For debug
+	print("Clicked ", skill_data.skill_id)
+	PlayerData.load_upgrades()
 
 func _on_mouse_entered() -> void:
 	if not skill_data or not tooltip:

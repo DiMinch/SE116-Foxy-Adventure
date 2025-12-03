@@ -23,3 +23,4 @@ func message(text: String) -> void:
 	$MessageLabel.text = text
 	await get_tree().create_timer(2).timeout
 	$MessageLabel.visible = false
+	PlayerData.load_upgrades()
