@@ -24,7 +24,10 @@ func _load_all_weapons():
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if file_name.ends_with(".tres"):
+			if dir.current_is_dir() == false and file_name.get_extension() == "tres" or file_name.get_extension() == "remap":
+				file_name = file_name.get_basename()
+				if file_name.get_extension() != "tres":
+					file_name += ".tres"
 				var weapon: WeaponData = load("res://data/weapons/%s" % file_name)
 				if weapon:
 					weapon_table[weapon.weapon_name] = weapon
