@@ -4,3 +4,4 @@ class_name MeleeData
 
 @export var passivebasic: Array = []
 @export var passiveplus: Array = []
+@export var ultidata: UltiData

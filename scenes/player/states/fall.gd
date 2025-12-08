@@ -8,6 +8,7 @@ func _enter() -> void:
 	pass
 
 func _update(_delta: float) -> void:
+	control_invulnerable()
 	control_swap_weapon()
 	control_jump()
 	#Control moving

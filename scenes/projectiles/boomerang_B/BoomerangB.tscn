@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgqpdxiqsnpu1"]
+
+[ext_resource type="Script" uid="uid://co58cu8h42m3o" path="res://scenes/projectiles/boomerang_B/boomerang_big.gd" id="1_4lrlo"]
+[ext_resource type="Texture2D" uid="uid://cammf7j6s26ao" path="res://assets/weapons/boomerang/boomerang.png" id="1_xqgie"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lrlo"]
+radius = 4.0
+height = 16.0
+
+[node name="BoomerangB" type="Area2D"]
+collision_layer = 0
+collision_mask = 17
+script = ExtResource("1_4lrlo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4lrlo")
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Direction"]
+modulate = Color(1, 0.43, 0.43, 1)
+position = Vector2(1, 0)
+texture = ExtResource("1_xqgie")

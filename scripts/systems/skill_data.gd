@@ -17,3 +17,7 @@ class_name SkillData
 
 @export_group("Weapon Upgrade")
 @export var target_weapon_name: String = ""
+@export_group("Weapon DeCooldown(%)")
+@export var de_cooldown: float = 1
+@export_group("Invulnerable(s)")
+@export var invul_bonus: float = 2.5

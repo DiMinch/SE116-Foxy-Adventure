@@ -1,0 +1,55 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://darusyhycbqa8"]
+
+[ext_resource type="Texture2D" uid="uid://b2fv4lbiphk66" path="res://assets/weapons/blade/smoke/001.png" id="1_etfg8"]
+[ext_resource type="Texture2D" uid="uid://carrobyf0fb14" path="res://assets/weapons/blade/smoke/002.png" id="2_duebv"]
+[ext_resource type="Texture2D" uid="uid://l0l7d2yuly35" path="res://assets/weapons/blade/smoke/003.png" id="3_qwdho"]
+[ext_resource type="Texture2D" uid="uid://unni76tm2csn" path="res://assets/weapons/blade/smoke/004.png" id="4_7pm34"]
+[ext_resource type="Texture2D" uid="uid://d0yx6eerue24e" path="res://assets/weapons/blade/smoke/005.png" id="5_aj08v"]
+[ext_resource type="Texture2D" uid="uid://d4tl2dt65lp5" path="res://assets/weapons/blade/smoke/006.png" id="6_iialu"]
+[ext_resource type="Texture2D" uid="uid://cxwanlnfm3pl6" path="res://assets/weapons/blade/smoke/007.png" id="7_qw0rc"]
+[ext_resource type="Texture2D" uid="uid://g4tgic54ksff" path="res://assets/weapons/blade/smoke/008.png" id="8_bi3ep"]
+[ext_resource type="Texture2D" uid="uid://clng15r88ut53" path="res://assets/weapons/blade/smoke/009.png" id="9_pf148"]
+[ext_resource type="Texture2D" uid="uid://s8urih56b750" path="res://assets/weapons/blade/smoke/010.png" id="10_jh1wc"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("6_iialu")
+}, {
+"duration": 0.25,
+"texture": ExtResource("7_qw0rc")
+}, {
+"duration": 0.25,
+"texture": ExtResource("8_bi3ep")
+}, {
+"duration": 0.25,
+"texture": ExtResource("9_pf148")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jh1wc")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_etfg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_duebv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qwdho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7pm34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aj08v")
+}],
+"loop": false,
+"name": &"play",
+"speed": 10.0
+}]

@@ -20,6 +20,7 @@ var hit_area: HitArea2D
 var spawn_position: Vector2
 
 func _ready() -> void:
+	add_to_group("Enemy")
 	super._ready()
 	_init_ray_cast()
 	_init_detect_player_area()

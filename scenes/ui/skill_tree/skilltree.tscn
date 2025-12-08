@@ -23,7 +23,7 @@ offset_bottom = 266.0
 [node name="OverlayColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 2
-color = Color(0.03529412, 0.54901963, 0.87058824, 0.69411767)
+color = Color(0.0352941, 0.54902, 0.870588, 0.694118)
 
 [node name="SkillTree" type="Control" parent="."]
 custom_minimum_size = Vector2(675, 265)
