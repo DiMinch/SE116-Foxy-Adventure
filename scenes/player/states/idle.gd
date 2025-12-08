@@ -5,6 +5,7 @@ func _enter() -> void:
 	obj.change_animation("idle")
 
 func _update(_delta: float) -> void:
+	control_invulnerable()
 	control_swap_weapon()
 	# Control jump
 	control_jump()
@@ -12,6 +13,7 @@ func _update(_delta: float) -> void:
 	control_moving()
 	# If not on floor change to fall
 	control_attack()
+	control_ultimate()
 	## Control throw blade: UNUSE
 	#control_throw()
 	control_utility_skills()

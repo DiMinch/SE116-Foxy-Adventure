@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BoomerangUlti" load_steps=3 format=3 uid="uid://0672y0fqu4v7"]
+
+[ext_resource type="Script" uid="uid://b24ep44fngpq5" path="res://scripts/systems/projectiles/boomerang_ulti_data.gd" id="1_5kbbn"]
+[ext_resource type="PackedScene" uid="uid://cgqpdxiqsnpu1" path="res://scenes/projectiles/boomerang_B/BoomerangB.tscn" id="1_m1gq4"]
+
+[resource]
+script = ExtResource("1_5kbbn")
+enemy_hp_percent = 0.5
+self_hp_cost = 0.25
+fly_speed = 600.0
+fly_distance = 400.0
+return_accel = 1200.0
+package_scene = ExtResource("1_m1gq4")
+timer = 0.15
+damage_unit = 0
+cool_down = 50.0
+range = Vector2(0, 0)
+speed = 0.0
+metadata/_custom_type_script = "uid://b24ep44fngpq5"

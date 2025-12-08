@@ -18,3 +18,4 @@ class_name WeaponData
 @export var timer: int
 @export var skin: SpriteFrames
 @export var attack_behavior: AttackBehavior
+@export var attack_ulti: AttackBehavior

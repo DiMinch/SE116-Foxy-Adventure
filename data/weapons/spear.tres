@@ -1,18 +1,25 @@
-[gd_resource type="Resource" script_class="MeleeData" load_steps=6 format=3 uid="uid://caprsarj7awm7"]
+[gd_resource type="Resource" script_class="MeleeData" load_steps=9 format=3 uid="uid://caprsarj7awm7"]
 
 [ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_23sov"]
 [ext_resource type="Texture2D" uid="uid://31g3xoelewph" path="res://assets/weapons/spear/spear.png" id="2_23sov"]
 [ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapons/melee.gd" id="2_hq2x0"]
+[ext_resource type="Script" uid="uid://dk2c8l2nkcw1q" path="res://scenes/combats/weapons/ulti/spear_ulti.gd" id="2_wipgh"]
 [ext_resource type="SpriteFrames" uid="uid://dbh2ohleryovk" path="res://scenes/player/animation/spear.tres" id="4_wipgh"]
+[ext_resource type="Resource" uid="uid://c8ss4v75xkv7u" path="res://data/ultis/SpearUlti.tres" id="6_mkper"]
 
 [sub_resource type="Resource" id="Resource_mkper"]
 script = ExtResource("1_23sov")
 metadata/_custom_type_script = "uid://clbkm1lviu1tl"
 
+[sub_resource type="Resource" id="Resource_amhf3"]
+script = ExtResource("2_wipgh")
+metadata/_custom_type_script = "uid://dk2c8l2nkcw1q"
+
 [resource]
 script = ExtResource("2_hq2x0")
 passivebasic = [1.0, 1.1, 1.2]
 passiveplus = [1.0, 1.1, 1.2, 1.3, 1.4]
+ultidata = ExtResource("6_mkper")
 weapon_name = "Spear"
 icon = ExtResource("2_23sov")
 attack = 150
@@ -29,4 +36,5 @@ ultimate_range = Vector2(100, 20)
 timer = 1
 skin = ExtResource("4_wipgh")
 attack_behavior = SubResource("Resource_mkper")
+attack_ulti = SubResource("Resource_amhf3")
 metadata/_custom_type_script = "uid://bmcmaiyw6twcf"
