@@ -12,6 +12,8 @@ const SWAP = "swap"
 const BLOCK = "block"
 const DASH = "dash"
 const WALL_SLIDE = "wall slide"
+const ULTI = "ulti"
+const INVULNERABLE  = "invulnerable"
 
 #Control moving and changing state to run
 #Return true if moving
@@ -95,7 +97,7 @@ func take_damage(damage) -> void:
 func control_attack() -> bool:
 	if obj.is_dialogue_active:
 		return false
-	if Input.is_action_pressed(ATTACK):
+	if Input.is_action_pressed(ATTACK) and !obj.is_attack:
 		if obj.has_weapon == true:
 			change_state(fsm.states.attack)
 		return true
@@ -117,10 +119,30 @@ func control_swap_weapon() -> bool:
 		return true
 	return false
 
+func control_ultimate() -> bool:
+	if Input.is_action_just_pressed(ULTI) and !obj.is_attack:
+		if obj.current_weapon_data and obj.current_ulti_cooldown <= 0: #(and obj.current_weapon_data.current_cooldown <= 0)
+			change_state(fsm.states.ulti)
+			debug_player_skills("ULTIMATE")
+			return true
+		elif obj.current_ulti_cooldown > 0:
+			print("Ulti is cooling down: ", int(obj.current_ulti_cooldown))
+	return false
+
+func control_invulnerable() -> bool:
+	print("Did use: INVULNERABLE")
+	if Input.is_action_just_pressed(INVULNERABLE) and obj.can_invulnerable:
+		debug_player_skills("INVULNERABLE")
+		obj.can_invulnerable = false
+		return true
+	return false
+
 func debug_player_skills(skill_name: String) -> void:
 	if skill_name == SWAP:
 		print("[SKILL] Player swap weapon to: ", "Thêm debug đổi sang weapon gì?")
 	if skill_name == JUMP:
 		print("[SKILL] Player Jumped: ", obj.current_jumps)
+	if skill_name == "ULTIMATE":
+		print("[SKILL] Player used ULTIMATE skill!")
 	else:
 		print("[SKILL] Player had use: ", skill_name.to_upper())

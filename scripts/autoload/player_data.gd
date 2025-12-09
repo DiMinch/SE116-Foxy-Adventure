@@ -9,14 +9,24 @@ const UPGRADE_SAVE_FILE = "user://upgrades.dat"
 var player_coins: int = 0
 var unlocked_skills: Dictionary = {}
 var unlocked_weapons: Dictionary = {}
+var skills_data: Dictionary = {}
 var weapon_table: Dictionary = {}
 var current_loadout: Array[String] = ["", ""]
 
 func _ready():
 	_load_all_weapons()
+	_init_skills_data()
 	load_upgrades()
 	# For Alpha Test
 	#generate_full_meta()
+
+func _init_skills_data():
+	var all_skills_resources = load_all_skill_resources()
+	for skill_res in all_skills_resources:
+		if skill_res is SkillData:
+			skills_data[skill_res.skill_id] = skill_res
+	
+	print("Đã cache ", skills_data.size(), " kỹ năng vào bộ nhớ.")
 
 func _load_all_weapons():
 	var dir = DirAccess.open("res://data/weapons")
@@ -24,7 +34,10 @@ func _load_all_weapons():
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if file_name.ends_with(".tres"):
+			if dir.current_is_dir() == false and file_name.get_extension() == "tres" or file_name.get_extension() == "remap":
+				file_name = file_name.get_basename()
+				if file_name.get_extension() != "tres":
+					file_name += ".tres"
 				var weapon: WeaponData = load("res://data/weapons/%s" % file_name)
 				if weapon:
 					weapon_table[weapon.weapon_name] = weapon

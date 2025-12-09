@@ -8,3 +8,4 @@ class_name ShurikenData
 @export_group("Passive Boomerang")
 @export var attack_passive: int
 @export var fly_speed_passive: int
+@export var ultidata: UltiData

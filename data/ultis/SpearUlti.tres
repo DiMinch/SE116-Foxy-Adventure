@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UltiData" load_steps=2 format=3 uid="uid://c8ss4v75xkv7u"]
+
+[ext_resource type="Script" uid="uid://bgdeb3y38gjp2" path="res://scripts/systems/projectiles/ulti_data.gd" id="1_8ovdd"]
+
+[resource]
+script = ExtResource("1_8ovdd")
+timer = 0.2
+damage_unit = 300
+cool_down = 20.0
+range = Vector2(100, 20)
+speed = 400.0
+metadata/_custom_type_script = "uid://bgdeb3y38gjp2"

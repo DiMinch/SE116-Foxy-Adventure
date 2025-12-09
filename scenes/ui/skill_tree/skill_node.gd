@@ -20,7 +20,7 @@ func _ready():
 	update_visuals()
 	self.pressed.connect(_on_pressed)
 
-func update_visuals():
+func update_visuals(_value = null):
 	if not skill_data:
 		panel.visible = true
 		self.disabled = true

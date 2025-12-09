@@ -5,6 +5,7 @@ func _enter() -> void:
 	obj.change_animation("jump")
 
 func _update(_delta: float):
+	control_invulnerable()
 	control_swap_weapon()
 	#Control moving
 	control_moving()
