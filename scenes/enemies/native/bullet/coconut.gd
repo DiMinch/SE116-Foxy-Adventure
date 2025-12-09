@@ -61,6 +61,16 @@ func _on_body_entered(body: Node) -> void:
 		if body.has_method("take_damage"):
 			body.take_damage(attack_damage)
 		queue_free()
+		return
+	if body is TileMapLayer:
+		queue_free()
+		return
+	if body.is_in_group("enemy"):
+		queue_free()
+	if body.collision_layer & 4 != 0:
+		queue_free()
+	if body.collision_layer & 1 != 0:
+		queue_free()
 
 func _on_hit_area_2d_hitted(_area: Variant) -> void:
 	queue_free()

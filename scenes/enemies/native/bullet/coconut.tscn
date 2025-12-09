@@ -15,7 +15,7 @@ script = ExtResource("1_jb27y")
 
 [node name="HitArea2D" parent="." instance=ExtResource("2_udi5i")]
 collision_layer = 32
-collision_mask = 5
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 shape = SubResource("CircleShape2D_3rq47")
