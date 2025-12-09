@@ -144,6 +144,7 @@ animation = &"atk1"
 flip_h = true
 
 [node name="Node2DFactory" type="Marker2D" parent="Direction"]
+position = Vector2(33, -20)
 script = ExtResource("22_vuscy")
 product_packed_scene = ExtResource("23_exaui")
 target_container_name = &"Bullets"
@@ -151,6 +152,7 @@ target_container_path = NodePath(".")
 metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
 [node name="Node2DFactory2" type="Marker2D" parent="Direction"]
+position = Vector2(0, -21)
 script = ExtResource("22_vuscy")
 product_packed_scene = ExtResource("24_ydjlh")
 target_container_name = &"Bullets"
