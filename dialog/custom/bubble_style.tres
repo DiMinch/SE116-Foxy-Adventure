@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=9 format=3 uid="uid://b50mcpp5gyixf"]
+
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_6jgw7"]
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_seg5s"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_u87h1"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_ll2iq"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_3qgj1"]
+
+[sub_resource type="Resource" id="Resource_u8sng"]
+script = ExtResource("1_6jgw7")
+scene = ExtResource("1_seg5s")
+
+[sub_resource type="Resource" id="Resource_qdg3i"]
+script = ExtResource("1_6jgw7")
+scene = ExtResource("3_ll2iq")
+
+[sub_resource type="Resource" id="Resource_hj1v1"]
+script = ExtResource("1_6jgw7")
+scene = ExtResource("4_3qgj1")
+
+[resource]
+script = ExtResource("2_u87h1")
+name = "bubble_style"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_u8sng"),
+"10": SubResource("Resource_qdg3i"),
+"11": SubResource("Resource_hj1v1")
+}

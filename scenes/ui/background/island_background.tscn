@@ -64,8 +64,8 @@ motion_scale = Vector2(0.001, 0.8)
 motion_mirroring = Vector2(767, 0)
 
 [node name="SkySprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(417, -11)
-scale = Vector2(26.125, 20.531)
+position = Vector2(417, -866.7521)
+scale = Vector2(26.125, 74.015495)
 texture = ExtResource("1_7aj27")
 
 [node name="SeaSkySprite2D" type="Sprite2D" parent="ParallaxLayer"]

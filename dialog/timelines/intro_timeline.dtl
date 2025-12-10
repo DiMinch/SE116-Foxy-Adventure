@@ -1,0 +1,19 @@
+[signal arg="fade_in"]
+[wait time="1.0"]
+
+[signal arg="image_1"]
+foxy: Tuyết rơi ngày càng dày đặc rồi
+foxy: Vừa lạnh, vừa đói, mình sắp không trụ nổi mất...
+[signal arg="zoom_slow_start"]
+foxy: Chết rồi, đầu mình, đau quá
+
+
+[signal arg="image_2"]
+[signal arg="zoom_slow_start"]
+foxy: Không lẽ... mình phải nằm lại đây sao
+foxy (defeat): Hự...
+
+foxy (defeat): ...
+[signal arg="fade_out"]
+[wait time="1.0"]
+[signal arg="end_cutscene"]

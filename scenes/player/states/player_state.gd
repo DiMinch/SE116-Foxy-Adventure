@@ -18,6 +18,9 @@ const INVULNERABLE  = "invulnerable"
 #Control moving and changing state to run
 #Return true if moving
 func control_moving() -> bool:
+	if obj.is_dialogue_active:
+		obj.velocity.x = 0
+		return false
 	var dir: float = Input.get_action_strength(RIGHT) - Input.get_action_strength(LEFT)
 	var is_moving: bool = abs(dir) > 0.1
 	if obj.is_on_wall() and not obj.is_on_floor():
@@ -40,6 +43,8 @@ func control_moving() -> bool:
 #Control jumping
 #Return true if jumping
 func control_jump() -> bool:
+	if obj.is_dialogue_active:
+		return false
 	# Double jump
 	if Input.is_action_just_pressed(JUMP) and (obj.current_jumps < obj.max_jumps or (obj.is_on_wall() and obj.can_wall_move)):
 		obj.jump()
@@ -51,6 +56,8 @@ func control_jump() -> bool:
 
 # Function to control skills
 func control_utility_skills() -> bool:
+	if obj.is_dialogue_active:
+		return false
 	if obj.can_dash and Input.is_action_just_pressed(DASH) and obj.is_count_down_dash:
 		#change_state(fsm.states.dash) 
 		obj.is_count_down_dash = false
@@ -67,6 +74,8 @@ func control_utility_skills() -> bool:
 	return false
 
 func check_wall_movement() -> bool:
+	if obj.is_dialogue_active:
+		return false
 	if obj.can_wall_move and obj.is_on_wall():
 		change_state(fsm.states.wall_slide)
 		debug_player_skills(WALL_SLIDE)
@@ -84,6 +93,8 @@ func take_damage(damage) -> void:
 		change_state(fsm.states.hurt)
 
 func control_attack() -> bool:
+	if obj.is_dialogue_active:
+		return false
 	if Input.is_action_pressed(ATTACK) and !obj.is_attack:
 		if obj.has_weapon == true:
 			change_state(fsm.states.attack)
@@ -99,12 +110,16 @@ func control_attack() -> bool:
 	#return false
 
 func control_swap_weapon() -> bool:
+	if obj.is_dialogue_active:
+		return false
 	if Input.is_action_just_pressed(SWAP):
 		obj.equip_slot(1 - obj.current_slot_index)
 		return true
 	return false
 
 func control_ultimate() -> bool:
+	if obj.is_dialogue_active:
+		return false
 	if Input.is_action_just_pressed(ULTI) and !obj.is_attack:
 		if obj.current_weapon_data and obj.current_ulti_cooldown <= 0: #(and obj.current_weapon_data.current_cooldown <= 0)
 			change_state(fsm.states.ulti)

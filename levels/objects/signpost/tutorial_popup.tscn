@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccdto7samtdc7"]
+
+[ext_resource type="Script" uid="uid://fvmb4144e25d" path="res://levels/objects/signpost/tutorial_popup.gd" id="1_ajr1d"]
+[ext_resource type="Texture2D" uid="uid://cnpyc7pw2swqo" path="res://assets/ui/wood_paper/Green Board/Full.png" id="1_xbayy"]
+[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="3_k2n6q"]
+[ext_resource type="Texture2D" uid="uid://d5e2tj0u0x7q" path="res://assets/ui/wood_paper/Green Button/Tick.png" id="3_lq0el"]
+[ext_resource type="Texture2D" uid="uid://cfstba0pkeci4" path="res://assets/tutorial/coin.png" id="4_k2n6q"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_lq0el"]
+keycode = 4194309
+
+[sub_resource type="InputEventKey" id="InputEventKey_k2n6q"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_kr5vn"]
+
+[sub_resource type="Shortcut" id="Shortcut_87w4j"]
+events = [SubResource("InputEventKey_lq0el"), SubResource("InputEventKey_k2n6q"), SubResource("InputEventKey_kr5vn")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k2n6q"]
+line_spacing = 2.0
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_lq0el"]
+font = ExtResource("3_k2n6q")
+font_size = 26
+font_color = Color(0.99999887, 0.9998266, 0.43888524, 1)
+outline_size = 9
+outline_color = Color(0.3882353, 0.6156863, 0.42745098, 1)
+shadow_size = 16
+shadow_color = Color(0.2, 0.19607843, 0.23921569, 1)
+
+[node name="TutorialPopup" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ajr1d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(297, 182)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.75
+offset_top = -91.25
+offset_right = 148.75
+offset_bottom = 91.25
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_xbayy")
+
+[node name="Button" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -28.0
+offset_right = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+shortcut = SubResource("Shortcut_87w4j")
+texture_normal = ExtResource("3_lq0el")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.75
+offset_top = 28.25
+offset_right = -36.75
+offset_bottom = -31.25
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial Text"
+label_settings = SubResource("LabelSettings_k2n6q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContentImage" type="TextureRect" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_k2n6q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Header" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.5
+offset_right = 148.5
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_lq0el")
+horizontal_alignment = 1
+vertical_alignment = 1
