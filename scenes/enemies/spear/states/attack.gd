@@ -15,6 +15,7 @@ func _enter() -> void:
 	# trượt theo hướng mặt với tốc độ attack_speed
 	obj.velocity.x = obj.direction * obj.attack_speed
 	
+	await get_tree().create_timer(0.7).timeout
 	# bật collision của HitArea2d
 	var hit_area := obj.get_node("Direction/HitArea2D") as Area2D
 	if hit_area:
