@@ -54,9 +54,6 @@ var piority_invul = false
 # power up
 var decorator_manager: DecoratorManager = null
 
-# dialogue
-var is_dialogue_active: bool = false
-
 # === SETUP PLAYER ===
 func _ready() -> void:
 	add_to_group("player")
