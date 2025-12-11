@@ -8,6 +8,7 @@ var _factory:  Node2DFactory
 var cannon : RigidBody2D
 
 func _update(_delta: float) -> void:
+	obj.velocity.x=0
 	if not anim.animation_finished.is_connected(_on_anim_done):
 		anim.animation_finished.connect(_on_anim_done)
 func _on_anim_done():

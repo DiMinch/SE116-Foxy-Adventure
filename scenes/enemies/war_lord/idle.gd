@@ -3,12 +3,20 @@ const MapScene = "Stage"
 const strPlayer = "Player"
 var is_left: bool = true
 var player: Player
+
 func _enter() -> void:
 	obj.change_animation("idle")
 var dem :int =1
 
-
+func set_ready_atk():
+	await get_tree().create_timer(0.2).timeout
+	obj.is_being_hurt =false
+	
 func _update(_delta: float) -> void:
+	if obj.is_being_hurt==true:
+		set_ready_atk()
+		
+	obj.velocity.x=0
 	var stage := find_parent(MapScene)
 	if stage == null:
 		return
@@ -24,7 +32,7 @@ func _update(_delta: float) -> void:
 	var dx: float = abs(to_player.x)
 	var dy: float = abs(to_player.y)
 	# player nằm trong “hộp” 200 x 150 quanh native thì cho attack
-	if dx <= obj.sight and dy <=40 :
+	if dx <= obj.sight and dy <=40 and obj.is_being_hurt==false:
 		
 		#print(">>> CHANGE TO ATTACK, dx=", dx, " dy=", dy)  # debug xem có chạy vào không
 		if is_opposite()==false and obj.is_in_attack_range==false:

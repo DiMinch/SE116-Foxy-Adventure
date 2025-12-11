@@ -13,14 +13,14 @@ var _initialized := false
 var _is_exploding := false
 var _last_speed_x: float = 0.0               # lưu speed.x frame trước để so sánh
 
-var attack_damage := 1
+
 
 # Hàm này được gọi ngay sau khi factory tạo viên đạn
 func setup(direction: int, range: float, speed: float) -> void:
 	_direction = direction
 	if _direction == 0:
 		_direction = 1
-
+	
 	attack_range = max(range, 0.0)
 	initial_speed = speed
 
@@ -93,6 +93,4 @@ func explode() -> void:
 func _on_body_entered(body: Node) -> void:
 	# chạm player => trừ máu + nổ
 	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
-			body.take_damage(attack_damage)
 		explode()

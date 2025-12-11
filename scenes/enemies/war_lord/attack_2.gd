@@ -1,7 +1,7 @@
 extends EnemyState
 
 @export var rocket_scene: Node2DFactory    # gán rocket.tscn ở Inspector
-@export var d: float = 150                 # khoảng cách từ war_lord tới điểm rơi
+@export var d: float = 100                 # khoảng cách từ war_lord tới điểm rơi
 	  # độ cao đỉnh quỹ đạo (gửi cho rocket.gd nếu cần)
 var _anim: AnimatedSprite2D
 
@@ -53,3 +53,5 @@ func _on_attack_finished() -> void:
 		change_state(fsm.states.takearest)
 	else:
 		change_state(fsm.states.idle)
+func _update(_delta: float) -> void:
+	obj.velocity.x=0

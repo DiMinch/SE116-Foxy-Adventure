@@ -1,11 +1,12 @@
 extends EnemyState
 
 func _enter():
-	obj.velocity.x=0
+	obj.is_being_hurt=true
 	obj.change_animation("hurt")
-	timer = 0.5
+	timer = 1
 
 func _update(delta:float):
+	obj.velocity.x=0
 	if update_timer(delta):
 		if obj.health <= 0:
 			obj.queue_free()

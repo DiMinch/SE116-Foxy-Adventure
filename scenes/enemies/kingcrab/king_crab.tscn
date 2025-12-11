@@ -124,7 +124,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_lkis0")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -220,7 +220,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_m1q8g")
-animation = &"stop"
+animation = &"hurt"
 flip_h = true
 
 [node name="States" type="Node" parent="."]

@@ -13,12 +13,14 @@ radius = 9.0
 contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1_7ebuv")
+attack_damage = null
+movement_speed = null
 
-[node name="HitArea2d" parent="." instance=ExtResource("2_1tf80")]
-collision_layer = 32
+[node name="HitArea2D" parent="." instance=ExtResource("2_1tf80")]
+collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 shape = SubResource("CircleShape2D_qbxd8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

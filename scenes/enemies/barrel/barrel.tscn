@@ -96,7 +96,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("12_jgjiv")]
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(0, 6)

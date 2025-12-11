@@ -1,4 +1,6 @@
 extends EnemyCharacter
+@onready var start_detect_player=false
+@onready var is_being_hurt=false
 @onready var bullet_factory := $Direction/Node2DFactory
 @onready var is_atk1=true
 func _ready() -> void:

@@ -82,7 +82,7 @@ target_position = Vector2(0, 15)
 
 [node name="HitArea2D" parent="Direction" instance=ExtResource("7_dhdpt")]
 position = Vector2(2, 0)
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
@@ -92,7 +92,7 @@ shape = SubResource("RectangleShape2D_1d2yd")
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("8_b1gr1")]
 position = Vector2(2, 0)
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-3, 0)

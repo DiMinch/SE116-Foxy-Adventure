@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d2tphol6b0v3i"]
+[gd_scene load_steps=34 format=3 uid="uid://d2tphol6b0v3i"]
 
 [ext_resource type="Script" uid="uid://c05atp35nvj5i" path="res://scenes/enemies/war_lord/war_lord.gd" id="1_rpkv1"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="2_fr1tk"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://blcg7b2jnrtle" path="res://scenes/enemies/war_lord/rocket.tscn" id="24_ydjlh"]
 [ext_resource type="Script" uid="uid://n2xvqb7b3tby" path="res://scenes/enemies/war_lord/attack_2.gd" id="25_0uu44"]
 [ext_resource type="Script" uid="uid://btr78r0fwqi36" path="res://scenes/enemies/war_lord/take_a_rest.gd" id="26_xw8x2"]
+[ext_resource type="Script" uid="uid://b5c0gfh2aplfv" path="res://scenes/enemies/war_lord/hurt.gd" id="29_ydjlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpkv1"]
 size = Vector2(74, 68)
@@ -93,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_716cy")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -122,29 +123,29 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="Direction" type="Node2D" parent="."]
 
-[node name="HitArea2d" parent="Direction" instance=ExtResource("2_fr1tk")]
-collision_layer = 32
+[node name="HitArea2D" parent="Direction" instance=ExtResource("2_fr1tk")]
+collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
 position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_rpkv1")
 
-[node name="HurtArea2d" parent="Direction" instance=ExtResource("3_exaui")]
+[node name="HurtArea2D" parent="Direction" instance=ExtResource("3_exaui")]
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_fr1tk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_34fud")
-animation = &"atk1"
+animation = &"hurt"
 flip_h = true
 
 [node name="Node2DFactory" type="Marker2D" parent="Direction"]
-position = Vector2(33, -20)
+position = Vector2(33, -4)
 script = ExtResource("22_vuscy")
 product_packed_scene = ExtResource("23_exaui")
 target_container_name = &"Bullets"
@@ -173,6 +174,11 @@ script = ExtResource("25_0uu44")
 [node name="TakeARest" type="Node" parent="States"]
 script = ExtResource("26_xw8x2")
 
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("29_ydjlh")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_exaui")
+
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

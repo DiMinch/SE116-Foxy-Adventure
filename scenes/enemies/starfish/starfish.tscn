@@ -110,7 +110,7 @@ collide_with_areas = true
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("13_pk7g6")]
 position = Vector2(2, 0)
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-2.5, -0.5)
@@ -118,7 +118,7 @@ shape = SubResource("RectangleShape2D_og618")
 
 [node name="HitArea2D" parent="Direction" instance=ExtResource("14_a711p")]
 position = Vector2(2, 0)
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]

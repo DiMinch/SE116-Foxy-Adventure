@@ -35,7 +35,7 @@ collision_layer = 256
 script = ExtResource("1_hh50g")
 
 [node name="HitArea2d" parent="." instance=ExtResource("2_0h6ds")]
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2d"]

@@ -13,14 +13,12 @@ var _active: bool = false
 var _exploded: bool = false
 var _life: float = 0.0
 var _last_pos: Vector2
-var attack_damage=1
 
 func setup(start: Vector2, target: Vector2, time: float = -1.0,max_travel_time:float=-1.0,default_travel_time:float=-1.0) -> void:
 	_start_pos = start
 	_target_pos = target
 	global_position = start
 	_last_pos = start
-
 	if time > 0.0:
 		travel_time = clamp(time, min_travel_time, max_travel_time)
 	else:
@@ -92,9 +90,6 @@ func _on_HitArea2d_area_entered(_area: Area2D) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("hu2hu")
-		if body.has_method("take_damage"):
-			body.take_damage(attack_damage)
 		explode()
 	if body is TileMapLayer:
 		explode()

@@ -6,6 +6,7 @@ func _enter() -> void:
 	obj.change_animation("idle")
 
 func _update(_delta: float) -> void:
+	obj.velocity.x=0
 	timer2+=_delta
 	if timer2>=2:
 		change_state(fsm.states.idle)
