@@ -63,7 +63,7 @@ animation = &"jump_atk"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(0, -12)
 sprite_frames = ExtResource("3_i1nod")
-animation = &"jump"
+animation = &"hurt"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
 position = Vector2(1, 0)

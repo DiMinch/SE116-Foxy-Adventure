@@ -13,8 +13,10 @@ var return_force: float = 800.0
 var current_damage: int = 0
 var travel_speed: float = 0.0
 var start_position: Vector2
+var rotation_speed = 50.0
 @onready var hitbox = $HitArea2D
 @onready var effect_scene: PackedScene
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	contact_monitor = true
@@ -23,6 +25,8 @@ func _ready() -> void:
 		body_entered.connect(_on_body_entered)
 
 func _physics_process(_delta: float) -> void:
+	sprite.rotation += rotation_speed * _delta
+	
 	if current_state == State.OUTBOUND:
 		if start_position.distance_to(global_position) >= max_range:
 			current_state = State.RETURNING
@@ -32,9 +36,7 @@ func _physics_process(_delta: float) -> void:
 	elif current_state == State.RETURNING:
 		if is_instance_valid(player_target):
 			var dir = (player_target.global_position - global_position).normalized()
-			
 			var return_speed = travel_speed * 1.2
-			
 			linear_velocity = dir * return_speed
 			
 			gravity_scale = 0
