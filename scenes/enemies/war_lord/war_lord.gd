@@ -4,10 +4,14 @@ extends EnemyCharacter
 @onready var is_short=true
 @onready var is_take_a_rest=false
 @onready var is_being_hurt=false
+
+
+@onready var hp_bar = $EnemyHpBarBoss
+
 func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Idle)
 	#enemy_type = "Starfish"
-	enemy_type = "WarLord"
+	enemy_type = "WarLord"	
 	super._ready()
 
 

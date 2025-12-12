@@ -4,6 +4,7 @@ extends EnemyState
 var shoot_timer: float = 0.0
 
 func _enter() -> void:
+	obj.velocity.x=0
 	obj.change_animation("shoot")
 	shoot_timer = shoot_delay
 	timer = 0.5

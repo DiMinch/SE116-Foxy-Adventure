@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d2tphol6b0v3i"]
+[gd_scene load_steps=35 format=3 uid="uid://d2tphol6b0v3i"]
 
 [ext_resource type="Script" uid="uid://c05atp35nvj5i" path="res://scenes/enemies/war_lord/war_lord.gd" id="1_rpkv1"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="2_fr1tk"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://n2xvqb7b3tby" path="res://scenes/enemies/war_lord/attack_2.gd" id="25_0uu44"]
 [ext_resource type="Script" uid="uid://btr78r0fwqi36" path="res://scenes/enemies/war_lord/take_a_rest.gd" id="26_xw8x2"]
 [ext_resource type="Script" uid="uid://b5c0gfh2aplfv" path="res://scenes/enemies/war_lord/hurt.gd" id="29_ydjlh"]
+[ext_resource type="PackedScene" uid="uid://ckyiea5px3h2f" path="res://scenes/HP_UI/hp_boss/EnemyHpBar_Boss.tscn" id="30_vw3hj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpkv1"]
 size = Vector2(74, 68)
@@ -180,5 +181,7 @@ script = ExtResource("29_ydjlh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_exaui")
+
+[node name="EnemyHpBarBoss" parent="." instance=ExtResource("30_vw3hj")]
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

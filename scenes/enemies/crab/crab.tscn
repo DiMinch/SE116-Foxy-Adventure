@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://pe3jgo1h8wlq"]
+[gd_scene load_steps=17 format=3 uid="uid://pe3jgo1h8wlq"]
 
 [ext_resource type="Script" uid="uid://crwnv5esc6llw" path="res://scenes/enemies/crab/crab.gd" id="1_ep1gc"]
 [ext_resource type="Texture2D" uid="uid://bheixrcxv5gb4" path="res://assets/monsters/crab/crab_hurt_01.png" id="2_ewkck"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b7g18r857thhi" path="res://scenes/enemies/states/run.gd" id="8_phqbf"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="11_0ud0h"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="12_0ud0h"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="12_novun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gen76"]
 size = Vector2(29, 17)
@@ -108,6 +109,8 @@ script = ExtResource("11_0ud0h")
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("12_0ud0h")
+
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("12_novun")]
 
 [connection signal="hitted" from="Direction/HitArea2D" to="." method="_on_hit_area_2d_hitted"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

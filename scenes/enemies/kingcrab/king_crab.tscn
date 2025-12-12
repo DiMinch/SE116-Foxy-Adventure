@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ver0k38lhd7w"]
+[gd_scene load_steps=46 format=3 uid="uid://ver0k38lhd7w"]
 
 [ext_resource type="Script" uid="uid://b2dh4rj4qjpqx" path="res://scenes/enemies/kingcrab/king_crab.gd" id="1_c8775"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="2_kr8ue"]
@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://jorvdg3y5vkq" path="res://scenes/enemies/kingcrab/attack_2.gd" id="37_mwfls"]
 [ext_resource type="Script" uid="uid://cxruauux0kmh4" path="res://scenes/enemies/kingcrab/return_pincers.gd" id="38_2feml"]
 [ext_resource type="Script" uid="uid://eufv41r71kwi" path="res://scenes/enemies/kingcrab/dizzy.gd" id="39_0ujdg"]
+[ext_resource type="PackedScene" uid="uid://ckyiea5px3h2f" path="res://scenes/HP_UI/hp_boss/EnemyHpBar_Boss.tscn" id="41_i82pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb8qc"]
 size = Vector2(98, 50)
@@ -246,5 +247,7 @@ script = ExtResource("39_0ujdg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 2)
 shape = SubResource("RectangleShape2D_h6iq2")
+
+[node name="EnemyHpBarBoss" parent="." instance=ExtResource("41_i82pq")]
 
 [connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
