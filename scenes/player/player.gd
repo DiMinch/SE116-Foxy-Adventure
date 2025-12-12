@@ -48,6 +48,8 @@ var can_wall_move: bool = false
 var can_invulnerable: bool = false
 var de_cooldown: float = 1
 var time_invul: float = 0
+var current_ulti_cooldown_weapon1: float = 0
+var current_ulti_cooldown_weapon2: float = 0
 var current_time_invul: float = 0
 var piority_invul = false
 
@@ -88,8 +90,14 @@ func _process(delta: float) -> void:
 	else:
 		piority_invul = false
 
-	if current_ulti_cooldown > 0:
-		current_ulti_cooldown -= delta
+	if current_ulti_cooldown_weapon1 > 0:
+		current_ulti_cooldown_weapon1 -= delta
+	if current_ulti_cooldown_weapon2 > 0:
+		current_ulti_cooldown_weapon2 -= delta
+	if current_slot_index:
+		current_ulti_cooldown = current_ulti_cooldown_weapon1
+	else:
+		current_ulti_cooldown = current_ulti_cooldown_weapon2
 
 # INIT STATS
 func _init_stats():

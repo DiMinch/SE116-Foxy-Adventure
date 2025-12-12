@@ -9,6 +9,8 @@ class_name Shuriken
 var start_position: Vector2
 var current_damage: int = 0
 var travel_speed: float = 0.0
+var rotation_speed = 50.0
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	contact_monitor = true
@@ -28,6 +30,9 @@ func setup(direction: Vector2, speed: float, damage: int, _max_range: int, effec
 	start_position = global_position
 
 func _physics_process(_delta: float) -> void:
+	sprite.rotation += rotation_speed * _delta
+	if travel_speed != 0:
+		linear_velocity = linear_velocity.normalized() * travel_speed
 	if start_position.distance_to(global_position) >= max_range:
 		queue_free()
 

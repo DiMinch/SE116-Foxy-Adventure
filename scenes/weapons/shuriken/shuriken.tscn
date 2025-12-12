@@ -1,24 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cltyfnoum75uu"]
+[gd_scene load_steps=7 format=3 uid="uid://cltyfnoum75uu"]
 
 [ext_resource type="Script" uid="uid://d2eh1wtyt67vo" path="res://scenes/weapons/shuriken/shuriken.gd" id="1_inshv"]
-[ext_resource type="Texture2D" uid="uid://dd2xrx7wcdk8o" path="res://assets/weapons/shuriken/shuriken.png" id="2_ekp6a"]
 [ext_resource type="Script" uid="uid://cwad6p4ebrsex" path="res://scripts/collision/hit_area_2d.gd" id="2_inshv"]
+[ext_resource type="Texture2D" uid="uid://bqx6l27djxf18" path="res://assets/weapons/shuriken/shuriken_small.png" id="3_51xcp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u8f5w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_inshv"]
 radius = 4.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ekp6a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ekp6a")
-}],
-"loop": true,
-"name": &"throw",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8f5w"]
 radius = 4.0
@@ -33,11 +22,6 @@ script = ExtResource("1_inshv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_inshv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
-sprite_frames = SubResource("SpriteFrames_ekp6a")
-animation = &"throw"
-
 [node name="HitArea2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 17
@@ -46,6 +30,9 @@ metadata/_custom_type_script = "uid://cwad6p4ebrsex"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 shape = SubResource("CircleShape2D_u8f5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_51xcp")
 
 [connection signal="body_entered" from="HitArea2D" to="." method="_on_body_entered"]
 [connection signal="hitted" from="HitArea2D" to="." method="_on_hit_area_2d_hitted"]
