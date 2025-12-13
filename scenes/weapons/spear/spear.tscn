@@ -51,7 +51,7 @@ shape = SubResource("CircleShape2D_g3xqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3c0c3")
-frame_progress = 0.66566545
+frame_progress = 0.665665
 
 [node name="HitArea2D" parent="." instance=ExtResource("12_4h2li")]
 collision_layer = 0

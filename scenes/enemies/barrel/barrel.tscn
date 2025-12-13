@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://86tw5wmdnbc4"]
+[gd_scene load_steps=22 format=3 uid="uid://86tw5wmdnbc4"]
 
 [ext_resource type="Script" uid="uid://ju1egbeufwdo" path="res://scenes/enemies/barrel/barrel.gd" id="1_ytd36"]
 [ext_resource type="Texture2D" uid="uid://ch0hp25m7evv1" path="res://assets/monsters/barrel/barrel_hurt_01.png" id="2_5r3rq"]
@@ -15,8 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="12_jgjiv"]
 [ext_resource type="Script" uid="uid://drghr3ycqml5q" path="res://scenes/enemies/barrel/states/idle.gd" id="13_7dgof"]
 [ext_resource type="Script" uid="uid://cl23eidiikdgv" path="res://scenes/enemies/barrel/states/shoot.gd" id="14_tofd5"]
-[ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="16_igiyw"]
+[ext_resource type="Script" uid="uid://diwib3136kdvi" path="res://scenes/enemies/barrel/states/hurt.gd" id="16_cx43u"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="17_cx43u"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_sq6do"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72a2k"]
 animations = [{
@@ -96,7 +97,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("12_jgjiv")]
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(0, 6)
@@ -115,10 +116,12 @@ script = ExtResource("13_7dgof")
 script = ExtResource("14_tofd5")
 
 [node name="Hurt" type="Node" parent="States"]
-script = ExtResource("16_igiyw")
+script = ExtResource("16_cx43u")
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("17_cx43u")
 metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
+
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("18_sq6do")]
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

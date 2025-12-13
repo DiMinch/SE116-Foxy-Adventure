@@ -3,7 +3,8 @@ extends BaseCharacter
 
 #bien xu ly Dash, Block, double_jump, slide on wall, jump on wall
 @export var is_count_down_dash = true 
-@export var is_count_down_block = true 
+@export var is_count_down_block = true
+@export var current_ulti_cooldown: float = 0.0 
 @export var WALL_SLIDE_SPEED = 20
 @export var speed_push = 150
 @export var is_push_out_wall = false
@@ -16,6 +17,7 @@ extends BaseCharacter
 @onready var melee_hitbox = $Direction/HitArea2D
 @onready var blade_shape = $Direction/HitArea2D/Blade
 @onready var spear_shape = $Direction/HitArea2D/Spear
+@onready var spear_ulti_shape = $Direction/HitArea2D/SpearUlti
 
 var timer_dash = 10
 var ok_tmp_dash = true
@@ -43,9 +45,19 @@ var current_jumps: int = 0
 var can_block: bool = false
 var can_dash: bool = false
 var can_wall_move: bool = false
+var can_invulnerable: bool = false
+var de_cooldown: float = 1
+var time_invul: float = 0
+var current_ulti_cooldown_weapon1: float = 0
+var current_ulti_cooldown_weapon2: float = 0
+var current_time_invul: float = 0
+var piority_invul = false
 
 # power up
 var decorator_manager: DecoratorManager = null
+
+# dialogue
+var is_dialogue_active: bool = false
 
 # === SETUP PLAYER ===
 func _ready() -> void:
@@ -71,6 +83,22 @@ func _ready() -> void:
 	print("Dash: ", can_dash)
 	print("Wall move: ", can_wall_move)
 
+func _process(delta: float) -> void:
+	if !can_invulnerable && current_time_invul > 0:
+		current_time_invul -= delta
+		piority_invul = true
+	else:
+		piority_invul = false
+
+	if current_ulti_cooldown_weapon1 > 0:
+		current_ulti_cooldown_weapon1 -= delta
+	if current_ulti_cooldown_weapon2 > 0:
+		current_ulti_cooldown_weapon2 -= delta
+	if current_slot_index:
+		current_ulti_cooldown = current_ulti_cooldown_weapon1
+	else:
+		current_ulti_cooldown = current_ulti_cooldown_weapon2
+
 # INIT STATS
 func _init_stats():
 	stats.load_from_dict(StatsManager.get_player_stats())
@@ -91,6 +119,14 @@ func update_abilities() -> void:
 	can_block = PlayerData.has_skill("block")
 	can_dash = PlayerData.has_skill("dash")
 	can_wall_move = PlayerData.has_skill("wall_movement")
+	if PlayerData.has_skill("invulnerable"):
+		time_invul = PlayerData.skills_data["invulnerable"].invul_bonus
+		can_invulnerable = true
+		current_time_invul = time_invul
+	if PlayerData.has_skill("cooldown"):
+		print(PlayerData.skills_data)
+		var skill_data = PlayerData.skills_data["cooldown"]
+		de_cooldown = skill_data.de_cooldown
 
 func load_loadout_from_names(weapon_names: Array):
 	for i in range(2):
@@ -199,7 +235,7 @@ func _check_fall_damage() -> void:
 
 # === COLLISIONS
 func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
-	if is_invulnerable:
+	if is_invulnerable || piority_invul:
 		return
 	fsm.current_state.take_damage(_damage)
 
@@ -281,6 +317,7 @@ func _update_hitbox(data_weapon: MeleeData) -> void:
 	melee_hitbox.set_basic_damage(data_weapon.attack)
 	melee_hitbox.set_damage_by_basic(data_weapon.passivebasic)
 	melee_hitbox.set_damage_by_plus(data_weapon.passiveplus)
+	melee_hitbox.set_damage()
 
 # === STATE MANAGER ===
 func save_state() -> Dictionary:

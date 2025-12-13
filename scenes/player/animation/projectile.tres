@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://dk0y0uvfxxyhn"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://dk0y0uvfxxyhn"]
 
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_atk_1.png" id="1_rgwtm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_atk_2.png" id="2_miafx"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bhk4wpsbf5t6l" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_defeat_2.png" id="8_fkasp"]
 [ext_resource type="Texture2D" uid="uid://d0geftcs6cm87" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_defeat_3.png" id="9_np5jm"]
 [ext_resource type="Texture2D" uid="uid://cs1jhjrfppan1" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_jump_2.png" id="10_awa6d"]
+[ext_resource type="Texture2D" uid="uid://bji7t7msspykg" path="res://assets/foxy/hp100/fox_hp100/fox_hit_1.png" id="11_hiqc0"]
+[ext_resource type="Texture2D" uid="uid://dod5mglfknodw" path="res://assets/foxy/hp100/fox_hp100/fox_hit_2.png" id="12_rg2so"]
+[ext_resource type="Texture2D" uid="uid://oe5vsqb17c0v" path="res://assets/foxy/hp100/fox_hp100/fox_hit_3.png" id="13_3e6vx"]
 [ext_resource type="Texture2D" uid="uid://4dsxiqa0hyk2" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_jump_1.png" id="13_6ryo6"]
 [ext_resource type="Texture2D" uid="uid://c3k7842sg3rwa" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_idle_1.png" id="14_0i6ry"]
 [ext_resource type="Texture2D" uid="uid://dw4fq8i3e2cwx" path="res://assets/foxy/hp100/fox_hp100_shuriken/fox_idle_2.png" id="15_fl3k7"]
@@ -79,13 +82,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_4834f")
+"texture": ExtResource("11_hiqc0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_fkasp")
+"texture": ExtResource("12_rg2so")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_np5jm")
+"texture": ExtResource("13_3e6vx")
 }],
 "loop": false,
 "name": &"hurt",

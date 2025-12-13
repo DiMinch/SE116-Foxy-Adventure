@@ -6,6 +6,7 @@ func _enter() -> void:
 	AudioManager.play_sound("player_jump")
 
 func _update(_delta: float):
+	control_invulnerable()
 	control_swap_weapon()
 	#Control moving
 	control_moving()

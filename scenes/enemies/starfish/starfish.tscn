@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b38tnnws2v8ub" path="res://scenes/enemies/starfish/states/run.gd" id="15_vyojd"]
 [ext_resource type="Script" uid="uid://cuv7jos77lbga" path="res://scenes/enemies/starfish/states/attack.gd" id="16_6had3"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="17_r5ogx"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_wmhok"]
 [ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="18_wmhok"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eau47"]
@@ -111,7 +112,7 @@ collide_with_areas = true
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("13_pk7g6")]
 position = Vector2(2, 0)
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-2.5, -0.5)
@@ -119,7 +120,7 @@ shape = SubResource("RectangleShape2D_og618")
 
 [node name="HitArea2D" parent="Direction" instance=ExtResource("14_a711p")]
 position = Vector2(2, 0)
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
@@ -146,5 +147,7 @@ stream = ExtResource("18_wmhok")
 max_distance = 300.0
 attenuation = 0.2
 bus = &"SFX"
+
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("18_wmhok")]
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

@@ -1,8 +1,15 @@
 extends EnemyState
-
+var stats_x := -150
+var stats_y := -250
 func _enter():
+	var a=obj.health
+	var b=obj.max_health
+	var target = a*100/b
+	obj.hp_bar.set_hp(target)
 	obj.change_animation("hurt")
-	timer = 0.2
+	obj.velocity.y = stats_y
+	obj.velocity.x = stats_x * -sign(obj.velocity.x)
+	timer = 0.5
 	
 	AudioManager.play_sound("enemy_hurt")
 

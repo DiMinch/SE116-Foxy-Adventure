@@ -38,7 +38,7 @@ func _on_boomerang_finished():
 func set_boomerang(player: Player) -> void:
 	var index = player.weapon_levels[player.current_slot_index]
 	
-	max_range = player.current_weapon_data.range.x
+	max_range = player.current_weapon_data.attack_range.x
 	fly_speed = player.current_weapon_data.fly_speed
 	damage = player.current_weapon_data.attack
 	

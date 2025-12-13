@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cq5q8plfomacm" path="res://assets/monsters/spear/spear_11.png" id="5_unj3c"]
 [ext_resource type="Texture2D" uid="uid://dqjye6ctd0nh0" path="res://assets/monsters/spear/spear_12.png" id="6_jm3be"]
 [ext_resource type="Texture2D" uid="uid://cxf7n1718clnu" path="res://assets/monsters/spear/spear_13.png" id="7_gq0df"]
-[ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="8_jmwy0"]
 [ext_resource type="Texture2D" uid="uid://xphkq75e5dm" path="res://assets/monsters/spear/spear_14.png" id="8_rhi0b"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="9_raun2"]
 [ext_resource type="Texture2D" uid="uid://d2bnpn8u1dp42" path="res://assets/monsters/spear/spear_15.png" id="9_ubhkv"]
@@ -26,10 +25,12 @@
 [ext_resource type="Script" uid="uid://8ppe0mhj6i2v" path="res://scenes/enemies/spear/states/idle.gd" id="22_k3sq8"]
 [ext_resource type="Script" uid="uid://caqbascyww3no" path="res://scenes/enemies/spear/states/run.gd" id="23_q4xu0"]
 [ext_resource type="Script" uid="uid://bc1yimsercqg2" path="res://scenes/enemies/spear/states/attack.gd" id="24_yc6h4"]
+[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/enemies/spear/states/hurt.gd" id="25_ng4rs"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="27_ng4rs"]
 [ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="27_ng4rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8eyj"]
-size = Vector2(13, 30)
+size = Vector2(5, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aey26"]
 animations = [{
@@ -134,10 +135,10 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("2_cwe63")]
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
-position = Vector2(-14.5, 3)
+position = Vector2(-16.5, 3)
 shape = SubResource("RectangleShape2D_o8eyj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
@@ -145,6 +146,7 @@ sprite_frames = SubResource("SpriteFrames_aey26")
 animation = &"attack"
 frame = 1
 frame_progress = 0.016720606
+animation = &"attack"
 
 [node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
 target_position = Vector2(40, 0)
@@ -154,7 +156,7 @@ position = Vector2(19, 0)
 target_position = Vector2(0, 26)
 
 [node name="HitArea2D" parent="Direction" instance=ExtResource("21_g1bps")]
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
@@ -178,7 +180,7 @@ script = ExtResource("23_q4xu0")
 script = ExtResource("24_yc6h4")
 
 [node name="Hurt" type="Node" parent="States"]
-script = ExtResource("8_jmwy0")
+script = ExtResource("25_ng4rs")
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("9_raun2")
@@ -189,5 +191,7 @@ stream = ExtResource("27_ng4rs")
 max_distance = 300.0
 attenuation = 0.2
 bus = &"SFX"
+
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("27_ng4rs")]
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

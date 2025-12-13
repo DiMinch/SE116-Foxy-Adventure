@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c03a3nn75s4pk"]
+[gd_scene load_steps=7 format=3 uid="uid://c03a3nn75s4pk"]
 
 [ext_resource type="Script" uid="uid://idsvs4w27i55" path="res://scenes/weapons/boomerang/boomerang.gd" id="1_qp5wd"]
 [ext_resource type="Script" uid="uid://cwad6p4ebrsex" path="res://scripts/collision/hit_area_2d.gd" id="2_pp6ym"]
@@ -9,17 +9,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0pqu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dbd7v"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hb6sv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_qp5wd")
-}],
-"loop": true,
-"name": &"play",
-"speed": 5.0
-}]
 
 [node name="Boomerang" type="RigidBody2D"]
 collision_layer = 0
@@ -39,6 +28,5 @@ metadata/_custom_type_script = "uid://cwad6p4ebrsex"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 shape = SubResource("CircleShape2D_dbd7v")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_hb6sv")
-animation = &"play"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_qp5wd")

@@ -9,14 +9,24 @@ const UPGRADE_SAVE_FILE = "user://upgrades.dat"
 var player_coins: int = 0
 var unlocked_skills: Dictionary = {}
 var unlocked_weapons: Dictionary = {}
+var skills_data: Dictionary = {}
 var weapon_table: Dictionary = {}
 var current_loadout: Array[String] = ["", ""]
 
 func _ready():
 	_load_all_weapons()
+	_init_skills_data()
 	load_upgrades()
 	# For Alpha Test
 	#generate_full_meta()
+
+func _init_skills_data():
+	var all_skills_resources = load_all_skill_resources()
+	for skill_res in all_skills_resources:
+		if skill_res is SkillData:
+			skills_data[skill_res.skill_id] = skill_res
+	
+	print("Đã cache ", skills_data.size(), " kỹ năng vào bộ nhớ.")
 
 func _load_all_weapons():
 	var dir = DirAccess.open("res://data/weapons")

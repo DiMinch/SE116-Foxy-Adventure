@@ -10,6 +10,7 @@ var is_change = false
 func _enter() -> void:
 	# đứng yên khi attack
 	obj.velocity.x = 0
+	
 	# đổi sang anim tấn công
 	if is_opposite():
 		obj.change_animation("attack")
@@ -17,6 +18,7 @@ func _enter() -> void:
 		is_change = true
 		obj.turn_around()
 		obj.change_animation("attack")
+	
 	# lấy AnimatedSprite2D
 	_anim = obj.get_node("Direction/AnimatedSprite2D") as AnimatedSprite2D
 	
@@ -29,14 +31,26 @@ func _enter() -> void:
 	if not _anim.animation_finished.is_connected(_on_attack_finished):
 		_anim.animation_finished.connect(_on_attack_finished)
 	
-	# NÉM DỪA ĐÚNG 1 LẦN KHI VÀO STATE
-	_throw_coconuts()
+	# 🔹 BẮT ĐẦU ĐẾM 0.2s RỒI MỚI NÉM DỪA
+	_start_throw_after_delay()
 	
 	AudioManager.play_sound("native_attack")
 
 func _update(_delta: float) -> void:
 	# trong lúc attack chỉ đứng yên, KHÔNG ném thêm
 	obj.velocity.x = 0
+
+# 🔹 HÀM MỚI: CHỜ 0.2s RỒI MỚI NÉM
+func _start_throw_after_delay() -> void:
+	await get_tree().create_timer(0.4).timeout
+
+	# state có thể đã bị đổi giữa chừng -> check cho chắc
+	if !is_inside_tree():
+		return
+	if fsm.current_state != self:
+		return
+
+	_throw_coconuts()
 
 func _throw_coconuts() -> void:
 	var factory: Node2D = obj.get_node("Direction/Node2DFactory")
@@ -49,6 +63,7 @@ func _throw_coconuts() -> void:
 	var right = factory.create()
 	right.global_position = spawn_pos
 	right.start_throw(Vector2(1, -0.8), obj.attack_speed, obj.attack_damage)
+	
 	# DỪA BÊN TRÁI
 	var left = factory.create()
 	left.global_position = spawn_pos
@@ -61,7 +76,6 @@ func _on_attack_finished() -> void:
 	change_state(fsm.previous_state)
 
 func is_opposite() -> bool:
-	# lấy player
 	var stage := obj.find_parent(MapScene)
 	if stage == null:
 		return false
@@ -72,9 +86,6 @@ func is_opposite() -> bool:
 	
 	var native_x: float = obj.global_position.x
 	var player_x: float = p.global_position.x
-	# hướng native đang nhìn (1 phải, -1 trái)
 	var looking_dir: float = obj.direction
-	# hướng player nằm (1 phải, -1 trái)
 	var player_dir: float = sign(player_x - native_x)
-	# true nếu native nhìn đúng về phía player
 	return looking_dir == player_dir

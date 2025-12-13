@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw3jmppsq4dnc"]
+
+[ext_resource type="Script" uid="uid://ocdotvp518co" path="res://levels/objects/signpost/sign_post.gd" id="1_wn883"]
+[ext_resource type="Texture2D" uid="uid://pabwu5xq783" path="res://assets/object/post/sign_post.png" id="1_wy04f"]
+[ext_resource type="PackedScene" uid="uid://dhsdd3xkpp8g2" path="res://scripts/collision/interactive_area_2d.tscn" id="2_wn883"]
+[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="4_mcxvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy04f"]
+size = Vector2(23, 21)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wy04f"]
+font = ExtResource("4_mcxvb")
+font_size = 13
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="SignPost" type="Node2D"]
+script = ExtResource("1_wn883")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wy04f")
+
+[node name="InteractiveArea2D" parent="." instance=ExtResource("2_wn883")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea2D"]
+position = Vector2(1.5, 5.5)
+shape = SubResource("RectangleShape2D_wy04f")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = -19.0
+offset_right = 10.0
+offset_bottom = -6.0
+text = "[F]"
+label_settings = SubResource("LabelSettings_wy04f")

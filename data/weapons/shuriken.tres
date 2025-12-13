@@ -1,28 +1,39 @@
-[gd_resource type="Resource" script_class="ShurikenData" load_steps=8 format=3 uid="uid://crvstkxcclwnr"]
+[gd_resource type="Resource" script_class="ShurikenData" load_steps=11 format=3 uid="uid://crvstkxcclwnr"]
 
 [ext_resource type="Script" uid="uid://bqkw8qpye8bk2" path="res://scenes/combats/weapons/attack_shuriken.gd" id="1_j70qi"]
 [ext_resource type="PackedScene" uid="uid://b16dax81btaqy" path="res://scenes/weapons/shuriken/effect/effect_spike.tscn" id="2_e37jy"]
 [ext_resource type="PackedScene" uid="uid://cltyfnoum75uu" path="res://scenes/weapons/shuriken/shuriken.tscn" id="2_j70qi"]
+[ext_resource type="Script" uid="uid://brnv7yamgo6ug" path="res://scenes/combats/weapons/ulti/shuriken_ulti.gd" id="2_jk2w8"]
 [ext_resource type="Script" uid="uid://3klmka3qldx1" path="res://scripts/systems/weapons/projectile.gd" id="3_e37jy"]
 [ext_resource type="Texture2D" uid="uid://dd2xrx7wcdk8o" path="res://assets/weapons/shuriken/shuriken.png" id="3_jk2w8"]
 [ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/projectile.tres" id="6_e37jy"]
+[ext_resource type="Resource" uid="uid://b2od6q6vnb66s" path="res://data/ultis/ShurikenUlti.tres" id="8_cd7oh"]
 
 [sub_resource type="Resource" id="Resource_e37jy"]
 script = ExtResource("1_j70qi")
 speed = 200
 damage = 50
+max_range = 0
 metadata/_custom_type_script = "uid://bqkw8qpye8bk2"
+
+[sub_resource type="Resource" id="Resource_cd7oh"]
+script = ExtResource("2_jk2w8")
+metadata/_custom_type_script = "uid://brnv7yamgo6ug"
 
 [resource]
 script = ExtResource("3_e37jy")
 spread_angles = Array[int]([15, 0, -15])
 effect_bpassive = ExtResource("2_e37jy")
 projectile_scene = ExtResource("2_j70qi")
+attack_passive = 0
+fly_speed_passive = 0
+ultidata = ExtResource("8_cd7oh")
 weapon_name = "Shuriken"
 icon = ExtResource("3_jk2w8")
 attack = 50
+attack_range = Vector2(300, 0)
 attack_speed = 120
-fly_speed = 200
+fly_speed = 400
 type = "W"
 type_method_attack = "shuriken"
 passive = "Shuriken trúng enemy tạo gai:
@@ -36,4 +47,5 @@ ultimate_range = Vector2(300, 50)
 timer = 3
 skin = ExtResource("6_e37jy")
 attack_behavior = SubResource("Resource_e37jy")
+attack_ulti = SubResource("Resource_cd7oh")
 metadata/_custom_type_script = "uid://3klmka3qldx1"

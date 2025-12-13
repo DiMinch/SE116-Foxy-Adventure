@@ -17,6 +17,7 @@ var _next_index: int = 0          # đang chờ bắn viên thứ mấy trong fi
 
 
 func _enter() -> void:
+	obj.velocity.x=0
 	obj.change_animation("idle")
 	# chỉ setup lần đầu, không reset khi từ Shoot quay lại
 	if not _initialized:

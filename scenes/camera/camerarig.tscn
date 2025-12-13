@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://tl36e8swlx70"]
+
+[ext_resource type="Script" uid="uid://cjlwcn1beholo" path="res://scenes/camera/camerarig.gd" id="1_26l2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdjp8"]
+size = Vector2(478, 269)
+
+[node name="Camerarig" type="CharacterBody2D"]
+collision_layer = 512
+collision_mask = 1024
+script = ExtResource("1_26l2j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_vdjp8")

@@ -2,6 +2,7 @@ extends Node2D
 class_name Stage
 
 @onready var turn_back_button = $CanvasLayer/TurnBack
+var is_ambient_dialogue: bool = false
 
 @export var level_music: AudioStream
 @export var boss_music: AudioStream
@@ -20,6 +21,8 @@ func _ready() -> void:
 	if GameManager.respawn_at_checkpoint():
 		return
 	GameManager.respawn_at_begin()
+	Dialogic.timeline_started.connect(_on_timeline_started)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	if MusicManager:
 		MusicManager.play_music(level_music)
@@ -31,3 +34,19 @@ func fade_in_screen() -> void:
 
 func _on_turn_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/game_screen/select_level_screen.tscn")
+
+func _on_timeline_started():
+	if GameManager.player and not is_ambient_dialogue:
+		GameManager.player.is_dialogue_active = true
+		GameManager.player.velocity = Vector2.ZERO
+		GameManager.player.change_animation("idle")
+		
+		# Tùy chọn: Tạm thời vô hiệu hóa input Space của Dialogic để tránh lỗi trùng input
+		# (Dialogic có cơ chế riêng, nhưng nếu muốn an toàn tuyệt đối thì tạm vô hiệu hóa)
+		# Dialogic.Input.input_actions.erase("ui_accept") 
+		
+func _on_timeline_ended():
+	if GameManager.player:
+		GameManager.player.is_dialogue_active = false
+	
+	is_ambient_dialogue = false
