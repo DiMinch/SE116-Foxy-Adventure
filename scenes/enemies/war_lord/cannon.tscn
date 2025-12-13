@@ -64,11 +64,11 @@ sprite_frames = SubResource("SpriteFrames_f0xl1")
 frame = 6
 frame_progress = 1.0
 
-[node name="HitArea2d" parent="." instance=ExtResource("10_y15qf")]
-collision_layer = 32
+[node name="HitArea2D" parent="." instance=ExtResource("10_y15qf")]
+collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 shape = SubResource("CircleShape2D_vnqtb")
 disabled = true
 

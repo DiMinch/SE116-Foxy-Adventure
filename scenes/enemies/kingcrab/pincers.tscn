@@ -34,11 +34,11 @@ size = Vector2(48, 24)
 collision_layer = 256
 script = ExtResource("1_hh50g")
 
-[node name="HitArea2d" parent="." instance=ExtResource("2_0h6ds")]
+[node name="HitArea2D" parent="." instance=ExtResource("2_0h6ds")]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 position = Vector2(-0.5, -3.5)
 shape = SubResource("RectangleShape2D_btegu")
 
@@ -49,3 +49,5 @@ animation = &"return"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_2gwqt")
+
+[connection signal="hitted" from="HitArea2D" to="." method="_on_hit_area_2d_hitted"]

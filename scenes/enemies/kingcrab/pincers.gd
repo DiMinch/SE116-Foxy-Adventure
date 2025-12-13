@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var speed: float = 400
-
+@onready var Hit =$HitArea2D
 var start_pos: Vector2
 var target_pos: Vector2
 var owner_crab: Node2D          # Con king_crab
@@ -12,7 +12,8 @@ var going_out: bool = true      # true: đang bay ra, false: đang bay về
 var timer =0.0
 var ok=false
 # Hàm này sẽ được gọi từ attack_2.gd
-func setup(start: Vector2, target: Vector2, crab: Node2D, custom_speed: float = -1.0) -> void:
+func setup(start: Vector2, target: Vector2, crab: Node2D, custom_speed: float = -1.0, attack_damage:float=-1) -> void:
+	Hit.damage=attack_damage
 	start_pos = start
 	target_pos = target
 	owner_crab = crab
@@ -84,3 +85,22 @@ func _update_flip() -> void:
 	# Nếu đang bay sang trái (x < 0) thì lật; sang phải thì bỏ lật
 	if linear_velocity.x != 0.0:
 		anim.flip_h = linear_velocity.x > 0.0
+
+
+func _on_hit_area_2d_hitted(area: Variant) -> void:
+	shake()
+	pass # Replace with function body.
+
+
+const MapScene = "Stage"
+const strCamera = "Camerarig"
+var is_left: bool = true
+var camera: CharacterBody2D
+func shake():
+	var stage := find_parent(MapScene)
+	if stage == null:
+		return
+	camera = stage.find_child(strCamera) as CharacterBody2D
+	if camera == null or not is_instance_valid(camera):
+		return
+	camera.shake_ground(0.2,20)

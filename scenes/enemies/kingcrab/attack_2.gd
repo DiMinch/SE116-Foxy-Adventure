@@ -23,7 +23,7 @@ func _enter() -> void:
 
 	pincers.global_position = start_pos
 	
-	pincers.setup(start_pos, target_pos, obj, pincers_speed)
+	pincers.setup(start_pos, target_pos, obj, pincers_speed, obj.attack_damage)
 
 	# Chỉ xử lý animation + đổi state bằng coroutine riêng
 	_do_attack_sequence()

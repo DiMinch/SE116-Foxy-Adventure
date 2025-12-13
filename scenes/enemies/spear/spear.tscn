@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cq5q8plfomacm" path="res://assets/monsters/spear/spear_11.png" id="5_unj3c"]
 [ext_resource type="Texture2D" uid="uid://dqjye6ctd0nh0" path="res://assets/monsters/spear/spear_12.png" id="6_jm3be"]
 [ext_resource type="Texture2D" uid="uid://cxf7n1718clnu" path="res://assets/monsters/spear/spear_13.png" id="7_gq0df"]
-[ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="8_jmwy0"]
 [ext_resource type="Texture2D" uid="uid://xphkq75e5dm" path="res://assets/monsters/spear/spear_14.png" id="8_rhi0b"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="9_raun2"]
 [ext_resource type="Texture2D" uid="uid://d2bnpn8u1dp42" path="res://assets/monsters/spear/spear_15.png" id="9_ubhkv"]
@@ -26,6 +25,7 @@
 [ext_resource type="Script" uid="uid://8ppe0mhj6i2v" path="res://scenes/enemies/spear/states/idle.gd" id="22_k3sq8"]
 [ext_resource type="Script" uid="uid://caqbascyww3no" path="res://scenes/enemies/spear/states/run.gd" id="23_q4xu0"]
 [ext_resource type="Script" uid="uid://bc1yimsercqg2" path="res://scenes/enemies/spear/states/attack.gd" id="24_yc6h4"]
+[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/enemies/spear/hurt.gd" id="25_ng4rs"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="27_ng4rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8eyj"]
@@ -176,7 +176,7 @@ script = ExtResource("23_q4xu0")
 script = ExtResource("24_yc6h4")
 
 [node name="Hurt" type="Node" parent="States"]
-script = ExtResource("8_jmwy0")
+script = ExtResource("25_ng4rs")
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("9_raun2")

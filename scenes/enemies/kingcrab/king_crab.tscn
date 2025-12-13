@@ -188,19 +188,19 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="Direction" type="Node2D" parent="."]
 
-[node name="HitArea2d" parent="Direction" instance=ExtResource("2_kr8ue")]
-collision_layer = 32
+[node name="HitArea2D" parent="Direction" instance=ExtResource("2_kr8ue")]
+collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
 position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_eb8qc")
 
-[node name="HurtArea2d" parent="Direction" instance=ExtResource("3_i82pq")]
+[node name="HurtArea2D" parent="Direction" instance=ExtResource("3_i82pq")]
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_jwgnk")
 
@@ -250,4 +250,4 @@ shape = SubResource("RectangleShape2D_h6iq2")
 
 [node name="EnemyHpBarBoss" parent="." instance=ExtResource("41_i82pq")]
 
-[connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

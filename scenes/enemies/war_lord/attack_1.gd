@@ -23,6 +23,6 @@ func _enter() -> void:
 func _shoot_cannon() -> void:
 	_factory = obj.get_node("Direction/Node2DFactory")
 	cannon = _factory.create() as RigidBody2D
-	cannon.setup(obj.direction, attack_range, cannon_speed)
+	cannon.setup(obj.direction, attack_range, cannon_speed, obj.attack_damage)
 	
 	

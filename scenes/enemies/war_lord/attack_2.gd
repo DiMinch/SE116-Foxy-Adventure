@@ -37,10 +37,10 @@ func _shoot_rockets() -> void:
 		# gợi ý rocket.gd: func setup(start: Vector2, target: Vector2, height: float)
 		if rocket.has_method("setup"):
 			if obj.is_short==true:
-				rocket.call("setup", origin, target,2.5,0.7,0.35)
+				rocket.call("setup", origin, target,2.5,0.7,0.35,obj.attack_damage)
 			else:
 				obj.is_take_a_rest=true
-				rocket.call("setup", origin, target2,2.5,0.8,0.4)	
+				rocket.call("setup", origin, target2,2.5,0.8,0.4,obj.attack_damage)	
 				
 	if obj.is_short==true:
 		obj.is_short=false

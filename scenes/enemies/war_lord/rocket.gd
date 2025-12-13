@@ -5,7 +5,7 @@ extends RigidBody2D
 #export var default_travel_time: float = 0.4
 
 @export var rotation_offset_deg: float = 0.0  # chỉnh cho khớp hướng sprite
-
+@onready var Hit= $HitArea2D
 var travel_time: float = 0.35
 var _start_pos: Vector2
 var _target_pos: Vector2
@@ -14,7 +14,8 @@ var _exploded: bool = false
 var _life: float = 0.0
 var _last_pos: Vector2
 
-func setup(start: Vector2, target: Vector2, time: float = -1.0,max_travel_time:float=-1.0,default_travel_time:float=-1.0) -> void:
+func setup(start: Vector2, target: Vector2, time: float = -1.0,max_travel_time:float=-1.0,default_travel_time:float=-1.0,attack_damage:int=-1) -> void:
+	Hit.damage= attack_damage
 	_start_pos = start
 	_target_pos = target
 	global_position = start
@@ -56,12 +57,13 @@ func _physics_process(delta: float) -> void:
 	
 
 func explode() -> void:
+	shake()
 	if _exploded:
 		return
 	_exploded = true
 	_active = false
-	$HitArea2d/CollisionShape2D.set_deferred("disabled", false)
-	$HitArea2d.monitoring = true 
+	$HitArea2D/CollisionShape2D.set_deferred("disabled", false)
+	$HitArea2D.monitoring = true 
 	#$Sprite2D2.visible = true
 	await get_tree().physics_frame
 
@@ -75,7 +77,7 @@ func explode() -> void:
 	anim.visible=true
 	anim.play("default")
 	await get_tree().create_timer(0.2).timeout
-	$HitArea2d/CollisionShape2D.set_deferred("disabled", true)
+	$HitArea2D/CollisionShape2D.set_deferred("disabled", true)
 	await anim.animation_finished
 	queue_free()
 
@@ -94,3 +96,16 @@ func _on_body_entered(body: Node) -> void:
 	if body is TileMapLayer:
 		explode()
 	return
+
+const MapScene = "Stage"
+const strCamera = "Camerarig"
+var is_left: bool = true
+var camera: CharacterBody2D
+func shake():
+	var stage := find_parent(MapScene)
+	if stage == null:
+		return
+	camera = stage.find_child(strCamera) as CharacterBody2D
+	if camera == null or not is_instance_valid(camera):
+		return
+	camera.shake_ground(0.3,40)
