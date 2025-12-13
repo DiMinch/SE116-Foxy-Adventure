@@ -18,7 +18,7 @@ extends BaseCharacter
 @onready var blade_shape = $Direction/HitArea2D/Blade
 @onready var spear_shape = $Direction/HitArea2D/Spear
 @onready var spear_ulti_shape = $Direction/HitArea2D/SpearUlti
-
+@onready var slash =$Direction/SwordSlash
 var fall_multiplier: float = 1.35
 var low_jump_multiplier = 0.75
 var timer_dash = 10
