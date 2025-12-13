@@ -2,7 +2,7 @@ extends EnemyCharacter
 @onready var hp_bar = $EnemyHpBarMinions
 @onready var bullet_factory := $Direction/BulletFactory
 @export var default_direction: int = -1 # 1 = bắn sang phải, -1 = bắn sang trái
-
+@onready var sprite = $Direction/AnimatedSprite2D
 func _ready() -> void:
 	change_direction(default_direction)
 	fsm = FSM.new(self, $States, $States/Idle)
