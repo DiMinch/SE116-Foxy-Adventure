@@ -33,8 +33,8 @@ font_color = Color(3.65794e-06, 0.504397, 0.504397, 1)
 outline_size = 2
 outline_color = Color(0.821789, 0.821789, 0.821789, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftbm5"]
-bg_color = Color(1, 1, 0.709804, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqab0"]
+bg_color = Color(1, 1, 0.52549, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -49,8 +49,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqab0"]
-bg_color = Color(1, 1, 0.52549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftbm5"]
+bg_color = Color(1, 1, 0.709804, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -229,13 +229,13 @@ offset_right = 48.0
 offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.510256, 0.443869, 1)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.821911, 2.62313e-06, 7.70092e-07, 1)
-theme_override_colors/font_hover_color = Color(1, 0.510256, 0.443869, 1)
 theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxFlat_ftbm5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_34qkg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mqab0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34qkg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftbm5")
 text = "Game Start"
 
 [node name="SkillTree" type="TextureButton" parent="."]

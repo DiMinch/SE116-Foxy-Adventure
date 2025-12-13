@@ -26,15 +26,15 @@
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("1_uteak")
 }, {
-"duration": 1.0,
+"duration": 0.25,
 "texture": ExtResource("2_h74sf")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
