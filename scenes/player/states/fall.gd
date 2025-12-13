@@ -31,6 +31,7 @@ func _update(_delta: float) -> void:
 		obj.velocity.x += obj.speed_push * obj.direction
 	
 	if obj.is_on_floor():
+		AudioManager.play_sound("landing")
 		obj.is_push_out_wall = false
 		obj.current_jumps = 0
 	if obj.is_on_floor() and not is_moving:

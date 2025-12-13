@@ -31,6 +31,8 @@ func _enter() -> void:
 	
 	# NÉM DỪA ĐÚNG 1 LẦN KHI VÀO STATE
 	_throw_coconuts()
+	
+	AudioManager.play_sound("native_attack")
 
 func _update(_delta: float) -> void:
 	# trong lúc attack chỉ đứng yên, KHÔNG ném thêm

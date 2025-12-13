@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://b3lwc2numk16r"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_mxic1"]
+[ext_resource type="AudioStream" uid="uid://d0hld506jlc8r" path="res://assets/audio/sfx/player/player_boomerang.wav" id="2_fl2gi"]
+
+[resource]
+script = ExtResource("1_mxic1")
+clip_id = "player_boomerang"
+stream = ExtResource("2_fl2gi")
+randomize_pitch = true

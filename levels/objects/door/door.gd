@@ -11,6 +11,7 @@ func _ready() -> void:
 	sprite.play("idle")
 
 func _on_interactive_area_2d_interacted() -> void:
+	AudioManager.play_sound("door")
 	await open_and_transition()
 
 func open_and_transition():

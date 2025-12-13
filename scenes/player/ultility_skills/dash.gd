@@ -5,6 +5,7 @@ extends PlayerState
 func _enter() -> void:
 	obj.change_animation('dash')
 	_timer = 0
+	AudioManager.play_sound("player_dash")
 
 func _update(_delta):
 	_timer += _delta

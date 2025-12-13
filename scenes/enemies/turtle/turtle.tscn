@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dn3a7knx6ld0t"]
+[gd_scene load_steps=16 format=3 uid="uid://dn3a7knx6ld0t"]
 
 [ext_resource type="Script" uid="uid://beyfewxe4fg4e" path="res://scenes/enemies/turtle/turtle.gd" id="1_3xsye"]
 [ext_resource type="Texture2D" uid="uid://dlj776gx12cyt" path="res://assets/monsters/turtle/turtle_blue_01.png" id="2_ttgbu"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="9_g5ys5"]
 [ext_resource type="Script" uid="uid://bxgbgd1plvcwq" path="res://scenes/enemies/turtle/states/run.gd" id="10_qbokc"]
 [ext_resource type="Script" uid="uid://doirwlb7sbrbc" path="res://scenes/enemies/turtle/states/into_shell.gd" id="11_r4cnp"]
+[ext_resource type="AudioStream" uid="uid://pdmb75w8l6by" path="res://assets/audio/sfx/enemies/crab_walk.wav" id="12_ertew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rb3tl"]
 animations = [{
@@ -94,3 +95,9 @@ script = ExtResource("10_qbokc")
 
 [node name="IntoShell" type="Node" parent="States"]
 script = ExtResource("11_r4cnp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_ertew")
+max_distance = 300.0
+attenuation = 0.2
+bus = &"SFX"

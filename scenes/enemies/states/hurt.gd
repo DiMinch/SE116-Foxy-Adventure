@@ -3,6 +3,8 @@ extends EnemyState
 func _enter():
 	obj.change_animation("hurt")
 	timer = 0.2
+	
+	AudioManager.play_sound("enemy_hurt")
 
 func _update(delta:float):
 	if update_timer(delta):
