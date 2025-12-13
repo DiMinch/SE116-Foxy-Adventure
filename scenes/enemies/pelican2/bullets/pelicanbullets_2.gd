@@ -1,6 +1,6 @@
 extends RigidBody2D
 @export var attack_damage:int
-
+@onready var Hit= $HitArea2D
 func _ready() -> void:
 	
 	pass
@@ -8,8 +8,6 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
-			body.take_damage(attack_damage)
 		queue_free()
 		return
 	if body is TileMapLayer:
@@ -17,5 +15,5 @@ func _on_body_entered(body: Node) -> void:
 		return
 	queue_free()
 	
-func setup(pelican: Pelican2) -> void:
-	attack_damage = pelican.spike
+func setup(damage :int) -> void:
+	Hit.damage = damage
