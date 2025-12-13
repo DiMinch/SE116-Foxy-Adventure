@@ -52,7 +52,6 @@ shape = SubResource("RectangleShape2D_iqsei")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -52)
-enabled = false
 zoom = Vector2(1.2, 1.2)
 
 [node name="Direction" type="Node2D" parent="."]
