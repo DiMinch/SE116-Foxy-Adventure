@@ -12,7 +12,7 @@ func execute_action(player: Player, weapon_data: WeaponData) -> void:
 	
 	speed = weapon_data.fly_speed
 	damage = weapon_data.attack
-	max_range = int(weapon_data.range.x)
+	max_range = int(weapon_data.attack_range.x)
 	dir = Vector2(player.direction, 0)
 	
 	if player.weapon_levels[player.current_slot_index] == 1:

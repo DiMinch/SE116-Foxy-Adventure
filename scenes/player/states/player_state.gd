@@ -130,7 +130,7 @@ func control_ultimate() -> bool:
 	return false
 
 func control_invulnerable() -> bool:
-	print("Did use: INVULNERABLE")
+	#print("Did use: INVULNERABLE")
 	if Input.is_action_just_pressed(INVULNERABLE) and obj.can_invulnerable:
 		debug_player_skills("INVULNERABLE")
 		obj.can_invulnerable = false

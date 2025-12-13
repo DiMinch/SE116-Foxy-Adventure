@@ -149,6 +149,10 @@ dialogic_default_action={
 2d_physics/layer_7="player_hit"
 2d_physics/layer_8="environment"
 2d_physics/layer_9="bullets"
+2d_physics/layer_10="camera"
+2d_physics/layer_11="block_camera"
+2d_physics/layer_12="camera_raise_zone"
+2d_physics/layer_13="area_camera"
 
 [rendering]
 

@@ -7,20 +7,20 @@ extends RigidBody2D
 @export var sudden_drop_factor: float = 0.35  # % tốc độ còn lại sau va chạm, thấp hơn thì coi là giảm đột ngột
 @export var min_speed_for_drop_check: float = 80.0 # chỉ check “giảm đột ngột” nếu trước đó nhanh hơn ngưỡng này
 
+@onready var Hit= $HitArea2D
 var _start_pos: Vector2
 var _direction: float = 1.0
 var _initialized := false
 var _is_exploding := false
 var _last_speed_x: float = 0.0               # lưu speed.x frame trước để so sánh
 
-var attack_damage := 1
-
 # Hàm này được gọi ngay sau khi factory tạo viên đạn
-func setup(direction: int, range: float, speed: float) -> void:
+func setup(direction: int, range: float, speed: float, attack_damage:int) -> void:
+	Hit.damage=attack_damage
 	_direction = direction
 	if _direction == 0:
 		_direction = 1
-
+	
 	attack_range = max(range, 0.0)
 	initial_speed = speed
 
@@ -71,13 +71,14 @@ func _physics_process(_delta: float) -> void:
 	_last_speed_x = current_speed_x
 
 func explode() -> void:
+	shake()
 	if _is_exploding:
 		return
 	_is_exploding = true
 
 	# Bật hit để gây sát thương trong lúc nổ
-	$HitArea2d/CollisionShape2D.set_deferred("disabled", false)
-	$HitArea2d.monitoring = true 
+	$HitArea2D/CollisionShape2D.set_deferred("disabled", false)
+	$HitArea2D.monitoring = true 
 
 	linear_velocity = Vector2.ZERO
 	sleeping = true
@@ -93,6 +94,19 @@ func explode() -> void:
 func _on_body_entered(body: Node) -> void:
 	# chạm player => trừ máu + nổ
 	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
-			body.take_damage(attack_damage)
 		explode()
+		
+const MapScene = "Stage"
+const strCamera = "Camerarig"
+var is_left: bool = true
+var camera: CharacterBody2D
+func shake():
+	var stage := find_parent(MapScene)
+	if stage == null:
+		return
+	camera = stage.find_child(strCamera) as CharacterBody2D
+	if camera == null or not is_instance_valid(camera):
+		return
+	camera.shake_ground(0.3,40)
+	
+	

@@ -1,5 +1,5 @@
 extends EnemyCharacter
-
+@onready var hp_bar = $EnemyHpBarMinions
 @onready var coconut_factory := $Direction/Node2DFactory
 
 func _ready() -> void:

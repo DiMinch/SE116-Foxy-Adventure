@@ -1,7 +1,10 @@
 extends EnemyCharacter
-@export var bullet_speed:float =300
+class_name Pelican2
+#@export var bullet_speed:float =300
 @onready var bullet_factory := $Direction/BulletFactory
 @export var dem=0
+
+
 func _ready()->void:
 	enemy_type = "Pelican2"
 	fsm=FSM.new(self,$States,$States/Fly)
@@ -10,6 +13,6 @@ func _ready()->void:
 func fire()->void:
 
 	var bullet :=bullet_factory.create() as RigidBody2D
+	bullet.setup(self)       
 	bullet.add_collision_exception_with(self)
-	
 	

@@ -10,7 +10,10 @@ func _update(delta: float) -> void:
 		change_state(fsm.states.idle)
 
 func _exit() -> void:
-	obj.current_ulti_cooldown = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
+	if obj.current_slot_index:
+		obj.current_ulti_cooldown_weapon1 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
+	else:
+		obj.current_ulti_cooldown_weapon2 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
 	obj.is_attack = false
 	obj.is_invulnerable = false
 

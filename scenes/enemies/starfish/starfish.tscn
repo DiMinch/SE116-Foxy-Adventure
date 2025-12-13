@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://xpcinxy6ihd7"]
+[gd_scene load_steps=23 format=3 uid="uid://xpcinxy6ihd7"]
 
 [ext_resource type="Script" uid="uid://b3jvtdck7uc7w" path="res://scenes/enemies/starfish/starfish.gd" id="1_vyojd"]
 [ext_resource type="Texture2D" uid="uid://div7ykrnkcmbm" path="res://assets/monsters/starfish/starfish_atk_01.png" id="2_f84se"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b38tnnws2v8ub" path="res://scenes/enemies/starfish/states/run.gd" id="15_vyojd"]
 [ext_resource type="Script" uid="uid://cuv7jos77lbga" path="res://scenes/enemies/starfish/states/attack.gd" id="16_6had3"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="17_r5ogx"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_wmhok"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eau47"]
 animations = [{
@@ -110,7 +111,7 @@ collide_with_areas = true
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("13_pk7g6")]
 position = Vector2(2, 0)
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-2.5, -0.5)
@@ -118,7 +119,7 @@ shape = SubResource("RectangleShape2D_og618")
 
 [node name="HitArea2D" parent="Direction" instance=ExtResource("14_a711p")]
 position = Vector2(2, 0)
-collision_layer = 32
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
@@ -139,5 +140,7 @@ script = ExtResource("16_6had3")
 
 [node name="Hurt" type="Node" parent="States"]
 script = ExtResource("17_r5ogx")
+
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("18_wmhok")]
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

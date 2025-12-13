@@ -1,7 +1,8 @@
 extends RigidBody2D
-@export var attack_damage=1
-@export var movement_speed: float = 200.0 
+@export var attack_damage:int
+
 func _ready() -> void:
+	
 	pass
 	#linear_velocity = Vector2(0, movement_speed)
 
@@ -15,3 +16,6 @@ func _on_body_entered(body: Node) -> void:
 		queue_free()
 		return
 	queue_free()
+	
+func setup(pelican: Pelican2) -> void:
+	attack_damage = pelican.spike

@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+@onready var Hit =$HitArea2D
 @export var upward_speed: float = 350.0          # lực hất lên cơ bản
 # 3 tham số để điều chỉnh tầm xa
 @export var full_range: float = 600.0            # khoảng cách ngang mà tại đó sẽ dùng buff tối đa
@@ -9,7 +9,7 @@ extends RigidBody2D
 const MapScene = "Stage"
 const strPlayer = "Player"
 
-var attack_damage: int = 0
+
 var player: Player
 
 func _ready() -> void:
@@ -21,7 +21,9 @@ func _ready() -> void:
 # direction: tao chỉ lấy hướng ngang (trái / phải)
 # speed: Attack_Speed
 func start_throw(direction: Vector2, speed: float, damage: int) -> void:
-	attack_damage = damage
+	print("damage",damage)
+	Hit.damage=damage/2
+	print("hit.damage",damage)
 	# nếu không tìm được player thì bắn kiểu cũ (ngang + hất lên)
 	if player == null or not is_instance_valid(player):
 		var dir_x := 1.0 if direction.x >= 0.0 else -1.0
@@ -58,8 +60,6 @@ func start_throw(direction: Vector2, speed: float, damage: int) -> void:
 func _on_body_entered(body: Node) -> void:
 	# chạm player => trừ máu + biến mất
 	if body.is_in_group("player"):
-		if body.has_method("take_damage"):
-			body.take_damage(attack_damage)
 		queue_free()
 		return
 	if body is TileMapLayer:
@@ -71,6 +71,3 @@ func _on_body_entered(body: Node) -> void:
 		queue_free()
 	if body.collision_layer & 1 != 0:
 		queue_free()
-
-func _on_hit_area_2d_hitted(_area: Variant) -> void:
-	queue_free()

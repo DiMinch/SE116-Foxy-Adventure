@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8acnn6gukpq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aftig"]
+
+[node name="BlockerCameraVertical" type="StaticBody2D"]
+scale = Vector2(3.7868874, 3.659236)
+collision_layer = 1024
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.26022294, 2.9921546)
+shape = SubResource("RectangleShape2D_aftig")

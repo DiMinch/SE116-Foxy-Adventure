@@ -1,11 +1,11 @@
-[gd_scene load_steps=45 format=3 uid="uid://ver0k38lhd7w"]
+[gd_scene load_steps=46 format=3 uid="uid://ver0k38lhd7w"]
 
 [ext_resource type="Script" uid="uid://b2dh4rj4qjpqx" path="res://scenes/enemies/kingcrab/king_crab.gd" id="1_c8775"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="2_kr8ue"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="3_i82pq"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="4_p4o0m"]
 [ext_resource type="Texture2D" uid="uid://dd5tmxydty4v6" path="res://assets/boss/King_Crab/King_Crab_5.png" id="5_crj12"]
-[ext_resource type="PackedScene" uid="uid://db8qp0bpl151d" path="res://scenes/enemies/kingcrab/pincers.tscn" id="5_kr8ue"]
+[ext_resource type="PackedScene" uid="uid://db8qp0bpl151d" path="res://scenes/enemies/kingcrab/pincers/pincers.tscn" id="5_kr8ue"]
 [ext_resource type="Texture2D" uid="uid://bcvw8levhpcyk" path="res://assets/boss/King_Crab/King_Crab_6.png" id="6_6bhpj"]
 [ext_resource type="Texture2D" uid="uid://b32tyl5hpw7xp" path="res://assets/boss/King_Crab/King_Crab_7.png" id="7_fx1qi"]
 [ext_resource type="Texture2D" uid="uid://dm7mhf0gcdlnb" path="res://assets/boss/King_Crab/King_Crab_8.png" id="8_urj1t"]
@@ -34,12 +34,13 @@
 [ext_resource type="Texture2D" uid="uid://blx0xuytnkmg7" path="res://assets/boss/King_Crab/King_Crab_10.png" id="31_1mb6q"]
 [ext_resource type="Texture2D" uid="uid://dkdy4o40oetdr" path="res://assets/boss/King_Crab/King_Crab_11.png" id="32_pdmtp"]
 [ext_resource type="Texture2D" uid="uid://cycifj81f4f2w" path="res://assets/boss/King_Crab/King_Crab_12.png" id="33_b5fbs"]
-[ext_resource type="Script" uid="uid://om4bjo1h03qd" path="res://scenes/enemies/kingcrab/run.gd" id="34_nadfd"]
-[ext_resource type="Script" uid="uid://dxnd60mbala4" path="res://scenes/enemies/kingcrab/hurt.gd" id="35_pu34x"]
-[ext_resource type="Script" uid="uid://ppdgudk8dool" path="res://scenes/enemies/kingcrab/attack_1.gd" id="36_4vdkf"]
-[ext_resource type="Script" uid="uid://jorvdg3y5vkq" path="res://scenes/enemies/kingcrab/attack_2.gd" id="37_mwfls"]
-[ext_resource type="Script" uid="uid://cxruauux0kmh4" path="res://scenes/enemies/kingcrab/return_pincers.gd" id="38_2feml"]
-[ext_resource type="Script" uid="uid://eufv41r71kwi" path="res://scenes/enemies/kingcrab/dizzy.gd" id="39_0ujdg"]
+[ext_resource type="Script" uid="uid://om4bjo1h03qd" path="res://scenes/enemies/kingcrab/states/run.gd" id="34_nadfd"]
+[ext_resource type="Script" uid="uid://dxnd60mbala4" path="res://scenes/enemies/kingcrab/states/hurt.gd" id="35_pu34x"]
+[ext_resource type="Script" uid="uid://ppdgudk8dool" path="res://scenes/enemies/kingcrab/states/attack_1.gd" id="36_4vdkf"]
+[ext_resource type="Script" uid="uid://jorvdg3y5vkq" path="res://scenes/enemies/kingcrab/states/attack_2.gd" id="37_mwfls"]
+[ext_resource type="Script" uid="uid://cxruauux0kmh4" path="res://scenes/enemies/kingcrab/states/return_pincers.gd" id="38_2feml"]
+[ext_resource type="Script" uid="uid://eufv41r71kwi" path="res://scenes/enemies/kingcrab/states/dizzy.gd" id="39_0ujdg"]
+[ext_resource type="PackedScene" uid="uid://ckyiea5px3h2f" path="res://scenes/HP_UI/hp_boss/EnemyHpBar_Boss.tscn" id="41_i82pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb8qc"]
 size = Vector2(98, 50)
@@ -124,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_lkis0")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -187,19 +188,19 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="Direction" type="Node2D" parent="."]
 
-[node name="HitArea2d" parent="Direction" instance=ExtResource("2_kr8ue")]
-collision_layer = 32
+[node name="HitArea2D" parent="Direction" instance=ExtResource("2_kr8ue")]
+collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
 position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_eb8qc")
 
-[node name="HurtArea2d" parent="Direction" instance=ExtResource("3_i82pq")]
+[node name="HurtArea2D" parent="Direction" instance=ExtResource("3_i82pq")]
 collision_layer = 16
-collision_mask = 64
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(3, 2)
 shape = SubResource("RectangleShape2D_jwgnk")
 
@@ -220,7 +221,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_m1q8g")
-animation = &"stop"
+animation = &"hurt"
 flip_h = true
 
 [node name="States" type="Node" parent="."]
@@ -247,4 +248,6 @@ script = ExtResource("39_0ujdg")
 position = Vector2(2.5, 2)
 shape = SubResource("RectangleShape2D_h6iq2")
 
-[connection signal="hurt" from="Direction/HurtArea2d" to="." method="_on_hurt_area_2d_hurt"]
+[node name="EnemyHpBarBoss" parent="." instance=ExtResource("41_i82pq")]
+
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

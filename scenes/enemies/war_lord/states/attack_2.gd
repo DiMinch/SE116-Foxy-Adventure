@@ -1,7 +1,7 @@
 extends EnemyState
 
 @export var rocket_scene: Node2DFactory    # gán rocket.tscn ở Inspector
-@export var d: float = 150                 # khoảng cách từ war_lord tới điểm rơi
+@export var d: float = 100                 # khoảng cách từ war_lord tới điểm rơi
 	  # độ cao đỉnh quỹ đạo (gửi cho rocket.gd nếu cần)
 var _anim: AnimatedSprite2D
 
@@ -37,10 +37,10 @@ func _shoot_rockets() -> void:
 		# gợi ý rocket.gd: func setup(start: Vector2, target: Vector2, height: float)
 		if rocket.has_method("setup"):
 			if obj.is_short==true:
-				rocket.call("setup", origin, target,2.5,0.7,0.35)
+				rocket.call("setup", origin, target,2.5,0.7,0.35,obj.attack_damage)
 			else:
 				obj.is_take_a_rest=true
-				rocket.call("setup", origin, target2,2.5,0.8,0.4)	
+				rocket.call("setup", origin, target2,2.5,0.8,0.4,obj.attack_damage)	
 				
 	if obj.is_short==true:
 		obj.is_short=false
@@ -53,3 +53,5 @@ func _on_attack_finished() -> void:
 		change_state(fsm.states.takearest)
 	else:
 		change_state(fsm.states.idle)
+func _update(_delta: float) -> void:
+	obj.velocity.x=0

@@ -8,6 +8,7 @@ var _factory:  Node2DFactory
 var cannon : RigidBody2D
 
 func _update(_delta: float) -> void:
+	obj.velocity.x=0
 	if not anim.animation_finished.is_connected(_on_anim_done):
 		anim.animation_finished.connect(_on_anim_done)
 func _on_anim_done():
@@ -22,6 +23,6 @@ func _enter() -> void:
 func _shoot_cannon() -> void:
 	_factory = obj.get_node("Direction/Node2DFactory")
 	cannon = _factory.create() as RigidBody2D
-	cannon.setup(obj.direction, attack_range, cannon_speed)
+	cannon.setup(obj.direction, attack_range, cannon_speed, obj.attack_damage)
 	
 	
