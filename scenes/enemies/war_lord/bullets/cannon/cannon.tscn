@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ypcwn73dtpf8"]
 
-[ext_resource type="Script" uid="uid://c8hpvniatykam" path="res://scenes/enemies/war_lord/cannon.gd" id="1_7pp6g"]
+[ext_resource type="Script" uid="uid://c8hpvniatykam" path="res://scenes/enemies/war_lord/bullets/cannon/cannon.gd" id="1_7pp6g"]
 [ext_resource type="Texture2D" uid="uid://c5o1v3dvlpcqt" path="res://assets/boss/war_lord_bullet/bullet_cannon.png" id="2_7c3iq"]
 [ext_resource type="Texture2D" uid="uid://ctl447qij17fc" path="res://assets/explode/Explosion_1/Explosion_4.png" id="3_0m6cj"]
 [ext_resource type="Texture2D" uid="uid://mocnuqn7q2i8" path="res://assets/explode/Explosion_1/Explosion_5.png" id="4_u1j1o"]

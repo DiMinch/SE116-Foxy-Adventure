@@ -4,8 +4,8 @@
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_u5orl"]
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="3_usywe"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_msorn"]
-[ext_resource type="PackedScene" uid="uid://c8acnn6gukpq7" path="res://scenes/camera/blocker_camera_vertical.tscn" id="6_dk5k0"]
-[ext_resource type="PackedScene" uid="uid://b8sbow42o0nrr" path="res://scenes/camera/camera_raise_zone.tscn" id="7_nhlmm"]
+[ext_resource type="PackedScene" uid="uid://c8acnn6gukpq7" path="res://scenes/camera/block_camera_vertical/blocker_camera_vertical.tscn" id="6_dk5k0"]
+[ext_resource type="PackedScene" uid="uid://b8sbow42o0nrr" path="res://scenes/camera/camera_raise_zone/camera_raise_zone.tscn" id="7_nhlmm"]
 [ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="8_10tfx"]
 [ext_resource type="PackedScene" uid="uid://d2tphol6b0v3i" path="res://scenes/enemies/war_lord/war_lord.tscn" id="9_10tfx"]
 

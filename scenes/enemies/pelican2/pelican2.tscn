@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dw761f534hsq" path="res://assets/monsters/pelican/pelican_03.png" id="7_yhwba"]
 [ext_resource type="Texture2D" uid="uid://b3ewkkxgxwo45" path="res://assets/monsters/pelican/pelican_04.png" id="8_rkbeq"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="9_hq5mm"]
-[ext_resource type="Script" uid="uid://bgo3e3y6cq6l7" path="res://scenes/enemies/pelican2/fly.gd" id="10_3rlno"]
-[ext_resource type="PackedScene" uid="uid://0ktc6wylg7sq" path="res://scenes/enemies/pelican2/pelicanbullets_2.tscn" id="10_a2n15"]
-[ext_resource type="Script" uid="uid://di483ence2mf1" path="res://scenes/enemies/pelican2/attack.gd" id="11_xdlie"]
+[ext_resource type="Script" uid="uid://bgo3e3y6cq6l7" path="res://scenes/enemies/pelican2/states/fly.gd" id="10_3rlno"]
+[ext_resource type="PackedScene" uid="uid://0ktc6wylg7sq" path="res://scenes/enemies/pelican2/bullets/pelicanbullets_2.tscn" id="10_a2n15"]
+[ext_resource type="Script" uid="uid://di483ence2mf1" path="res://scenes/enemies/pelican2/states/attack.gd" id="11_xdlie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ocge"]
 size = Vector2(35, 24)

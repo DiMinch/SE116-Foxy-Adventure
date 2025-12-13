@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="12_jgjiv"]
 [ext_resource type="Script" uid="uid://drghr3ycqml5q" path="res://scenes/enemies/barrel/states/idle.gd" id="13_7dgof"]
 [ext_resource type="Script" uid="uid://cl23eidiikdgv" path="res://scenes/enemies/barrel/states/shoot.gd" id="14_tofd5"]
-[ext_resource type="Script" uid="uid://diwib3136kdvi" path="res://scenes/enemies/barrel/hurt.gd" id="16_cx43u"]
+[ext_resource type="Script" uid="uid://diwib3136kdvi" path="res://scenes/enemies/barrel/states/hurt.gd" id="16_cx43u"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="17_cx43u"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_sq6do"]
 

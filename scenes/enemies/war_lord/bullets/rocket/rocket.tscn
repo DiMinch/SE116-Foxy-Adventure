@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://blcg7b2jnrtle"]
 
-[ext_resource type="Script" uid="uid://dynbby6k7xda2" path="res://scenes/enemies/war_lord/rocket.gd" id="1_182ju"]
+[ext_resource type="Script" uid="uid://dynbby6k7xda2" path="res://scenes/enemies/war_lord/bullets/rocket/rocket.gd" id="1_182ju"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="1_p6ode"]
 [ext_resource type="Texture2D" uid="uid://nw6a36gdk6wg" path="res://assets/boss/war_lord_bullet/bullet_rocket.png" id="2_bivp3"]
 [ext_resource type="Texture2D" uid="uid://cpk33k4quevb2" path="res://assets/explode/png/00.png" id="4_uiguh"]

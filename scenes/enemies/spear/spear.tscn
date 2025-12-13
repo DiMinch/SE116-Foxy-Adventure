@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://8ppe0mhj6i2v" path="res://scenes/enemies/spear/states/idle.gd" id="22_k3sq8"]
 [ext_resource type="Script" uid="uid://caqbascyww3no" path="res://scenes/enemies/spear/states/run.gd" id="23_q4xu0"]
 [ext_resource type="Script" uid="uid://bc1yimsercqg2" path="res://scenes/enemies/spear/states/attack.gd" id="24_yc6h4"]
-[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/enemies/spear/hurt.gd" id="25_ng4rs"]
+[ext_resource type="Script" uid="uid://dnv2rcyst64rt" path="res://scenes/enemies/spear/states/hurt.gd" id="25_ng4rs"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="27_ng4rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8eyj"]
