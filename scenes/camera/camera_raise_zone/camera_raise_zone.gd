@@ -3,7 +3,7 @@ class_name CameraRaiseZone
 
 @export var raise_offset := Vector2(0, -100)
 @export var only_apply_to_group := "camera_rig"
-@export var exit_delay := 1
+@export var exit_delay := 2
 
 var _inside := {}   # body -> true/false
 

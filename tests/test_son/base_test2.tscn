@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_msorn"]
 [ext_resource type="PackedScene" uid="uid://c8acnn6gukpq7" path="res://scenes/camera/block_camera_vertical/blocker_camera_vertical.tscn" id="6_dk5k0"]
 [ext_resource type="PackedScene" uid="uid://b8sbow42o0nrr" path="res://scenes/camera/camera_raise_zone/camera_raise_zone.tscn" id="7_nhlmm"]
-[ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="8_10tfx"]
+[ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="8_nhlmm"]
 [ext_resource type="PackedScene" uid="uid://d2tphol6b0v3i" path="res://scenes/enemies/war_lord/war_lord.tscn" id="9_10tfx"]
 
 [node name="Stage" type="Node2D"]
@@ -44,8 +44,8 @@ scale = Vector2(5.471407, 1.1771429)
 position = Vector2(575.00006, 178)
 scale = Vector2(7.193039, -0.96312135)
 
-[node name="Camerarig" parent="." instance=ExtResource("8_10tfx")]
-position = Vector2(70, -59)
-
 [node name="WarLord" parent="." instance=ExtResource("9_10tfx")]
 position = Vector2(531, -9)
+
+[node name="Camerarig" parent="." instance=ExtResource("8_nhlmm")]
+position = Vector2(300, -33)
