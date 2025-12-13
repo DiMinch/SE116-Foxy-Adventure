@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://eusw5htc6cbg"]
+[gd_scene load_steps=23 format=4 uid="uid://eusw5htc6cbg"]
 
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="1_sjb42"]
 [ext_resource type="Script" uid="uid://h4ffqh5h3qex" path="res://levels/level_1.gd" id="1_yydhl"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bpo30r05g65wx" path="res://assets/object/post/arrow_post_up.png" id="15_jq2cn"]
 [ext_resource type="Texture2D" uid="uid://5a5yalo4ytej" path="res://assets/tutorial/palm.png" id="16_a5s8o"]
 [ext_resource type="Texture2D" uid="uid://ba0wdods8uuft" path="res://assets/tutorial/fruit.png" id="17_ls4ot"]
+[ext_resource type="PackedScene" uid="uid://hrcnc0indhbm" path="res://levels/objects/other/CinematicTrigger.tscn" id="18_tx362"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hd6v"]
 texture = ExtResource("11_fjysh")
@@ -31,6 +32,9 @@ modulate_color = Color(1, 1, 0, 0.23137255)
 texture = ExtResource("11_fjysh")
 texture_margin_bottom = 1.0
 modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx362"]
+size = Vector2(23, 106)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_yydhl")
@@ -125,3 +129,15 @@ popup_scene = ExtResource("10_yydhl")
 tutorial_text = "Trái cây không chỉ giúp làm đầy cái bụng đói
 mà còn đem lại sức mạnh trong thời gian ngắn"
 tutorial_image = ExtResource("17_ls4ot")
+
+[node name="CinematicTrigger" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("18_tx362")]
+target_node = NodePath("../Marker2D")
+boss_name = "Cửa"
+boss_title = "Điểm đích"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CinematicTrigger"]
+position = Vector2(590.5, -568)
+shape = SubResource("RectangleShape2D_tx362")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2723, -1507)

@@ -18,6 +18,7 @@ scene = ExtResource("3_ygy7m")
 script = ExtResource("2_gerrj")
 scene = ExtResource("4_x51bp")
 overrides = {
+"box_modulate": "Color(1, 1, 1, 0.9019608)",
 "name_label_font_size": "10.0",
 "text_size": "8.0"
 }
