@@ -26,6 +26,7 @@ GameManager="*res://scripts/autoload/game_manager.gd"
 PlayerData="*res://scripts/autoload/player_data.gd"
 StatsManager="*res://scripts/stats/stats_manager.gd"
 AudioManager="*res://scripts/audio/audio_manager.gd"
+MusicManager="*res://scripts/audio/music_manager.gd"
 
 [display]
 

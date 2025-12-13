@@ -3,6 +3,9 @@ class_name Stage
 
 @onready var turn_back_button = $CanvasLayer/TurnBack
 
+@export var level_music: AudioStream
+@export var boss_music: AudioStream
+
 func _enter_tree() -> void:
 	# Handle portal spawning first
 	GameManager.current_stage = self
@@ -17,6 +20,9 @@ func _ready() -> void:
 	if GameManager.respawn_at_checkpoint():
 		return
 	GameManager.respawn_at_begin()
+	
+	if MusicManager:
+		MusicManager.play_music(level_music)
 
 func fade_in_screen() -> void:
 	var fade_layer = get_tree().root.get_node_or_null("FadeLayer")
