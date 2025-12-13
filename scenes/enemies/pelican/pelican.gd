@@ -42,6 +42,8 @@ func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Fly)
 	player = find_parent(MapScene).find_child(strPlayer)
 	super._ready()
+	
+	AudioManager.play_sound("pelican")
 
 func fire() -> void:
 	var bullet := bullet_factory.create() as RigidBody2D

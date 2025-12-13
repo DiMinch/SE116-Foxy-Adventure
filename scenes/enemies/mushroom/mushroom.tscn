@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="11_io5uk"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="12_3dip8"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="13_io5uk"]
+[ext_resource type="AudioStream" uid="uid://0iwcblt6p4da" path="res://assets/audio/sfx/enemies/mushroom_walk.wav" id="13_io5uk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_toaug"]
 animations = [{
@@ -115,6 +116,13 @@ metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 shape = SubResource("CapsuleShape2D_jmoqu")
 
 [node name="EnemyHpBarMinions" parent="." instance=ExtResource("13_io5uk")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_io5uk")
+volume_db = -10.0
+max_distance = 300.0
+attenuation = 0.2
+bus = &"SFX"
 
 [connection signal="hitted" from="Direction/HitArea2D" to="." method="_on_hit_area_2d_hitted"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

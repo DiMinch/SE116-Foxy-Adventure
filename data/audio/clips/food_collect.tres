@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://c4e01bljowbli"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_w22wi"]
+[ext_resource type="AudioStream" uid="uid://xphium2agqc3" path="res://assets/audio/sfx/others/food_collect.wav" id="2_hgphn"]
+
+[resource]
+script = ExtResource("1_w22wi")
+clip_id = "food_collect"
+stream = ExtResource("2_hgphn")
+randomize_pitch = true

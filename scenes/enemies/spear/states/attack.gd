@@ -22,6 +22,8 @@ func _enter() -> void:
 		_hit_shape = hit_area.get_node("CollisionShape2D") as CollisionShape2D
 		if _hit_shape:
 			_hit_shape.disabled = false
+	
+	AudioManager.play_sound("spear_attack")
 
 func _update(delta: float) -> void:
 	# luôn giữ vận tốc trượt theo hướng mặt

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://bfqebgmxa3ygr"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_v8cr4"]
+[ext_resource type="AudioStream" uid="uid://0iwcblt6p4da" path="res://assets/audio/sfx/enemies/mushroom_walk.wav" id="2_bp14d"]
+
+[resource]
+script = ExtResource("1_v8cr4")
+clip_id = "mushroom_walk"
+stream = ExtResource("2_bp14d")
+randomize_pitch = true

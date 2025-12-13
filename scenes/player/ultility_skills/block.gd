@@ -7,6 +7,7 @@ func _enter() -> void:
 	_block_shape = obj.get_node('Direction/StaticBody2D/CollisionShape2D') as CollisionShape2D
 	_block_shape.disabled = false
 	timer = 0.5
+	AudioManager.play_sound("player_block")
 
 func _update(delta: float):
 	if update_timer(delta):

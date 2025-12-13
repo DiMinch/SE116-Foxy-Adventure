@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://xwg431o6dtni"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_cngr6"]
+[ext_resource type="AudioStream" uid="uid://dbp5ataiv3sqg" path="res://assets/audio/sfx/enemies/native_coconut_hit.wav" id="2_njaok"]
+
+[resource]
+script = ExtResource("1_cngr6")
+clip_id = "native_coconut_hit"
+stream = ExtResource("2_njaok")
+randomize_pitch = true

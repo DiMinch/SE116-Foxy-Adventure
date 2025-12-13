@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://dcqc5qtoj07g4"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_fk0ic"]
+[ext_resource type="AudioStream" uid="uid://b8tu1k8julplv" path="res://assets/audio/sfx/player/player_hurt.wav" id="2_rujne"]
+
+[resource]
+script = ExtResource("1_fk0ic")
+clip_id = "player_hurt"
+stream = ExtResource("2_rujne")

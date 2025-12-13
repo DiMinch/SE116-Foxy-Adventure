@@ -8,6 +8,8 @@ func _enter() -> void:
 	obj.change_animation("shoot")
 	shoot_timer = shoot_delay
 	timer = 0.5
+	
+	AudioManager.play_sound("barrel_shoot")
 
 func _update(delta :float) -> void:
 	if shoot_timer > 0:

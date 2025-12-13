@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://btqukoegxoked" path="res://assets/object/items/key/effects/sparks_5.png" id="14_5rpi1"]
 [ext_resource type="Texture2D" uid="uid://brodxu2x4ryhl" path="res://assets/object/items/key/effects/sparks_6.png" id="15_7sb45"]
 [ext_resource type="Texture2D" uid="uid://mpytl08054la" path="res://assets/object/items/key/effects/sparks_7.png" id="16_kvfch"]
-[ext_resource type="Texture2D" uid="uid://ddkinj2elkfks" path="res://assets/object/items/key/effects/sparks_8.png" id="17_o6ipn"]
+[ext_resource type="Texture2D" uid="uid://cgjub62o71ho5" path="res://assets/object/items/key/effects/sparks_8.png" id="17_o6ipn"]
 [ext_resource type="Texture2D" uid="uid://bdsaruplvj1ik" path="res://assets/object/items/key/effects/sparks_9.png" id="18_t2dox"]
-[ext_resource type="Texture2D" uid="uid://dmo15173e8ug" path="res://assets/object/items/key/effects/sparks_10.png" id="19_x3uyv"]
-[ext_resource type="Texture2D" uid="uid://da0yytmnugk27" path="res://assets/object/items/key/effects/sparks_11.png" id="20_il4dm"]
+[ext_resource type="Texture2D" uid="uid://cla3o8uudpyd" path="res://assets/object/items/key/effects/sparks_10.png" id="19_x3uyv"]
+[ext_resource type="Texture2D" uid="uid://c3mqig6vv8tqb" path="res://assets/object/items/key/effects/sparks_11.png" id="20_il4dm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is7hb"]
 size = Vector2(20, 24)

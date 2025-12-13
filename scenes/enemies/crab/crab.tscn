@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="11_0ud0h"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="12_0ud0h"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="12_novun"]
+[ext_resource type="AudioStream" uid="uid://pdmb75w8l6by" path="res://assets/audio/sfx/enemies/crab_walk.wav" id="12_novun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gen76"]
 size = Vector2(29, 17)
@@ -111,6 +112,12 @@ script = ExtResource("11_0ud0h")
 script = ExtResource("12_0ud0h")
 
 [node name="EnemyHpBarMinions" parent="." instance=ExtResource("12_novun")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_novun")
+max_distance = 300.0
+attenuation = 0.2
+bus = &"SFX"
+
 
 [connection signal="hitted" from="Direction/HitArea2D" to="." method="_on_hit_area_2d_hitted"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

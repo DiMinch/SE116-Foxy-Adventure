@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="18_1461y"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="19_d4u6i"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="20_rpxsc"]
+[ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="20_rpxsc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kn7eo"]
 animations = [{
@@ -95,7 +96,9 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_kn7eo")
-animation = &"dead"
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
 
 [node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
 target_position = Vector2(30, 0)
@@ -138,6 +141,11 @@ script = ExtResource("18_1461y")
 script = ExtResource("19_d4u6i")
 metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 
-[node name="EnemyHpBarMinions" parent="." instance=ExtResource("20_rpxsc")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_rpxsc")
+max_distance = 300.0
+attenuation = 0.2
+bus = &"SFX"
 
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("20_rpxsc")]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

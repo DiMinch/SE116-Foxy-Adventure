@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://f4x7xjrayhc3"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_mff60"]
+[ext_resource type="AudioStream" uid="uid://bsa6qgkgn5r3d" path="res://assets/audio/sfx/others/ui_click.wav" id="2_cakm1"]
+
+[resource]
+script = ExtResource("1_mff60")
+clip_id = "ui_click"
+stream = ExtResource("2_cakm1")
+randomize_pitch = true
