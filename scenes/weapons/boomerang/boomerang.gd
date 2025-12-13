@@ -65,6 +65,7 @@ func setup(spawner: Player, direction: Vector2, speed: float, damage: int, _max_
 
 func _on_body_entered(_body: Node) -> void:
 	if current_state == State.OUTBOUND:
+		print(_body)
 		current_state = State.RETURNING
 		collision_mask &= ~(1 << 0)
 		set_angular_velocity(0)

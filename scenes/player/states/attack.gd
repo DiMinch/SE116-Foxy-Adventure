@@ -2,9 +2,10 @@ extends PlayerState
 
 func _enter() -> void:
 	obj.change_animation(ATTACK)
-	timer = 0.2
 	obj.velocity.x = 0
 	timer = 0.3
+	if obj.melee_hitbox.monitoring:
+		obj.melee_hitbox.update_stat_attack()
 
 func _exit() -> void:
 	obj.is_attack = false
