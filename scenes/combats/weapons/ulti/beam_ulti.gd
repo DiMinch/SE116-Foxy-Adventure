@@ -15,6 +15,7 @@ func _perform_barrage(player: CharacterBody2D, data: WeaponData) -> void:
 	var duration_val = float(data.timer)
 	var shot_count = 6
 	player.velocity.x = 0
+	player.is_invulnerable = true
 
 	if data.ultidata and "count" in data.ultidata:
 		shot_count = data.ultidata.count
@@ -28,13 +29,16 @@ func _perform_barrage(player: CharacterBody2D, data: WeaponData) -> void:
 		_spawn_beam(player, data, angle)
 		
 		await player.get_tree().create_timer(wait_time).timeout
+	
+	player.is_invulnerable = false
 
 func _spawn_beam(player: CharacterBody2D, data: WeaponData, angle: float) -> void:
 	
 	if not data.ultidata or not "package_scene" in data.ultidata: return
 	var beam_scene = data.ultidata.package_scene
 	if beam_scene == null: return
-
+	player.animated_sprite.play("attack")
+	await player.animated_sprite.animation_finished
 	var beam = beam_scene.instantiate()
 
 	var fire_point = player.get_node_or_null("Direction/FireFactory")

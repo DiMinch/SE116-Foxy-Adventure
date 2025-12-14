@@ -21,6 +21,4 @@ shape = SubResource("CapsuleShape2D_5smux")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(-9, 0)
 sprite_frames = ExtResource("1_x6nxk")
-animation = &"dead"
-frame = 4
-frame_progress = 1.0
+animation = &"stop"

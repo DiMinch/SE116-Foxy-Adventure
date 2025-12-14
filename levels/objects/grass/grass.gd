@@ -1,4 +1,5 @@
 extends Node2D
+class_name Grass
 
 @onready var dead_anima: AnimatedSprite2D = $Direction/DeadAnimatedSprite2D
 @onready var alive_anima: AnimatedSprite2D = $Direction/AliveAnimatedSprite2D
