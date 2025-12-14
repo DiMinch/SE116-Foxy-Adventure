@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://daai7noxusesy"]
+[gd_scene load_steps=19 format=3 uid="uid://daai7noxusesy"]
 
 [ext_resource type="Script" uid="uid://daqhjshkj4gmn" path="res://scenes/enemies/mushroom/mushroom.gd" id="1_ysheg"]
 [ext_resource type="Texture2D" uid="uid://cnffiueq84mw3" path="res://assets/monsters/mushroom/mushroom_hurt_01.png" id="2_k0mc2"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="9_3dip8"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="11_io5uk"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="12_3dip8"]
-[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="13_io5uk"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="13_0xreg"]
 [ext_resource type="AudioStream" uid="uid://0iwcblt6p4da" path="res://assets/audio/sfx/enemies/mushroom_walk.wav" id="13_io5uk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_toaug"]
@@ -115,7 +115,7 @@ metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jmoqu")
 
-[node name="EnemyHpBarMinions" parent="." instance=ExtResource("13_io5uk")]
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("13_0xreg")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_io5uk")
