@@ -26,10 +26,10 @@
 [resource]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 1.0,
 "texture": ExtResource("1_uteak")
 }, {
-"duration": 0.25,
+"duration": 1.0,
 "texture": ExtResource("2_h74sf")
 }],
 "loop": false,
