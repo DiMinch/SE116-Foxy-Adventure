@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://xpcinxy6ihd7"]
+[gd_scene load_steps=24 format=3 uid="uid://xpcinxy6ihd7"]
 
 [ext_resource type="Script" uid="uid://b3jvtdck7uc7w" path="res://scenes/enemies/starfish/starfish.gd" id="1_vyojd"]
 [ext_resource type="Texture2D" uid="uid://div7ykrnkcmbm" path="res://assets/monsters/starfish/starfish_atk_01.png" id="2_f84se"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b38tnnws2v8ub" path="res://scenes/enemies/starfish/states/run.gd" id="15_vyojd"]
 [ext_resource type="Script" uid="uid://cuv7jos77lbga" path="res://scenes/enemies/starfish/states/attack.gd" id="16_6had3"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="17_r5ogx"]
+[ext_resource type="Script" uid="uid://d2r6hnt34qvui" path="res://scenes/enemies/starfish/states/dead.gd" id="18_s8cle"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_wmhok"]
 [ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="18_wmhok"]
 
@@ -142,6 +143,8 @@ script = ExtResource("16_6had3")
 [node name="Hurt" type="Node" parent="States"]
 script = ExtResource("17_r5ogx")
 
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("18_s8cle")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_wmhok")
 max_distance = 300.0

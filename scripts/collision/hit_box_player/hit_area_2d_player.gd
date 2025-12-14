@@ -52,6 +52,7 @@ func get_stat_damage(index: int) -> float:
 
 func set_damage() -> void:
 	damage = basic_damage * stat_damage
+	print(damage)
 
 func set_basic_damage(_basic_damage: float) -> void:
 	basic_damage = _basic_damage

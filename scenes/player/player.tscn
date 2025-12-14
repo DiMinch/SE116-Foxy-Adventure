@@ -1,14 +1,30 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0jou4iuydvkg"]
-[gd_scene load_steps=26 format=3 uid="uid://d0jou4iuydvkg"]
+[gd_scene load_steps=45 format=3 uid="uid://d0jou4iuydvkg"]
 
 [ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
+[ext_resource type="Texture2D" uid="uid://bty4n284rnk13" path="res://assets/Sword Slashes/Blue Group Slashes/File1.png" id="2_kxw46"]
 [ext_resource type="SpriteFrames" uid="uid://dk0y0uvfxxyhn" path="res://scenes/player/animation/projectile.tres" id="2_ykrpk"]
+[ext_resource type="Texture2D" uid="uid://ciqkhoovkrqrw" path="res://assets/Sword Slashes/Blue Group Slashes/File3.png" id="3_8qxvo"]
 [ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/player/animation/normal.tres" id="3_i1nod"]
+[ext_resource type="Texture2D" uid="uid://d38p5ik80tvsl" path="res://assets/Sword Slashes/Blue Group Slashes/File5.png" id="4_5q8fn"]
 [ext_resource type="Script" uid="uid://c4cp5p23xlrh7" path="res://scripts/factories/player_factory/node2d_player_factory.gd" id="5_i1nod"]
+[ext_resource type="Texture2D" uid="uid://ccbirbn21owlf" path="res://assets/Sword Slashes/Blue Group Slashes/File12.png" id="5_wva7c"]
+[ext_resource type="Texture2D" uid="uid://dojkomt3eph6" path="res://assets/Sword Slashes/Blue Group Slashes/File6.png" id="6_7obkq"]
+[ext_resource type="Texture2D" uid="uid://cte8ggya4vjty" path="res://assets/Sword Slashes/Blue Group Slashes/File7.png" id="7_vo27k"]
+[ext_resource type="Texture2D" uid="uid://c7pwqwxi32v0r" path="res://assets/Sword Slashes/Blue Slash Thin/File2.png" id="8_genst"]
 [ext_resource type="Script" uid="uid://b2ekl120ho1ol" path="res://scripts/collision/hit_box_player/hit_area_2d_player.gd" id="8_i1nod"]
+[ext_resource type="Texture2D" uid="uid://buv342drsa7ng" path="res://assets/Sword Slashes/Blue Slash Thin/File3.png" id="9_niom3"]
+[ext_resource type="Texture2D" uid="uid://dopa1eoa4lx3r" path="res://assets/Sword Slashes/Blue Slash Thin/File4.png" id="10_ttakn"]
+[ext_resource type="Texture2D" uid="uid://bulb460b3i36a" path="res://assets/Sword Slashes/Blue Slash Thin/File1.png" id="11_rw8a5"]
+[ext_resource type="Texture2D" uid="uid://bcpkdmvdgkkjp" path="res://assets/Sword Slashes/Blue Slash Thin/File5.png" id="12_iwuka"]
+[ext_resource type="Texture2D" uid="uid://3wxedo13ii1c" path="res://assets/Sword Slashes/Blue Slash Thin/File6.png" id="13_hyqqp"]
+[ext_resource type="Texture2D" uid="uid://bcbuqv05ti2at" path="res://assets/Sword Slashes/Blue Slash Wide/File1.png" id="14_ds1xl"]
+[ext_resource type="Texture2D" uid="uid://c3s3ekoeug0rr" path="res://assets/Sword Slashes/Blue Slash Wide/File2.png" id="15_1u1sw"]
+[ext_resource type="Texture2D" uid="uid://cgt8dynfwinr5" path="res://assets/Sword Slashes/Blue Slash Wide/File3.png" id="16_2t3bg"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="16_8ydkj"]
-[ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="18_uf5tr"]
+[ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="18_uf5tr"][ext_resource type="Texture2D" uid="uid://dxephbmsrsev5" path="res://assets/Sword Slashes/Blue Slash Wide/File4.png" id="17_jrbya"]
+[ext_resource type="Texture2D" uid="uid://cqueybka16epq" path="res://assets/Sword Slashes/Blue Slash Wide/File5.png" id="18_ahqnk"]
 [ext_resource type="Script" uid="uid://mugkmsxscuv6" path="res://scenes/player/states/ulti.gd" id="18_uf5tr"]
+[ext_resource type="Texture2D" uid="uid://cqyj2i7yfnfim" path="res://assets/Sword Slashes/Blue Slash Wide/File6.png" id="19_vb1ce"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="20_niom3"]
 [ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
 [ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
@@ -21,8 +37,7 @@
 [ext_resource type="Script" uid="uid://b1vcfs5ygcykv" path="res://scenes/player/ultility_skills/dash.gd" id="45_kghjy"]
 [ext_resource type="Script" uid="uid://bcbpp7lh2wg8a" path="res://scenes/player/ultility_skills/block.gd" id="46_72eiu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqsei"]
-size = Vector2(25, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uf5tr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
 radius = 15.0
@@ -40,6 +55,87 @@ radius = 15.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kghjy"]
 size = Vector2(4, 29)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ncpa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kxw46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qxvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5q8fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wva7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7obkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vo27k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_genst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_niom3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ttakn")
+}],
+"loop": false,
+"name": &"mix",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_rw8a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_genst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_niom3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ttakn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iwuka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hyqqp")
+}],
+"loop": false,
+"name": &"thin",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ds1xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1u1sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2t3bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jrbya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ahqnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vb1ce")
+}],
+"loop": false,
+"name": &"wide",
+"speed": 15.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf5tr"]
 
 [node name="Player" type="CharacterBody2D"]
@@ -50,7 +146,7 @@ metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -14)
-shape = SubResource("RectangleShape2D_iqsei")
+shape = SubResource("CapsuleShape2D_uf5tr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -52)
@@ -62,12 +158,11 @@ zoom = Vector2(1.2, 1.2)
 visible = false
 position = Vector2(0, -11)
 sprite_frames = ExtResource("2_ykrpk")
-animation = &"dash"
+animation = &"jump_atk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(0, -12)
 sprite_frames = ExtResource("3_i1nod")
-animation = &"run"
 animation = &"hurt"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
@@ -80,7 +175,7 @@ position = Vector2(-3, -15)
 shape = SubResource("CapsuleShape2D_iqsei")
 
 [node name="FireFactory" type="Marker2D" parent="Direction"]
-position = Vector2(14, -9)
+position = Vector2(14, -11)
 script = ExtResource("5_i1nod")
 metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
@@ -118,6 +213,13 @@ position = Vector2(19, -16.5)
 shape = SubResource("RectangleShape2D_kghjy")
 disabled = true
 
+[node name="SwordSlash" type="AnimatedSprite2D" parent="Direction"]
+visible = false
+position = Vector2(33, -10)
+scale = Vector2(0.183, 0.183)
+sprite_frames = SubResource("SpriteFrames_0ncpa")
+animation = &"mix"
+
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" type="Node" parent="States"]
@@ -149,10 +251,6 @@ script = ExtResource("45_kghjy")
 
 [node name="Block" type="Node" parent="States"]
 script = ExtResource("46_72eiu")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_uf5tr")
-bus = &"SFX"
 
 [node name="Ulti" type="Node" parent="States"]
 script = ExtResource("18_uf5tr")

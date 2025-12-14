@@ -114,7 +114,7 @@ position = Vector2(805, 246)
 target_stage = "uid://cwdh2x7mqppdi"
 
 [node name="Player" parent="." instance=ExtResource("9_7mofw")]
-position = Vector2(499, 141)
+position = Vector2(696, 146)
 
 [node name="Pelican" parent="." instance=ExtResource("7_1duck")]
 position = Vector2(208, 166)
@@ -122,7 +122,7 @@ position = Vector2(208, 166)
 [node name="Bullets" type="Node" parent="."]
 
 [node name="WarLord" parent="." instance=ExtResource("8_ono1l")]
-position = Vector2(660, 108)
+position = Vector2(510, 108)
 
 [node name="Mushroom" parent="." instance=ExtResource("8_nnv0g")]
 position = Vector2(706, 233)

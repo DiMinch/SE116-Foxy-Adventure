@@ -1,4 +1,5 @@
 extends EnemyCharacter
+@onready var sprite = $Direction/AnimatedSprite2D
 @onready var hp_bar = $EnemyHpBarMinions
 func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Run)

@@ -18,11 +18,14 @@ extends BaseCharacter
 @onready var blade_shape = $Direction/HitArea2D/Blade
 @onready var spear_shape = $Direction/HitArea2D/Spear
 @onready var spear_ulti_shape = $Direction/HitArea2D/SpearUlti
-
+@onready var slash =$Direction/SwordSlash
+var fall_multiplier: float = 1.35
+var low_jump_multiplier = 0.75
 var timer_dash = 10
 var ok_tmp_dash = true
 var timer_block = 10
 var ok_tmp_block = true
+var FALL_THRESHOLD = 100
 
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
@@ -82,6 +85,10 @@ func _ready() -> void:
 	print("Block: ", can_block)
 	print("Dash: ", can_dash)
 	print("Wall move: ", can_wall_move)
+	
+	was_on_floor = is_on_floor()
+	if !was_on_floor:
+		fall_start_y = global_position.y
 
 func _process(delta: float) -> void:
 	if !can_invulnerable && current_time_invul > 0:
@@ -219,19 +226,29 @@ func _physics_process(delta: float) -> void:
 	play_walking_sound()
 
 func _check_fall_damage() -> void:
-	var on_floor_now = is_on_floor()
+	var on_floor_now := is_on_floor()
+
 	if not on_floor_now and was_on_floor:
 		fall_start_y = global_position.y
+
 	if on_floor_now and not was_on_floor:
-		var fall_distance = global_position.y - fall_start_y
-		var threshold = 500
-		if fall_distance > threshold and not is_invulnerable:
-			var damage = (fall_distance - threshold) / 5.0
-			print("⚠️ Player mất ", damage, " máu do rơi từ độ cao ", fall_distance)
-			fsm.change_state(fsm.states.hurt)
-			fsm.current_state.take_damage(damage)
-	fall_start_y = 0.0 if on_floor_now else fall_start_y
+		if fall_start_y >= 0.0:
+			var fall_distance := global_position.y - fall_start_y
+
+			if fall_distance > FALL_THRESHOLD:
+				if not is_invulnerable and not piority_invul:
+
+					var f_damage: float = (fall_distance - FALL_THRESHOLD) / 5.0
+					print("⚠️ Player mất ", f_damage, 
+						  " máu do rơi từ độ cao ", fall_distance)
+
+					fsm.change_state(fsm.states.hurt)
+					fsm.current_state.take_damage(f_damage)
+
+		fall_start_y = -1.0
+
 	was_on_floor = on_floor_now
+
 
 # === COLLISIONS
 func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
@@ -309,8 +326,9 @@ func _on_frame_changed():
 			else:
 				melee_hitbox.set_deferred("monitoring", false)
 		else:
-			melee_hitbox.set_deferred("monitoring", false)		
+			melee_hitbox.set_deferred("monitoring", false)
 	else:
+		is_attack = false
 		melee_hitbox.set_deferred("monitoring", false)
 
 func _update_hitbox(data_weapon: MeleeData) -> void:

@@ -2,7 +2,7 @@ extends PlayerState
 
 func _enter() -> void:
 	obj.is_attack = true
-
+	obj.change_animation(ATTACK)
 	use_ultimate()
 
 func _update(delta: float) -> void:
