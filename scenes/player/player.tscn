@@ -139,9 +139,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf5tr"]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 99
 collision_layer = 2
 slide_on_ceiling = false
 script = ExtResource("1_wodsf")
+movement_speed = 250.0
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -150,7 +152,7 @@ shape = SubResource("CapsuleShape2D_uf5tr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -52)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(0.8, 0.8)
 
 [node name="Direction" type="Node2D" parent="."]
 
