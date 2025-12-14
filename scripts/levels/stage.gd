@@ -4,6 +4,9 @@ class_name Stage
 @onready var turn_back_button = $CanvasLayer/TurnBack
 var is_ambient_dialogue: bool = false
 
+@export var level_music: AudioStream
+@export var boss_music: AudioStream
+
 func _enter_tree() -> void:
 	# Handle portal spawning first
 	GameManager.current_stage = self
@@ -20,6 +23,9 @@ func _ready() -> void:
 	GameManager.respawn_at_begin()
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	
+	if MusicManager:
+		MusicManager.play_music(level_music)
 
 func fade_in_screen() -> void:
 	var fade_layer = get_tree().root.get_node_or_null("FadeLayer")

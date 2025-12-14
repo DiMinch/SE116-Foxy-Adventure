@@ -19,6 +19,7 @@ extends BaseCharacter
 @onready var spear_shape = $Direction/HitArea2D/Spear
 @onready var spear_ulti_shape = $Direction/HitArea2D/SpearUlti
 @onready var slash =$Direction/SwordSlash
+
 var fall_multiplier: float = 1.35
 var low_jump_multiplier = 0.75
 var timer_dash = 10
@@ -223,6 +224,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		current_jumps = 0
 	super._physics_process(delta)
+	
+	play_walking_sound()
 
 func _check_fall_damage() -> void:
 	var on_floor_now := is_on_floor()
@@ -384,3 +387,11 @@ func release_invulnerable_lock():
 	invulnerable_lock_count = max(invulnerable_lock_count - 1, 0)
 	if invulnerable_lock_count == 0:
 		is_invulnerable = false
+	
+func play_walking_sound():
+	if fsm.current_state == fsm.states.run:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
+	else:
+		if $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.stop()

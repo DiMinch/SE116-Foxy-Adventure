@@ -33,6 +33,8 @@ func _enter() -> void:
 	
 	# 🔹 BẮT ĐẦU ĐẾM 0.2s RỒI MỚI NÉM DỪA
 	_start_throw_after_delay()
+	
+	AudioManager.play_sound("native_attack")
 
 func _update(_delta: float) -> void:
 	# trong lúc attack chỉ đứng yên, KHÔNG ném thêm
