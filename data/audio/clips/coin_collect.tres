@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://dg6n23avi2au1"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_lv2d1"]
+[ext_resource type="AudioStream" uid="uid://qstw6ph3c6yb" path="res://assets/audio/sfx/others/coin_collect.mp3" id="2_4mslp"]
+
+[resource]
+script = ExtResource("1_lv2d1")
+clip_id = "coin_collect"
+stream = ExtResource("2_4mslp")
+randomize_pitch = true

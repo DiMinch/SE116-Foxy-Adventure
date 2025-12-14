@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c3s3ekoeug0rr" path="res://assets/Sword Slashes/Blue Slash Wide/File2.png" id="15_1u1sw"]
 [ext_resource type="Texture2D" uid="uid://cgt8dynfwinr5" path="res://assets/Sword Slashes/Blue Slash Wide/File3.png" id="16_2t3bg"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="16_8ydkj"]
-[ext_resource type="Texture2D" uid="uid://dxephbmsrsev5" path="res://assets/Sword Slashes/Blue Slash Wide/File4.png" id="17_jrbya"]
+[ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="18_uf5tr"][ext_resource type="Texture2D" uid="uid://dxephbmsrsev5" path="res://assets/Sword Slashes/Blue Slash Wide/File4.png" id="17_jrbya"]
 [ext_resource type="Texture2D" uid="uid://cqueybka16epq" path="res://assets/Sword Slashes/Blue Slash Wide/File5.png" id="18_ahqnk"]
 [ext_resource type="Script" uid="uid://mugkmsxscuv6" path="res://scenes/player/states/ulti.gd" id="18_uf5tr"]
 [ext_resource type="Texture2D" uid="uid://cqyj2i7yfnfim" path="res://assets/Sword Slashes/Blue Slash Wide/File6.png" id="19_vb1ce"]
@@ -182,7 +182,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 [node name="HitArea2D" parent="Direction" instance=ExtResource("20_niom3")]
 position = Vector2(14, -13)
 collision_layer = 0
-collision_mask = 16
+collision_mask = 17
 script = ExtResource("8_i1nod")
 stat_damage = 1
 basic_damage = 1
@@ -261,7 +261,7 @@ collision_mask = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_raise_camera_zone"]
 position = Vector2(-1, 8)
-scale = Vector2(1.148395, 1)
+scale = Vector2(1.14839, 1)
 shape = SubResource("RectangleShape2D_uf5tr")
 
 [connection signal="frame_changed" from="Direction/AnimatedSprite2D" to="." method="_on_frame_changed"]

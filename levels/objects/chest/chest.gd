@@ -27,3 +27,5 @@ func open_chest():
 	await animated_sprite.animation_finished
 	GameManager.inventory_system.add_currency("coins", coin_reward)
 	print("Chest opened! You received ",coin_reward, " coin!")
+	
+	AudioManager.play_sound("open_chest")

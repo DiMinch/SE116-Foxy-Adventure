@@ -17,6 +17,8 @@ func _enter() -> void:
 
 	timer = 0.5
 	obj.start_invulnerability()
+	
+	AudioManager.play_sound("player_hurt")
 
 func _update(delta: float):
 	if update_timer(delta):

@@ -9,10 +9,12 @@
 [sub_resource type="Resource" id="Resource_tadub"]
 script = ExtResource("2_gerrj")
 scene = ExtResource("1_wcoxn")
+overrides = {}
 
 [sub_resource type="Resource" id="Resource_irltc"]
 script = ExtResource("2_gerrj")
 scene = ExtResource("3_ygy7m")
+overrides = {}
 
 [sub_resource type="Resource" id="Resource_1cjan"]
 script = ExtResource("2_gerrj")
@@ -31,4 +33,6 @@ layer_info = {
 "10": SubResource("Resource_irltc"),
 "11": SubResource("Resource_1cjan")
 }
+base_overrides = {}
+layers = Array[ExtResource("2_gerrj")]([])
 metadata/_latest_layer = "11"

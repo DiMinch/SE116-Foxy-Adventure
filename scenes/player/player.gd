@@ -222,6 +222,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		current_jumps = 0
 	super._physics_process(delta)
+	
+	play_walking_sound()
 
 func _check_fall_damage() -> void:
 	var on_floor_now := is_on_floor()
@@ -364,3 +366,11 @@ func restore_health(amount: int) -> void:
 
 func collect_powerup(powerup_id: String) -> void:
 	decorator_manager.apply_powerup(powerup_id)
+	
+func play_walking_sound():
+	if fsm.current_state == fsm.states.run:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
+	else:
+		if $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.stop()

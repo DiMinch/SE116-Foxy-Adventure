@@ -21,3 +21,5 @@ func collect() -> void:
 	if fruit_type == "Strawberry":
 		GameManager.player.collect_powerup("high_jump")
 	queue_free()
+	
+	AudioManager.play_sound("food_collect")

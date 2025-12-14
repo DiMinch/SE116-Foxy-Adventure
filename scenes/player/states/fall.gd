@@ -34,6 +34,7 @@ func _update(_delta: float) -> void:
 
 	# --- Reset jumps khi chạm đất ---
 	if obj.is_on_floor():
+		AudioManager.play_sound("landing")
 		obj.is_push_out_wall = false
 		obj.current_jumps = 0
 

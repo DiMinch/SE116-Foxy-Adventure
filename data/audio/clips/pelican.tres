@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://cadtxtoyx2hnh"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_acqkq"]
+[ext_resource type="AudioStream" uid="uid://cm1fewrpft37n" path="res://assets/audio/sfx/enemies/pelican.wav" id="2_wg4cc"]
+
+[resource]
+script = ExtResource("1_acqkq")
+clip_id = "pelican"
+stream = ExtResource("2_wg4cc")
+randomize_pitch = true
