@@ -368,6 +368,7 @@ func collect_powerup(powerup_id: String) -> void:
 	decorator_manager.apply_powerup(powerup_id)
 	
 func play_walking_sound():
+
 	if fsm.current_state == fsm.states.run:
 		if not $AudioStreamPlayer.playing:
 			$AudioStreamPlayer.play()
