@@ -182,7 +182,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 [node name="HitArea2D" parent="Direction" instance=ExtResource("20_niom3")]
 position = Vector2(14, -13)
 collision_layer = 0
-collision_mask = 16
+collision_mask = 17
 script = ExtResource("8_i1nod")
 stat_damage = 1
 basic_damage = 1
@@ -261,7 +261,7 @@ collision_mask = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_raise_camera_zone"]
 position = Vector2(-1, 8)
-scale = Vector2(1.148395, 1)
+scale = Vector2(1.14839, 1)
 shape = SubResource("RectangleShape2D_uf5tr")
 
 [connection signal="frame_changed" from="Direction/AnimatedSprite2D" to="." method="_on_frame_changed"]
