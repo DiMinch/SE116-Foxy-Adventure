@@ -4,6 +4,21 @@ const OPENING_CUTSCENE = preload("res://dialog/cutscenes/opening_cutscene.tscn")
 
 func _ready():
 	play_opening_cutscene()
+func _exit_tree():
+	cleanup_dialogic()
+
+func cleanup_dialogic():
+	if Dialogic.current_timeline != null:
+		Dialogic.end_timeline()
+	
+	if Dialogic.timeline_ended.is_connected(_on_level_timeline_ended):
+		Dialogic.timeline_ended.disconnect(_on_level_timeline_ended)
+	
+	var dialog_node = Dialogic.Styles.get_layout_node()
+	if dialog_node and dialog_node.has_method("unregister_character"):
+		var foxy_resource = load("res://dialog/characters/foxy.dch")
+		if foxy_resource:
+			dialog_node.unregister_character(foxy_resource)
 
 func play_opening_cutscene():
 	var cutscene = OPENING_CUTSCENE.instantiate()

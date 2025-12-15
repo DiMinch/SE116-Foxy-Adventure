@@ -94,7 +94,7 @@ tile_map_data = PackedByteArray("AAD7/wMAAAAHAAAAAAD8/wMAAAABAAEAAAD9/wMAAAABAAE
 tile_set = ExtResource("2_crte6")
 
 [node name="Begin" type="Node2D" parent="."]
-position = Vector2(5400, -507)
+position = Vector2(219, 47)
 
 [node name="Door" parent="." instance=ExtResource("4_76ugp")]
 position = Vector2(10850, -1119)
@@ -114,7 +114,7 @@ motion_scale = Vector2(0.001, 0.8)
 motion_mirroring = Vector2(767, 0)
 
 [node name="SkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1387, -57)
+position = Vector2(1434, -99.00001)
 scale = Vector2(100, 78.587)
 texture = ExtResource("6_55gdq")
 
