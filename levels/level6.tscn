@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://bwh41hvmhtcb6"]
+[gd_scene load_steps=24 format=4 uid="uid://bwh41hvmhtcb6"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_adppw"]
+[ext_resource type="AudioStream" uid="uid://b0qehbm6hbwaf" path="res://assets/audio/music/music_normal.wav" id="2_celb7"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_rv0x7"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_4egkl"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_i4qay"]
@@ -85,6 +86,7 @@ func _spawn_cloud():
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_adppw")
+level_music = ExtResource("2_celb7")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://udtyhr7uwt3f"]
+[gd_scene load_steps=18 format=4 uid="uid://udtyhr7uwt3f"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_mub31"]
+[ext_resource type="AudioStream" uid="uid://b0qehbm6hbwaf" path="res://assets/audio/music/music_normal.wav" id="2_dscan"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_ln8rm"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_a5bpx"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_dscan"]
@@ -36,6 +37,7 @@ func _process(delta: float) -> void:
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_mub31")
+level_music = ExtResource("2_dscan")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]

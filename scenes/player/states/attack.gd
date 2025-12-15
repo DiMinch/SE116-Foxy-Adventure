@@ -10,6 +10,18 @@ func _enter() -> void:
 		
 	if obj.current_weapon_data.weapon_name=="Blade":
 		play_slash()
+		AudioManager.play_sound("player_sword")
+	
+	if obj.current_weapon_data.weapon_name=="Spear":
+		AudioManager.play_sound("player_spear")
+	
+	if obj.current_weapon_data.weapon_name=="Boomerang":
+		AudioManager.play_sound("player_boomerang")
+		
+	if obj.current_weapon_data.weapon_name=="Shuriken":
+		AudioManager.play_sound("player_shuriken")
+		
+	
 
 func _update(delta: float) -> void:
 	if update_timer(delta):
