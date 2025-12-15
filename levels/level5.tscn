@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=4 uid="uid://lbaqamwa7in4"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_dm5g0"]
-[ext_resource type="AudioStream" uid="uid://p72ugqo4rbuu" path="res://assets/audio/music/music-forest.ogg" id="2_gw0q8"]
+[ext_resource type="AudioStream" uid="uid://dqpxg86pwbbcn" path="res://assets/audio/music/music-mountain.ogg" id="2_gw0q8"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_vp6pq"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_66nwl"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_t5gjd"]
