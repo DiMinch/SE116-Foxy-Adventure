@@ -32,9 +32,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_h74sf")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

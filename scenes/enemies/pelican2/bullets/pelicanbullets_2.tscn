@@ -14,7 +14,6 @@ contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1_7ebuv")
 attack_damage = null
-movement_speed = null
 
 [node name="HitArea2D" parent="." instance=ExtResource("2_1tf80")]
 collision_layer = 0

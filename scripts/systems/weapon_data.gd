@@ -19,3 +19,4 @@ class_name WeaponData
 @export var skin: SpriteFrames
 @export var attack_behavior: AttackBehavior
 @export var attack_ulti: AttackBehavior
+@export var effect_attack: PackedScene

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhrnqki2qmxfn"]
+[gd_scene load_steps=16 format=3 uid="uid://bhrnqki2qmxfn"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_btjcs"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_1ama6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://daai7noxusesy" path="res://scenes/enemies/mushroom/mushroom.tscn" id="8_nnv0g"]
 [ext_resource type="PackedScene" uid="uid://d2tphol6b0v3i" path="res://scenes/enemies/war_lord/war_lord.tscn" id="8_ono1l"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="9_7mofw"]
+[ext_resource type="PackedScene" uid="uid://blj15re1ibmb" path="res://levels/objects/grass/grass.tscn" id="10_dp7lh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok4yu"]
 
@@ -114,7 +115,7 @@ position = Vector2(805, 246)
 target_stage = "uid://cwdh2x7mqppdi"
 
 [node name="Player" parent="." instance=ExtResource("9_7mofw")]
-position = Vector2(499, 141)
+position = Vector2(-25, 10)
 
 [node name="Pelican" parent="." instance=ExtResource("7_1duck")]
 position = Vector2(208, 166)
@@ -122,7 +123,7 @@ position = Vector2(208, 166)
 [node name="Bullets" type="Node" parent="."]
 
 [node name="WarLord" parent="." instance=ExtResource("8_ono1l")]
-position = Vector2(660, 108)
+position = Vector2(510, 108)
 
 [node name="Mushroom" parent="." instance=ExtResource("8_nnv0g")]
 position = Vector2(706, 233)
@@ -135,3 +136,6 @@ position = Vector2(340, 135)
 
 [node name="Mushroom3" parent="." instance=ExtResource("8_nnv0g")]
 position = Vector2(123, 215)
+
+[node name="Grass" parent="." instance=ExtResource("10_dp7lh")]
+position = Vector2(548, 234)

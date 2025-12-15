@@ -2,7 +2,7 @@ extends PlayerState
 
 func _enter() -> void:
 	obj.is_attack = true
-
+	obj.change_animation(ATTACK)
 	use_ultimate()
 
 func _update(delta: float) -> void:
@@ -15,7 +15,7 @@ func _exit() -> void:
 	else:
 		obj.current_ulti_cooldown_weapon2 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
 	obj.is_attack = false
-	obj.is_invulnerable = false
+
 
 func use_ultimate() -> void:
 	var weapon = obj.current_weapon_data

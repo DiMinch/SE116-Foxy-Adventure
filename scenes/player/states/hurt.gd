@@ -15,8 +15,10 @@ func _enter() -> void:
 	obj.velocity.y = stats_x
 	obj.velocity.x = stats_y * sign(obj.velocity.x)
 
-	timer = 0.5
 	obj.start_invulnerability()
+	timer = 0.5
+	
+	AudioManager.play_sound("player_hurt")
 
 func _update(delta: float):
 	if update_timer(delta):

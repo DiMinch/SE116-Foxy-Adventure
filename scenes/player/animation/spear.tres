@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://dbh2ohleryovk"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://dbh2ohleryovk"]
 
 [ext_resource type="Texture2D" uid="uid://f5el3sxi6uso" path="res://assets/foxy/hp100/fox_hp100_spear/fox_atk_1.png" id="1_5p46l"]
 [ext_resource type="Texture2D" uid="uid://disr7te3ocqd5" path="res://assets/foxy/hp100/fox_hp100_spear/fox_atk_2.png" id="2_7fhqj"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dri031d0gxusy" path="res://assets/foxy/hp100/fox_hp100_spear/fox_defeat_1.png" id="8_6fjhy"]
 [ext_resource type="Texture2D" uid="uid://x0uqi57doiw2" path="res://assets/foxy/hp100/fox_hp100_spear/fox_defeat_2.png" id="9_fy5g2"]
 [ext_resource type="Texture2D" uid="uid://dsqoac8fydlq8" path="res://assets/foxy/hp100/fox_hp100_spear/fox_defeat_3.png" id="10_pmhye"]
-[ext_resource type="Texture2D" uid="uid://bu350gxe3e27f" path="res://assets/foxy/hp100/fox_hp100_spear/fox_jump_2.png" id="11_pofgv"]
 [ext_resource type="Texture2D" uid="uid://dps3siwsdrmev" path="res://assets/foxy/hp100/fox_hp100_spear/fox_hit_1.png" id="12_o484t"]
 [ext_resource type="Texture2D" uid="uid://vx52uejhlboq" path="res://assets/foxy/hp100/fox_hp100_spear/fox_hit_2.png" id="13_3tgd5"]
 [ext_resource type="Texture2D" uid="uid://b3lco2sd24hk3" path="res://assets/foxy/hp100/fox_hp100_spear/fox_hit_3.png" id="14_dynua"]
@@ -78,7 +77,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_pofgv")
+"texture": ExtResource("19_g2q8o")
 }],
 "loop": false,
 "name": &"fall",
@@ -120,9 +119,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("18_ykn7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_g2q8o")
 }],
 "loop": false,
 "name": &"jump_atk",

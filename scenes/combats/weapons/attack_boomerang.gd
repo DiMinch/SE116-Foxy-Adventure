@@ -12,23 +12,23 @@ var angles_to_fire: Array[int] = [0]
 func execute_action(player: Player, weapon_data: WeaponData) -> void:
 	if not weapon_data.projectile_scene:
 		return
-	
+
 	var base_direction: Vector2 = Vector2(player.direction, 0)
 	var num_to_fire = max_boomerang - count_boomerang
 	if num_to_fire <= 0:
 		return
-	
+
 	for i in range(num_to_fire):
 		var angle = angles_to_fire[i]
 		var final_direction: Vector2 = base_direction.rotated(deg_to_rad(angle))
-		
+
 		var projectile = player.projectile_factory.create(weapon_data.projectile_scene)
 		if projectile:
 			projectile.add_collision_exception_with(player)
-			
+
 			if projectile.has_method("setup"):
 				projectile.setup(player, final_direction, fly_speed, damage, max_range, null)
-			
+
 			count_boomerang += 1
 			projectile.connect("returned_or_destroyed", Callable(self, "_on_boomerang_finished"))
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://r5dkswh4uets"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_s7cua"]
+[ext_resource type="AudioStream" uid="uid://ckd7846l3qge0" path="res://assets/audio/sfx/enemies/spear_attack.wav" id="2_y8u2a"]
+
+[resource]
+script = ExtResource("1_s7cua")
+clip_id = "spear_attack"
+stream = ExtResource("2_y8u2a")
+randomize_pitch = true

@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://drghr3ycqml5q" path="res://scenes/enemies/barrel/states/idle.gd" id="13_7dgof"]
 [ext_resource type="Script" uid="uid://cl23eidiikdgv" path="res://scenes/enemies/barrel/states/shoot.gd" id="14_tofd5"]
 [ext_resource type="Script" uid="uid://diwib3136kdvi" path="res://scenes/enemies/barrel/states/hurt.gd" id="16_cx43u"]
-[ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="17_cx43u"]
+[ext_resource type="Script" uid="uid://b0a52kt4t0qnm" path="res://scenes/enemies/barrel/states/dead.gd" id="17_sq6do"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_sq6do"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72a2k"]
@@ -119,7 +119,7 @@ script = ExtResource("14_tofd5")
 script = ExtResource("16_cx43u")
 
 [node name="Dead" type="Node" parent="States"]
-script = ExtResource("17_cx43u")
+script = ExtResource("17_sq6do")
 metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 
 [node name="EnemyHpBarMinions" parent="." instance=ExtResource("18_sq6do")]

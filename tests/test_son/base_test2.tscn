@@ -20,7 +20,7 @@ tile_set = ExtResource("2_u5orl")
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_usywe")]
 
 [node name="Player" parent="." instance=ExtResource("4_msorn")]
-position = Vector2(317, 29)
+position = Vector2(388, 34)
 is_push_out_wall = true
 flag_push = true
 has_weapon = true
@@ -34,18 +34,18 @@ position = Vector2(17, 74)
 
 [node name="BlockerCameraVertical2" parent="." instance=ExtResource("6_dk5k0")]
 position = Vector2(1105, 51)
-scale = Vector2(3.780463, 3.659236)
+scale = Vector2(3.78046, 3.65924)
 
 [node name="CameraRaiseZone" parent="." instance=ExtResource("7_nhlmm")]
 position = Vector2(591, 49)
-scale = Vector2(5.471407, 1.1771429)
-
-[node name="CameraRaiseZone2" parent="." instance=ExtResource("7_nhlmm")]
-position = Vector2(575.00006, 178)
-scale = Vector2(7.193039, -0.96312135)
+scale = Vector2(5.47141, 1.17714)
 
 [node name="WarLord" parent="." instance=ExtResource("9_10tfx")]
-position = Vector2(531, -9)
+position = Vector2(702, -14)
 
 [node name="Camerarig" parent="." instance=ExtResource("8_nhlmm")]
-position = Vector2(300, -33)
+position = Vector2(186, -316)
+
+[node name="BlockerCameraVertical3" parent="." instance=ExtResource("6_dk5k0")]
+position = Vector2(513, 176)
+scale = Vector2(223.426, 0.182962)

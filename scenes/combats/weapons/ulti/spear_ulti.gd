@@ -11,10 +11,10 @@ func execute_action(player: CharacterBody2D, weapon_data: WeaponData) -> void:
 
 	_perform_drill_dash(player, dash_data)
 
-func _perform_drill_dash(player: CharacterBody2D, data: UltiData) -> void:
-	if "is_invulnerable" in player:
-		player.is_invulnerable = true
+func _perform_drill_dash(player: Player, data: UltiData) -> void:
 
+	player.is_invulnerable = true
+	
 	var hitbox = player.melee_hitbox
 	var original_transform = Transform2D()
 	var original_damage = 1
@@ -30,6 +30,7 @@ func _perform_drill_dash(player: CharacterBody2D, data: UltiData) -> void:
 
 	var start_pos = player.global_position
 	var timer = 0.0
+
 	while timer < data.timer:
 		if not is_instance_valid(player): return
 
@@ -48,4 +49,6 @@ func _perform_drill_dash(player: CharacterBody2D, data: UltiData) -> void:
 	player.velocity.x = 0
 	player.spear_shape.set_deferred("disabled", false)
 	player.spear_ulti_shape.set_deferred("disabled", true)
+	await player.get_tree().create_timer(0.5).timeout
+	player.is_invulnerable = false
 	hitbox.damage = original_damage

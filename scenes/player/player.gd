@@ -18,13 +18,18 @@ extends BaseCharacter
 @onready var blade_shape = $Direction/HitArea2D/Blade
 @onready var spear_shape = $Direction/HitArea2D/Spear
 @onready var spear_ulti_shape = $Direction/HitArea2D/SpearUlti
+@onready var slash =$Direction/SwordSlash
 
+var fall_multiplier: float = 1.35
+var low_jump_multiplier = 0.75
 var timer_dash = 10
 var ok_tmp_dash = true
 var timer_block = 10
 var ok_tmp_block = true
+var FALL_THRESHOLD = 100
 
 ## Player character class that handles movement, combat, and state management
+var invulnerable_lock_count := 0
 var is_invulnerable: bool = false
 var fall_start_y: float = 0.0
 var was_on_floor: bool = false
@@ -82,6 +87,10 @@ func _ready() -> void:
 	print("Block: ", can_block)
 	print("Dash: ", can_dash)
 	print("Wall move: ", can_wall_move)
+	
+	was_on_floor = is_on_floor()
+	if !was_on_floor:
+		fall_start_y = global_position.y
 
 func _process(delta: float) -> void:
 	if !can_invulnerable && current_time_invul > 0:
@@ -215,21 +224,32 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		current_jumps = 0
 	super._physics_process(delta)
+	
+	play_walking_sound()
 
 func _check_fall_damage() -> void:
-	var on_floor_now = is_on_floor()
+	var on_floor_now := is_on_floor()
+
 	if not on_floor_now and was_on_floor:
 		fall_start_y = global_position.y
+
 	if on_floor_now and not was_on_floor:
-		var fall_distance = global_position.y - fall_start_y
-		var threshold = 500
-		if fall_distance > threshold and not is_invulnerable:
-			var damage = (fall_distance - threshold) / 5.0
-			print("⚠️ Player mất ", damage, " máu do rơi từ độ cao ", fall_distance)
-			fsm.change_state(fsm.states.hurt)
-			fsm.current_state.take_damage(damage)
-	fall_start_y = 0.0 if on_floor_now else fall_start_y
+		if fall_start_y >= 0.0:
+			var fall_distance := global_position.y - fall_start_y
+
+			if fall_distance > FALL_THRESHOLD:
+				if not is_invulnerable and not piority_invul:
+
+					var f_damage: float = (fall_distance - FALL_THRESHOLD) / 5.0
+					print("⚠️ Player mất ", f_damage, 
+						  " máu do rơi từ độ cao ", fall_distance)
+
+					fsm.current_state.take_damage(f_damage)
+
+		fall_start_y = -1.0
+
 	was_on_floor = on_floor_now
+
 
 # === COLLISIONS
 func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
@@ -238,12 +258,14 @@ func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
 	fsm.current_state.take_damage(_damage)
 
 func start_invulnerability():
-	is_invulnerable = true
+	if is_invulnerable:
+		return
+	acquire_invulnerable_lock()
 	onHurt.monitoring = false
 	
 	_blink_effect()
 	await get_tree().create_timer(invulnerable_time).timeout
-	is_invulnerable = false
+	release_invulnerable_lock()
 	_stop_blink_effect()
 	
 	await get_tree().process_frame
@@ -251,10 +273,19 @@ func start_invulnerability():
 
 func _blink_effect():
 	var sprite = _next_animated_sprite
+
+	if sprite.has_meta("blink_tween"):
+		var old_tween: Tween = sprite.get_meta("blink_tween")
+		old_tween.kill()
+		sprite.remove_meta("blink_tween")
+
 	var tween = create_tween()
 	tween.set_loops()
-	tween.tween_property(sprite, "modulate:a", 0.3, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(sprite, "modulate:a", 0.3, 0.1)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
+
 	sprite.set_meta("blink_tween", tween)
 
 func _stop_blink_effect():
@@ -307,8 +338,9 @@ func _on_frame_changed():
 			else:
 				melee_hitbox.set_deferred("monitoring", false)
 		else:
-			melee_hitbox.set_deferred("monitoring", false)		
+			melee_hitbox.set_deferred("monitoring", false)
 	else:
+		is_attack = false
 		melee_hitbox.set_deferred("monitoring", false)
 
 func _update_hitbox(data_weapon: MeleeData) -> void:
@@ -346,3 +378,20 @@ func restore_health(amount: int) -> void:
 
 func collect_powerup(powerup_id: String) -> void:
 	decorator_manager.apply_powerup(powerup_id)
+
+func acquire_invulnerable_lock():
+	invulnerable_lock_count += 1
+	is_invulnerable = true
+
+func release_invulnerable_lock():
+	invulnerable_lock_count = max(invulnerable_lock_count - 1, 0)
+	if invulnerable_lock_count == 0:
+		is_invulnerable = false
+	
+func play_walking_sound():
+	if fsm.current_state == fsm.states.run:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
+	else:
+		if $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.stop()

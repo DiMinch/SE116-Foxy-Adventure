@@ -4,7 +4,7 @@ extends EnemyCharacter
 @onready var is_short=true
 @onready var is_take_a_rest=false
 @onready var is_being_hurt=false
-
+@onready var sprite = $Direction/AnimatedSprite2D
 
 @onready var hp_bar = $EnemyHpBarBoss
 
