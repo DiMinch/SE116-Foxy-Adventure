@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://86tw5wmdnbc4"]
+[gd_scene load_steps=23 format=3 uid="uid://86tw5wmdnbc4"]
 
 [ext_resource type="Script" uid="uid://ju1egbeufwdo" path="res://scenes/enemies/barrel/barrel.gd" id="1_ytd36"]
 [ext_resource type="Texture2D" uid="uid://ch0hp25m7evv1" path="res://assets/monsters/barrel/barrel_hurt_01.png" id="2_5r3rq"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://diwib3136kdvi" path="res://scenes/enemies/barrel/states/hurt.gd" id="16_cx43u"]
 [ext_resource type="Script" uid="uid://b0a52kt4t0qnm" path="res://scenes/enemies/barrel/states/dead.gd" id="17_sq6do"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_sq6do"]
+[ext_resource type="AudioStream" uid="uid://cpqbkorf4k21w" path="res://assets/audio/sfx/enemies/barrel_shoot.wav" id="19_bh1st"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72a2k"]
 animations = [{
@@ -123,5 +124,11 @@ script = ExtResource("17_sq6do")
 metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 
 [node name="EnemyHpBarMinions" parent="." instance=ExtResource("18_sq6do")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_bh1st")
+volume_db = -2.22
+max_distance = 300.0
+attenuation = 0.2
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

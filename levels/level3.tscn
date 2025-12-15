@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://dai7e3meplndn"]
+[gd_scene load_steps=28 format=4 uid="uid://dai7e3meplndn"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_mf7v1"]
+[ext_resource type="AudioStream" uid="uid://bip702dn03qtb" path="res://assets/audio/music/music_forest2.wav" id="2_4lmri"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="2_cpie4"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_d6jip"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_udvx3"]
@@ -89,6 +90,7 @@ modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_mf7v1")
+level_music = ExtResource("2_4lmri")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]

@@ -25,7 +25,7 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	if MusicManager:
-		MusicManager.play_music(level_music)
+		MusicManager.play_music(level_music, true, -12.0, 1.0)
 
 func fade_in_screen() -> void:
 	var fade_layer = get_tree().root.get_node_or_null("FadeLayer")
@@ -34,6 +34,7 @@ func fade_in_screen() -> void:
 
 func _on_turn_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/game_screen/select_level_screen.tscn")
+	MusicManager.stop_music()
 
 func _on_timeline_started():
 	if GameManager.player and not is_ambient_dialogue:

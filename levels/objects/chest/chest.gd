@@ -28,4 +28,3 @@ func open_chest():
 
 	
 	AudioManager.play_sound("open_chest")
-
