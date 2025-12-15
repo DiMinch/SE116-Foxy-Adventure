@@ -3,13 +3,17 @@ extends EnemyRunState
 const MapScene = "Stage"
 const strPlayer = "Player"
 var player: Player
-
+var Hurt:CollisionShape2D
 @export var movement_range: float = 200.0   # phạm vi spear chạy qua (tâm là vị trí lúc vào state)
 
+func _enter()->void:
+	Hurt=obj.hurt
 func _update(delta: float) -> void:
 	# giữ logic chạy / quay đầu gốc (run.gd)
 	super._update(delta)
-	
+	if is_opposite()==true:
+		Hurt.disabled=true
+	else : Hurt.disabled=false
 	# --- PHẦN ĐUỔI PLAYER GIỮ NGUYÊN ---
 	player = find_parent(MapScene).find_child(strPlayer)
 	if player and is_instance_valid(player):

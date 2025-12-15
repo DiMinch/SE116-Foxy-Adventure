@@ -6,6 +6,7 @@ var _fading := false
 
 func _enter() -> void:
 	#print("ENTER DEAD, alpha =", obj.sprite.modulate.a)
+	obj.hurt.disabled =true
 	obj.change_animation("idle")
 	obj.sprite.stop()
 	obj.sprite.frame = 1
