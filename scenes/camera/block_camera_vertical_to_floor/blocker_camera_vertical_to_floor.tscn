@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cad4u5uuwol7h"]
+
+[ext_resource type="Script" uid="uid://2j0gfqp68y5f" path="res://scenes/camera/block_camera_vertical_to_floor/blocker_camera_vertical_to_floor.gd" id="1_3sj24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aftig"]
+
+[node name="BlockerCameraVerticalToFloor" type="StaticBody2D"]
+scale = Vector2(3.7868874, 3.659236)
+collision_layer = 1024
+collision_mask = 512
+script = ExtResource("1_3sj24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aftig")

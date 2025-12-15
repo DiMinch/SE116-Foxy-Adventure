@@ -389,6 +389,7 @@ func release_invulnerable_lock():
 		is_invulnerable = false
 	
 func play_walking_sound():
+
 	if fsm.current_state == fsm.states.run:
 		if not $AudioStreamPlayer.playing:
 			$AudioStreamPlayer.play()

@@ -26,6 +26,8 @@ func play_slash():
 	if count==1:
 		anim.scale = Vector2(0.15,0.15)
 		anim.play("thin")	
+		await anim.animation_finished
+		anim.visible=false
 		count+=1
 	elif count==2:
 		anim.scale =Vector2(0.15,0.15)
@@ -33,6 +35,7 @@ func play_slash():
 		await anim.animation_finished
 		anim.scale=Vector2(0.183,0.183)
 		count+=1
+		anim.visible=false
 	else:
 		anim.scale =Vector2(0.2,0.2)
 		anim.position= Vector2(20,-10)
@@ -40,9 +43,9 @@ func play_slash():
 		await anim.animation_finished
 		anim.position= Vector2(36,-10)
 		anim.scale=Vector2(0.183,0.183)
+		anim.visible=false
 		count=1
-	await anim.animation_finished
-	anim.visible=false
 	if obj.melee_hitbox:
 		obj.melee_hitbox.set_deferred("monitoring", false)
+	
 	
