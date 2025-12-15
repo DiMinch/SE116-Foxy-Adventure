@@ -11,10 +11,10 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_awkx7"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 1.0,
 "texture": ExtResource("2_4yaho")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("3_3ggrq")
 }, {
 "duration": 1.0,
@@ -47,3 +47,4 @@ sprite_frames = SubResource("SpriteFrames_awkx7")
 animation = &"idle"
 frame = 6
 frame_progress = 1.0
+speed_scale = 1.5

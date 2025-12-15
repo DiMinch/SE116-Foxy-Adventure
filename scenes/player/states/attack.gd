@@ -10,8 +10,6 @@ func _enter() -> void:
 		
 	if obj.current_weapon_data.weapon_name=="Blade":
 		play_slash()
-func _exit() -> void:
-	obj.is_attack = false
 
 func _update(delta: float) -> void:
 	if update_timer(delta):

@@ -1,6 +1,9 @@
 class_name Player
 extends BaseCharacter
 
+const DASH_COOLDOWN = 10
+const BLOCK_COOLDOWN = 10
+
 #bien xu ly Dash, Block, double_jump, slide on wall, jump on wall
 @export var is_count_down_dash = true 
 @export var is_count_down_block = true
@@ -34,6 +37,7 @@ var is_invulnerable: bool = false
 var fall_start_y: float = 0.0
 var was_on_floor: bool = false
 var is_attack: bool = false
+var is_ulti: bool = false
 var check_attack: bool = true
 
 @export var invulnerable_time := 2.0
@@ -199,26 +203,9 @@ func apply_weapon_data(data: WeaponData):
 
 # === PHYSIC PROCESS ===
 func _physics_process(delta: float) -> void:
-	# Dash skill
-	if is_count_down_dash == false and ok_tmp_dash == true:
-		timer_dash = 0
-		ok_tmp_dash = false
-	
-	timer_dash += delta
-	if timer_dash >= 10:
-		timer_dash = 10
-		is_count_down_dash = true
-		ok_tmp_dash = true
-	# Block skill
-	if is_count_down_block == false and ok_tmp_block == true:
-		timer_block = 0
-		ok_tmp_block = false
-	
-	timer_block += delta
-	if timer_block >= 10:
-		timer_block = 10
-		is_count_down_block = true
-		ok_tmp_block = true
+	_update_dash_cooldown(delta)
+	_update_block_cooldown(delta)
+
 	# Check Logic
 	_check_fall_damage()
 	if is_on_floor():
@@ -226,6 +213,33 @@ func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	
 	play_walking_sound()
+
+func _update_dash_cooldown(delta: float) -> void:
+	# Reset timer 1 lần duy nhất sau khi dash
+	if ok_tmp_dash:
+		timer_dash = 0.0
+		ok_tmp_dash = false
+
+	# Đang cooldown
+	if not is_count_down_dash:
+		timer_dash += delta
+		if timer_dash >= DASH_COOLDOWN:
+			timer_dash = DASH_COOLDOWN
+			is_count_down_dash = true
+
+func _update_block_cooldown(delta: float) -> void:
+	# Reset timer đúng 1 lần
+	if ok_tmp_block:
+		timer_block = 0.0
+		ok_tmp_block = false
+
+	# Đang cooldown
+	if not is_count_down_block:
+		timer_block += delta
+		if timer_block >= BLOCK_COOLDOWN:
+			timer_block = BLOCK_COOLDOWN
+			is_count_down_block = true
+
 
 func _check_fall_damage() -> void:
 	var on_floor_now := is_on_floor()
@@ -332,7 +346,7 @@ func _on_frame_changed():
 		var _frame = animated_sprite.frame
 
 		if current_weapon_data:
-			if current_weapon_data.attack_behavior && !is_attack:
+			if current_weapon_data.attack_behavior && !is_attack && !is_ulti:
 				is_attack = true
 				current_weapon_data.attack_behavior.execute_action(self, current_weapon_data)
 			else:
