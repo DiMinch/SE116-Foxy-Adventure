@@ -29,6 +29,8 @@ func open_and_transition():
 	await fade_screen(true)
 	GameManager.change_stage(target_stage, target_door)
 	sprite.play("closing")
+	
+
 
 func _teleport_in_same_stage() -> void:
 	var target_portal = GameManager.current_stage.find_child(target_door)

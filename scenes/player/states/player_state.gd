@@ -95,7 +95,7 @@ func take_damage(damage) -> void:
 func control_attack() -> bool:
 	if obj.is_dialogue_active:
 		return false
-	if Input.is_action_pressed(ATTACK) and !obj.is_attack:
+	if Input.is_action_pressed(ATTACK) and !obj.is_attack and !obj.is_invulnerable:
 		if obj.has_weapon == true:
 			change_state(fsm.states.attack)
 		return true
@@ -120,8 +120,8 @@ func control_swap_weapon() -> bool:
 func control_ultimate() -> bool:
 	if obj.is_dialogue_active:
 		return false
-	if Input.is_action_just_pressed(ULTI) and !obj.is_attack:
-		if obj.current_weapon_data and obj.current_ulti_cooldown <= 0: #(and obj.current_weapon_data.current_cooldown <= 0)
+	if Input.is_action_just_pressed(ULTI) and !obj.is_attack and !obj.is_invulnerable:
+		if obj.current_weapon_data:# and obj.current_ulti_cooldown <= 0: #(and obj.current_weapon_data.current_cooldown <= 0)
 			change_state(fsm.states.ulti)
 			debug_player_skills("ULTIMATE")
 			return true

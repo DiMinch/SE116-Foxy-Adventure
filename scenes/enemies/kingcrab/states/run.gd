@@ -6,8 +6,8 @@ const strPlayer = "Player"
 var is_left: bool = true
 var player: Player
 
-var timer_count_down: float = 0.0              # đếm 2s cho lần detect đầu
-var can_atk_after_count_down: bool = false     # true = đã chờ xong 2s trong lần detect này
+var timer_count_down: float = 0.0              # đếm 1s cho lần detect đầu
+var can_atk_after_count_down: bool = false     # true = đã chờ xong 1s trong lần detect này
 var _hurt_timer_running: bool = false          # để không tạo nhiều timer khi bị hurt
 
 
@@ -64,7 +64,7 @@ func _update(delta: float) -> void:
 		if not can_atk_after_count_down:
 			obj.velocity.x = 0.0
 			timer_count_down += delta
-			if timer_count_down >= 2.0:
+			if timer_count_down >= 1.0:
 				can_atk_after_count_down = true  # từ giờ trở đi được phép đánh ngay
 
 		# nếu đã chờ xong 2s (hoặc từ attack quay lại run mà player vẫn trong vùng)

@@ -1,6 +1,9 @@
 class_name Player
 extends BaseCharacter
 
+const DASH_COOLDOWN = 10
+const BLOCK_COOLDOWN = 10
+
 #bien xu ly Dash, Block, double_jump, slide on wall, jump on wall
 @export var is_count_down_dash = true 
 @export var is_count_down_block = true
@@ -29,10 +32,12 @@ var ok_tmp_block = true
 var FALL_THRESHOLD = 100
 
 ## Player character class that handles movement, combat, and state management
+var invulnerable_lock_count := 0
 var is_invulnerable: bool = false
 var fall_start_y: float = 0.0
 var was_on_floor: bool = false
 var is_attack: bool = false
+var is_ulti: bool = false
 var check_attack: bool = true
 
 @export var invulnerable_time := 2.0
@@ -198,26 +203,9 @@ func apply_weapon_data(data: WeaponData):
 
 # === PHYSIC PROCESS ===
 func _physics_process(delta: float) -> void:
-	# Dash skill
-	if is_count_down_dash == false and ok_tmp_dash == true:
-		timer_dash = 0
-		ok_tmp_dash = false
-	
-	timer_dash += delta
-	if timer_dash >= 10:
-		timer_dash = 10
-		is_count_down_dash = true
-		ok_tmp_dash = true
-	# Block skill
-	if is_count_down_block == false and ok_tmp_block == true:
-		timer_block = 0
-		ok_tmp_block = false
-	
-	timer_block += delta
-	if timer_block >= 10:
-		timer_block = 10
-		is_count_down_block = true
-		ok_tmp_block = true
+	_update_dash_cooldown(delta)
+	_update_block_cooldown(delta)
+
 	# Check Logic
 	_check_fall_damage()
 	if is_on_floor():
@@ -225,6 +213,33 @@ func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	
 	play_walking_sound()
+
+func _update_dash_cooldown(delta: float) -> void:
+	# Reset timer 1 lần duy nhất sau khi dash
+	if ok_tmp_dash:
+		timer_dash = 0.0
+		ok_tmp_dash = false
+
+	# Đang cooldown
+	if not is_count_down_dash:
+		timer_dash += delta
+		if timer_dash >= DASH_COOLDOWN:
+			timer_dash = DASH_COOLDOWN
+			is_count_down_dash = true
+
+func _update_block_cooldown(delta: float) -> void:
+	# Reset timer đúng 1 lần
+	if ok_tmp_block:
+		timer_block = 0.0
+		ok_tmp_block = false
+
+	# Đang cooldown
+	if not is_count_down_block:
+		timer_block += delta
+		if timer_block >= BLOCK_COOLDOWN:
+			timer_block = BLOCK_COOLDOWN
+			is_count_down_block = true
+
 
 func _check_fall_damage() -> void:
 	var on_floor_now := is_on_floor()
@@ -243,7 +258,6 @@ func _check_fall_damage() -> void:
 					print("⚠️ Player mất ", f_damage, 
 						  " máu do rơi từ độ cao ", fall_distance)
 
-					fsm.change_state(fsm.states.hurt)
 					fsm.current_state.take_damage(f_damage)
 
 		fall_start_y = -1.0
@@ -258,12 +272,14 @@ func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
 	fsm.current_state.take_damage(_damage)
 
 func start_invulnerability():
-	is_invulnerable = true
+	if is_invulnerable:
+		return
+	acquire_invulnerable_lock()
 	onHurt.monitoring = false
 	
 	_blink_effect()
 	await get_tree().create_timer(invulnerable_time).timeout
-	is_invulnerable = false
+	release_invulnerable_lock()
 	_stop_blink_effect()
 	
 	await get_tree().process_frame
@@ -271,10 +287,19 @@ func start_invulnerability():
 
 func _blink_effect():
 	var sprite = _next_animated_sprite
+
+	if sprite.has_meta("blink_tween"):
+		var old_tween: Tween = sprite.get_meta("blink_tween")
+		old_tween.kill()
+		sprite.remove_meta("blink_tween")
+
 	var tween = create_tween()
 	tween.set_loops()
-	tween.tween_property(sprite, "modulate:a", 0.3, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(sprite, "modulate:a", 0.3, 0.1)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
+
 	sprite.set_meta("blink_tween", tween)
 
 func _stop_blink_effect():
@@ -321,7 +346,7 @@ func _on_frame_changed():
 		var _frame = animated_sprite.frame
 
 		if current_weapon_data:
-			if current_weapon_data.attack_behavior && !is_attack:
+			if current_weapon_data.attack_behavior && !is_attack && !is_ulti:
 				is_attack = true
 				current_weapon_data.attack_behavior.execute_action(self, current_weapon_data)
 			else:
@@ -367,8 +392,18 @@ func restore_health(amount: int) -> void:
 
 func collect_powerup(powerup_id: String) -> void:
 	decorator_manager.apply_powerup(powerup_id)
+
+func acquire_invulnerable_lock():
+	invulnerable_lock_count += 1
+	is_invulnerable = true
+
+func release_invulnerable_lock():
+	invulnerable_lock_count = max(invulnerable_lock_count - 1, 0)
+	if invulnerable_lock_count == 0:
+		is_invulnerable = false
 	
 func play_walking_sound():
+
 	if fsm.current_state == fsm.states.run:
 		if not $AudioStreamPlayer.playing:
 			$AudioStreamPlayer.play()

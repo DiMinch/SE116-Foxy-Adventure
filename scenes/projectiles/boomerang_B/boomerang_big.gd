@@ -40,10 +40,11 @@ func _physics_process(delta: float) -> void:
 
 func hit(hurt_area):
 	var grand_parent = hurt_area.get_parent().get_parent()
+	if grand_parent is Grass:
+		return
 	if hurt_area.has_method("take_damage"):
 
 		var current_hp = 0
-		
 		current_hp = grand_parent.health
 
 		var dynamic_damage = int(current_hp * stats.enemy_hp_percent)

@@ -3,8 +3,13 @@ extends EnemyState
 var _start_x: float = 0.0
 var _hit_shape: CollisionShape2D
 var _timer : float = 0.0
+const MapScene = "Stage"
+const strPlayer = "Player"
+var Hurt:CollisionShape2D
+var player: Player
 
 func _enter() -> void:
+	Hurt=obj.hurt
 	_timer = 2.0
 	# lưu vị trí bắt đầu
 	_start_x = obj.global_position.x
@@ -27,6 +32,9 @@ func _enter() -> void:
 
 func _update(delta: float) -> void:
 	# luôn giữ vận tốc trượt theo hướng mặt
+	if is_opposite()==true:
+		Hurt.disabled=true
+	else : Hurt.disabled=false
 	_timer -= delta
 	obj.velocity.x = obj.direction * obj.attack_speed
 	if _should_turn_around():
@@ -58,3 +66,21 @@ func _should_turn_around()->bool:
 	if obj.is_on_floor() and obj.is_can_fall():
 		return true
 	return false
+func is_opposite() -> bool:
+	# lấy player
+	var stage := obj.find_parent(MapScene)
+	if stage == null:
+		return false
+	
+	var p := stage.find_child(strPlayer) as Player
+	if p == null or not is_instance_valid(p):
+		return false
+	
+	var native_x: float = obj.global_position.x
+	var player_x: float = p.global_position.x
+	# hướng spear đang nhìn (1 phải, -1 trái)
+	var looking_dir: float = obj.direction
+	# hướng player nằm (1 phải, -1 trái)
+	var player_dir: float = sign(player_x - native_x)
+	# true nếu spear nhìn đúng về phía player
+	return looking_dir == player_dir

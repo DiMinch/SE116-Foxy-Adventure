@@ -1,10 +1,12 @@
 extends EnemyState
 
-@export var fade_speed := 2   # càng lớn fade càng nhanh
+@export var fade_speed := 5   # càng lớn fade càng nhanh
 
 var _fading := false
 
 func _enter() -> void:
+	obj.Hit.monitoring=false
+	obj.hurt.disabled =true
 	#print("ENTER DEAD, alpha =", obj.sprite.modulate.a)
 	obj.change_animation("idle")
 	obj.sprite.stop()

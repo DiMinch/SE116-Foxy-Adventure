@@ -5,8 +5,9 @@ extends EnemyCharacter
 @onready var is_take_a_rest=false
 @onready var is_being_hurt=false
 @onready var sprite = $Direction/AnimatedSprite2D
-
+@onready var Hit =$Direction/HitArea2D
 @onready var hp_bar = $EnemyHpBarBoss
+@onready var hurt =$Direction/HurtArea2D/CollisionShape2D
 
 func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Idle)

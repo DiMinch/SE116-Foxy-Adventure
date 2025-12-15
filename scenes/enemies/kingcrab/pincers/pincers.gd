@@ -103,4 +103,4 @@ func shake():
 	camera = stage.find_child(strCamera) as CharacterBody2D
 	if camera == null or not is_instance_valid(camera):
 		return
-	camera.shake_ground(0.2,20)
+	camera.shake_ground(0.2,30)
