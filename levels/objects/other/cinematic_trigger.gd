@@ -3,12 +3,18 @@ extends Area2D
 @export_group("Cinematic Targets")
 @export var target_node: Node2D
 @export var boss_name: String = "KING CRAB"
-@export var boss_title: String = "Terror of the Seas"
 
 @export_group("VFX Settings")
 @export var enable_shake: bool = true
 @export var shake_power: float = 3.0
 @export var block_player_input: bool = true
+@export var enable_cinematic: bool = true
+
+@export_group("Interaction Settings")
+@export var enable_followup_popup: bool = false
+@export var popup_scene: PackedScene
+@export_multiline var tutorial_text: String = "Nội dung..."
+@export var tutorial_image: Texture2D
 
 @onready var cinema_cam = $CinemaCamera
 @onready var top_bar = $CinematicUI/TopBar
@@ -29,6 +35,9 @@ func _ready():
 	
 	collision_mask = 2
 	body_entered.connect(_on_body_entered)
+	
+	if popup_scene == null:
+		popup_scene = load("res://levels/objects/signpost/tutorial_popup.tscn")
 
 func _on_body_entered(body):
 	if is_triggered: return
@@ -38,10 +47,6 @@ func _on_body_entered(body):
 
 func start_cinematic_sequence(player):
 	is_triggered = true
-	
-	print("Cinematic started")
-	print("Target node: ", target_node)
-	print("Player: ", player)
 	
 	if block_player_input:
 		if player.has_method("set_physics_process"):
@@ -57,11 +62,10 @@ func start_cinematic_sequence(player):
 		cinema_cam.zoom = main_cam.zoom
 		cinema_cam.enabled = true
 		cinema_cam.make_current()
-		print("Main camera found and switched")
 	else:
-		print("WARNING: No Camera2D found on player")
+		print("[CINEMATIC] WARNING: No Camera2D found on player")
 
-	cinema_ui.visible = true
+	cinema_ui.visible = enable_cinematic
 	
 	var tween = create_tween().set_parallel(true)
 	
@@ -73,13 +77,12 @@ func start_cinematic_sequence(player):
 	await tween.finished
 	
 	if target_node:
-		print("Panning camera to: ", target_node.global_position)
 		var pan_tween = create_tween()
 		pan_tween.tween_property(cinema_cam, "global_position", target_node.global_position, 1.2)\
 			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 		await pan_tween.finished
 	else:
-		print("ERROR: target_node is null!")
+		print("[CINEMATIC] ERROR: target_node is null!")
 	
 	Engine.time_scale = 0.2
 	speed_lines.visible = false
@@ -88,7 +91,7 @@ func start_cinematic_sequence(player):
 		apply_camera_shake()
 	
 	# Hiện thông tin Boss
-	boss_label.text = "[center]%s\n[font_size=24]%s[/font_size][/center]" % [boss_name, boss_title]
+	boss_label.text = boss_name
 	
 	var boss_tween = create_tween()
 	boss_tween.tween_property(boss_card, "modulate:a", 1.0, 0.1)
@@ -122,6 +125,14 @@ func start_cinematic_sequence(player):
 		player.set_physics_process(true)
 	
 	queue_free()
+	
+	if enable_followup_popup:
+		var popup = popup_scene.instantiate()
+	
+		get_tree().root.add_child(popup)
+		
+		if popup.has_method("setup_content"):
+			popup.setup_content(tutorial_text, tutorial_image)
 
 func apply_camera_shake():
 	var shake_tween = create_tween()

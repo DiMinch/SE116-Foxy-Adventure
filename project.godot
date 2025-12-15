@@ -30,7 +30,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"foxy": "res://dialog/characters/foxy.dch"
+"foxy": "res://dialog/characters/foxy.dch",
+"foxy_grandpa": "res://dialog/characters/foxy_grandpa.dch",
+"king_crab": "res://dialog/characters/king_crab.dch",
+"war_lord": "res://dialog/characters/war_lord.dch"
 }
 directories/dtl_directory={
 "intro_timeline": "res://dialog/timelines/intro_timeline.dtl",

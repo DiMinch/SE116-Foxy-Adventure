@@ -130,14 +130,15 @@ tutorial_text = "Trái cây không chỉ giúp làm đầy cái bụng đói
 mà còn đem lại sức mạnh trong thời gian ngắn"
 tutorial_image = ExtResource("17_ls4ot")
 
-[node name="CinematicTrigger" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("18_tx362")]
-target_node = NodePath("../Marker2D")
-boss_name = "Cửa"
-boss_title = "Điểm đích"
+[node name="Cinematic" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CinematicTrigger"]
+[node name="CinematicTrigger" parent="Cinematic" node_paths=PackedStringArray("target_node") instance=ExtResource("18_tx362")]
+target_node = NodePath("../../Door")
+boss_name = "Cửa ra"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cinematic/CinematicTrigger"]
 position = Vector2(590.5, -568)
 shape = SubResource("RectangleShape2D_tx362")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Door" type="Marker2D" parent="Cinematic"]
 position = Vector2(2723, -1507)
