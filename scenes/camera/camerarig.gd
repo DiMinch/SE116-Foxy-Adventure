@@ -85,6 +85,10 @@ func _physics_process(delta: float) -> void:
 	player = stage.find_child(strPlayer) as Player
 	if player == null or not is_instance_valid(player):
 		return
+		
+	if abs(player.global_position.x-global_position.x)>225 or abs(player.global_position.y-global_position.y)>125:
+		
+		global_position =player.global_position
 	# --- camera shake update ---
 	if _shake_time > 0.0:
 		_shake_time -= delta

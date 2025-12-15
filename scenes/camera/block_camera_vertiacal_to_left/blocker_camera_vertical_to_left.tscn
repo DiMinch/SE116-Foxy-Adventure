@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rxvcfdj2km1q"]
+
+[ext_resource type="Script" uid="uid://dwkgxcsafwxl" path="res://scenes/camera/block_camera_vertiacal_to_left/blocker_camera_vertical_to_left.gd" id="1_h6kqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aftig"]
+
+[node name="BlockerCameraVerticalToLeft" type="StaticBody2D"]
+scale = Vector2(3.7868874, 3.659236)
+collision_layer = 1024
+collision_mask = 512
+script = ExtResource("1_h6kqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.26022294, 2.9921546)
+shape = SubResource("RectangleShape2D_aftig")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dmhy6uiu3m6qb"]
+[gd_scene load_steps=25 format=3 uid="uid://dmhy6uiu3m6qb"]
 
 [ext_resource type="Script" uid="uid://y5l1mvysh22g" path="res://scenes/enemies/native/native.gd" id="1_pe3bm"]
 [ext_resource type="Texture2D" uid="uid://brwe7dhbehxvr" path="res://assets/monsters/native/native_8.png" id="2_1461y"]
@@ -19,8 +19,8 @@
 [ext_resource type="Script" uid="uid://b0ih6rf0eu1ok" path="res://scenes/enemies/native/states/attack.gd" id="16_gtspd"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="18_1461y"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="19_d4u6i"]
-[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="20_rpxsc"]
-[ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="20_rpxsc"]
+[ext_resource type="AudioStream" uid="uid://c5ryv334sivsf" path="res://assets/audio/sfx/player/player_walk.wav" id="20_rpxsc"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="21_mflj3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kn7eo"]
 animations = [{
@@ -145,7 +145,7 @@ metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 stream = ExtResource("20_rpxsc")
 max_distance = 300.0
 attenuation = 0.2
-bus = &"SFX"
 
-[node name="EnemyHpBarMinions" parent="." instance=ExtResource("20_rpxsc")]
+[node name="EnemyHpBarMinions" parent="." instance=ExtResource("21_mflj3")]
+
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
