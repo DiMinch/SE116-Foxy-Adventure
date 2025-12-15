@@ -41,11 +41,11 @@ position = Vector2(2152, -1037)
 position = Vector2(2718, -771)
 
 [node name="Camerarig" parent="." instance=ExtResource("11_c5hp6")]
-position = Vector2(241, -2)
+position = Vector2(307, -19)
 
 [node name="BlockerCameraVertical" parent="." instance=ExtResource("13_j6jbw")]
-position = Vector2(-16, -532)
-scale = Vector2(1.2628533, 62.15039)
+position = Vector2(-12, -532)
+scale = Vector2(1.2628533, 73.091736)
 
 [node name="BlockerCameraVertical2" parent="." instance=ExtResource("13_j6jbw")]
 position = Vector2(436, 239)
