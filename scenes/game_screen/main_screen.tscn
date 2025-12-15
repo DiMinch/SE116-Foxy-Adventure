@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_cqicu"]
 [ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_8okfs"]
 [ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ftbm5"]
-[ext_resource type="Texture2D" uid="uid://cu4wu006nmkbd" path="res://assets/ui/logo.png" id="11_mqab0"]
+[ext_resource type="Texture2D" uid="uid://s0xtrmudu7a2" path="res://assets/ui/logo.png" id="11_mqab0"]
 [ext_resource type="Texture2D" uid="uid://fglbdisawtyj" path="res://assets/ui/wood_paper/Prefabs/6.png" id="11_n1kf1"]
 [ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="14_q7ijo"]
 [ext_resource type="Texture2D" uid="uid://v405dewipa2w" path="res://assets/ui/skill_tree/B1_1.png" id="15_8gdh3"]
@@ -245,8 +245,6 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("14_q7ijo")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_mqab0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_34qkg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ftbm5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q7ijo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8gdh3")
