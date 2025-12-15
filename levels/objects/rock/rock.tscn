@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://slmi4tavg5nh"]
+
+[node name="Rock" type="Node2D"]
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]

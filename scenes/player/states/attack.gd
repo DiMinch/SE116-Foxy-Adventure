@@ -8,23 +8,24 @@ func _enter() -> void:
 	if obj.melee_hitbox.monitoring:
 		obj.melee_hitbox.update_stat_attack()
 		
-	if obj.current_slot_index==0:
+	if obj.current_weapon_data.weapon_name=="Blade":
 		play_slash()
 func _exit() -> void:
 	obj.is_attack = false
-	if obj.melee_hitbox:
-		obj.melee_hitbox.set_deferred("monitoring", false)
 
 func _update(delta: float) -> void:
 	if update_timer(delta):
 		change_state(fsm.previous_state)
 
 
+
 func play_slash():
-	anim =obj.slash
+	anim = obj.slash
 	anim.visible=true
+	anim.position = Vector2(5 ,anim.position.y)
 	if count==1:
-		anim.play("thin")
+		anim.scale = Vector2(0.15,0.15)
+		anim.play("thin")	
 		await anim.animation_finished
 		anim.visible=false
 		count+=1
@@ -38,10 +39,14 @@ func play_slash():
 	else:
 		anim.scale =Vector2(0.2,0.2)
 		#anim.position= Vector2(5,-10)
+		anim.position= Vector2(20,-10)
 		anim.play("mix")
 		await anim.animation_finished
 		anim.position= Vector2(33,-10)
+		anim.position= Vector2(36,-10)
 		anim.visible=false
 		count=1
+	if obj.melee_hitbox:
+		obj.melee_hitbox.set_deferred("monitoring", false)
 	
 	

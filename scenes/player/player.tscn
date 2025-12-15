@@ -45,7 +45,7 @@ radius = 15.0
 height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttakn"]
-size = Vector2(25, 25)
+size = Vector2(31.5, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykrpk"]
 size = Vector2(50, 20)
@@ -188,12 +188,12 @@ _passivebasic = []
 _passiveplus = []
 
 [node name="Blade" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(12, 0)
+position = Vector2(15.25, 0)
 shape = SubResource("RectangleShape2D_ttakn")
 disabled = true
 
 [node name="Spear" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(25, -1)
+position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_ykrpk")
 disabled = true
 
