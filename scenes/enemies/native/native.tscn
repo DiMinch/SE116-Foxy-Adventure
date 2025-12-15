@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ckopvoukwn82s" path="res://scenes/enemies/native/bullet/coconut.tscn" id="15_1461y"]
 [ext_resource type="Script" uid="uid://b0ih6rf0eu1ok" path="res://scenes/enemies/native/states/attack.gd" id="16_gtspd"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="18_1461y"]
-[ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="19_d4u6i"]
+[ext_resource type="Script" uid="uid://bvwi4xbmxvqw3" path="res://scenes/enemies/native/dead.gd" id="19_mflj3"]
 [ext_resource type="AudioStream" uid="uid://c5ryv334sivsf" path="res://assets/audio/sfx/player/player_walk.wav" id="20_rpxsc"]
 [ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="21_mflj3"]
 
@@ -138,7 +138,7 @@ script = ExtResource("16_gtspd")
 script = ExtResource("18_1461y")
 
 [node name="Dead" type="Node" parent="States"]
-script = ExtResource("19_d4u6i")
+script = ExtResource("19_mflj3")
 metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

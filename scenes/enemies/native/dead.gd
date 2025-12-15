@@ -4,10 +4,10 @@ extends EnemyState
 
 var _fading := false
 
-func _enter() -> void:
-	obj.Hit.monitoring=false
+func _enter() -> void:	
 	#print("ENTER DEAD, alpha =", obj.sprite.modulate.a)
 	obj.change_animation("run")
+	AudioManager.play_sound("enemy_die")
 	obj.sprite.stop()
 	obj.sprite.frame = 1
 	_fading = true

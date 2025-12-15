@@ -17,9 +17,8 @@ func _process(delta: float) -> void:
 	player = stage.find_child(strPlayer) as Player
 	
 	var d=player.global_position.y-global_position.y
-	if abs(d)>abs(height/2): 
+	if d>abs(height/2): 
 		is_out_of_zone=true	
-		print(abs(d),"-",height/2)
 	else :
 		is_out_of_zone=false
 	if player == null or not is_instance_valid(player):
@@ -27,6 +26,5 @@ func _process(delta: float) -> void:
 	if global_position.x>player.global_position.x and is_out_of_zone==false:
 		Coll.disabled=false
 	else :
-		print("hehe")
 		Coll.disabled=true
 		

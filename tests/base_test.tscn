@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://c65eshjac01qj"]
+[gd_scene load_steps=5 format=4 uid="uid://c65eshjac01qj"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_7ugm8"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_a762p"]
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="3_sxg8j"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_dwgbq"]
-[ext_resource type="PackedScene" uid="uid://d2tphol6b0v3i" path="res://scenes/enemies/war_lord/war_lord.tscn" id="5_sxg8j"]
-[ext_resource type="PackedScene" uid="uid://dmhy6uiu3m6qb" path="res://scenes/enemies/native/native.tscn" id="6_dwgbq"]
-[ext_resource type="PackedScene" uid="uid://ltxwp2u8glo8" path="res://scenes/enemies/spear/spear.tscn" id="7_5ahv6"]
-[ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="8_7n0sk"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_7ugm8")
@@ -20,7 +16,7 @@ tile_set = ExtResource("2_a762p")
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_sxg8j")]
 
 [node name="Player" parent="." instance=ExtResource("4_dwgbq")]
-position = Vector2(308, 24)
+position = Vector2(146, 91)
 is_push_out_wall = true
 flag_push = true
 has_weapon = true
@@ -28,15 +24,3 @@ has_weapon = true
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Bullets" type="Node2D" parent="."]
-
-[node name="WarLord" parent="." instance=ExtResource("5_sxg8j")]
-position = Vector2(643, -3)
-
-[node name="Native" parent="." instance=ExtResource("6_dwgbq")]
-position = Vector2(455, 125)
-
-[node name="Spear" parent="." instance=ExtResource("7_5ahv6")]
-position = Vector2(578, 138)
-
-[node name="Camerarig" parent="." instance=ExtResource("8_7n0sk")]
-position = Vector2(22, -74)

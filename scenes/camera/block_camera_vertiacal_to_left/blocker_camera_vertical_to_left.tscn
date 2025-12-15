@@ -5,11 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aftig"]
 
 [node name="BlockerCameraVerticalToLeft" type="StaticBody2D"]
-scale = Vector2(3.7868874, 3.659236)
 collision_layer = 1024
 collision_mask = 512
 script = ExtResource("1_h6kqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.26022294, 2.9921546)
 shape = SubResource("RectangleShape2D_aftig")

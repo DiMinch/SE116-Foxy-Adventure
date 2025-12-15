@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bpparbnk6bxbu"]
+[gd_scene load_steps=6 format=4 uid="uid://bpparbnk6bxbu"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_qcg57"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_u5orl"]
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="3_usywe"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_msorn"]
-[ext_resource type="PackedScene" uid="uid://c8acnn6gukpq7" path="res://scenes/camera/block_camera_vertical_to_right/blocker_camera_vertical_to_right.tscn" id="6_dk5k0"]
-[ext_resource type="PackedScene" uid="uid://b8sbow42o0nrr" path="res://scenes/camera/camera_raise_zone/camera_raise_zone.tscn" id="7_nhlmm"]
 [ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="8_nhlmm"]
-[ext_resource type="PackedScene" uid="uid://bc75qjq4kksh" path="res://scenes/camera/block_camera_vertical/blocker_camera_vertical.tscn" id="11_mrnhl"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_qcg57")
@@ -20,7 +17,7 @@ tile_set = ExtResource("2_u5orl")
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_usywe")]
 
 [node name="Player" parent="." instance=ExtResource("4_msorn")]
-position = Vector2(695, 21)
+position = Vector2(140, 86)
 is_push_out_wall = true
 flag_push = true
 has_weapon = true
@@ -29,15 +26,5 @@ has_weapon = true
 
 [node name="Bullets" type="Node2D" parent="."]
 
-[node name="CameraRaiseZone" parent="." instance=ExtResource("7_nhlmm")]
-position = Vector2(591, 49)
-scale = Vector2(5.47141, 1.17714)
-
 [node name="Camerarig" parent="." instance=ExtResource("8_nhlmm")]
-position = Vector2(186, -316)
-
-[node name="BlockerCameraVertical2" parent="." instance=ExtResource("11_mrnhl")]
-position = Vector2(1105, 52)
-
-[node name="BlockerCameraVerticalToRight" parent="." instance=ExtResource("6_dk5k0")]
-position = Vector2(490, -77)
+position = Vector2(176, -155)
