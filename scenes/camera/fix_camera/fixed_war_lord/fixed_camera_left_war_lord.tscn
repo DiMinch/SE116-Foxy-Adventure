@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6eu5ix6jsql"]
+
+[ext_resource type="Script" uid="uid://c1ec0rr4npty5" path="res://scenes/camera/fix_camera/fixed_war_lord/fixed_camera_left_war_lord.gd" id="1_6dtjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdts"]
+
+[node name="FixedCameraLeftWarLord" type="StaticBody2D"]
+scale = Vector2(3.7868874, 3.659236)
+collision_layer = 1024
+collision_mask = 512
+script = ExtResource("1_6dtjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wbdts")

@@ -88,7 +88,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"mix",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,7 +111,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"thin",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"wide",
-"speed": 15.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf5tr"]
@@ -254,7 +254,6 @@ script = ExtResource("18_uf5tr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("36_kxw46")
-bus = &"SFX"
 
 [node name="Detect_raise_camera_zone" type="Area2D" parent="."]
 collision_layer = 4096

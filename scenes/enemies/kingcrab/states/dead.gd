@@ -5,6 +5,7 @@ extends EnemyState
 var _fading := false
 
 func _enter() -> void:
+	obj.Hit.monitoring=false
 	#print("ENTER DEAD, alpha =", obj.sprite.modulate.a)
 	obj.change_animation("idle")
 	obj.sprite.stop()

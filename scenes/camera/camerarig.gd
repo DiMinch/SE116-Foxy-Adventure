@@ -18,7 +18,7 @@ var player: Player
 var pos_raise_col:Vector2
 var _default_offset: Vector2
 var _default_offset_inited := false
-var _active_zones := {}  # zone_id -> true
+var _active_zones := {} # zone_id -> true
 
 func set_camera_offset(pos_raise_collision: Vector2,new_offset: Vector2, zone_id: int = -1) -> void:
 	pos_raise_col=pos_raise_collision
@@ -26,7 +26,6 @@ func set_camera_offset(pos_raise_collision: Vector2,new_offset: Vector2, zone_id
 		if _active_zones.has(zone_id):
 			return
 		_active_zones[zone_id] = true
-
 
 	if not _default_offset_inited:
 		_default_offset = offset
@@ -58,6 +57,20 @@ func shake_ground(duration: float = shake_duration, strength: float = shake_stre
 
 
 # =========================
+# ADD: FREEZE FOLLOW WHEN SHAKE + TOGGLE COLLISION
+# (giữ kiểu rung cũ: cộng vào desired, chỉ freeze follow trong lúc rung)
+# =========================
+@onready var _colshape: CollisionShape2D = get_node_or_null("CollisionShape2D")
+
+var _is_shaking := false
+var _freeze_pos := Vector2.ZERO
+
+func _set_collision_enabled(enabled: bool) -> void:
+	if _colshape != null and is_instance_valid(_colshape):
+		_colshape.disabled = not enabled
+
+
+# =========================
 # READY
 # =========================
 func _ready() -> void:
@@ -77,14 +90,16 @@ func _ready() -> void:
 # PHYSICS PROCESS
 # =========================
 func _physics_process(delta: float) -> void:
-	
-	
 	var stage := find_parent(MapScene)
 	if stage == null:
 		return
 	player = stage.find_child(strPlayer) as Player
 	if player == null or not is_instance_valid(player):
 		return
+
+	if abs(player.global_position.x-global_position.x)>200 or abs(player.global_position.y-global_position.y)>100:
+		global_position =player.global_position
+
 	# --- camera shake update ---
 	if _shake_time > 0.0:
 		_shake_time -= delta
@@ -95,7 +110,31 @@ func _physics_process(delta: float) -> void:
 	else:
 		_shake_offset = Vector2.ZERO
 
-	# --- follow logic ---
+	# =========================
+	# ADD: bắt đầu rung -> freeze vị trí + tắt collision
+	# =========================
+	if _shake_offset != Vector2.ZERO:
+		if _is_shaking == false:
+			_is_shaking = true
+			_freeze_pos = global_position
+			_set_collision_enabled(false)
+	else:
+		if _is_shaking == true:
+			_is_shaking = false
+			_set_collision_enabled(true)
+
+	# =========================
+	# ADD: đang rung -> giữ nguyên vị trí (không follow player/offset)
+	# nhưng vẫn rung kiểu cũ (cộng offset rung)
+	# =========================
+	if _is_shaking:
+		var desired := _freeze_pos + _shake_offset
+		var dir := desired - global_position
+		velocity = dir * follow_speed
+		move_and_slide()
+		return
+
+	# --- follow logic (GIỮ NGUYÊN CÁCH RUNG CŨ) ---
 	var desired := player.global_position +offset + _shake_offset# +Vector2(0,100)
 	if player.direction==1:
 		desired+=Vector2(50,0)

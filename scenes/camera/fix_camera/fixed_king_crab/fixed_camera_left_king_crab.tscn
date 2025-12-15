@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://647ui0liioms"]
+
+[ext_resource type="Script" uid="uid://ratcepur6ffe" path="res://scenes/camera/fix_camera/fixed_king_crab/fixed_camera_left_king_crab.gd" id="1_xvooj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdts"]
+
+[node name="FixedCameraLeftKingCrab" type="StaticBody2D"]
+scale = Vector2(3.7868874, 3.659236)
+collision_layer = 1024
+collision_mask = 512
+script = ExtResource("1_xvooj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wbdts")
