@@ -7,7 +7,7 @@ var is_opened: bool = false
 
 func _ready():
 	interacted.connect(_on_interacted)
-	animated_sprite.play("close")
+	animated_sprite.play("close_has_gold")
 
 func _on_interacted():
 	attempt_open_chest()
@@ -15,17 +15,17 @@ func _on_interacted():
 func attempt_open_chest():
 	if is_opened:
 		return
-	if GameManager.inventory_system.has_key():
-		open_chest()
+	open_chest()
 
 func open_chest():
 	if is_opened:
 		return
 	is_opened = true
-	GameManager.inventory_system.use_currency("keys", used_key)
-	animated_sprite.play("open")
+	animated_sprite.play("open_has_gold")
 	await animated_sprite.animation_finished
 	GameManager.inventory_system.add_currency("coins", coin_reward)
 	print("Chest opened! You received ",coin_reward, " coin!")
+
 	
 	AudioManager.play_sound("open_chest")
+
