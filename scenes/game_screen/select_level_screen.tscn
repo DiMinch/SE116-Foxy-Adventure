@@ -25,7 +25,14 @@ var levels := [
 	{ \"name\": \"Level 3\", \"scene\": \"res://levels/level3.tscn\" },
 	{ \"name\": \"Level 4\", \"scene\": \"res://levels/level4.tscn\" },
 	{ \"name\": \"Level 5\", \"scene\": \"res://levels/level5.tscn\" },
-	{ \"name\": \"Level 6\", \"scene\": \"res://levels/level6.tscn\" }
+	{ \"name\": \"Level 6\", \"scene\": \"res://levels/levelMidBoss.tscn\" },
+	{ \"name\": \"Level 7\", \"scene\": \"res://levels/level6.tscn\" },
+
+	{ \"name\": \"Level 8\", \"scene\": \"res://levels/level7.tscn\" },
+	{ \"name\": \"Level 9\", \"scene\": \"res://levels/level8.tscn\" },
+	{ \"name\": \"Level 10\", \"scene\": \"res://levels/levelBossFinal.tscn\" },
+
+
 ]
 
 func _ready() -> void:
