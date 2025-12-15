@@ -38,12 +38,11 @@ func play_slash():
 		anim.visible=false
 	else:
 		anim.scale =Vector2(0.2,0.2)
-		#anim.position= Vector2(5,-10)
 		anim.position= Vector2(20,-10)
 		anim.play("mix")
 		await anim.animation_finished
-		anim.position= Vector2(33,-10)
 		anim.position= Vector2(36,-10)
+		anim.scale=Vector2(0.183,0.183)
 		anim.visible=false
 		count=1
 	if obj.melee_hitbox:
