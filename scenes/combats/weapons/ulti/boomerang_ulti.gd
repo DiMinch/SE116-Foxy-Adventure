@@ -28,5 +28,5 @@ func _throw_boomerang(player: CharacterBody2D, data: BoomerangUlti) -> void:
 
 	if boomerang.has_method("setup"):
 		boomerang.setup(data, dir, spawn_pos, player)
-	
+	player.is_ulti = false
 	player.get_tree().root.add_child(boomerang)

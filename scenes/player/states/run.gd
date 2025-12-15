@@ -2,6 +2,7 @@ extends PlayerState
 
 func _enter() -> void:
 	#Change animation to run
+	print("RUN")
 	obj.change_animation("run")
 
 func _update(_delta: float) -> void:

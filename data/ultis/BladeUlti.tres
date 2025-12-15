@@ -10,6 +10,6 @@ package_scene = ExtResource("1_7852d")
 timer = 2.0
 damage_unit = 100
 cool_down = 40.0
-range = Vector2(8, 50)
+range = Vector2(50, 50)
 speed = 0.0
 metadata/_custom_type_script = "uid://3dh0pw5qtocp"

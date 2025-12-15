@@ -31,6 +31,7 @@ func _perform_barrage(player: CharacterBody2D, data: WeaponData) -> void:
 		await player.get_tree().create_timer(wait_time).timeout
 	
 	player.is_invulnerable = false
+	player.is_ulti = false
 
 func _spawn_beam(player: CharacterBody2D, data: WeaponData, angle: float) -> void:
 	
