@@ -7,6 +7,7 @@ var rise_slow_timer := 0.0
 func _enter() -> void:
 	#Change animation to jump
 	obj.change_animation("jump")
+	AudioManager.play_sound("player_jump")
 	rise_slow_timer = rise_slow_duration
 
 func _update(_delta: float):

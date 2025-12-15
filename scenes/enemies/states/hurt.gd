@@ -6,6 +6,8 @@ func _enter():
 	obj.velocity.y = stats_y
 	obj.velocity.x = stats_x * -sign(obj.velocity.x)
 	timer = 0.5
+	
+	AudioManager.play_sound("enemy_hurt")
 
 func _update(delta:float):
 	var a=obj.health

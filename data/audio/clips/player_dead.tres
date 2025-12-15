@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://coc7yuyf0hw77"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_gaggw"]
+[ext_resource type="AudioStream" uid="uid://c2284tqcshorh" path="res://assets/audio/sfx/player/player_dead.wav" id="2_ip2et"]
+
+[resource]
+script = ExtResource("1_gaggw")
+clip_id = "player_dead"
+stream = ExtResource("2_ip2et")
+randomize_pitch = true

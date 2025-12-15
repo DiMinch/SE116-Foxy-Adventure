@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://bpvew5m3ry3xf"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_i825a"]
+[ext_resource type="AudioStream" uid="uid://pdmb75w8l6by" path="res://assets/audio/sfx/enemies/crab_walk.wav" id="2_dghwf"]
+
+[resource]
+script = ExtResource("1_i825a")
+clip_id = "crab_walk"
+stream = ExtResource("2_dghwf")
+randomize_pitch = true

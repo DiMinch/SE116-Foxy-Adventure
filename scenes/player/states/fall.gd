@@ -20,7 +20,7 @@ func _update(_delta: float) -> void:
 			obj.velocity.y = max_fall
 
 	# --- Wall slide ---
-	if not obj.is_on_floor() and obj.is_on_wall() and obj.can_wall_move:
+	if not obj.is_on_floor() and obj.is_on_wall() and obj.can_wall_move and (Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right")):
 		if obj.velocity.y > obj.WALL_SLIDE_SPEED:
 			obj.velocity.y = obj.WALL_SLIDE_SPEED
 		# obj.change_animation("wall_slide")
@@ -34,6 +34,7 @@ func _update(_delta: float) -> void:
 
 	# --- Reset jumps khi chạm đất ---
 	if obj.is_on_floor():
+		AudioManager.play_sound("landing")
 		obj.is_push_out_wall = false
 		obj.current_jumps = 0
 

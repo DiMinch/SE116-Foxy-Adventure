@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://03frm7w333xg"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_gv7lq"]
+[ext_resource type="AudioStream" uid="uid://cpqbkorf4k21w" path="res://assets/audio/sfx/enemies/barrel_shoot.wav" id="2_x278i"]
+
+[resource]
+script = ExtResource("1_gv7lq")
+clip_id = "barrel_shoot"
+stream = ExtResource("2_x278i")
+randomize_pitch = true

@@ -19,6 +19,7 @@ extends BaseCharacter
 @onready var spear_shape = $Direction/HitArea2D/Spear
 @onready var spear_ulti_shape = $Direction/HitArea2D/SpearUlti
 @onready var slash =$Direction/SwordSlash
+
 var fall_multiplier: float = 1.35
 var low_jump_multiplier = 0.75
 var timer_dash = 10
@@ -28,6 +29,7 @@ var ok_tmp_block = true
 var FALL_THRESHOLD = 100
 
 ## Player character class that handles movement, combat, and state management
+var invulnerable_lock_count := 0
 var is_invulnerable: bool = false
 var fall_start_y: float = 0.0
 var was_on_floor: bool = false
@@ -222,6 +224,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		current_jumps = 0
 	super._physics_process(delta)
+	
+	play_walking_sound()
 
 func _check_fall_damage() -> void:
 	var on_floor_now := is_on_floor()
@@ -240,7 +244,6 @@ func _check_fall_damage() -> void:
 					print("⚠️ Player mất ", f_damage, 
 						  " máu do rơi từ độ cao ", fall_distance)
 
-					fsm.change_state(fsm.states.hurt)
 					fsm.current_state.take_damage(f_damage)
 
 		fall_start_y = -1.0
@@ -255,12 +258,14 @@ func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
 	fsm.current_state.take_damage(_damage)
 
 func start_invulnerability():
-	is_invulnerable = true
+	if is_invulnerable:
+		return
+	acquire_invulnerable_lock()
 	onHurt.monitoring = false
 	
 	_blink_effect()
 	await get_tree().create_timer(invulnerable_time).timeout
-	is_invulnerable = false
+	release_invulnerable_lock()
 	_stop_blink_effect()
 	
 	await get_tree().process_frame
@@ -268,10 +273,19 @@ func start_invulnerability():
 
 func _blink_effect():
 	var sprite = _next_animated_sprite
+
+	if sprite.has_meta("blink_tween"):
+		var old_tween: Tween = sprite.get_meta("blink_tween")
+		old_tween.kill()
+		sprite.remove_meta("blink_tween")
+
 	var tween = create_tween()
 	tween.set_loops()
-	tween.tween_property(sprite, "modulate:a", 0.3, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(sprite, "modulate:a", 0.3, 0.1)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
+
 	sprite.set_meta("blink_tween", tween)
 
 func _stop_blink_effect():
@@ -364,3 +378,20 @@ func restore_health(amount: int) -> void:
 
 func collect_powerup(powerup_id: String) -> void:
 	decorator_manager.apply_powerup(powerup_id)
+
+func acquire_invulnerable_lock():
+	invulnerable_lock_count += 1
+	is_invulnerable = true
+
+func release_invulnerable_lock():
+	invulnerable_lock_count = max(invulnerable_lock_count - 1, 0)
+	if invulnerable_lock_count == 0:
+		is_invulnerable = false
+	
+func play_walking_sound():
+	if fsm.current_state == fsm.states.run:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
+	else:
+		if $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.stop()
