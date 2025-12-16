@@ -9,6 +9,7 @@ func _ready():
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
 	target_volume_db = music_player.volume_db
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _process(delta):
 	if music_player and music_player.volume_db != target_volume_db:

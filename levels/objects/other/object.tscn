@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr1ts1hvwd66y"]
+
+[ext_resource type="Texture2D" uid="uid://cgcdjra1u5fyv" path="res://assets/object/traps/23.png" id="1_qh3ee"]
+
+[sub_resource type="Gradient" id="Gradient_onw2t"]
+colors = PackedColorArray(1, 1, 1, 0.4627451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5da4n"]
+gradient = SubResource("Gradient_onw2t")
+fill = 1
+fill_from = Vector2(0.48290598, 0.50427353)
+fill_to = Vector2(0.2777778, 0.35042736)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh3ee"]
+size = Vector2(10, 32)
+
+[node name="Node2D" type="StaticBody2D"]
+z_index = -5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qh3ee")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, 1)
+texture = SubResource("GradientTexture2D_5da4n")
+texture_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qh3ee")

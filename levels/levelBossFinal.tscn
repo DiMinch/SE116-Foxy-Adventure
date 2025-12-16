@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://ly27c5qk8dcu"]
+[gd_scene load_steps=15 format=4 uid="uid://ly27c5qk8dcu"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_xjd82"]
+[ext_resource type="Resource" uid="uid://cxt8v7bq2hcvi" path="res://dialog/timelines/start_final.dtl" id="2_er3tg"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_pn4bh"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_f0j57"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_kh6tk"]
@@ -76,6 +77,7 @@ modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_xjd82")
+start_timeline = ExtResource("2_er3tg")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]
@@ -87,7 +89,7 @@ position = Vector2(-799, 461)
 
 [node name="Door" parent="." instance=ExtResource("3_f0j57")]
 position = Vector2(1979, 477)
-target_stage = "uid://desinyrehvlky"
+target_stage = "uid://eusw5htc6cbg"
 target_door = "Begin"
 
 [node name="Bullets" type="Node2D" parent="."]

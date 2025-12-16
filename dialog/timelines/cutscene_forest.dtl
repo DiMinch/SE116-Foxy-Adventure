@@ -1,0 +1,74 @@
+[style name="style"]
+[signal arg="fade_in"]
+[wait time="1.0"]
+
+[signal arg="image_1"]
+foxy_grandpa: Foxy!
+foxy: Ô-Ông!
+foxy: Thật sự phải là ông không?
+foxy: Ông ơi hãy trả lời cháu đi.
+[signal arg="zoom_slow_start"]
+foxy_grandpa: Foxy à, cháu đã lớn thật rồi.
+foxy: Ông ơi, sao ông lại ở đây?
+foxy_grandpa: Ông nhớ Foxy của ông nhiều lắm.
+foxy: Cháu cũng vậy, cháu cũng nhớ ông. Ông ơi...\
+[pause=1]Sao đến cả ông cũng bỏ rơi cháu...
+
+[signal arg="flash"]
+[signal arg="image_2"]
+[signal arg="effect:sepia"]
+[signal arg="vignette_on"]
+[wait time="1"]
+foxy: Lạnh quá...
+foxy: Mẹ ơi, ba ơi, sao ba mẹ lại để con lại một mình...\
+[pause=1]Ba mẹ đi đâu mất rồi.
+foxy: Con nhớ anh hai.
+foxy: Con nhớ anh ba.
+foxy: Con nhớ mọi người.\
+[pause=1]Nhưng lạnh quá...
+foxy: Con...
+foxy (defeat): ...
+[wait time="2"]
+secret: Này cháu kia.
+
+[signal arg="flash"]
+[signal arg="image_3"]
+foxy_grandpa: Tại sao cháu lại nằm ở đây.\
+[pause=1]Cháu về nhà với ta chứ?
+foxy: Dạ.
+
+[signal arg="flash"]
+[signal arg="image_4"]
+foxy: [i]Ba mẹ từ nhỏ đã bỏ rơi tôi. Ông là người đã cưu mang tôi.[/i]
+[wait time="1"]
+foxy_grandpa: Nóng rồi này, Foxy mau ăn đi nhe.
+foxy_grandpa: Cháu của ông, mau ăn chóng lớn!
+[wait time="1"]
+foxy: [i]Cháu ruột của ông đã qua đời trong trận lỡ tuyết năm nọ.[/i]
+foxy: [i]Từ lần đó, ông đã chăm sóc tôi, xem tôi như cháu ruột của mình[i]
+
+[signal arg="flash"]
+[signal arg="image_5"]
+foxy: [i]Ở bên cạnh ông, tôi thật sự rất hạnh phúc.[/i]
+foxy: [i]Tôi đã từng nghĩ, tôi nên cảm ơn ba mẹ, vì đã bỏ rơi mình.[/i]
+foxy: [i]Nhớ có như vậy, tôi mới được làm cháu của ông[/i]
+[wait time="2"]
+foxy_grandpa: Foxy à, nếu sau này được gặp lại ba mẹ, cháu đừng giận họ nhé.
+foxy: Tại sao ông lại nói về chuyện này ạ?
+foxy: Họ đã bỏ rơi cháu, họ có thương yêu gì cháu đâu.
+foxy_grandpa: Đôi khi bỏ rơi cháu là để muốn cháu được ai đó tốt hơn nhận nuôi đấy Foxy.
+foxy_grandpa: Ba mẹ cháu hẳn có nhiều nỗi khổ lắm.
+foxy_grandpa: Mùa đông năm ấy, lương thực khan hiếm, nhà phải nuôi 10 đứa con, e là...
+foxy_grandpa: Dù gì đi nữa, ba mẹ vẫn là ba mẹ mình.
+foxy: Dạ, cháu hiểu rồi.\
+Cháu sẽ nghe lời ông.
+
+[signal arg="effect:normal"]
+[signal arg="fade_out"]
+[wait time="1.0"]
+foxy: Đó cũng là lần cuối tôi được trò chuyện cùng ông.
+foxy: Ông, đã rời khỏi thế gian này, để lại tôi ở đây.
+foxy: Tôi ghét những căn bệnh.
+foxy: Tôi ghét những gì xấu xa.
+foxy: Tôi muốn bảo vệ mọi sự sống trên đời.
+[signal arg="end_cutscene"]

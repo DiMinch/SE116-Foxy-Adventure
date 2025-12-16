@@ -21,7 +21,7 @@ events = [SubResource("InputEventKey_lq0el"), SubResource("InputEventKey_k2n6q")
 
 [sub_resource type="LabelSettings" id="LabelSettings_k2n6q"]
 line_spacing = 2.0
-font_size = 10
+font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_lq0el"]
 font = ExtResource("3_k2n6q")
@@ -81,9 +81,11 @@ metadata/_edit_use_anchors_ = true
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 clip_contents = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
 offset_left = 36.75
 offset_top = 28.25
 offset_right = -36.75
@@ -93,11 +95,13 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Tutorial Text"
 label_settings = SubResource("LabelSettings_k2n6q")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="ContentImage" type="TextureRect" parent="TextureRect/VBoxContainer"]
 layout_mode = 2

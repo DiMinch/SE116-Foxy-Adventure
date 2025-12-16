@@ -35,12 +35,31 @@ directories/dch_directory={
 "foxy": "res://dialog/characters/foxy.dch",
 "foxy_grandpa": "res://dialog/characters/foxy_grandpa.dch",
 "king_crab": "res://dialog/characters/king_crab.dch",
-"war_lord": "res://dialog/characters/war_lord.dch"
+"secret": "res://dialog/characters/secret.dch",
+"war_lord": "res://dialog/characters/war_lord.dch",
+"war_lord_2": "res://dialog/characters/war_lord_2.dch"
 }
 directories/dtl_directory={
+"cutscene_final": "res://dialog/timelines/cutscene_final.dtl",
+"cutscene_forest": "res://dialog/timelines/cutscene_forest.dtl",
+"cutscene_mid": "res://dialog/timelines/cutscene_mid.dtl",
+"cutscene_skilltree": "res://dialog/timelines/cutscene_skilltree.dtl",
 "intro_timeline": "res://dialog/timelines/intro_timeline.dtl",
 "level1": "res://dialog/timelines/level1.dtl",
-"start": "res://dialog/timelines/start.dtl"
+"level2": "res://dialog/timelines/level2.dtl",
+"level3": "res://dialog/timelines/level3.dtl",
+"level4": "res://dialog/timelines/level4.dtl",
+"level5": "res://dialog/timelines/level5.dtl",
+"level6": "res://dialog/timelines/level6.dtl",
+"level7": "res://dialog/timelines/level7.dtl",
+"level8": "res://dialog/timelines/level8.dtl",
+"start": "res://dialog/timelines/start.dtl",
+"start_final": "res://dialog/timelines/start_final.dtl",
+"start_level2": "res://dialog/timelines/start_level2.dtl",
+"start_level3": "res://dialog/timelines/start_level3.dtl",
+"start_level6": "res://dialog/timelines/start_level6.dtl",
+"start_level8": "res://dialog/timelines/start_level8.dtl",
+"start_mid": "res://dialog/timelines/start_mid.dtl"
 }
 layout/style_directory={
 "": "res://dialog/custom/style/style.tres",
@@ -50,6 +69,41 @@ layout/style_directory={
 layout/style_list=["res://dialog/custom/style/style.tres", "res://dialog/custom/style/bubble_style.tres"]
 layout/default_style="res://dialog/custom/style/style.tres"
 glossary/default_case_sensitive=true
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
+timer/process_in_physics=false
+variables={}
 
 [display]
 

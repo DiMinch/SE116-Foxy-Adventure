@@ -22,6 +22,7 @@ var current_sfx_bus_name: String = SFX_BUS
 var current_music_id: String = ""
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# Initialize music player
 	music_player = AudioStreamPlayer.new()
 	music_player.name = "MusicPlayer"

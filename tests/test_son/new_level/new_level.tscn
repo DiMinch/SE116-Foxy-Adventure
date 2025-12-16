@@ -161,7 +161,8 @@ scale = Vector2(0.39882508, 4.863499)
 position = Vector2(1014, -652)
 
 [node name="Player" parent="." instance=ExtResource("4_kv3b1")]
-position = Vector2(72, 84)
+position = Vector2(102, 85)
+max_health = 10
 
 [node name="Camerarig" parent="." instance=ExtResource("11_c5hp6")]
 position = Vector2(201, -7)
