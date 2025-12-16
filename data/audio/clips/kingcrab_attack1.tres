@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://dst34kowhs015"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_iydq7"]
+[ext_resource type="AudioStream" uid="uid://d02bpd8du1av1" path="res://assets/audio/sfx/enemies/kingcrab_attack1.wav" id="2_j36is"]
+
+[resource]
+script = ExtResource("1_iydq7")
+clip_id = "kingcrab_attack1"
+stream = ExtResource("2_j36is")
+randomize_pitch = true

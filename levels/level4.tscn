@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_1c06p"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="2_b8ghs"]
-[ext_resource type="AudioStream" uid="uid://p72ugqo4rbuu" path="res://assets/audio/music/music-forest.ogg" id="2_gh4cy"]
+[ext_resource type="AudioStream" uid="uid://dqpxg86pwbbcn" path="res://assets/audio/music/music-mountain.ogg" id="2_gh4cy"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_lrvx3"]
 [ext_resource type="Texture2D" uid="uid://cs42p5hc6k8aa" path="res://assets/platform/mountain/background/sky_fc.png" id="5_naavy"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/platform/island/background/additional_water.png" id="6_im0iu"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://x2gxcgg53lwf"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_tos3g"]
+[ext_resource type="AudioStream" uid="uid://n74vtax30xxd" path="res://assets/audio/sfx/enemies/dizzy.wav" id="2_yed00"]
+
+[resource]
+script = ExtResource("1_tos3g")
+clip_id = "dizzy"
+stream = ExtResource("2_yed00")
+randomize_pitch = true

@@ -8,6 +8,7 @@ const MapScene = "Stage"
 const strPlayer = "Player"
 var pincers : RigidBody2D
 func _enter() -> void:
+	AudioManager.play_sound("kingcrab_attack1")
 	obj.velocity = Vector2.ZERO
 	obj.change_animation("attack2")
 

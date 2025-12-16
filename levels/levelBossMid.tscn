@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=4 uid="uid://cgtggomjj4ili"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_xqyya"]
-[ext_resource type="AudioStream" uid="uid://cpukcbtbbp1n7" path="res://assets/audio/music/music_boss2.wav" id="2_8qsqs"]
+[ext_resource type="AudioStream" uid="uid://dd6canulbjnel" path="res://assets/audio/music/music-boss_castle.ogg" id="2_8qsqs"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_r6cra"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_xe8uf"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_c8c0h"]

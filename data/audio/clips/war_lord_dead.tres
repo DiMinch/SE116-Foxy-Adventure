@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://bf3kicnrmkqjr"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_ol6ne"]
+[ext_resource type="AudioStream" uid="uid://bkfb7deh5hrb5" path="res://assets/audio/sfx/enemies/war_lord_dead.wav" id="2_agvvl"]
+
+[resource]
+script = ExtResource("1_ol6ne")
+clip_id = "war_lord_dead"
+stream = ExtResource("2_agvvl")
+randomize_pitch = true

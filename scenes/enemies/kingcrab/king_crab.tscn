@@ -222,7 +222,7 @@ metadata/_custom_type_script = "uid://c1lgf5lgnrcat"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_m1q8g")
-animation = &"hurt"
+animation = &"stop"
 flip_h = true
 
 [node name="States" type="Node" parent="."]
