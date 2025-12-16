@@ -97,11 +97,6 @@ tile_set = ExtResource("2_vp6pq")
 [node name="Begin" type="Node2D" parent="."]
 position = Vector2(1923, 971)
 
-[node name="Door" parent="." instance=ExtResource("3_66nwl")]
-position = Vector2(1444, 1409)
-target_stage = "uid://bwh41hvmhtcb6"
-target_door = "Begin"
-
 [node name="Player" parent="." instance=ExtResource("4_t5gjd")]
 position = Vector2(2562, 573)
 
@@ -717,3 +712,7 @@ texture = ExtResource("8_vobc4")
 position = Vector2(2435, 1219)
 scale = Vector2(3, 4.28)
 texture = ExtResource("8_vobc4")
+
+[node name="Door2" parent="." instance=ExtResource("3_66nwl")]
+position = Vector2(1609, 1409)
+target_stage = "uid://bwh41hvmhtcb6"
