@@ -122,7 +122,6 @@ stream = ExtResource("13_io5uk")
 volume_db = -10.0
 max_distance = 300.0
 attenuation = 0.2
-bus = &"SFX"
 
 [connection signal="hitted" from="Direction/HitArea2D" to="." method="_on_hit_area_2d_hitted"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

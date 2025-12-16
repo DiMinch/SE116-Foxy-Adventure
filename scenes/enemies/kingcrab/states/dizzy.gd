@@ -12,6 +12,7 @@ func _enter():
 	await anim.animation_finished
 	# Xong beforedizzy → đổi sang dizzy
 	anim.play("dizzy")
+	AudioManager.play_sound("dizzy")
 func _update(_delta: float) -> void:
 	timer2+=_delta 
 	if timer2>=2: change_state(fsm.states.run)

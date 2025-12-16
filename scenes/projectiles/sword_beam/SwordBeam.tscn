@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://darusyhycbqa8" path="res://scenes/projectiles/sword_beam/sword_beam.tres" id="1_x6nxk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5smux"]
+height = 26.3158
 
 [node name="SwordBeam" type="Area2D"]
 collision_layer = 0
@@ -11,14 +12,17 @@ collision_mask = 16
 script = ExtResource("1_5smux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.76837e-07)
+position = Vector2(2, -2.84217e-14)
 rotation = 1.5708
 scale = Vector2(0.7, 1.52)
 shape = SubResource("CapsuleShape2D_5smux")
 
 [node name="Direction" type="Node2D" parent="."]
+position = Vector2(1, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(-9, 0)
 sprite_frames = ExtResource("1_x6nxk")
-animation = &"stop"
+animation = &"play"
+frame = 4
+frame_progress = 1.0

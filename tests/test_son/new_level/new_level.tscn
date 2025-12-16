@@ -101,7 +101,7 @@ position = Vector2(163, -146.00002)
 scale = Vector2(12.945497, 1.6765833)
 
 [node name="BlockerCameraVerticalToFloor5" parent="." instance=ExtResource("11_2yqlh")]
-position = Vector2(2400, -446.00003)
+position = Vector2(2402, -396)
 rotation = -0.0018918947
 scale = Vector2(44.334343, 1.9090261)
 

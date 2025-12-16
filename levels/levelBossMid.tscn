@@ -81,6 +81,7 @@ modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_xqyya")
+level_music = ExtResource("2_8qsqs")
 start_timeline = ExtResource("2_4ebdn")
 ending_cutscene_scene = ExtResource("2_8qsqs")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"

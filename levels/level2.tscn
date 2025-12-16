@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://cg3kd1aqgw5xm" path="res://dialog/timelines/start_level2.dtl" id="2_75exu"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_crte6"]
 [ext_resource type="Resource" uid="uid://dcwfnyjym5eks" path="res://dialog/timelines/level2.dtl" id="2_s0tuf"]
+[ext_resource type="AudioStream" uid="uid://b0qehbm6hbwaf" path="res://assets/audio/music/music_normal.wav" id="2_sg85d"]
 [ext_resource type="Resource" uid="uid://cemj3qwx2ev28" path="res://dialog/characters/foxy.dch" id="3_hfi3b"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_s1bpp"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="4_76ugp"]
@@ -312,19 +313,19 @@ environment = SubResource("Environment_sr7fn")
 [node name="SignPost" parent="." instance=ExtResource("24_vuw6k")]
 position = Vector2(597, 48)
 sign_texture = ExtResource("25_erhed")
-tutorial_text = "Các sinh vật có vẻ khá nóng nảy vì một chuyện gì đó. Hãy cẩn thận!
+tutorial_text = "C�c sinh v?t c� v? kh� n�ng n?y v� m?t chuy?n g� d�. H�y c?n th?n!
 
-Phía trước chính là \"Nấm\". Chỉ cần bạn không chạm vào chúng là ổn!"
+Ph�a tru?c ch�nh l� \"N?m\". Ch? c?n b?n kh�ng ch?m v�o ch�ng l� ?n!"
 tutorial_image = ExtResource("26_erhed")
 
 [node name="SignPost2" parent="." instance=ExtResource("24_vuw6k")]
 position = Vector2(6285, -687)
 sign_texture = ExtResource("27_vrpbn")
-tutorial_text = "\"Cua\" cũng giống như \"Nấm\". Chỉ cần bạn không chạm vào chúng, chúng sẽ không làm hại bạn."
+tutorial_text = "\"Cua\" cung gi?ng nhu \"N?m\". Ch? c?n b?n kh�ng ch?m v�o ch�ng, ch�ng s? kh�ng l�m h?i b?n."
 tutorial_image = ExtResource("28_qisw3")
 
 [node name="SignPost3" parent="." instance=ExtResource("24_vuw6k")]
 position = Vector2(10349, -1136)
 sign_texture = ExtResource("25_erhed")
-tutorial_text = "Nhấn [F] để mở rương thưởng. Rương sẽ chứa nhiều phần quà hấp dẫn."
+tutorial_text = "Nh?n [F] d? m? ruong thu?ng. Ruong s? ch?a nhi?u ph?n qu� h?p d?n."
 tutorial_image = ExtResource("29_qisw3")

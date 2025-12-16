@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_1c06p"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="2_b8ghs"]
 [ext_resource type="Resource" uid="uid://bqbskomwga2oa" path="res://dialog/timelines/level4.dtl" id="2_qi51e"]
+[ext_resource type="AudioStream" uid="uid://dqpxg86pwbbcn" path="res://assets/audio/music/music-mountain.ogg" id="2_gh4cy"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="3_lrvx3"]
 [ext_resource type="Resource" uid="uid://cemj3qwx2ev28" path="res://dialog/characters/foxy.dch" id="3_lw0yu"]
 [ext_resource type="Texture2D" uid="uid://cs42p5hc6k8aa" path="res://assets/platform/mountain/background/sky_fc.png" id="5_naavy"]
@@ -84,6 +85,7 @@ modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_1c06p")
+level_music = ExtResource("2_gh4cy")
 ambient_timeline = ExtResource("2_qi51e")
 ambient_character = ExtResource("3_lw0yu")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
@@ -853,5 +855,5 @@ centered = false
 [node name="SignPost" parent="." instance=ExtResource("14_yruw8")]
 position = Vector2(261, -1328)
 sign_texture = ExtResource("15_1c06p")
-tutorial_text = "Hãy cẩn thận cầu gai mà \"Bồ nông\" thả từ trên trời xuống."
+tutorial_text = "H�y c?n th?n c?u gai m� \"B? n�ng\" th? t? tr�n tr?i xu?ng."
 tutorial_image = ExtResource("16_1c06p")

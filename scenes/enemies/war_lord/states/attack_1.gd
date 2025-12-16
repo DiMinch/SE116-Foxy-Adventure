@@ -19,6 +19,8 @@ func _enter() -> void:
 	anim = obj.get_node("Direction/AnimatedSprite2D") as AnimatedSprite2D
 	await get_tree().create_timer(0.2).timeout
 	_shoot_cannon()
+	
+	AudioManager.play_sound("war_lord_attack1")
 
 func _shoot_cannon() -> void:
 	_factory = obj.get_node("Direction/Node2DFactory")

@@ -32,4 +32,5 @@ func _throw_shuriken(player: CharacterBody2D, data: ShurikenUlti) -> void:
 		shuriken.global_position = spawn_pos
 		shuriken.scale.x = dir
 	
+	player.is_ulti = false
 	player.get_tree().root.add_child(shuriken)

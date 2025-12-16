@@ -17,6 +17,8 @@ func _enter() -> void:
 	obj.change_animation("attack1")
 	obj.velocity.x = obj.direction * speed_moment
 	
+	AudioManager.play_sound("kingcrab_attack1")
+	
 func _update(delta: float) -> void:
 	if _should_turn_around():
 		obj.turn_around()

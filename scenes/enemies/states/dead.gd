@@ -6,6 +6,7 @@ var _fading := false
 
 func _enter() -> void:	
 	obj.Hit.monitoring=false
+	obj.hurt.disabled =true
 	#print("ENTER DEAD, alpha =", obj.sprite.modulate.a)
 	obj.change_animation("run")
 	AudioManager.play_sound("enemy_die")

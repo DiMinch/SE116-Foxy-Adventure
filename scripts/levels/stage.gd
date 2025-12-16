@@ -106,6 +106,8 @@ func trigger_ambient_dialogue():
 	is_ambient_dialogue = true
 	_has_played_ambient = true
 	
+	if MusicManager:
+		MusicManager.play_music(level_music, true, -12.0, 1.0)
 	var dialog_node = Dialogic.Styles.load_style(ambient_style_name)
 	
 	if dialog_node and dialog_node.has_method("register_character"):
@@ -139,6 +141,7 @@ func fade_in_screen() -> void:
 
 func _on_turn_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/game_screen/select_level_screen.tscn")
+	MusicManager.stop_music()
 
 func _on_timeline_started():
 	if GameManager.player and not is_ambient_dialogue:

@@ -2,17 +2,23 @@ extends EnemyState
 
 const MapScene = "Stage"
 const strPlayer = "Player"
+var Hurt:CollisionShape2D
 var player: Player
 
 var _time: float = 0.0
 
 func _enter() -> void:
+	Hurt=obj.hurt
 	_time = 0.0
 	obj.velocity.x = 0
 	obj.change_animation("idle")
 
 func _update(delta: float) -> void:
 	# đứng yên không di chuyển
+	if is_opposite()==true:
+		print("huhu")
+		Hurt.disabled=true
+	else : Hurt.disabled=false
 	obj.velocity.x = 0
 	player = find_parent(MapScene).find_child(strPlayer)
 	var dx = player.global_position.x - obj.position.x

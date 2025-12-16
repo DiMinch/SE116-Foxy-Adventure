@@ -59,7 +59,7 @@ func setup_trajectory(facing_dir: int, angle_offset: float) -> void:
 func setup_stats(_damage: int, range_val: Vector2) -> void:
 	damage = _damage
 	max_distance = range_val.x
-	if range_val.y > 0:
-		var scale_factor = range_val.y / 20.0
-		scale.y = scale_factor
-		scale.x = scale.x * scale_factor
+	#if range_val.y > 0:
+		#var scale_factor = range_val.y / 20.0
+		#scale.y = scale_factor
+		#scale.x = scale.x * scale_factor

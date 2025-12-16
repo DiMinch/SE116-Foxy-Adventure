@@ -17,7 +17,7 @@ tile_set = ExtResource("2_u5orl")
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_usywe")]
 
 [node name="Player" parent="." instance=ExtResource("4_msorn")]
-position = Vector2(140, 86)
+position = Vector2(338, 21)
 is_push_out_wall = true
 flag_push = true
 has_weapon = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=4 uid="uid://t14o7ar75tu1"]
+[gd_scene load_steps=39 format=4 uid="uid://t14o7ar75tu1"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_hji5y"]
+[ext_resource type="AudioStream" uid="uid://b0qehbm6hbwaf" path="res://assets/audio/music/music_normal.wav" id="2_kecaa"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_mkivy"]
 [ext_resource type="Resource" uid="uid://cdk4uryq4cv05" path="res://dialog/timelines/start_level8.dtl" id="2_s5iu8"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_wfcpe"]
@@ -112,6 +113,7 @@ adjustment_saturation = 1.34
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_hji5y")
+level_music = ExtResource("2_kecaa")
 start_timeline = ExtResource("2_s5iu8")
 ambient_timeline = ExtResource("3_ybm0h")
 ambient_character = ExtResource("4_krdxn")
@@ -1079,7 +1081,7 @@ position = Vector2(2068, -96)
 [node name="SignPost" parent="." instance=ExtResource("30_w38qp")]
 position = Vector2(302, 464)
 sign_texture = ExtResource("31_tjxu8")
-tutorial_text = "Hãy né những trái dừa của \"Thổ dân ngáo\"."
+tutorial_text = "H�y n� nh?ng tr�i d?a c?a \"Th? d�n ng�o\"."
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.33858636, 0.13887382, 0, 1)

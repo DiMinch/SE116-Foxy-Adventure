@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=4 uid="uid://dai7e3meplndn"]
+[gd_scene load_steps=40 format=4 uid="uid://dai7e3meplndn"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_mf7v1"]
+[ext_resource type="AudioStream" uid="uid://p72ugqo4rbuu" path="res://assets/audio/music/music-forest.ogg" id="2_4lmri"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="2_cpie4"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_d6jip"]
 [ext_resource type="Resource" uid="uid://c1tq7ckqfwsey" path="res://dialog/timelines/level3.dtl" id="2_i3cyh"]
@@ -124,6 +125,7 @@ adjustment_saturation = 1.34
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_mf7v1")
+level_music = ExtResource("2_4lmri")
 start_timeline = ExtResource("2_x6jsp")
 ambient_timeline = ExtResource("2_i3cyh")
 ambient_character = ExtResource("3_x6jsp")
@@ -587,13 +589,13 @@ environment = SubResource("Environment_g38f6")
 [node name="SignPost" parent="." instance=ExtResource("26_4sv2i")]
 position = Vector2(143, 23)
 sign_texture = ExtResource("27_6slt7")
-tutorial_text = "\"Thùng gỗ\" sẽ bắn ra các viên đạn liên tiếp để tấn công. Đừng để bị dính đạn nhé.
+tutorial_text = "\"Th�ng g?\" s? b?n ra c�c vi�n d?n li�n ti?p d? t?n c�ng. �?ng d? b? d�nh d?n nh�.
 
-Bạn cũng có thể tấn công lại quái với [C] và vũ khí trên tay."
+B?n cung c� th? t?n c�ng l?i qu�i v?i [C] v� vu kh� tr�n tay."
 tutorial_image = ExtResource("28_43cms")
 
 [node name="SignPost2" parent="." instance=ExtResource("26_4sv2i")]
 position = Vector2(3544, -1770)
 sign_texture = ExtResource("27_6slt7")
-tutorial_text = "\"Sao biển\" có khả năng phát hiện và lao về phía bạn để tấn công. Nâng cao cảnh giác nhé!"
+tutorial_text = "\"Sao bi?n\" c� kh? nang ph�t hi?n v� lao v? ph�a b?n d? t?n c�ng. N�ng cao c?nh gi�c nh�!"
 tutorial_image = ExtResource("29_6slt7")

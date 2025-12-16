@@ -51,7 +51,7 @@ size = Vector2(31.5, 25)
 size = Vector2(50, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uf5tr"]
-radius = 15.0
+radius = 17.1172
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kghjy"]
 size = Vector2(4, 29)
@@ -210,7 +210,7 @@ shape = SubResource("RectangleShape2D_ykrpk")
 disabled = true
 
 [node name="SpearUlti" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(-9, 1)
+position = Vector2(-7, 1)
 shape = SubResource("CircleShape2D_uf5tr")
 disabled = true
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_dm5g0"]
 [ext_resource type="Resource" uid="uid://s8okckav2u4b" path="res://dialog/timelines/level5.dtl" id="2_33jjl"]
+[ext_resource type="AudioStream" uid="uid://dqpxg86pwbbcn" path="res://assets/audio/music/music-mountain.ogg" id="2_gw0q8"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_vp6pq"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_66nwl"]
 [ext_resource type="Resource" uid="uid://cemj3qwx2ev28" path="res://dialog/characters/foxy.dch" id="3_ooqki"]
@@ -92,6 +93,7 @@ modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_dm5g0")
+level_music = ExtResource("2_gw0q8")
 ambient_timeline = ExtResource("2_33jjl")
 ambient_character = ExtResource("3_ooqki")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
@@ -725,14 +727,18 @@ position = Vector2(2435, 1219)
 scale = Vector2(3, 4.28)
 texture = ExtResource("8_vobc4")
 
+[node name="Door2" parent="." instance=ExtResource("3_66nwl")]
+position = Vector2(1609, 1409)
+target_stage = "uid://bwh41hvmhtcb6"
+
 [node name="SignPost" parent="." instance=ExtResource("20_poffv")]
 position = Vector2(401, -304)
 sign_texture = ExtResource("21_62um3")
-tutorial_text = "\"R√πa bi·ªÉn\" kh√° nh√∫t nh√°t, lu√¥n r√∫t v√†o c√°i v·ªè v√¥ song c·ªßa m√¨nh. R√πa kh√¥ng t·∫•n c√¥ng, nh∆∞ng ƒë·ª´ng ch·∫°m v√†o gai n√≥ nh√©."
+tutorial_text = "\"R˘a bi?n\" kh· nh˙t nh·t, luÙn r˙t v‡o c·i v? vÙ song c?a mÏnh. R˘a khÙng t?n cÙng, nhung d?ng ch?m v‡o gai nÛ nhÈ."
 tutorial_image = ExtResource("22_s7sq4")
 
 [node name="SignPost2" parent="." instance=ExtResource("20_poffv")]
 position = Vector2(2704, -304)
 sign_texture = ExtResource("23_8380d")
-tutorial_text = "\"Th·ªï d√¢n khi√™n\" c√≥ m·ªôt t·∫•m khi√™n r·∫•t d√†y, s·ª± ph√≤ng th·ªß ki√™n c·ªë ch·ªâ c√≥ th·ªÉ ch·ªçc l·ªßng t·ª´ ph√≠a sau."
+tutorial_text = "\"Th? d‚n khiÍn\" cÛ m?t t?m khiÍn r?t d‡y, s? phÚng th? kiÍn c? ch? cÛ th? ch?c l?ng t? phÌa sau."
 tutorial_image = ExtResource("24_62um3")
