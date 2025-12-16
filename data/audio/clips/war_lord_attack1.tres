@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://m5vw5a43rs80"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_eaftk"]
+[ext_resource type="AudioStream" uid="uid://b7uvonws61jk5" path="res://assets/audio/sfx/enemies/war_lord_attack1.wav" id="2_0ewfo"]
+
+[resource]
+script = ExtResource("1_eaftk")
+clip_id = "war_lord_attack1"
+stream = ExtResource("2_0ewfo")
+randomize_pitch = true

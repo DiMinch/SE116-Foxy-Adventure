@@ -71,6 +71,9 @@ func _physics_process(_delta: float) -> void:
 	_last_speed_x = current_speed_x
 
 func explode() -> void:
+	
+	AudioManager.play_sound("explosion")
+	
 	shake()
 	if _is_exploding:
 		return
@@ -90,6 +93,7 @@ func explode() -> void:
 	anim.play("default")
 	await anim.animation_finished
 	queue_free()
+	
 
 func _on_body_entered(body: Node) -> void:
 	# chạm player => trừ máu + nổ

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://ly27c5qk8dcu"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_xjd82"]
-[ext_resource type="AudioStream" uid="uid://cpukcbtbbp1n7" path="res://assets/audio/music/music_boss2.wav" id="2_er3tg"]
+[ext_resource type="AudioStream" uid="uid://dae8j3wjltlpy" path="res://assets/audio/music/music_boss2.wav" id="2_er3tg"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_pn4bh"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_f0j57"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_kh6tk"]

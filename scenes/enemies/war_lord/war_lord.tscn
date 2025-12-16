@@ -143,7 +143,9 @@ shape = SubResource("RectangleShape2D_fr1tk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_34fud")
-animation = &"idle"
+animation = &"atk1"
+frame = 6
+frame_progress = 1.0
 flip_h = true
 
 [node name="Node2DFactory" type="Marker2D" parent="Direction"]

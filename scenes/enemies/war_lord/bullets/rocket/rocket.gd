@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func explode() -> void:
+	AudioManager.play_sound("explosion")
 	shake()
 	if _exploded:
 		return
