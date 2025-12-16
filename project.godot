@@ -13,7 +13,7 @@ config_version=5
 config/name="[SE116 - Team 6] Foxy Adventure"
 run/main_scene="uid://oaubt4ncrqj"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="uid://cr1040f2pbjl1"
+config/icon="uid://dgigpwplkc26c"
 
 [audio]
 
@@ -28,6 +28,7 @@ StatsManager="*res://scripts/stats/stats_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AudioManager="*res://scripts/audio/audio_manager.gd"
 MusicManager="*res://scripts/audio/music_manager.gd"
+UserSystem="*res://scripts/autoload/user_system.gd"
 
 [dialogic]
 

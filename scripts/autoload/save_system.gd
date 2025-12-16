@@ -1,7 +1,6 @@
 extends Node
 
 ## Save system for persistent checkpoint data
-
 const SAVE_FILE = "user://checkpoint_save.dat"
 
 # Save checkpoint data to file

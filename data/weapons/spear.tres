@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MeleeData" load_steps=10 format=3 uid="uid://caprsarj7awm7"]
 
 [ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_23sov"]
-[ext_resource type="Texture2D" uid="uid://31g3xoelewph" path="res://assets/weapons/spear/spear.png" id="2_23sov"]
+[ext_resource type="Texture2D" uid="uid://b44wq36li2v16" path="res://assets/weapons/spear/spear.png" id="2_23sov"]
 [ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapons/melee.gd" id="2_hq2x0"]
 [ext_resource type="Script" uid="uid://dk2c8l2nkcw1q" path="res://scenes/combats/weapons/ulti/spear_ulti.gd" id="2_wipgh"]
 [ext_resource type="PackedScene" uid="uid://b40nt2ltqujlb" path="res://scenes/projectiles/spear_beam/spear_beam.tscn" id="3_amhf3"]

@@ -6,7 +6,7 @@ var target_portal_name: String = ""
 var current_checkpoint_id: String = ""
 var checkpoint_data: Dictionary = {}
 
-var current_stage = ""
+var current_stage: Node = null
 var player: Player = null
 var inventory_system: InvetorySystem = null
 
@@ -43,7 +43,6 @@ func save_checkpoint(checkpoint_id: String) -> void:
 		"player_state": player_state_dict,
 		"stage_path": current_stage.scene_file_path,
 		"health": player.health,
-		#"has_blade": player.has_blade
 	}
 	print("Checkpoint saved: ", checkpoint_id)
 
@@ -129,3 +128,6 @@ func respawn_at_begin() -> bool:
 	player.global_position = begin_node.global_position
 	print("Player respawned at Begin")
 	return true
+
+func level_completed(level_id: String, elapsed_time: float):
+	UserSystem.record

@@ -4,7 +4,7 @@ signal coins_changed(new_amount)
 signal skill_unlocked(skill_id)
 signal weapon_unlocked(weapon_name)
 
-const UPGRADE_SAVE_FILE = "user://upgrades.dat"
+var current_upgrade_save_path: String = ""
 
 var player_coins: int = 0
 var unlocked_skills: Dictionary = {}
@@ -16,9 +16,6 @@ var current_loadout: Array[String] = ["", ""]
 func _ready():
 	_load_all_weapons()
 	_init_skills_data()
-	load_upgrades()
-	# For Alpha Test
-	#generate_full_meta()
 
 func _init_skills_data():
 	var all_skills_resources = load_all_skill_resources()
@@ -73,7 +70,7 @@ func upgrade_skill(skill_data: SkillData):
 	save_upgrades()
 
 func _set_new_game_defaults():
-	player_coins = 20
+	player_coins = 0
 	unlocked_skills = {}
 	unlocked_weapons = {}
 	var all_skills = load_all_skill_resources()
@@ -83,39 +80,49 @@ func _set_new_game_defaults():
 	coins_changed.emit(player_coins)
 
 func save_upgrades():
+	if current_upgrade_save_path.is_empty():
+		return
+	
 	var save_data = {
 		"coins": player_coins,
 		"skills": unlocked_skills,
 		"weapons": unlocked_weapons,
 		"loadout": current_loadout
 	}
-	var file = FileAccess.open(UPGRADE_SAVE_FILE, FileAccess.WRITE)
+	var file = FileAccess.open(current_upgrade_save_path, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(save_data))
 		file.close()
 
-func load_upgrades():
-	if not FileAccess.file_exists(UPGRADE_SAVE_FILE):
+func load_upgrades_for_profile(path: String):
+	current_upgrade_save_path = path
+	
+	if not FileAccess.file_exists(current_upgrade_save_path):
 		_set_new_game_defaults()
 		return
-	var file = FileAccess.open(UPGRADE_SAVE_FILE, FileAccess.READ)
+	
+	var file = FileAccess.open(current_upgrade_save_path, FileAccess.READ)
 	if not file:
 		_set_new_game_defaults()
 		return
+	
 	var json_string = file.get_as_text().strip_edges()
 	file.close()
 	if json_string == "":
 		_set_new_game_defaults()
 		return
+	
 	var data = JSON.parse_string(json_string)
 	if data == null:
 		_set_new_game_defaults()
 		return
+	
 	player_coins = data.get("coins", 0)
 	unlocked_skills = data.get("skills", {})
 	unlocked_weapons = data.get("weapons", {})
 	var raw_loadout = data.get("loadout", ["", ""])
 	current_loadout.assign(raw_loadout)
+	
 	var converted = {}
 	for wname in unlocked_weapons.keys():
 		if weapon_table.has(wname):
@@ -143,27 +150,3 @@ func set_loadout_slot(slot_index: int, weapon_name: String):
 	
 	current_loadout[slot_index] = weapon_name
 	save_upgrades()
-
-func generate_full_meta():
-	player_coins = 99999
-	# Unlock all skills
-	unlocked_skills = {}
-	var all_skills = load_all_skill_resources()
-	for skill in all_skills:
-		unlocked_skills[skill.skill_id] = skill.max_level
-	# Unlock all weapons
-	unlocked_weapons = {}
-	for weapon_name in weapon_table.keys():
-		unlocked_weapons[weapon_name] = true
-	
-	# Loadout default: Blade, Spear
-	current_loadout = ["Blade", "Spear"]
-	# Update UI
-	coins_changed.emit(player_coins)
-	for skill in all_skills:
-		skill_unlocked.emit(skill.skill_id)
-	for wn in unlocked_weapons.keys():
-		weapon_unlocked.emit(wn)
-	# Save meta
-	save_upgrades()
-	print("[META] Generated FULL META: all skills & weapons unlocked!")
