@@ -62,7 +62,7 @@ func fade_screen(is_fade_out: bool) -> void:
 	
 	var fade_layer = get_tree().root.get_node_or_null("FadeLayer")
 	if fade_layer == null:
-		fade_layer = FadeLayer.new()
+		fade_layer = preload("res://scenes/ui/fade_layer/fade_layer.tscn").instantiate()
 		root.add_child(fade_layer)
 
 	if is_fade_out:

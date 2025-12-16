@@ -10,4 +10,4 @@ func take_damage(direction: Vector2, damage: float):
 	hurt.emit(direction, damage)
 
 func LOG(info_damage):
-	print("[CHARACTER][DAMAGE] DAMAGE = ", info_damage)
+	print("[%s] take damage = %s" % [get_parent().name, info_damage])

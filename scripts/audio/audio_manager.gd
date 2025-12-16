@@ -55,8 +55,6 @@ func play_sound(sound_id: String, volume_db: float = 0.0) -> void:
 		return
 	
 	play_audio_clip(audio_clip, volume_db, false)
-	print("Playing SFX: ", sound_id)
-
 
 ## Play sound by path directly
 func play_sound_path(sound_path: String, volume_db: float = 0.0) -> void:

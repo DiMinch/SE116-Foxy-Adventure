@@ -16,7 +16,6 @@ func _enter() -> void:
 func _update(delta: float) -> void:
 	# đứng yên không di chuyển
 	if is_opposite()==true:
-		print("huhu")
 		Hurt.disabled=true
 	else : Hurt.disabled=false
 	obj.velocity.x = 0

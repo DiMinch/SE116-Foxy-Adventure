@@ -40,7 +40,7 @@ var is_attack: bool = false
 var is_ulti: bool = false
 var check_attack: bool = true
 
-@export var invulnerable_time := 2.0
+@export var invulnerable_time := 1.0
 @export var has_weapon: bool = false
 
 var weapon_slots: Array[WeaponData] = [null, null]
@@ -246,24 +246,24 @@ func _check_fall_damage() -> void:
 
 	if not on_floor_now and was_on_floor:
 		fall_start_y = global_position.y
+		print("Vị trí rơi bắt đầu",fall_start_y)
 
 	if on_floor_now and not was_on_floor:
-		if fall_start_y >= 0.0:
+		#if fall_start_y >= 0.0:
 			var fall_distance := global_position.y - fall_start_y
 
 			if fall_distance > FALL_THRESHOLD:
 				if not is_invulnerable and not piority_invul:
 
-					var f_damage: float = (fall_distance - FALL_THRESHOLD) / 5.0
-					print("⚠️ Player mất ", f_damage, 
+					var f_damage: int = (fall_distance - FALL_THRESHOLD) / 5.0
+					print("⚠️ Player mất ", f_damage,
 						  " máu do rơi từ độ cao ", fall_distance)
 
 					fsm.current_state.take_damage(f_damage)
 
-		fall_start_y = -1.0
+		#fall_start_y = -1.0
 
 	was_on_floor = on_floor_now
-
 
 # === COLLISIONS
 func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
@@ -403,7 +403,6 @@ func release_invulnerable_lock():
 		is_invulnerable = false
 	
 func play_walking_sound():
-
 	if fsm.current_state == fsm.states.run:
 		if not $AudioStreamPlayer.playing:
 			$AudioStreamPlayer.play()

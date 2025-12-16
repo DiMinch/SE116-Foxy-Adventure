@@ -1,6 +1,8 @@
 extends PlayerState
+
 var anim : AnimatedSprite2D
-@onready var count=1
+@onready var count = 1
+
 func _enter() -> void:
 	obj.change_animation(ATTACK)
 	obj.velocity.x = 0
@@ -8,7 +10,7 @@ func _enter() -> void:
 	if obj.melee_hitbox.monitoring:
 		obj.melee_hitbox.update_stat_attack()
 		
-	if obj.current_weapon_data.weapon_name=="Blade":
+	if obj.current_weapon_data.weapon_name == "Blade":
 		play_slash()
 		AudioManager.play_sound("player_sword")
 	

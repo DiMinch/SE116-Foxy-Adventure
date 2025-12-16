@@ -124,7 +124,7 @@ metadata/_edit_lock_ = true
 [node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-1, -50)
 motion_scale = Vector2(0.001, 0.8)
-motion_mirroring = Vector2(510, 0)
+motion_mirroring = Vector2(460, 0)
 script = SubResource("GDScript_w7ck5")
 
 [node name="BigClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud"]

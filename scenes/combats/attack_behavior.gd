@@ -7,5 +7,5 @@ func attack(_player: Player):
 func execute_action(_player: Player, _weapon_data: WeaponData) -> void:
 	pass
 
-func reset(obj: Player) -> void:
+func reset(_obj: Player) -> void:
 	pass

@@ -67,7 +67,8 @@ func _init_detect_player_area():
 func _init_hurt_area():
 	if has_node("Direction/HurtArea2D"):
 		var hurt_area = $Direction/HurtArea2D
-		hurt_area.hurt.connect(_on_hurt_area_2d_hurt)
+		if not hurt_area.hurt.is_connected(_on_hurt_area_2d_hurt):
+			hurt_area.hurt.connect(_on_hurt_area_2d_hurt)
 
 # init hit area
 func _init_hit_area():
