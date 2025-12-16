@@ -11,6 +11,7 @@ func _ready():
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
 	target_volume_db = music_player.volume_db
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	music_player.finished.connect(_on_music_finished)
 
 func _process(delta):

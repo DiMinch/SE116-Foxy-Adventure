@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=38 format=3 uid="uid://b7b7mx8uru2eh"]
+[gd_resource type="TileSet" load_steps=50 format=3 uid="uid://b7b7mx8uru2eh"]
 
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/terrain/terrain_32x32.png" id="1_cvmva"]
 [ext_resource type="PackedScene" uid="uid://c8iyq6ukbtgdh" path="res://levels/objects/tree/palm_tree_1.tscn" id="2_cx6lm"]
@@ -26,6 +26,17 @@
 [ext_resource type="PackedScene" uid="uid://dmd053cx1mj0o" path="res://scenes/collectibles/fruits/strawberry.tscn" id="23_u7gpn"]
 [ext_resource type="PackedScene" uid="uid://cvv06808wlvnc" path="res://scenes/objects/drop out to platform/drop_out_platform.tscn" id="24_u7gpn"]
 [ext_resource type="Texture2D" uid="uid://u5c0uqtapc5k" path="res://assets/terrain/Terrain and Back Wall (32x32).png" id="26_nycm1"]
+[ext_resource type="PackedScene" uid="uid://bbh86gw27lprp" path="res://levels/objects/other/mushroom.tscn" id="27_slvqe"]
+[ext_resource type="PackedScene" uid="uid://bit41cvkhgnga" path="res://levels/objects/other/mushroom2.tscn" id="28_snnla"]
+[ext_resource type="PackedScene" uid="uid://dr1ts1hvwd66y" path="res://levels/objects/other/object.tscn" id="28_wagyp"]
+[ext_resource type="PackedScene" uid="uid://bmfry7yby7m7e" path="res://levels/objects/other/seaweed2.tscn" id="29_2wrvb"]
+[ext_resource type="PackedScene" uid="uid://btqnywfbk44os" path="res://levels/objects/other/object2.tscn" id="29_5vlc8"]
+[ext_resource type="PackedScene" uid="uid://d20nvd4svfcv7" path="res://levels/objects/other/seaweed.tscn" id="30_l08yg"]
+[ext_resource type="PackedScene" uid="uid://b856gibjiwq21" path="res://levels/objects/other/seaweed3.tscn" id="31_posi7"]
+[ext_resource type="PackedScene" uid="uid://cdhayi74c8176" path="res://levels/objects/other/seaweed4.tscn" id="32_wagyp"]
+[ext_resource type="PackedScene" uid="uid://b2eyhafyeu2ni" path="res://levels/objects/other/seaweed5.tscn" id="33_5vlc8"]
+[ext_resource type="PackedScene" uid="uid://c22x8vi4u0moj" path="res://levels/objects/other/seagrass1.tscn" id="34_5s2d7"]
+[ext_resource type="PackedScene" uid="uid://rtnfcylfjhjk" path="res://levels/objects/other/seagrass2.tscn" id="35_guadg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0ni4"]
 texture = ExtResource("1_cvmva")
@@ -587,6 +598,7 @@ texture_region_size = Vector2i(32, 32)
 10:1/0/terrain_set = 0
 10:1/0/terrain = 1
 10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:1/0/terrains_peering_bit/right_side = 1
 10:1/0/terrains_peering_bit/bottom_side = 1
 10:1/0/terrains_peering_bit/left_side = 1
 10:1/0/terrains_peering_bit/top_left_corner = 1
@@ -1365,11 +1377,13 @@ texture_region_size = Vector2i(32, 32)
 12:0/0/terrains_peering_bit/right_side = 0
 12:0/0/terrains_peering_bit/bottom_right_corner = 0
 12:0/0/terrains_peering_bit/bottom_side = 0
+12:0/0/terrains_peering_bit/left_side = 0
 12:0/0/terrains_peering_bit/top_side = 0
 13:0/0 = 0
 13:0/0/terrain_set = 1
 13:0/0/terrain = 0
 13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:0/0/terrains_peering_bit/right_side = 0
 13:0/0/terrains_peering_bit/bottom_side = 0
 13:0/0/terrains_peering_bit/bottom_left_corner = 0
 13:0/0/terrains_peering_bit/left_side = 0
@@ -1447,9 +1461,7 @@ texture_region_size = Vector2i(32, 32)
 9:1/0/terrains_peering_bit/right_side = 0
 9:1/0/terrains_peering_bit/bottom_right_corner = 0
 9:1/0/terrains_peering_bit/bottom_side = 0
-9:1/0/terrains_peering_bit/bottom_left_corner = 0
 9:1/0/terrains_peering_bit/left_side = 0
-9:1/0/terrains_peering_bit/top_left_corner = 0
 9:1/0/terrains_peering_bit/top_side = 0
 9:1/0/terrains_peering_bit/top_right_corner = 0
 10:1/0 = 0
@@ -1468,12 +1480,14 @@ texture_region_size = Vector2i(32, 32)
 12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 12:1/0/terrains_peering_bit/right_side = 0
 12:1/0/terrains_peering_bit/bottom_side = 0
+12:1/0/terrains_peering_bit/left_side = 0
 12:1/0/terrains_peering_bit/top_side = 0
 12:1/0/terrains_peering_bit/top_right_corner = 0
 13:1/0 = 0
 13:1/0/terrain_set = 1
 13:1/0/terrain = 0
 13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:1/0/terrains_peering_bit/right_side = 0
 13:1/0/terrains_peering_bit/bottom_side = 0
 13:1/0/terrains_peering_bit/left_side = 0
 13:1/0/terrains_peering_bit/top_left_corner = 0
@@ -1675,6 +1689,20 @@ scenes/6/scene = ExtResource("23_u7gpn")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_paxt8"]
 resource_name = "drop_out"
 scenes/1/scene = ExtResource("24_u7gpn")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_slvqe"]
+resource_name = "others"
+scenes/1/scene = ExtResource("27_slvqe")
+scenes/2/scene = ExtResource("28_snnla")
+scenes/3/scene = ExtResource("29_2wrvb")
+scenes/4/scene = ExtResource("30_l08yg")
+scenes/5/scene = ExtResource("31_posi7")
+scenes/6/scene = ExtResource("32_wagyp")
+scenes/7/scene = ExtResource("33_5vlc8")
+scenes/8/scene = ExtResource("34_5s2d7")
+scenes/9/scene = ExtResource("35_guadg")
+scenes/10/scene = ExtResource("28_wagyp")
+scenes/11/scene = ExtResource("29_5vlc8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wrvb"]
 texture = ExtResource("26_nycm1")
@@ -2063,7 +2091,7 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Land"
 terrain_set_0/terrain_0/color = Color(0.501961, 0.92549, 0.25098, 1)
 terrain_set_0/terrain_1/name = "Sand"
-terrain_set_0/terrain_1/color = Color(0.771385, 0.205007, 0.222141, 1)
+terrain_set_0/terrain_1/color = Color(0, 0, 0, 1)
 terrain_set_0/terrain_2/name = "Backwall"
 terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 terrain_set_0/terrain_3/name = "Hardwall"
@@ -2083,3 +2111,4 @@ sources/7 = SubResource("TileSetScenesCollectionSource_paxt8")
 sources/9 = SubResource("TileSetAtlasSource_2wrvb")
 sources/11 = SubResource("TileSetAtlasSource_gkiga")
 sources/12 = SubResource("TileSetAtlasSource_nycm1")
+sources/8 = SubResource("TileSetScenesCollectionSource_slvqe")

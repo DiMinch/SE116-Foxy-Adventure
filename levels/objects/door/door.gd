@@ -12,25 +12,28 @@ func _ready() -> void:
 
 func _on_interactive_area_2d_interacted() -> void:
 	AudioManager.play_sound("door")
-	await open_and_transition()
+	open_and_transition()
 
 func open_and_transition():
-	var target_res := ResourceLoader.load(target_stage)
-	
+	var target_res := ResourceLoader.load(target_stage) # 
 	if GameManager.current_stage.scene_file_path == target_res.resource_path:
-		print("[Door] Teleported player to portal: %s in same scene" % target_door)
+		print("[Door] Teleported player within same scene")
 		_teleport_in_same_stage()
 		return
 	
-	print("[Door] Different stage detected. Fading out and changing scene...")
-
+	print("[Door] Level Finished. Requesting stage completion...")
+	
 	sprite.play("opening")
 	await sprite.animation_finished
-	await fade_screen(true)
-	GameManager.change_stage(target_stage, target_door)
-	sprite.play("closing")
 	
-
+	if GameManager.current_stage.has_method("complete_level"):
+		GameManager.current_stage.complete_level(target_stage, target_door)
+	else:
+		push_warning("Stage script chưa có hàm complete_level, fallback về cách cũ")
+		await fade_screen(true)
+		GameManager.change_stage(target_stage, target_door)
+	
+	sprite.play("closing")
 
 func _teleport_in_same_stage() -> void:
 	var target_portal = GameManager.current_stage.find_child(target_door)

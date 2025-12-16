@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://cgtggomjj4ili"]
+[gd_scene load_steps=19 format=4 uid="uid://cgtggomjj4ili"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_xqyya"]
-[ext_resource type="AudioStream" uid="uid://dd6canulbjnel" path="res://assets/audio/music/music-boss_castle.ogg" id="2_8qsqs"]
+[ext_resource type="Resource" uid="uid://c3dueh5nhhqlb" path="res://dialog/timelines/start_mid.dtl" id="2_4ebdn"]
+[ext_resource type="PackedScene" uid="uid://cf771d03crkdw" path="res://dialog/cutscenes/mid_cutscene.tscn" id="2_8qsqs"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_r6cra"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_xe8uf"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_c8c0h"]
@@ -81,6 +82,8 @@ modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_xqyya")
 level_music = ExtResource("2_8qsqs")
+start_timeline = ExtResource("2_4ebdn")
+ending_cutscene_scene = ExtResource("2_8qsqs")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]
@@ -98,7 +101,7 @@ target_door = "Begin"
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_c8c0h")]
-position = Vector2(142, 352)
+position = Vector2(73, 460)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

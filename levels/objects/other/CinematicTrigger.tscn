@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://hrcnc0indhbm"]
+
+[ext_resource type="Script" uid="uid://dm0qlimwul1kv" path="res://levels/objects/other/cinematic_trigger.gd" id="1_030pd"]
+[ext_resource type="Texture2D" uid="uid://fglbdisawtyj" path="res://assets/ui/wood_paper/Prefabs/6.png" id="2_3bsrm"]
+[ext_resource type="Shader" uid="uid://canf4yi5nu5bf" path="res://assets/shader/speed_lines.gdshader" id="2_k7fbl"]
+[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="4_der34"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_der34"]
+shader = ExtResource("2_k7fbl")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 0.50000002375
+shader_parameter/line_density = 0.950000045125
+shader_parameter/animation_speed = 10.0000004275
+shader_parameter/mask_size = 0.30000001425
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0k1g"]
+font = ExtResource("4_der34")
+font_size = 17
+outline_size = 4
+outline_color = Color(1, 0.7058824, 0.023529412, 1)
+shadow_size = 9
+shadow_color = Color(1, 0.49019608, 0.3882353, 1)
+shadow_offset = Vector2(0, 0)
+
+[node name="CinematicTrigger" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_030pd")
+
+[node name="CinemaCamera" type="Camera2D" parent="."]
+visible = false
+
+[node name="CinematicUI" type="CanvasLayer" parent="."]
+
+[node name="SpeedLines" type="ColorRect" parent="CinematicUI"]
+material = SubResource("ShaderMaterial_der34")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="ColorRect" parent="CinematicUI"]
+custom_minimum_size = Vector2(0, 20)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBar" type="ColorRect" parent="CinematicUI"]
+custom_minimum_size = Vector2(0, 20)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="BossCard" type="Control" parent="CinematicUI"]
+layout_mode = 3
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 128.0
+offset_bottom = 67.0
+
+[node name="TextureRect" type="TextureRect" parent="CinematicUI/BossCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3bsrm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CinematicUI/BossCard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -11.5
+offset_right = 33.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_m0k1g")
+horizontal_alignment = 1
+vertical_alignment = 1

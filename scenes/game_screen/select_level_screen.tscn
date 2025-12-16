@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c0swi1nn4x6a7"]
+[gd_scene load_steps=19 format=3 uid="uid://c0swi1nn4x6a7"]
 
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_mjl6i"]
 [ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_0wfy5"]
@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dtr2vpd02i7fr" path="res://assets/ui/wood_paper/Big Banner/5.png" id="8_jxpmf"]
 [ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_dvh2u"]
 [ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_i84yh"]
+[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="11_43wf0"]
 [ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ujsgk"]
-[ext_resource type="Texture2D" uid="uid://6jxh3u2185ov" path="res://assets/ui/wood_paper/Small Text/Small Icons/5.png" id="12_0wfy5"]
+[ext_resource type="Texture2D" uid="uid://ck6jl13ouf7ol" path="res://assets/ui/button/close_normal.png" id="12_ucmd2"]
+[ext_resource type="Texture2D" uid="uid://2snfbakud06d" path="res://assets/ui/button/close_hover.png" id="13_43wf0"]
 [ext_resource type="Texture2D" uid="uid://dwdjuruo8iq3q" path="res://assets/ui/wood_paper/Small Text/Small Icons/17.png" id="13_bl280"]
 
 [sub_resource type="GDScript" id="GDScript_mjl6i"]
@@ -56,7 +58,8 @@ func _on_equip_texture_button_pressed() -> void:
 
 [sub_resource type="LabelSettings" id="LabelSettings_4m22o"]
 line_spacing = 0.0
-font_size = 18
+font = ExtResource("11_43wf0")
+font_size = 32
 font_color = Color(0, 0.38431373, 0.6784314, 1)
 outline_size = 2
 outline_color = Color(0.8217887, 0.82178867, 0.82178867, 1)
@@ -213,10 +216,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -61.0
-offset_top = 70.0
-offset_right = 61.0
-offset_bottom = 95.0
+offset_left = -93.0
+offset_top = 57.0
+offset_right = 93.0
+offset_bottom = 87.0
 grow_horizontal = 2
 text = "CHOOSE LEVEL"
 label_settings = SubResource("LabelSettings_4m22o")
@@ -244,21 +247,22 @@ columns = 4
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CloseTextureButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -47.0
-offset_top = 50.0
-offset_right = -27.0
-offset_bottom = 70.0
-grow_horizontal = 0
-size_flags_horizontal = 8
+offset_left = -64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
-texture_normal = ExtResource("12_0wfy5")
-texture_pressed = ExtResource("12_0wfy5")
-texture_hover = ExtResource("12_0wfy5")
-texture_disabled = ExtResource("12_0wfy5")
-texture_focused = ExtResource("12_0wfy5")
+texture_normal = ExtResource("12_ucmd2")
+texture_pressed = ExtResource("13_43wf0")
+texture_hover = ExtResource("13_43wf0")
+texture_disabled = ExtResource("13_43wf0")
+texture_focused = ExtResource("13_43wf0")
 stretch_mode = 0
 
 [node name="EquipTextureButton" type="TextureButton" parent="CanvasLayer"]

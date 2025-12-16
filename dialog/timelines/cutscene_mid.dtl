@@ -1,0 +1,67 @@
+[style name="style"]
+[signal arg="fade_in"]
+[wait time="1.0"]
+
+[signal arg="image_1"]
+foxy: Mệt quá!
+foxy: Hai cậu mạnh thật đấy.
+war_lord: Bọn tôi cũng không ngờ\
+là cậu mạnh đến thế.
+war_lord: Nhưng mà, tại sao cậu\
+lại đến hòn đảo này?
+war_lord_2: Đúng đấy.\
+Cậu là tay sai của hắn ta đúng không?\
+Đến để chiếm hòn đảo này?
+foxy: Hắn ta? Tay sai? Chiếm?
+foxy: Không. Các cậu hiểu nhầm rồi.
+foxy: Tôi không hề biết hắn ta là ai, càng không phải là tay sai của hắn\
+Và cũng chẳng muốn chiếm hòn đảo này.
+war_lord: Ồ, ra là hiểu lầm sao.\
+[pause=1]Nếu thật sự thế, chúng tôi chân thành xin lỗi.
+war_lord_2: Trước giờ, chúng tôi chưa từng nhìn thấy cậu.\
+Do thấy cậu lạ quá, chúng tôi tưởng hắn ta đã bắt đầu kế hoạch rồi.
+foxy: Không cần phải xin lỗi đâu, dù có hơi đau thật...
+foxy: Cơ mà, hắn ta là ai, và kế hoạch là kế hoạch gì?
+[wait time="2"]
+war_lord: Dưới đáy biển sâu kia, có một tên tự xưng là King Crab.
+war_lord: Hắn luôn ôm ấp tham vọng sẽ thâu tóm cả vùng biển này.\
+Và hòn đảo này cũng không phải là ngoại lệ.
+war_lord: Hòn đảo cũng sẽ là bước đà để hắn bành trướng địa bàn hơn nữa.
+war_lord_2: Và hắn thật sự rất mạnh. Giờ đây hắn như trở thành bá chủ thế giới biển.
+war_lord_2: Chúng tôi đang rất lo lắng, vì hắn có thể tấn công lên đây bất cứ khi nào.
+war_lord_2: Thế nên như cậu thấy, cả hòn đảo này đang trong trạng thái sẵn sàng chiến đấu.
+
+[signal arg="flash"]
+[signal arg="image_2"]
+[wait time="1"]
+war_lord: Hòn đảo này là nơi chúng tôi lớn lên.
+war_lord: Ngay khi mở mắt ra, chúng tôi đã có mặt tại đây rồi.
+
+[signal arg="flash"]
+[signal arg="image_3"]
+[wait time="1"]
+war_lord: Chúng tôi luôn sinh sống hòa thuận, che chở cho nhau.
+war_lord: Cả hòn đảo này cứ như một gia đình vậy.
+
+[signal arg="flash"]
+[signal arg="image_1"]
+[wait time="1"]
+war_lord: Thế nên, chúng tôi - tất cả các cư dân trên đảo, đều không muốn đánh mất nơi này.
+foxy: ...
+foxy: Hắn thật sự, King Crab í, mạnh đến thế à?
+war_lord_2: Cậu đừng khinh thường sức mạnh của hắn. Cả hai chúng tôi cũng phải e dè hắn đấy.\
+Nhưng mà tại sao cậu lại hỏi vậy?
+foxy: Có thể nào, để tôi giúp các cậu?
+war_lord: Cậu nói gì? Thật đấy chứ?
+foxy: Thật đấy. Tôi nói giỡn các cậu làm gì.
+war_lord: Nhưng hắn thậm chí còn mạnh hơn cả anh em chúng tôi đấy.
+foxy: Và tôi cũng vậy mà.
+war_lord: ...
+war_lord: Đúng là vậy, nhưng mà tại sao cậu lại giúp chúng tôi?
+foxy: Vì chính nghĩa.
+foxy_grandpa: [i]Foxy à, con phải biết giúp đỡ mọi người[i]
+war_lord: Chúng tôi... thật sự không biết phải cảm ơn cậu như thế nào cả.
+foxy: Không có gì hết. Chỉ cần, một bữa ăn thịnh soạn là được.
+
+[signal arg="fade_out"]
+[signal arg="end_cutscene"]

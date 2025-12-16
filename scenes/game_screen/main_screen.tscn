@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://oaubt4ncrqj"]
+[gd_scene load_steps=20 format=3 uid="uid://oaubt4ncrqj"]
 
 [ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_lccoy"]
 [ext_resource type="Texture2D" uid="uid://bvcfcabnciimj" path="res://assets/ui/wood_paper/Big Banner/1.png" id="2_ftbm5"]
@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://6222jnb64ws2" path="res://assets/ui/wood_paper/Big Banner/33.png" id="9_cqicu"]
 [ext_resource type="Texture2D" uid="uid://5eqsk6rfd7nn" path="res://assets/ui/wood_paper/Big Banner/6.png" id="10_8okfs"]
 [ext_resource type="PackedScene" uid="uid://ij5yrv77jvm6" path="res://scenes/npcs/player.tscn" id="11_ftbm5"]
-[ext_resource type="Texture2D" uid="uid://r72ep26vlic0" path="res://assets/ui/wood_paper/Small Text/Small Icons/18.png" id="12_34qkg"]
+[ext_resource type="Texture2D" uid="uid://s0xtrmudu7a2" path="res://assets/ui/logo.png" id="11_mqab0"]
+[ext_resource type="Texture2D" uid="uid://fglbdisawtyj" path="res://assets/ui/wood_paper/Prefabs/6.png" id="11_n1kf1"]
+[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="14_q7ijo"]
+[ext_resource type="Texture2D" uid="uid://v405dewipa2w" path="res://assets/ui/skill_tree/B1_1.png" id="15_8gdh3"]
 
 [sub_resource type="GDScript" id="GDScript_ftbm5"]
 script/source = "extends Control
@@ -26,35 +29,38 @@ func _on_skill_tree_pressed() -> void:
 	get_parent().add_child(skill_tree_ui)
 "
 
-[sub_resource type="LabelSettings" id="LabelSettings_78pgj"]
-line_spacing = 0.0
-font_size = 18
-font_color = Color(3.65794e-06, 0.504397, 0.504397, 1)
-outline_size = 2
-outline_color = Color(0.821789, 0.821789, 0.821789, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqab0"]
-bg_color = Color(1, 1, 0.52549, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34qkg"]
-bg_color = Color(1, 1, 0.541176, 1)
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftbm5"]
-bg_color = Color(1, 1, 0.709804, 1)
+bg_color = Color(1, 0.45882353, 0.2627451, 1)
+border_color = Color(1, 0.9372549, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7ijo"]
+bg_color = Color(0.77050096, 0.2596961, 5.7756904e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gdh3"]
+bg_color = Color(1, 0.45882353, 0.2627451, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 2
 
 [node name="MainScreen" type="Control"]
 layout_mode = 3
@@ -68,6 +74,7 @@ script = SubResource("GDScript_ftbm5")
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_lccoy")]
 
 [node name="Banner" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -194,62 +201,63 @@ grow_vertical = 0
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_8okfs")
 
-[node name="Label" type="Label" parent="."]
+[node name="Banner2" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -55.0
-offset_right = 79.0
-offset_bottom = -5.0
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
-text = "FOXY ADVENTURER
-MỘT GIẤC MƠ"
-label_settings = SubResource("LabelSettings_78pgj")
-horizontal_alignment = 1
+texture = ExtResource("11_n1kf1")
+expand_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("11_ftbm5")]
-position = Vector2(343, 172)
-scale = Vector2(-1, 1)
+visible = false
+position = Vector2(343, 192)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 
-[node name="GameStart" type="Button" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 15.0
-offset_right = 48.0
-offset_bottom = 46.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(1, 0.510256, 0.443869, 1)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.821911, 2.62313e-06, 7.70092e-07, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/hover = SubResource("StyleBoxFlat_mqab0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_34qkg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="TextureRect" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_mqab0")
+stretch_mode = 3
+
+[node name="GameStart" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9999998, 0.9946564, 0.9899308, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("14_q7ijo")
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_ftbm5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q7ijo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8gdh3")
 text = "Game Start"
 
-[node name="SkillTree" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 185.0
-offset_right = 140.0
-offset_bottom = 205.0
-texture_normal = ExtResource("12_34qkg")
-texture_pressed = ExtResource("12_34qkg")
-texture_hover = ExtResource("12_34qkg")
-texture_disabled = ExtResource("12_34qkg")
-texture_focused = ExtResource("12_34qkg")
-stretch_mode = 0
+[node name="SkillTree" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "Skill Tree"
+icon = ExtResource("15_8gdh3")
+flat = true
 
-[connection signal="pressed" from="GameStart" to="." method="_on_game_start_pressed"]
-[connection signal="pressed" from="SkillTree" to="." method="_on_skill_tree_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/GameStart" to="." method="_on_game_start_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/SkillTree" to="." method="_on_skill_tree_pressed"]

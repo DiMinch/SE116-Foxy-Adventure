@@ -1,0 +1,10 @@
+foxy: Địa hình ít quanh co hơn lúc nãy...
+[wait time="20"]
+
+foxy: Biển ở xa quá.
+[wait time="30"]
+
+foxy: Phải nhanh chân thôi.
+[wait time="10"]
+
+[end_timeline]

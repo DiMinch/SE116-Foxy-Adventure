@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbyjrkujvauv"]
+
+[ext_resource type="Script" uid="uid://n58puknbq7wy" path="res://levels/objects/other/snow_weather.gd" id="1_ra1j2"]
+
+[sub_resource type="Gradient" id="Gradient_rnx57"]
+offsets = PackedFloat32Array(0, 0.5263158)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1j0ao"]
+gradient = SubResource("Gradient_rnx57")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.51282054, 0.48290598)
+
+[node name="SnowWeather" type="Node2D"]
+script = ExtResource("1_ra1j2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 100
+texture = SubResource("GradientTexture2D_1j0ao")
+lifetime = 5.0
+preprocess = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+gravity = Vector2(0, 50)
+tangential_accel_min = -5.0
+tangential_accel_max = 5.0
+scale_amount_max = 3.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

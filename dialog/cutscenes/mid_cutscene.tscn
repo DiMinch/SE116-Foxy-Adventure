@@ -1,0 +1,14 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf771d03crkdw"]
+
+[ext_resource type="PackedScene" uid="uid://c3jtgg2ler42j" path="res://dialog/cutscenes/base_cutscene.tscn" id="1_akcrk"]
+[ext_resource type="Script" uid="uid://cnpuifuip0lme" path="res://dialog/cutscenes/mid_cutscene.gd" id="2_xbr2e"]
+[ext_resource type="Texture2D" uid="uid://bv2yv2j3mby42" path="res://assets/cutscenes/mid_1.png" id="3_7mnot"]
+[ext_resource type="Texture2D" uid="uid://dcalwxnpk2p41" path="res://assets/cutscenes/mid_2.png" id="4_r7cjk"]
+[ext_resource type="Texture2D" uid="uid://bj6g42t153g3q" path="res://assets/cutscenes/mid_3.png" id="5_4csgs"]
+
+[node name="BaseCutscene" instance=ExtResource("1_akcrk")]
+script = ExtResource("2_xbr2e")
+img1 = ExtResource("3_7mnot")
+img2 = ExtResource("4_r7cjk")
+img3 = ExtResource("5_4csgs")
+timeline_name = "cutscene_mid"

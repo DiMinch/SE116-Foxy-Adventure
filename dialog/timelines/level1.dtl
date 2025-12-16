@@ -3,13 +3,15 @@ foxy: Lạ ghê
 
 foxy: Cơ mà khung cảnh này\
 quen thuộc thật nhỉ?
-[wait time="5.0"]
+[wait time="10"]
 
 foxy: Hình như ông đã từng\
 kể cho mình nghe về hòn đảo này...
-[wait time="5.0"]
+[wait time="10"]
 
 foxy: Một hòn đảo ấm áp... Thích quá!
-[wait time="5.0"]
+[wait time="10"]
+
+foxy: Phải tìm chút gì đó ăn thôi!
 
 [end_timeline]
