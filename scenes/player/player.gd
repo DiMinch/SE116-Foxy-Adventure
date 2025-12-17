@@ -29,13 +29,13 @@ var timer_dash = 10
 var ok_tmp_dash = true
 var timer_block = 10
 var ok_tmp_block = true
-var FALL_THRESHOLD = 100
+var FALL_THRESHOLD = 200
 
 ## Player character class that handles movement, combat, and state management
 var invulnerable_lock_count := 0
 var is_invulnerable: bool = false
 var fall_start_y: float = 0.0
-var was_on_floor: bool = false
+#var was_on_floor: bool = false
 var is_attack: bool = false
 var is_ulti: bool = false
 var check_attack: bool = true
@@ -92,9 +92,9 @@ func _ready() -> void:
 	print("Dash: ", can_dash)
 	print("Wall move: ", can_wall_move)
 	
-	was_on_floor = is_on_floor()
-	if !was_on_floor:
-		fall_start_y = global_position.y
+	#was_on_floor = is_on_floor()
+	#if !was_on_floor:
+		#fall_start_y = global_position.y
 
 func _process(delta: float) -> void:
 	if !can_invulnerable && current_time_invul > 0:
@@ -207,7 +207,7 @@ func _physics_process(delta: float) -> void:
 	_update_block_cooldown(delta)
 
 	# Check Logic
-	_check_fall_damage()
+	#_check_fall_damage()
 	if is_on_floor():
 		current_jumps = 0
 	super._physics_process(delta)
@@ -240,30 +240,24 @@ func _update_block_cooldown(delta: float) -> void:
 			timer_block = BLOCK_COOLDOWN
 			is_count_down_block = true
 
-
-func _check_fall_damage() -> void:
-	var on_floor_now := is_on_floor()
-
-	if not on_floor_now and was_on_floor:
-		fall_start_y = global_position.y
-		print("Vị trí rơi bắt đầu",fall_start_y)
-
-	if on_floor_now and not was_on_floor:
-		#if fall_start_y >= 0.0:
-			var fall_distance := global_position.y - fall_start_y
-
-			if fall_distance > FALL_THRESHOLD:
-				if not is_invulnerable and not piority_invul:
-
-					var f_damage: int = (fall_distance - FALL_THRESHOLD) / 5.0
-					print("⚠️ Player mất ", f_damage,
-						  " máu do rơi từ độ cao ", fall_distance)
-
-					fsm.current_state.take_damage(f_damage)
-
-		#fall_start_y = -1.0
-
-	was_on_floor = on_floor_now
+#func _check_fall_damage() -> void:
+	#var on_floor_now := is_on_floor()
+#
+	#if not on_floor_now and was_on_floor and velocity.y > 0.0:
+		#fall_start_y = global_position.y
+	#
+	## End fall
+	#if on_floor_now and not was_on_floor:
+		#var fall_distance := global_position.y - fall_start_y
+#
+		#if fall_distance > FALL_THRESHOLD:
+			#if not is_invulnerable and not piority_invul:
+				#var f_damage := int((fall_distance - FALL_THRESHOLD) / 5.0)
+				#print("⚠️ Player mất ", f_damage,
+					  #" máu do rơi từ độ cao ", fall_distance)
+				#fsm.current_state.take_damage(f_damage)
+	#
+	#was_on_floor = on_floor_now
 
 # === COLLISIONS
 func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:

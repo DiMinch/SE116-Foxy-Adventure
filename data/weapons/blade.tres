@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="MeleeData" load_steps=9 format=3 uid="uid://dkxudnx38pk1e"]
 
 [ext_resource type="Script" uid="uid://bmcmaiyw6twcf" path="res://scripts/systems/weapons/melee.gd" id="1_a118g"]
-[ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scenes/combats/weapons/attack_melee.gd" id="1_tigi4"]
+[ext_resource type="Script" uid="uid://clbkm1lviu1tl" path="res://scripts/combats/weapons/attack_melee.gd" id="1_tigi4"]
 [ext_resource type="Texture2D" uid="uid://dxkcgo463majk" path="res://assets/weapons/blade/blade_anim_1.png" id="1_ub7cd"]
-[ext_resource type="Script" uid="uid://cupnjjapxyriq" path="res://scenes/combats/weapons/ulti/beam_ulti.gd" id="2_q47pj"]
+[ext_resource type="Script" uid="uid://cupnjjapxyriq" path="res://scripts/combats/weapons/ulti/beam_ulti.gd" id="2_q47pj"]
 [ext_resource type="SpriteFrames" uid="uid://cchshj6ljuypn" path="res://scenes/player/animation/blade.tres" id="4_3m72n"]
 [ext_resource type="Resource" uid="uid://b3d7w1rmytjhd" path="res://data/ultis/BladeUlti.tres" id="5_3hus2"]
 

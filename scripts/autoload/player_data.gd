@@ -14,6 +14,7 @@ var weapon_table: Dictionary = {}
 var current_loadout: Array[String] = ["", ""]
 
 func _ready():
+	UserSystem._load_last_user()
 	_load_all_weapons()
 	_init_skills_data()
 
@@ -81,7 +82,12 @@ func _set_new_game_defaults():
 
 func save_upgrades():
 	if current_upgrade_save_path.is_empty():
-		return
+		var path_from_user_system = UserSystem.get_current_upgrade_path()
+		if not path_from_user_system.is_empty():
+			current_upgrade_save_path = path_from_user_system
+		else:
+			push_error("Cannot save ugrades: UserSystem reports an empty save path.")
+			return
 	
 	var save_data = {
 		"coins": player_coins,

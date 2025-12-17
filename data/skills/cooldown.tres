@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://m0evddljpims"]
 
-[ext_resource type="Texture2D" uid="uid://cnfnalbbeqvcg" path="res://assets/object/items/powerup/speed_up.png" id="1_4adds"]
+[ext_resource type="Texture2D" uid="uid://dplcic5i5iwr7" path="res://assets/ui/skill_tree/B2_4.png" id="1_4adds"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_4jakm"]
 [ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="3_5oaf5"]
 
@@ -13,10 +13,7 @@ icon = ExtResource("1_4adds")
 tier = 2
 cost = 4
 type = "W"
-max_level = 1
 prerequisites = ["invulnerable", "ultimate"]
-default_unlocked = false
 weapon_to_unlock = ExtResource("3_5oaf5")
-target_weapon_name = ""
 de_cooldown = 0.5
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

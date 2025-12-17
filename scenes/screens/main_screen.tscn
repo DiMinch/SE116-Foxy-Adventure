@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://oaubt4ncrqj"]
+
+[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="1_lccoy"]
+[ext_resource type="Texture2D" uid="uid://fglbdisawtyj" path="res://assets/ui/Prefabs/6.png" id="2_k48fn"]
+[ext_resource type="Theme" uid="uid://da3t4bdgx6pa4" path="res://data/default_theme.tres" id="4_0o4el"]
+[ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/ui/stage_ui/hud/hud.tscn" id="6_2mnft"]
+[ext_resource type="Texture2D" uid="uid://s0xtrmudu7a2" path="res://assets/ui/logo.png" id="11_mqab0"]
+[ext_resource type="Texture2D" uid="uid://v405dewipa2w" path="res://assets/ui/skill_tree/B1_1.png" id="15_8gdh3"]
+
+[sub_resource type="GDScript" id="GDScript_ftbm5"]
+script/source = "extends Control
+
+var skill_tree_scene: PackedScene = preload(\"res://scenes/ui/skill_tree/skilltree.tscn\")
+
+func _ready() -> void:
+	UserSystem._ready()
+
+func _on_game_start_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/screens/select_level_screen.tscn\")
+
+func _on_skill_tree_pressed() -> void:
+	var skill_tree_ui = skill_tree_scene.instantiate()
+	get_parent().add_child(skill_tree_ui)
+"
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ftbm5")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_lccoy")]
+
+[node name="Banner2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_k48fn")
+expand_mode = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="TextureRect" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_mqab0")
+stretch_mode = 3
+
+[node name="GameStart" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_0o4el")
+theme_override_colors/font_color = Color(0.9411765, 0, 0.08235294, 1)
+theme_override_colors/font_pressed_color = Color(0.9411765, 0, 0.08235294, 1)
+theme_override_colors/font_hover_color = Color(0.9411765, 0, 0.08235294, 1)
+text = "Game Start"
+
+[node name="SkillTree" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "Skill Tree"
+icon = ExtResource("15_8gdh3")
+flat = true
+
+[node name="HUD" parent="AspectRatioContainer" instance=ExtResource("6_2mnft")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/GameStart" to="." method="_on_game_start_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/SkillTree" to="." method="_on_skill_tree_pressed"]

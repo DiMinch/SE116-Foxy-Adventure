@@ -12,6 +12,7 @@ func _enter() -> void:
 	obj.sprite.stop()
 	obj.sprite.frame = 0
 	_fading = true
+	AudioManager.play_sound("war_lord_dead")
 
 func _update(delta: float) -> void:
 	obj.velocity.x=0

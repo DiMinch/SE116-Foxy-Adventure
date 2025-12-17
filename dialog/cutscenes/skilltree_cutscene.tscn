@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://da40kicskiins"]
+
+[ext_resource type="PackedScene" uid="uid://c3jtgg2ler42j" path="res://dialog/cutscenes/base_cutscene.tscn" id="1_tfkhj"]
+[ext_resource type="Script" uid="uid://cjce47ss4vhyd" path="res://dialog/cutscenes/skilltree_cutscene.gd" id="2_h7cas"]
+[ext_resource type="Texture2D" uid="uid://bbbwgjc0yxlnb" path="res://assets/cutscenes/skill_tree_1.png" id="3_5aebr"]
+[ext_resource type="Texture2D" uid="uid://cr582n0yltyjl" path="res://assets/cutscenes/skill_tree_2.png" id="4_m18ik"]
+
+[node name="SkillTreeCutscene" instance=ExtResource("1_tfkhj")]
+script = ExtResource("2_h7cas")
+img1 = ExtResource("3_5aebr")
+img2 = ExtResource("4_m18ik")
+timeline_name = "cutscene_skilltree"
+
+[node name="TextureRect" parent="." index="0"]
+texture = null

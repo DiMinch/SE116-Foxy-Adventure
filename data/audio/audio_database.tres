@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AudioDatabase" load_steps=33 format=3 uid="uid://cjk8r87s1w30a"]
+[gd_resource type="Resource" script_class="AudioDatabase" load_steps=39 format=3 uid="uid://cjk8r87s1w30a"]
 
 [ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_x0dso"]
 [ext_resource type="Resource" uid="uid://03frm7w333xg" path="res://data/audio/clips/barrel_shoot.tres" id="2_bwrda"]
@@ -6,18 +6,24 @@
 [ext_resource type="Resource" uid="uid://dcqc5qtoj07g4" path="res://data/audio/clips/player_hurt.tres" id="2_ut6nb"]
 [ext_resource type="Resource" uid="uid://bpvew5m3ry3xf" path="res://data/audio/clips/crab_walk.tres" id="3_ca5ng"]
 [ext_resource type="Resource" uid="uid://b4e6k3i8ll8hi" path="res://data/audio/clips/enemy_die.tres" id="4_j4vq7"]
+[ext_resource type="AudioStream" uid="uid://n74vtax30xxd" path="res://assets/audio/sfx/enemies/dizzy.wav" id="4_saqkh"]
 [ext_resource type="Resource" uid="uid://b8fwp172uhepf" path="res://data/audio/clips/enemy_hurt.tres" id="5_sd3kk"]
+[ext_resource type="Resource" uid="uid://b36yxjavfd1cy" path="res://data/audio/clips/explosion.tres" id="6_lubev"]
 [ext_resource type="Resource" uid="uid://bfqebgmxa3ygr" path="res://data/audio/clips/mushroom_walk.tres" id="6_sd3kk"]
 [ext_resource type="Resource" uid="uid://b0d4pjhrjppmn" path="res://data/audio/clips/native_attack.tres" id="7_lubev"]
+[ext_resource type="Resource" uid="uid://dst34kowhs015" path="res://data/audio/clips/kingcrab_attack1.tres" id="8_be375"]
 [ext_resource type="Resource" uid="uid://xwg431o6dtni" path="res://data/audio/clips/native_coconut_hit.tres" id="8_rdqdp"]
 [ext_resource type="Resource" uid="uid://cadtxtoyx2hnh" path="res://data/audio/clips/pelican.tres" id="9_1iflg"]
+[ext_resource type="Resource" uid="uid://c6dehdchlwu6j" path="res://data/audio/clips/kingcrab_attack2.tres" id="9_03vyq"]
 [ext_resource type="Resource" uid="uid://1y5g3rtonuu5" path="res://data/audio/clips/starfish_spin.tres" id="10_be375"]
-[ext_resource type="AudioStream" uid="uid://ckd7846l3qge0" path="res://assets/audio/sfx/enemies/spear_attack.wav" id="10_saqkh"]
+[ext_resource type="Resource" uid="uid://r5dkswh4uets" path="res://data/audio/clips/spear_attack.tres" id="10_j4vq7"]
 [ext_resource type="Resource" uid="uid://c2r2q4gwmdr5o" path="res://data/audio/clips/door.tres" id="11_03vyq"]
+[ext_resource type="Resource" uid="uid://m5vw5a43rs80" path="res://data/audio/clips/war_lord_attack1.tres" id="12_j4vq7"]
 [ext_resource type="Resource" uid="uid://lqhomand8hkc" path="res://data/audio/clips/open_chest.tres" id="12_sbk0j"]
 [ext_resource type="Resource" uid="uid://0mo0mcmxifmv" path="res://data/audio/clips/spike.tres" id="13_irwrg"]
 [ext_resource type="Resource" uid="uid://dg6n23avi2au1" path="res://data/audio/clips/coin_collect.tres" id="15_be375"]
 [ext_resource type="Resource" uid="uid://c4e01bljowbli" path="res://data/audio/clips/food_collect.tres" id="16_03vyq"]
+[ext_resource type="Resource" uid="uid://bf3kicnrmkqjr" path="res://data/audio/clips/war_lord_dead.tres" id="16_be375"]
 [ext_resource type="Resource" uid="uid://cmxhoqap7c8qo" path="res://data/audio/clips/key_collect.tres" id="17_sbk0j"]
 [ext_resource type="Resource" uid="uid://f4x7xjrayhc3" path="res://data/audio/clips/ui_click.tres" id="18_irwrg"]
 [ext_resource type="Resource" uid="uid://d38pjy82lk0pb" path="res://data/audio/clips/landing.tres" id="18_lq2h1"]
@@ -32,12 +38,12 @@
 [ext_resource type="Resource" uid="uid://xt1ywnq1gpqq" path="res://data/audio/clips/player_walk.tres" id="28_oh8lu"]
 [ext_resource type="Resource" uid="uid://df7ymsxuf56qj" path="res://data/audio/clips/wall_slide.tres" id="29_qjy2u"]
 
-[sub_resource type="Resource" id="Resource_61boq"]
+[sub_resource type="Resource" id="Resource_sbk0j"]
 script = ExtResource("1_x0dso")
-clip_id = "spear_attack"
-stream = ExtResource("10_saqkh")
+clip_id = "dizzy"
+stream = ExtResource("4_saqkh")
 randomize_pitch = true
 
 [resource]
 script = ExtResource("2_quhjw")
-clips = Array[ExtResource("1_x0dso")]([ExtResource("2_bwrda"), ExtResource("3_ca5ng"), ExtResource("4_j4vq7"), ExtResource("5_sd3kk"), ExtResource("6_sd3kk"), ExtResource("7_lubev"), ExtResource("8_rdqdp"), ExtResource("9_1iflg"), SubResource("Resource_61boq"), ExtResource("10_be375"), ExtResource("11_03vyq"), ExtResource("12_sbk0j"), ExtResource("13_irwrg"), ExtResource("15_be375"), ExtResource("16_03vyq"), ExtResource("17_sbk0j"), ExtResource("18_irwrg"), ExtResource("18_lq2h1"), ExtResource("19_165g3"), ExtResource("20_gwagj"), ExtResource("21_iyqwt"), ExtResource("22_5g6on"), ExtResource("2_ut6nb"), ExtResource("25_0d4ek"), ExtResource("25_r6xfc"), ExtResource("26_p56tg"), ExtResource("27_nyorn"), ExtResource("28_oh8lu"), ExtResource("29_qjy2u")])
+clips = Array[ExtResource("1_x0dso")]([ExtResource("2_bwrda"), ExtResource("3_ca5ng"), SubResource("Resource_sbk0j"), ExtResource("4_j4vq7"), ExtResource("5_sd3kk"), ExtResource("6_lubev"), ExtResource("8_be375"), ExtResource("9_03vyq"), ExtResource("6_sd3kk"), ExtResource("7_lubev"), ExtResource("8_rdqdp"), ExtResource("9_1iflg"), ExtResource("10_j4vq7"), ExtResource("10_be375"), ExtResource("12_j4vq7"), ExtResource("16_be375"), ExtResource("11_03vyq"), ExtResource("12_sbk0j"), ExtResource("13_irwrg"), ExtResource("15_be375"), ExtResource("16_03vyq"), ExtResource("17_sbk0j"), ExtResource("18_irwrg"), ExtResource("18_lq2h1"), ExtResource("19_165g3"), ExtResource("20_gwagj"), ExtResource("21_iyqwt"), ExtResource("22_5g6on"), ExtResource("2_ut6nb"), ExtResource("25_0d4ek"), ExtResource("25_r6xfc"), ExtResource("26_p56tg"), ExtResource("27_nyorn"), ExtResource("28_oh8lu"), ExtResource("29_qjy2u")])

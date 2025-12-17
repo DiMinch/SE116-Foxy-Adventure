@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6h2kdx3u18fq"]
+[gd_scene load_steps=16 format=3 uid="uid://c6h2kdx3u18fq"]
 
 [ext_resource type="Script" uid="uid://dxv1b8oslgbmm" path="res://scenes/ui/skill_tree/skilltree.gd" id="1_6jabl"]
 [ext_resource type="PackedScene" uid="uid://ciedqnjh53j5u" path="res://scenes/ui/skill_tree/skillnode.tscn" id="1_c1uv7"]
+[ext_resource type="Texture2D" uid="uid://csanhy2wsc1jq" path="res://assets/object/items/coin/01.png" id="2_86yrs"]
 [ext_resource type="Resource" uid="uid://doguvkkvepna0" path="res://data/skills/blade.tres" id="2_c1uv7"]
 [ext_resource type="Resource" uid="uid://xd6c1bwlnf04" path="res://data/skills/spear.tres" id="3_raaid"]
 [ext_resource type="Resource" uid="uid://bvptym0nrnx0n" path="res://data/skills/block.tres" id="4_f6l73"]
@@ -18,11 +19,12 @@
 [node name="ScrollContainer" type="ScrollContainer"]
 clip_contents = false
 offset_right = 479.0
-offset_bottom = 266.0
+offset_bottom = 289.0
 
 [node name="OverlayColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(480, 270)
+custom_minimum_size = Vector2(700, 300)
 layout_mode = 2
+size_flags_horizontal = 4
 color = Color(0.0352941, 0.54902, 0.870588, 0.694118)
 
 [node name="SkillTree" type="Control" parent="."]
@@ -33,6 +35,21 @@ mouse_filter = 1
 mouse_force_pass_scroll_events = false
 script = ExtResource("1_6jabl")
 unlocked_color = Color(1, 0.960784, 0.313726, 1)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="SkillTree/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_86yrs")
+
+[node name="CoinLabel" type="Label" parent="SkillTree/VBoxContainer"]
+layout_mode = 2
 
 [node name="stage1" type="Control" parent="SkillTree"]
 anchors_preset = 0

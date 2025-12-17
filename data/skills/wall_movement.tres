@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://civltnpindj77"]
 
-[ext_resource type="Texture2D" uid="uid://jsyv82thtasa" path="res://assets/foxy/hp100/fox_hp100/fox_jump_2.png" id="1_ysaui"]
+[ext_resource type="Texture2D" uid="uid://bxmnxmc74vfmy" path="res://assets/ui/skill_tree/B2_1.png" id="1_ysaui"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_h753i"]
 
 [resource]

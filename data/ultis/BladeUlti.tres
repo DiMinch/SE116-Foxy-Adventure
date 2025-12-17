@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BeamUlti" load_steps=3 format=3 uid="uid://b3d7w1rmytjhd"]
 
 [ext_resource type="Script" uid="uid://3dh0pw5qtocp" path="res://scripts/systems/projectiles/beam_data.gd" id="1_5v6xt"]
-[ext_resource type="PackedScene" uid="uid://blsvflwyhm21b" path="res://scenes/projectiles/sword_beam/SwordBeam.tscn" id="1_7852d"]
+[ext_resource type="PackedScene" uid="uid://blsvflwyhm21b" path="res://scenes/ultimates/sword_beam/SwordBeam.tscn" id="1_7852d"]
 
 [resource]
 script = ExtResource("1_5v6xt")

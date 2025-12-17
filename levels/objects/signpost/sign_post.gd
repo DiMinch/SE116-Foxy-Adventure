@@ -5,6 +5,7 @@ extends Node2D
 
 @export_group("Interaction Settings")
 @export var is_interactable: bool = true
+@export var allow_auto_interact: bool = true
 @export var popup_scene: PackedScene
 @export_multiline var tutorial_text: String = "Nội dung hướng dẫn..."
 @export var tutorial_image: Texture2D
@@ -12,6 +13,8 @@ extends Node2D
 @onready var interact_label = $Label
 @onready var sprite_2d = $Sprite2D
 @onready var interactive_area = $InteractiveArea2D
+
+var has_auto_triggered: bool = false
 
 func _ready():
 	# 1. Cập nhật Skin (nếu có assign ảnh)
@@ -36,6 +39,10 @@ func _ready():
 
 func _on_interaction_available():
 	interact_label.visible = true
+	
+	if not has_auto_triggered and is_interactable and allow_auto_interact:
+		has_auto_triggered = true
+		_on_interacted()
 
 func _on_interaction_unavailable():
 	interact_label.visible = false

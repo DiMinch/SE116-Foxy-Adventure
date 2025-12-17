@@ -1,17 +1,17 @@
-[gd_scene load_steps=18 format=4 uid="uid://cgtggomjj4ili"]
+[gd_scene load_steps=15 format=4 uid="uid://cgtggomjj4ili"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_xqyya"]
-[ext_resource type="AudioStream" uid="uid://cpukcbtbbp1n7" path="res://assets/audio/music/music_boss2.wav" id="2_8qsqs"]
+[ext_resource type="Resource" path="res://dialog/timelines/start_mid.dtl" id="2_4ebdn"]
+[ext_resource type="PackedScene" path="res://dialog/cutscenes/mid_cutscene.tscn" id="2_8qsqs"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_r6cra"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_xe8uf"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_c8c0h"]
-[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="5_y8sci"]
-[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="6_8qsqs"]
-[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="7_4ebdn"]
+[ext_resource type="Texture2D" uid="uid://iptcwdohkwda" path="res://assets/platform/island/background/big_clouds.png" id="5_y8sci"]
 [ext_resource type="PackedScene" uid="uid://d2tphol6b0v3i" path="res://scenes/enemies/war_lord/war_lord.tscn" id="8_r6cra"]
 [ext_resource type="PackedScene" uid="uid://c2rtdki2wb8yc" path="res://scenes/enemies/pelican/pelican.tscn" id="9_y8sci"]
 [ext_resource type="PackedScene" uid="uid://cyq6x0ll4udb5" path="res://scenes/enemies/pelican2/pelican2.tscn" id="10_8qsqs"]
 [ext_resource type="PackedScene" uid="uid://twbvjqtgwt7x" path="res://levels/objects/spike/spike.tscn" id="11_4ebdn"]
+[ext_resource type="PackedScene" uid="uid://cos1xhye61oa" path="res://scenes/ui/stage_ui/stage_ui.tscn" id="12_8qsqs"]
 
 [sub_resource type="GDScript" id="GDScript_w7ck5"]
 script/source = "extends ParallaxLayer
@@ -64,23 +64,11 @@ func _spawn_cloud():
 	clouds.append(cloud)
 "
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wf6kw"]
-texture = ExtResource("6_8qsqs")
-texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nasht"]
-texture = ExtResource("6_8qsqs")
-texture_margin_bottom = 1.0
-modulate_color = Color(1, 1, 0, 0.23137255)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ow7pe"]
-texture = ExtResource("6_8qsqs")
-texture_margin_bottom = 1.0
-modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
-
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_xqyya")
 level_music = ExtResource("2_8qsqs")
+start_timeline = ExtResource("2_4ebdn")
+ending_cutscene_scene = ExtResource("2_8qsqs")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]
@@ -98,7 +86,7 @@ target_door = "Begin"
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_c8c0h")]
-position = Vector2(142, 352)
+position = Vector2(73, 460)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -121,23 +109,6 @@ centered = false
 
 [node name="CloudManager" type="Node2D" parent="ParallaxBackground/ParallaxLayerCloud"]
 script = SubResource("GDScript_2nn5w")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TurnBack" type="Button" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -30.0
-offset_top = 5.0
-offset_right = -6.0
-offset_bottom = 31.0
-grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_wf6kw")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nasht")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ow7pe")
-icon = ExtResource("7_4ebdn")
-icon_alignment = 1
 
 [node name="WarLord" parent="." instance=ExtResource("8_r6cra")]
 position = Vector2(722, 436)
@@ -168,3 +139,5 @@ position = Vector2(1508, 480)
 
 [node name="Spike4" parent="." instance=ExtResource("11_4ebdn")]
 position = Vector2(1658, 480)
+
+[node name="StageUI" parent="." instance=ExtResource("12_8qsqs")]

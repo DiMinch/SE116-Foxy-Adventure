@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://d3mk81tc2ox4g"]
 
-[ext_resource type="Texture2D" uid="uid://beyr3w8o1u12j" path="res://assets/foxy/hp100/fox_hp100/fox_dash_3.png" id="1_8kid6"]
+[ext_resource type="Texture2D" uid="uid://bbnmm6og5ox0y" path="res://assets/ui/skill_tree/B1_5.png" id="1_8kid6"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_sl8c3"]
 
 [resource]

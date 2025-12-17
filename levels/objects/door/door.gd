@@ -1,4 +1,5 @@
 extends Node2D
+class_name Door
 
 @export_file("*.tscn") var target_stage = ""
 @export var target_door = "Door"
@@ -12,25 +13,36 @@ func _ready() -> void:
 
 func _on_interactive_area_2d_interacted() -> void:
 	AudioManager.play_sound("door")
-	await open_and_transition()
+	if GameManager.inventory_system.has_key():
+		await open_and_transition()
+	else:
+		print("[INFO] Player doesn't have key to open door!")
 
 func open_and_transition():
 	var target_res := ResourceLoader.load(target_stage)
 	
 	if GameManager.current_stage.scene_file_path == target_res.resource_path:
-		print("[Door] Teleported player to portal: %s in same scene" % target_door)
+		print("[Door] Teleported player within same scene")
 		_teleport_in_same_stage()
 		return
 	
-	print("[Door] Different stage detected. Fading out and changing scene...")
-
+	print("[Door] Level Finished. Requesting stage completion...")
+	
 	sprite.play("opening")
 	await sprite.animation_finished
-	await fade_screen(true)
-	GameManager.change_stage(target_stage, target_door)
-	sprite.play("closing")
 	
-
+	if GameManager.current_stage:
+		if GameManager.player:
+			GameManager.player.velocity = Vector2.ZERO
+			GameManager.player.change_animation("idle")
+	
+	if GameManager.current_stage.has_method("complete_level"):
+		GameManager.current_stage.complete_level(target_stage, target_door)
+	else:
+		push_warning("Stage script chưa có hàm complete_level, fallback về cách cũ")
+		GameManager.change_stage(target_stage, target_door)
+	
+	sprite.play("closing")
 
 func _teleport_in_same_stage() -> void:
 	var target_portal = GameManager.current_stage.find_child(target_door)
@@ -45,27 +57,6 @@ func _teleport_in_same_stage() -> void:
 	
 	sprite.play("opening")
 	await sprite.animation_finished
+	GameManager.player.velocity = Vector2.ZERO
 	GameManager.player.global_position = target_portal.global_position
 	sprite.play("closing")
-
-func fade_screen(is_fade_out: bool) -> void:
-	if not is_inside_tree():
-		await ready
-
-	var tree := get_tree()
-	if tree == null:
-		return
-
-	var root := tree.root
-	if root == null:
-		return
-	
-	var fade_layer = get_tree().root.get_node_or_null("FadeLayer")
-	if fade_layer == null:
-		fade_layer = preload("res://scenes/ui/fade_layer/fade_layer.tscn").instantiate()
-		root.add_child(fade_layer)
-
-	if is_fade_out:
-		await fade_layer.fade_out()
-	else:
-		await fade_layer.fade_in()

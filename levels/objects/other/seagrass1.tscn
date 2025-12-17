@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c22x8vi4u0moj"]
+
+[ext_resource type="Texture2D" uid="uid://biiivp0twvxfu" path="res://assets/platform/sea/objects/grass1.png" id="1_lgjs3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("1_lgjs3")

@@ -1,0 +1,32 @@
+[style name="style"]
+[signal arg="fade_in"]
+[wait time="1.0"]
+
+[signal arg="image_1"]
+foxy: Phía trước là gì nhỉ, chói quá.
+foxy: Một cây cọ đang... phát sáng?
+foxy: Đi lại gần đó kiểm tra thôi.
+[signal arg="zoom_slow_start"]
+secret: Chúc mừng bạn đã mở khóa được [b]Skill Tree[/b]
+foxy: Là ai đang nói thế?\
+[pause=1]Cơ mà Skill Tree là gì?
+secret: Skill Tree sẽ giúp đem lại cho bạn nguồn sức mạnh bất ngờ.
+secret: Hãy ra Menu chính để kiểm tra nhé.
+foxy: Khó hiểu thật...\
+[pause=1]Còn đây là...
+
+[signal arg="flash"]
+[signal arg="image_2"]
+[signal arg="zoom_slow_start"]
+foxy: Một tấm bản đồ kho báu?
+foxy: Vàng, kim cương, đá quý...\
+[pause=1]Tưởng gì, chẳng có gì giá trị cả.
+[signal arg="zoom_slow_start"]
+foxy: Gì đây.
+foxy: Là đồ ăn sao??
+foxy: Vậy thì, không thể không đi rồi...\
+Bụng đang đói mà, đành chịu vậy.
+
+[signal arg="fade_out"]
+[wait time="1.0"]
+[signal arg="end_cutscene"]

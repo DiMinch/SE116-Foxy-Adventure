@@ -13,8 +13,13 @@ var inventory_system: InvetorySystem = null
 func _ready() -> void:
 	# Load checkpoint data when game starts
 	load_checkpoint_data()
+	# Add inventory system
 	inventory_system = InvetorySystem.new()
 	add_child(inventory_system)
+
+func clear_level_coins():
+	if inventory_system:
+		inventory_system.reset_level_coins()
 
 #change stage by path and target portal name
 func change_stage(stage_path: String, _target_portal_name: String = "") -> void:
@@ -130,4 +135,15 @@ func respawn_at_begin() -> bool:
 	return true
 
 func level_completed(level_id: String, elapsed_time: float):
-	UserSystem.record
+	# Write time and completed level
+	UserSystem.record_level_completion(level_id, elapsed_time)
+	
+	# Update coins for user
+	var coin_reward = calculate_reward(elapsed_time)
+	var player_data: PlayerData = get_node("/root/PlayerData")
+	player_data.player_coins += coin_reward
+	player_data.coins_changed.emit(player_data.player_coins)
+	player_data.save_upgrades()
+
+func calculate_reward(time: float) -> int:
+	return 100 + max(0, int(100/time))

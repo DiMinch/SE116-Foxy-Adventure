@@ -1,4 +1,5 @@
 extends CollectibleBase
+class_name Key
 
 @export var key_amount: int = 1
 

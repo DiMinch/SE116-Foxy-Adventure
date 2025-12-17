@@ -58,6 +58,12 @@ func use_consumable(type: String, amount: int = 1) -> bool:
 func has_key() -> bool:
 	return currencies.keys > 0
 
+func reset_level_coins():
+	if currencies.has("coins"):
+		currencies["coins"] = 0
+		item_changed.emit("coins", 0)
+		print("[INVENTORY] Level Coins cleared.")
+
 func debug(debug_type: String, item_type: String, amount: int) -> void:
 	var current_amount = 0
 	if item_type == "fruits":

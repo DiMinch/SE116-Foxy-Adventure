@@ -1,4 +1,5 @@
 extends CollectibleBase
+class_name Coin
 
 @export var coin_amount: int = 1
 

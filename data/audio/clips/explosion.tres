@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://b36yxjavfd1cy"]
+
+[ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_e7fw1"]
+[ext_resource type="AudioStream" uid="uid://2ihi6fl25s72" path="res://assets/audio/sfx/enemies/explosion.wav" id="2_un2we"]
+
+[resource]
+script = ExtResource("1_e7fw1")
+clip_id = "explosion"
+stream = ExtResource("2_un2we")
+volume_db = -2.0
+randomize_pitch = true

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ShurikenUlti" load_steps=3 format=3 uid="uid://b2od6q6vnb66s"]
 
 [ext_resource type="Script" uid="uid://cuxo2dqiots12" path="res://scripts/systems/projectiles/shuriken_ulti_data.gd" id="1_dk6bw"]
-[ext_resource type="PackedScene" uid="uid://c0a8626clgtgn" path="res://scenes/projectiles/shuriken_B/ShurikenB.tscn" id="1_g21gy"]
+[ext_resource type="PackedScene" uid="uid://c0a8626clgtgn" path="res://scenes/ultimates/shuriken_B/ShurikenB.tscn" id="1_g21gy"]
 
 [resource]
 script = ExtResource("1_dk6bw")

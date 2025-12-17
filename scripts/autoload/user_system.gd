@@ -3,31 +3,127 @@ extends Node
 const META_SAVE_DIR = "user://profiles/"
 const META_FILE_NAME = "meta.dat"
 const UPGRADE_FILE_NAME = "upgrades.dat"
+const USER_LIST_FILE = "user://users.json"
+const LAST_USER_FILE = "user://last_user.dat"
 
 var current_username: String = ""
 var meta_data: Dictionary = {
 	"levels_completed": {},
 	"last_played": 0,
 }
-
+var user_list: Dictionary = {}
 var player_data: PlayerData = null
 
 func _ready() -> void:
 	DirAccess.make_dir_absolute(META_SAVE_DIR)
+	_load_user_list()
+	_load_last_user()
+
+# Load last user
+func _load_last_user():
+	if not FileAccess.file_exists(LAST_USER_FILE):
+		current_username = ""
+		return
+	
+	var file = FileAccess.open(LAST_USER_FILE, FileAccess.READ)
+	if file:
+		var last_user = file.get_as_text().strip_edges()
+		file.close()
+		
+		if not last_user.is_empty() and user_list.has(last_user):
+			current_username = last_user
+			print("Last user found: ", current_username)
+			_load_meta_data()
+			
+			if PlayerData:
+				PlayerData.load_upgrades_for_profile(get_current_upgrade_path())
+
+# Save last user
+func _save_last_user(username: String):
+	var file = FileAccess.open(LAST_USER_FILE, FileAccess.WRITE)
+	if file:
+		file.store_string(username)
+		file.close()
+	_load_meta_data()
+
+# User management
+func _load_user_list():
+	if not FileAccess.file_exists(USER_LIST_FILE):
+		user_list = {}
+		return
+	
+	var file = FileAccess.open(USER_LIST_FILE, FileAccess.READ)
+	if file:
+		var json_string = file.get_as_text()
+		var data = JSON.parse_string(json_string)
+		if data is Dictionary:
+			user_list = data
+		file.close()
+	print("User list loaded. Total users: ", user_list.size())
+
+func _save_user_list():
+	var file = FileAccess.open(USER_LIST_FILE, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(user_list, "\t"))
+		file.close()
+
+# Register
+func register_user(username: String, password: String) -> String:
+	# Validate input
+	if username.length() < 3:
+		return "Tên đăng nhập phải có ít nhất 3 ký tự."
+	if password.length() < 6:
+		return "Mật khẩu phải có ít nhất 6 ký tự."
+	if user_list.has(username):
+		return "Tên đăng nhập đã tồn tại."
+	
+	# Save new user
+	user_list[username] = password 
+	_save_user_list()
+	
+	# Create save dir for new user
+	var user_dir = META_SAVE_DIR + username
+	DirAccess.make_dir_absolute(user_dir)
+	
+	print("[SYSTEM] User registered: ", username)
+	return ""
 
 # Login & load data
-func login(username: String) -> bool:
-	if username.is_empty():
-		return false
+func login(username: String, password: String) -> String:
+	# Check empty
+	if username.is_empty() or password.is_empty():
+		return "Vui lòng nhập tên đăng nhập và mật khẩu."
+	# Check exist user
+	if not user_list.has(username):
+		return "Tên đăng nhập không tồn tại."
+	# Check password
+	if user_list[username] != password:
+		return "Mật khẩu không chính xác."
 	
 	current_username = username
+	# Save last user
+	_save_last_user(current_username)
 	# Load meta data
 	_load_meta_data()
 	# Load player upgrades
+	if PlayerData:
+		PlayerData.load_upgrades_for_profile(get_current_upgrade_path())
+	print("[SYSTEM] User logged in: ", current_username)
+	return ""
+
+# Logout
+func logout() -> void:
+	if current_username.is_empty():
+		return
+	
 	if player_data:
-		player_data.load_upgrades_for_profile(get_current_upgrade_path())
-	print("User logged in: ", current_username)
-	return true
+		player_data.save_upgrades()
+	
+	current_username = ""
+	meta_data = { "levels_completed": {}, "last_played": 0 }
+	
+	_save_last_user("")
+	print("[SYSTEM] User logged out.")
 
 # Get file upgrades path
 func get_current_upgrade_path() -> String:
@@ -86,5 +182,5 @@ func record_level_completion(level_id: String, completion_time: float) -> bool:
 		
 	meta_data.levels_completed[level_id] = level_data
 	_save_meta_data()
-	print("Level completion recorded for ", level_id)
+	print("[SYSTEM] Level completion recorded for ", level_id)
 	return true

@@ -1,25 +1,25 @@
 [gd_scene load_steps=7 format=3 uid="uid://cw81k02mlynwo"]
 
 [ext_resource type="Script" uid="uid://d2le4cs16xton" path="res://levels/objects/tree/back_tree.gd" id="1_c0dm2"]
-[ext_resource type="Texture2D" uid="uid://cheu53nimdwyt" path="res://assets/island/back_palm_trees/back_palm_tree_regular_01.png" id="2_0ufud"]
-[ext_resource type="Texture2D" uid="uid://dt1od2hyke60g" path="res://assets/island/back_palm_trees/back_palm_tree_regular_02.png" id="3_wi381"]
-[ext_resource type="Texture2D" uid="uid://frimagh5yfit" path="res://assets/island/back_palm_trees/back_palm_tree_regular_03.png" id="4_h5cwi"]
-[ext_resource type="Texture2D" uid="uid://cjcxdxoq8hp4l" path="res://assets/island/back_palm_trees/back_palm_tree_regular_04.png" id="5_42ykk"]
+[ext_resource type="Texture2D" uid="uid://dguiuwuicfa03" path="res://assets/platform/island/back_palm_trees/back_palm_tree_regular_01.png" id="2_c0dm2"]
+[ext_resource type="Texture2D" uid="uid://bpwondbj4558e" path="res://assets/platform/island/back_palm_trees/back_palm_tree_regular_02.png" id="3_0ufud"]
+[ext_resource type="Texture2D" uid="uid://c3nrpc6p40pf7" path="res://assets/platform/island/back_palm_trees/back_palm_tree_regular_03.png" id="4_wi381"]
+[ext_resource type="Texture2D" uid="uid://ho802g5dfbty" path="res://assets/platform/island/back_palm_trees/back_palm_tree_regular_04.png" id="5_h5cwi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vdv5c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0ufud")
+"texture": ExtResource("2_c0dm2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wi381")
+"texture": ExtResource("3_0ufud")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_h5cwi")
+"texture": ExtResource("4_wi381")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_42ykk")
+"texture": ExtResource("5_h5cwi")
 }],
 "loop": true,
 "name": &"default",
@@ -33,3 +33,5 @@ script = ExtResource("1_c0dm2")
 z_index = -100
 position = Vector2(13, -16)
 sprite_frames = SubResource("SpriteFrames_vdv5c")
+frame = 2
+frame_progress = 0.36503732

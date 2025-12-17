@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BoomerangUlti" load_steps=3 format=3 uid="uid://0672y0fqu4v7"]
 
 [ext_resource type="Script" uid="uid://b24ep44fngpq5" path="res://scripts/systems/projectiles/boomerang_ulti_data.gd" id="1_5kbbn"]
-[ext_resource type="PackedScene" uid="uid://cgqpdxiqsnpu1" path="res://scenes/projectiles/boomerang_B/BoomerangB.tscn" id="1_m1gq4"]
+[ext_resource type="PackedScene" uid="uid://cgqpdxiqsnpu1" path="res://scenes/ultimates/boomerang_B/BoomerangB.tscn" id="1_m1gq4"]
 
 [resource]
 script = ExtResource("1_5kbbn")

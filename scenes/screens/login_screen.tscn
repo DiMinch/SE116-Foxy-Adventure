@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://dql8o7pke7pdg"]
+
+[ext_resource type="Script" uid="uid://pgcgw7507p2h" path="res://scenes/screens/login_screen.gd" id="1_mtr5y"]
+[ext_resource type="Texture2D" uid="uid://s0xtrmudu7a2" path="res://assets/ui/logo.png" id="1_v3f21"]
+[ext_resource type="FontFile" uid="uid://kb1r61u7sq8p" path="res://assets/font/default.ttf" id="2_mtr5y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fsn6"]
+font = ExtResource("2_mtr5y")
+font_size = 20
+font_color = Color(1, 0.5803922, 0.40784314, 1)
+
+[node name="LoginScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mtr5y")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 10.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_v3f21")
+stretch_mode = 3
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "ĐĂNG NHẬP"
+label_settings = SubResource("LabelSettings_0fsn6")
+horizontal_alignment = 1
+
+[node name="UsernameInput" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "Tên đăng nhập"
+max_length = 50
+
+[node name="PasswordInput" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "Mật khẩu"
+max_length = 50
+secret = true
+
+[node name="Message" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LoginButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Đăng nhập"
+
+[node name="RegisterButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Đăng ký"
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/RegisterButton" to="." method="_on_register_button_pressed"]

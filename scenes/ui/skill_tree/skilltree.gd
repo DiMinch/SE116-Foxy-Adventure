@@ -7,11 +7,21 @@ var last_pos := Vector2.ZERO # Lưu vị trí toàn cục
 @export var unlocked_color: Color = Color(1.0, 1.0, 0.204)
 @export var locked_color: Color = Color(0.5, 0.5, 0.5, 0.5)
 
+@onready var coin_label = $VBoxContainer/CoinLabel
+
 func _ready():
+	PlayerData.coins_changed.connect(_on_coins_changed)
+	_update_text(PlayerData.player_coins)
 	skill_nodes_map.clear()
 	_scan_stage_children(self)
 	PlayerData.skill_unlocked.connect(_on_skill_unlocked)
 	queue_redraw()
+
+func _on_coins_changed(new_amount: int) -> void:
+	_update_text(new_amount)
+
+func _update_text(amount: int) -> void:
+	coin_label.text = str(amount)
 
 func _scan_stage_children(parent: Node) -> void:
 	for node in parent.get_children():

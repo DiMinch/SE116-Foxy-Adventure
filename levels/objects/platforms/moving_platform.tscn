@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cayiakok1l7fj"]
 
-[ext_resource type="Texture2D" uid="uid://bn23ps3jhu4ru" path="res://assets/island/moving_platform/moving_platform.png" id="1_4jgm3"]
 [ext_resource type="Script" uid="uid://bt0g3e6a33vqq" path="res://levels/objects/platforms/moving_platform.gd" id="1_wh5gd"]
+[ext_resource type="Texture2D" uid="uid://cwkp10twtnyh5" path="res://assets/platform/island/moving_platform/moving_platform.png" id="2_2g7tq"]
 [ext_resource type="Script" uid="uid://nvuabioddqmj" path="res://scripts/collision/interactive_area_2d.gd" id="2_wh5gd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjlqd"]
@@ -65,7 +65,7 @@ remote_path = NodePath("../AnimatableBody2D")
 rotation = 1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
-texture = ExtResource("1_4jgm3")
+texture = ExtResource("2_2g7tq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
 position = Vector2(0, -4)

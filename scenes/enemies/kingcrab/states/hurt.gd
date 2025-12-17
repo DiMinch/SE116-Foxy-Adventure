@@ -4,6 +4,8 @@ func _enter():
 	obj.is_being_hurt=true
 	obj.change_animation("hurt")
 	timer = 0.5
+	
+	AudioManager.play_sound("enemy_hurt")
 
 func _update(delta:float):
 	var a=obj.health

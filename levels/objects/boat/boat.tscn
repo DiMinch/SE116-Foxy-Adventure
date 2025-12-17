@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://2y1bj1iekc0n"]
 
 [ext_resource type="Script" uid="uid://chd2s6optarub" path="res://levels/objects/boat/boat.gd" id="1_hlncd"]
-[ext_resource type="Texture2D" uid="uid://bnyyso8r3xy7h" path="res://assets/island/boat/boat_sail_1.png" id="1_ndtfy"]
-[ext_resource type="Texture2D" uid="uid://vtdtt6qgcrpm" path="res://assets/island/boat/boat_sail_2.png" id="2_2l30g"]
-[ext_resource type="Texture2D" uid="uid://y8tmjcm0d6ki" path="res://assets/island/boat/boat_sail_3.png" id="3_hlncd"]
-[ext_resource type="Texture2D" uid="uid://bv2po7d5rema6" path="res://assets/island/boat/boat_sail_4.png" id="4_kc5hd"]
-[ext_resource type="Texture2D" uid="uid://cbrqqsfiyiei0" path="res://assets/island/boat/boat_sail_5.png" id="5_5ayfn"]
-[ext_resource type="Texture2D" uid="uid://crflavbexmqg2" path="res://assets/island/boat/boat_body.png" id="6_fotra"]
+[ext_resource type="Texture2D" uid="uid://dc1amdk7xqxeq" path="res://assets/platform/island/boat/boat_body.png" id="2_hlncd"]
+[ext_resource type="Texture2D" uid="uid://cdvkwnn8cunhb" path="res://assets/platform/island/boat/boat_sail_1.png" id="3_kc5hd"]
+[ext_resource type="Texture2D" uid="uid://cjx8ei2icgwl7" path="res://assets/platform/island/boat/boat_sail_2.png" id="4_5ayfn"]
+[ext_resource type="Texture2D" uid="uid://bxpxxk52vinvu" path="res://assets/platform/island/boat/boat_sail_3.png" id="5_fotra"]
+[ext_resource type="Texture2D" uid="uid://bnyonb2cejm8b" path="res://assets/platform/island/boat/boat_sail_4.png" id="6_w62em"]
+[ext_resource type="Texture2D" uid="uid://cha8b1l3rjdg2" path="res://assets/platform/island/boat/boat_sail_5.png" id="7_rs381"]
 [ext_resource type="Script" uid="uid://nvuabioddqmj" path="res://scripts/collision/interactive_area_2d.gd" id="8_kc5hd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ayfn"]
@@ -16,19 +16,19 @@ size = Vector2(84, 20)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ndtfy")
+"texture": ExtResource("3_kc5hd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_2l30g")
+"texture": ExtResource("4_5ayfn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hlncd")
+"texture": ExtResource("5_fotra")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_kc5hd")
+"texture": ExtResource("6_w62em")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_5ayfn")
+"texture": ExtResource("7_rs381")
 }],
 "loop": true,
 "name": &"default",
@@ -41,7 +41,7 @@ start_direction = "Left"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 17)
-texture = ExtResource("6_fotra")
+texture = ExtResource("2_hlncd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 17)

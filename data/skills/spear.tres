@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://xd6c1bwlnf04"]
 
-[ext_resource type="Texture2D" uid="uid://31g3xoelewph" path="res://assets/weapons/spear/spear.png" id="1_1uhls"]
+[ext_resource type="Texture2D" uid="uid://dw6845lkhbnep" path="res://assets/ui/skill_tree/B1_7.png" id="1_1uhls"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_r80do"]
 [ext_resource type="Resource" uid="uid://caprsarj7awm7" path="res://data/weapons/spear.tres" id="3_0k712"]
 

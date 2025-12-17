@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://ly27c5qk8dcu"]
+[gd_scene load_steps=11 format=4 uid="uid://ly27c5qk8dcu"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_xjd82"]
-[ext_resource type="AudioStream" uid="uid://cpukcbtbbp1n7" path="res://assets/audio/music/music_boss2.wav" id="2_er3tg"]
+[ext_resource type="AudioStream" uid="uid://dae8j3wjltlpy" path="res://assets/audio/music/music_boss2.wav" id="2_er3tg"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_pn4bh"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="3_f0j57"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_kh6tk"]
+[ext_resource type="PackedScene" uid="uid://cos1xhye61oa" path="res://scenes/ui/stage_ui/stage_ui.tscn" id="8_er3tg"]
 [ext_resource type="PackedScene" uid="uid://ver0k38lhd7w" path="res://scenes/enemies/kingcrab/king_crab.tscn" id="8_n736i"]
-[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/platform/island/background/big_clouds.png" id="8_qpn5x"]
-[ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="9_ww1fx"]
-[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="10_7eant"]
+[ext_resource type="Texture2D" uid="uid://iptcwdohkwda" path="res://assets/platform/island/background/big_clouds.png" id="8_qpn5x"]
 
 [sub_resource type="GDScript" id="GDScript_w7ck5"]
 script/source = "extends ParallaxLayer
@@ -61,23 +60,10 @@ func _spawn_cloud():
 	clouds.append(cloud)
 "
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wf6kw"]
-texture = ExtResource("9_ww1fx")
-texture_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nasht"]
-texture = ExtResource("9_ww1fx")
-texture_margin_bottom = 1.0
-modulate_color = Color(1, 1, 0, 0.23137255)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ow7pe"]
-texture = ExtResource("9_ww1fx")
-texture_margin_bottom = 1.0
-modulate_color = Color(0.9843137, 0.9843137, 0, 0.5921569)
-
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_xjd82")
 level_music = ExtResource("2_er3tg")
+start_timeline = ExtResource("2_er3tg")
 metadata/_custom_type_script = "uid://dfskoxxxcb01m"
 
 [node name="World" type="TileMapLayer" parent="."]
@@ -89,7 +75,7 @@ position = Vector2(-799, 461)
 
 [node name="Door" parent="." instance=ExtResource("3_f0j57")]
 position = Vector2(1979, 477)
-target_stage = "uid://desinyrehvlky"
+target_stage = "uid://eusw5htc6cbg"
 target_door = "Begin"
 
 [node name="Bullets" type="Node2D" parent="."]
@@ -119,22 +105,7 @@ centered = false
 [node name="CloudManager" type="Node2D" parent="ParallaxBackground/ParallaxLayerCloud"]
 script = SubResource("GDScript_2nn5w")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TurnBack" type="Button" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -30.0
-offset_top = 5.0
-offset_right = -6.0
-offset_bottom = 31.0
-grow_horizontal = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_wf6kw")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_nasht")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ow7pe")
-icon = ExtResource("10_7eant")
-icon_alignment = 1
-
 [node name="KingCrab" parent="." instance=ExtResource("8_n736i")]
 position = Vector2(485, 413)
+
+[node name="StageUI" parent="." instance=ExtResource("8_er3tg")]

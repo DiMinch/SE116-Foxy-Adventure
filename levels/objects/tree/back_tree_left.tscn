@@ -1,25 +1,25 @@
 [gd_scene load_steps=7 format=3 uid="uid://dunky0om8ijfg"]
 
 [ext_resource type="Script" uid="uid://d2le4cs16xton" path="res://levels/objects/tree/back_tree.gd" id="1_b06vo"]
-[ext_resource type="Texture2D" uid="uid://c3vk7bcx7443m" path="res://assets/island/back_palm_trees/back_palm_tree_left_01.png" id="2_nwmsl"]
-[ext_resource type="Texture2D" uid="uid://crbk21cr2x0g0" path="res://assets/island/back_palm_trees/back_palm_tree_left_02.png" id="3_u2411"]
-[ext_resource type="Texture2D" uid="uid://5dkaa2a7hhs2" path="res://assets/island/back_palm_trees/back_palm_tree_left_03.png" id="4_fc7r8"]
-[ext_resource type="Texture2D" uid="uid://c6o3jd3irav67" path="res://assets/island/back_palm_trees/back_palm_tree_left_04.png" id="5_3gv2x"]
+[ext_resource type="Texture2D" uid="uid://bvxgqpi54j78l" path="res://assets/platform/island/back_palm_trees/back_palm_tree_left_01.png" id="2_b06vo"]
+[ext_resource type="Texture2D" uid="uid://dqi37q1e3pntg" path="res://assets/platform/island/back_palm_trees/back_palm_tree_left_02.png" id="3_nwmsl"]
+[ext_resource type="Texture2D" uid="uid://3tcns5yslqh6" path="res://assets/platform/island/back_palm_trees/back_palm_tree_left_03.png" id="4_u2411"]
+[ext_resource type="Texture2D" uid="uid://boitb6ltol12d" path="res://assets/platform/island/back_palm_trees/back_palm_tree_left_04.png" id="5_fc7r8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vdv5c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nwmsl")
+"texture": ExtResource("2_b06vo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_u2411")
+"texture": ExtResource("3_nwmsl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fc7r8")
+"texture": ExtResource("4_u2411")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_3gv2x")
+"texture": ExtResource("5_fc7r8")
 }],
 "loop": true,
 "name": &"default",
