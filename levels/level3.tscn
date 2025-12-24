@@ -316,7 +316,13 @@ texture = ExtResource("12_c750c")
 
 [node name="BushBackground" type="Sprite2D" parent="Background"]
 z_index = -99
-position = Vector2(-2215, -3427.0002)
+position = Vector2(-780.0001, -3744)
+scale = Vector2(30.393068, 27.68533)
+texture = ExtResource("12_mf7v1")
+
+[node name="BushBackground2" type="Sprite2D" parent="Background"]
+z_index = -99
+position = Vector2(10958, -4673)
 scale = Vector2(30.393068, 27.68533)
 texture = ExtResource("12_mf7v1")
 

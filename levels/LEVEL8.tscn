@@ -112,6 +112,7 @@ adjustment_enabled = true
 adjustment_saturation = 1.34
 
 [node name="Stage" type="Node2D"]
+position = Vector2(-5, 0)
 script = ExtResource("1_hji5y")
 level_music = ExtResource("2_kecaa")
 start_timeline = ExtResource("2_s5iu8")

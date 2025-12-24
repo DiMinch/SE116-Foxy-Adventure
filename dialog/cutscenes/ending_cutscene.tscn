@@ -21,8 +21,5 @@ img6 = ExtResource("8_fye7q")
 img7 = ExtResource("9_d0qsx")
 timeline_name = "cutscene_final"
 
-[node name="UI" parent="." index="3"]
-layer = 128
-
 [node name="SkipButton" parent="UI" index="0"]
 z_index = 100

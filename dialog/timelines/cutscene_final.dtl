@@ -10,41 +10,42 @@ king_crab: Ta phục.
 foxy: Hãy từ bỏ ý định chiếm đoạt hòn đảo đi nhé.
 foxy: Nếu không, đừng trách ta vô tình.
 king_crab: Chiếm ư? Ta chưa bao giờ có ý định đó.
-foxy: Hả? Ý ngươi là sao?
+foxy: Hả? Ý ngươi là sao?\
 [pause=1]Tại sao mọi người trên đảo đều nói rằng ngươi sắp chiếm hòn đảo?
 foxy: Rồi còn tham vọng thâu tóm thế giới, bành trướng lãnh địa?
 king_crab: ...
 king_crab: Họ thật sự nghĩ ta như vậy ư?
-foxy: Ngươi thật sự không biết gì hết?
+foxy: Ngươi thật sự không biết gì hết sao?
 king_crab: Ta không hiểu vì sao, mỗi khi nhìn thấy ta,\
-tất cả như nhìn thấy một ác ma vậy.
+Họ đều phản ứng như nhìn thấy một ác ma vậy.
 king_crab: Ta không giỏi ăn nói, cũng không giỏi thế hiện cảm xúc.
 foxy: Thật không?
-king_crab: Ta nói dối ngươi làm gì chứ. Ở đây thật cô đơn, ta...
-foxy: Thì ra sự thật là như vậy.
+king_crab: Ta nói dối ngươi làm gì chứ. Ở đây thật cô đơn, ta chỉ muốn...
+foxy: ...
+foxy: Thì ra là vậy.
 foxy: Lát nữa, ngươi hãy cùng ta lên gặp mọi người trên đảo đi.\
 Hãy cũng giải quyết hiểu lầm này.
-king_crab: Liệu có được chứ? Hay ta sẽ lại bị...
+king_crab: Liệu có được chứ? Hay sẽ lại...
 foxy: Không sao, cứ tin ta đi.
 foxy: Mà nhân tiện...\
 [pause=1]Hòm kho báu kia, là của ngươi nhỉ?
 king_crab: Ngươi muốn lấy chứ gì?\
 Cứ lấy đi. Ngươi đã đánh thắng rồi mà. Quân tử nhất ngôn.
-foxy: Không, không. Ta sẽ không lấy vàng bạc đá quý hay gì đâu. Mà ta chỉ cần một thứ.
+foxy: Không, không. Ta sẽ không lấy vàng bạc đá quý hay gì đâu. Mà ta chỉ cần...
 
 
 [signal arg="flash"]
 [signal arg="image_2"]
 [wait time="1.0"]
 foxy: Ah.
-foxy: Thật sự có đồ ăn này.\
-[pause=1]Ta- À, mình đổi xưng hô đi nhỉ, tôi ăn được chứ?
+foxy: Thật sự có đồ ăn này.
+[pause=1]Ta ăn được chứ?
 king_crab: Tưởng gì, trái cây thôi mà.
-king_crab: Nếu vàng vòng tôi còn cho cậu lấy, thì chút đấy nhằm nhò gì.
+king_crab: Nếu vàng vòng ta còn cho ngươi lấy, thì chút đấy nhằm nhò gì.
 
 [signal arg="flash"]
 [signal arg="image_3"]
-foxy: Vậy tôi không khách sáo nhé.
+foxy: Vậy ta không khách sáo nhé.
 foxy: Ăn thôi-\
 [pause=1]Nhưng mà, sao lạnh quá vậy.
 foxy: Bộ cái rương này mới rã đông h-
@@ -58,7 +59,6 @@ foxy: Chỉ là[pause=1] tuyết trắng.
 [signal arg="flash"]
 [signal arg="image_5"]
 foxy (defeat): Thì ra nãy giờ, mình vẫn nằm đây.
-foxy (defeat): Trên nền tuyết lạnh lẽo này sao.
 foxy (defeat): Hòn đảo ấm áp, bạn bè thân thiện... haha... chỉ là một giấc mơ?!
 foxy (defeat): Thật là khát... Thật là đói...
 foxy (defeat): Thật sự đã đến lúc, mình bỏ mạng rồi sao.
@@ -87,12 +87,12 @@ foxy_grandpa: Được vậy thì, hai ông cháu ta sẽ tiếp tục hạnh ph
 foxy_grandpa: Ông cũng cô đơn lắm, Foxy ạ.
 foxy_grandpa: Nhưng ông cũng muốn chứng kiến cảnh cháu lớn lên\
 Tiếp tục sống khỏe, nên cáo.
-foxy_grandpa: Còn ý cháu thế nào? Ông sẽ chờ câu trả lời của cháu ông.
+foxy_grandpa: Còn ý của cháu ông thế nào? Ông sẽ chờ câu trả lời của cháu.
 - Cháu sẽ đi theo ông!
 	jump Option_A
 - Cháu vẫn muốn ở lại.
 	jump Option_B
-	
+
 label Option_A
 foxy_grandpa: Cháu chắc chứ.
 foxy: Dạ ông. Cháu đã quá cô đơn rồi.
@@ -103,9 +103,9 @@ jump Ending
 label Option_B
 foxy: Cháu vẫn muốn bản thân sẽ trưởng thành, sẽ mạnh mẽ\
 Như những gì ông đã dặn dò.
-foxy: Cháu muốn bản thân lần nữa khi gặp ông,\
+foxy: Cháu muốn lần nữa khi gặp ông,\
 Cháu sẽ không còn cô đơn nữa.
-foxy: Cháu vừa mơ được một giấc mơ rất kì lạ. Nó đã khiến cho cháu cảm nhận rất nhiều.
+foxy: Cháu vừa mơ được một giấc mơ rất kì lạ. Nó đã cho cháu cảm nhận rất nhiều điều.
 foxy_grandpa: Được thôi, Foxy của ông.
 foxy_grandpa: Ông vẫn sẽ luôn dõi theo cháu. Ông yêu cháu.
 foxy: Cháu cũng yêu ông.

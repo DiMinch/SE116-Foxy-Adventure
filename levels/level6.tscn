@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bwh41hvmhtcb6"]
+[gd_scene load_steps=28 format=4 uid="uid://bwh41hvmhtcb6"]
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_adppw"]
 [ext_resource type="AudioStream" uid="uid://b0qehbm6hbwaf" path="res://assets/audio/music/music_normal.wav" id="2_celb7"]
