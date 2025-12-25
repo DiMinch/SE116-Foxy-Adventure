@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="[SE116 - Team 6] Foxy Adventure"
-run/main_scene="uid://dql8o7pke7pdg"
+run/main_scene="uid://c0vwuk4wpbayx"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://dgigpwplkc26c"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://d0jxf3w5ejqt7"
 
 [autoload]
 
@@ -120,6 +120,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [gui]
 
 theme/custom="uid://da3t4bdgx6pa4"
+theme/custom_font="uid://cvsgvp4g00cx1"
 
 [input]
 

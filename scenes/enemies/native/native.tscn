@@ -1,17 +1,17 @@
 [gd_scene load_steps=25 format=3 uid="uid://dmhy6uiu3m6qb"]
 
 [ext_resource type="Script" uid="uid://y5l1mvysh22g" path="res://scenes/enemies/native/native.gd" id="1_pe3bm"]
-[ext_resource type="Texture2D" uid="uid://brwe7dhbehxvr" path="res://assets/monsters/native/native_8.png" id="2_1461y"]
-[ext_resource type="Texture2D" uid="uid://dpeckl5jow80t" path="res://assets/monsters/native/native_9.png" id="3_d4u6i"]
-[ext_resource type="Texture2D" uid="uid://cyl7g00mtm1d2" path="res://assets/monsters/native/native_10.png" id="4_rpxsc"]
-[ext_resource type="Texture2D" uid="uid://dntsrjss2iy7s" path="res://assets/monsters/native/native_11.png" id="5_mflj3"]
-[ext_resource type="Texture2D" uid="uid://bkftcn4cvkymi" path="res://assets/monsters/native/native_6.png" id="6_o8aiu"]
-[ext_resource type="Texture2D" uid="uid://dy7h644bxromn" path="res://assets/monsters/native/native_7.png" id="7_i1fqc"]
-[ext_resource type="Texture2D" uid="uid://crths4peavjj4" path="res://assets/monsters/native/native_1.png" id="8_4wv6r"]
-[ext_resource type="Texture2D" uid="uid://dfcjgmsl7tbci" path="res://assets/monsters/native/native_2.png" id="9_nraa6"]
-[ext_resource type="Texture2D" uid="uid://ben21t6nk0qqi" path="res://assets/monsters/native/native_3.png" id="10_gwcqi"]
-[ext_resource type="Texture2D" uid="uid://cmldbppvptuka" path="res://assets/monsters/native/native_4.png" id="11_tglhi"]
-[ext_resource type="Texture2D" uid="uid://dishgdu3ttrfb" path="res://assets/monsters/native/native_5.png" id="12_o2ypj"]
+[ext_resource type="Texture2D" uid="uid://dot0lnnowga21" path="res://assets/monsters/native/native_8.png" id="2_1461y"]
+[ext_resource type="Texture2D" uid="uid://cl5sunmnaybjx" path="res://assets/monsters/native/native_9.png" id="3_d4u6i"]
+[ext_resource type="Texture2D" uid="uid://wii5q2h3epyk" path="res://assets/monsters/native/native_10.png" id="4_rpxsc"]
+[ext_resource type="Texture2D" uid="uid://c3185vhgkxgao" path="res://assets/monsters/native/native_11.png" id="5_mflj3"]
+[ext_resource type="Texture2D" uid="uid://de81hcjyejowl" path="res://assets/monsters/native/native_6.png" id="6_o8aiu"]
+[ext_resource type="Texture2D" uid="uid://bpmgc8serv8w0" path="res://assets/monsters/native/native_7.png" id="7_i1fqc"]
+[ext_resource type="Texture2D" uid="uid://dps8ln8cdg0hr" path="res://assets/monsters/native/native_1.png" id="8_4wv6r"]
+[ext_resource type="Texture2D" uid="uid://b5qqi5vtsf27t" path="res://assets/monsters/native/native_2.png" id="9_nraa6"]
+[ext_resource type="Texture2D" uid="uid://cfv58wjuhukk6" path="res://assets/monsters/native/native_3.png" id="10_gwcqi"]
+[ext_resource type="Texture2D" uid="uid://01yf83ioyll1" path="res://assets/monsters/native/native_4.png" id="11_tglhi"]
+[ext_resource type="Texture2D" uid="uid://l54h47f8tl6u" path="res://assets/monsters/native/native_5.png" id="12_o2ypj"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="13_ln74m"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="14_x4alf"]
 [ext_resource type="Script" uid="uid://bwbpimr1hnna3" path="res://scenes/enemies/native/states/run.gd" id="15_5aqtg"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="18_1461y"]
 [ext_resource type="Script" uid="uid://bvwi4xbmxvqw3" path="res://scenes/enemies/native/dead.gd" id="19_mflj3"]
 [ext_resource type="AudioStream" uid="uid://c5ryv334sivsf" path="res://assets/audio/sfx/player/player_walk.wav" id="20_rpxsc"]
-[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="21_mflj3"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/ui/hp_bar/hp_minions/EnemyHpBar_Minions.tscn" id="21_mflj3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kn7eo"]
 animations = [{
@@ -145,6 +145,7 @@ metadata/_custom_type_script = "uid://ju0y5m1uk1yi"
 stream = ExtResource("20_rpxsc")
 max_distance = 300.0
 attenuation = 0.2
+bus = &"SFX"
 
 [node name="EnemyHpBarMinions" parent="." instance=ExtResource("21_mflj3")]
 

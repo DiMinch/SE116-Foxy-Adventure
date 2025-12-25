@@ -13,9 +13,9 @@ func _update(delta: float) -> void:
 
 func _exit() -> void:
 	if obj.current_slot_index:
-		obj.current_ulti_cooldown_weapon1 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
+		obj.current_ulti_cooldown_weapon_1 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
 	else:
-		obj.current_ulti_cooldown_weapon2 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
+		obj.current_ulti_cooldown_weapon_2 = obj.current_weapon_data.ultidata.cool_down * obj.de_cooldown
 
 
 func use_ultimate() -> void:

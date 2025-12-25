@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3jtgg2ler42j"]
+[gd_scene load_steps=14 format=3 uid="uid://xh5nlhou488s"]
 
-[ext_resource type="Script" uid="uid://cbrn7qm4nkqxu" path="res://dialog/cutscenes/base_cutscene.gd" id="1_wksin"]
-[ext_resource type="Shader" uid="uid://dw5kskrss8i3c" path="res://dialog/cutscenes/cutscene_filter.gdshader" id="2_rsois"]
-[ext_resource type="StyleBox" uid="uid://bumvx86r80yya" path="res://dialog/cutscenes/skip_button.tres" id="3_ddaw8"]
+[ext_resource type="Script" path="res://dialog/cutscenes/base_cutscene.gd" id="1_wksin"]
+[ext_resource type="Shader" path="res://dialog/cutscenes/cutscene_filter.gdshader" id="2_rsois"]
+[ext_resource type="StyleBox" path="res://dialog/cutscenes/skip_button.tres" id="3_ddaw8"]
 [ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="3_rsois"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hcs3"]
@@ -156,5 +156,6 @@ theme_override_styles/focus = ExtResource("3_ddaw8")
 shortcut = SubResource("Shortcut_6xvsu")
 shortcut_in_tooltip = false
 text = "SKIP >>>"
+flat = true
 
 [connection signal="pressed" from="UI/SkipButton" to="." method="_on_skip_button_pressed"]

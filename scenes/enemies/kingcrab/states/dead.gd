@@ -8,11 +8,12 @@ func _enter() -> void:
 	obj.Hit.monitoring=false
 	obj.hurt.disabled =true
 	#print("ENTER DEAD, alpha =", obj.sprite.modulate.a)
-	obj.change_animation("idle")
+	obj.change_animation("hurt")
 	obj.sprite.stop()
 	obj.sprite.frame = 0
 	_fading = true
 	AudioManager.play_sound("war_lord_dead")
+	GameManager.inventory_system.add_currency("keys", 1)
 
 func _update(delta: float) -> void:
 	obj.velocity.x=0

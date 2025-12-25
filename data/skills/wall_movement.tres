@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://civltnpindj77"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://civltnpindj77"]
 
 [ext_resource type="Texture2D" uid="uid://bxmnxmc74vfmy" path="res://assets/ui/skill_tree/B2_1.png" id="1_ysaui"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_h753i"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_h753i"]
 
 [resource]
 script = ExtResource("2_h753i")
@@ -10,6 +11,6 @@ skill_name = "Wall Movement"
 description = "Học được Wall Slide và Wall Jump."
 icon = ExtResource("1_ysaui")
 tier = 2
-cost = 4
-prerequisites = ["Spear"]
+cost = 200
+prerequisites = ["second_slot"]
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://dnghe3jdgbbl6"]
 
-[ext_resource type="Texture2D" uid="uid://0oxl8yjpg1k5" path="res://assets/ui/result/wheel_l.png" id="1_8pvdt"]
-[ext_resource type="Texture2D" uid="uid://s8giej6c6v68" path="res://assets/ui/result/gun_l1.png" id="2_su8y5"]
-[ext_resource type="Texture2D" uid="uid://k3ykj6aqi2j7" path="res://assets/ui/result/gun_l2.png" id="3_etvwd"]
-[ext_resource type="Texture2D" uid="uid://dn2gj4ombwspe" path="res://assets/ui/result/fox_cry_1.png" id="4_faupk"]
-[ext_resource type="Texture2D" uid="uid://dxr2mh56qa6wb" path="res://assets/ui/result/fox_cry_2.png" id="5_qtp38"]
-[ext_resource type="Texture2D" uid="uid://duomksnipflnc" path="res://assets/ui/result/banner_l.png" id="6_cgvpk"]
+[ext_resource type="Texture2D" uid="uid://b1llkybvkwtyx" path="res://assets/ui/result/wheel_l.png" id="1_8pvdt"]
+[ext_resource type="Texture2D" uid="uid://bk823f8nihbqu" path="res://assets/ui/result/gun_l1.png" id="2_su8y5"]
+[ext_resource type="Texture2D" uid="uid://du8iam4l3v8rx" path="res://assets/ui/result/gun_l2.png" id="3_etvwd"]
+[ext_resource type="Texture2D" uid="uid://chv6rkgskn00s" path="res://assets/ui/result/fox_cry_1.png" id="4_faupk"]
+[ext_resource type="Texture2D" uid="uid://ds6bel0wpmfn6" path="res://assets/ui/result/fox_cry_2.png" id="5_qtp38"]
+[ext_resource type="Texture2D" uid="uid://buanodi3q0rwh" path="res://assets/ui/result/banner_l.png" id="6_cgvpk"]
 
 [sub_resource type="GDScript" id="GDScript_3ooyt"]
 script/source = "extends Node2D
@@ -13,7 +13,7 @@ script/source = "extends Node2D
 func _ready() -> void:
 	$AnimationPlayer.play(\"init_defeat\")
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	$AnimationPlayer.play_section_with_markers(\"init_defeat\", \"idle\", \"idle_end\")
 	pass # Replace with function body.
 "

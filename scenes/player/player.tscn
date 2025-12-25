@@ -1,9 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://d0jou4iuydvkg"]
+[gd_scene load_steps=49 format=3 uid="uid://d0jou4iuydvkg"]
 
 [ext_resource type="Script" uid="uid://cxkd8yvl5fi5l" path="res://scenes/player/player.gd" id="1_wodsf"]
 [ext_resource type="Texture2D" uid="uid://bty4n284rnk13" path="res://assets/Sword Slashes/Blue Group Slashes/File1.png" id="2_kxw46"]
 [ext_resource type="Texture2D" uid="uid://ciqkhoovkrqrw" path="res://assets/Sword Slashes/Blue Group Slashes/File3.png" id="3_8qxvo"]
 [ext_resource type="SpriteFrames" uid="uid://ck88w0efelmsf" path="res://scenes/player/animation/normal.tres" id="3_i1nod"]
+[ext_resource type="SpriteFrames" uid="uid://cchshj6ljuypn" path="res://scenes/player/animation/blade.tres" id="3_kxw46"]
 [ext_resource type="Texture2D" uid="uid://d38p5ik80tvsl" path="res://assets/Sword Slashes/Blue Group Slashes/File5.png" id="4_5q8fn"]
 [ext_resource type="Script" uid="uid://c4cp5p23xlrh7" path="res://scripts/factories/player_factory/node2d_player_factory.gd" id="5_i1nod"]
 [ext_resource type="Texture2D" uid="uid://ccbirbn21owlf" path="res://assets/Sword Slashes/Blue Group Slashes/File12.png" id="5_wva7c"]
@@ -28,7 +29,7 @@
 [ext_resource type="Script" uid="uid://tkysb7niuq57" path="res://scenes/player/states/hurt.gd" id="21_yj68g"]
 [ext_resource type="Script" uid="uid://da3rld22pj1ah" path="res://scenes/player/states/dead.gd" id="22_ioxgp"]
 [ext_resource type="Script" uid="uid://bnspr08amkpn8" path="res://scenes/player/states/attack.gd" id="27_j4nxn"]
-[ext_resource type="Script" uid="uid://yagldttxtji2" path="res://scenes/player/ultility_skills/throw_blade.gd" id="30_tffgl"]
+[ext_resource type="Script" uid="uid://mhw6gg74wf3f" path="res://scenes/player/states/swim.gd" id="36_8qxvo"]
 [ext_resource type="AudioStream" uid="uid://c5ryv334sivsf" path="res://assets/audio/sfx/player/player_walk.wav" id="36_kxw46"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="39_art4l"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="40_fjxoa"]
@@ -38,7 +39,8 @@
 [ext_resource type="Script" uid="uid://bcbpp7lh2wg8a" path="res://scenes/player/ultility_skills/block.gd" id="46_72eiu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uf5tr"]
-radius = 10.5
+radius = 9.0
+height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqsei"]
 radius = 15.0
@@ -159,7 +161,7 @@ movement_speed = 250.0
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -14)
+position = Vector2(-1, -12)
 shape = SubResource("CapsuleShape2D_uf5tr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -171,6 +173,12 @@ zoom = Vector2(0.8, 0.8)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 position = Vector2(0, -12)
 sprite_frames = ExtResource("3_i1nod")
+animation = &"idle"
+
+[node name="BladeAnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+visible = false
+position = Vector2(0, -12)
+sprite_frames = ExtResource("3_kxw46")
 animation = &"idle"
 
 [node name="HurtArea2D" parent="Direction" instance=ExtResource("16_8ydkj")]
@@ -228,6 +236,14 @@ scale = Vector2(0.183, 0.183)
 sprite_frames = SubResource("SpriteFrames_0ncpa")
 animation = &"mix"
 
+[node name="WaterArea2D" type="Area2D" parent="Direction"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterArea2D"]
+position = Vector2(-1, -12)
+shape = SubResource("CapsuleShape2D_uf5tr")
+
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" type="Node" parent="States"]
@@ -251,9 +267,6 @@ script = ExtResource("22_ioxgp")
 [node name="Attack" type="Node" parent="States"]
 script = ExtResource("27_j4nxn")
 
-[node name="Throw_blade" type="Node" parent="States"]
-script = ExtResource("30_tffgl")
-
 [node name="Dash" type="Node" parent="States"]
 script = ExtResource("45_kghjy")
 
@@ -263,10 +276,16 @@ script = ExtResource("46_72eiu")
 [node name="Ulti" type="Node" parent="States"]
 script = ExtResource("18_uf5tr")
 
+[node name="Swim" type="Node" parent="States"]
+script = ExtResource("36_8qxvo")
+metadata/_custom_type_script = "uid://ccr5rwr8d50o6"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("36_kxw46")
+bus = &"SFX"
 
 [node name="Detect_raise_camera_zone" type="Area2D" parent="."]
+visible = false
 collision_layer = 4096
 collision_mask = 2048
 
@@ -276,6 +295,7 @@ scale = Vector2(1.14839, 1)
 shape = SubResource("RectangleShape2D_uf5tr")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(0, -13)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.81960785)
@@ -283,7 +303,9 @@ texture = SubResource("GradientTexture2D_8qxvo")
 texture_scale = 5.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_kxw46")
 
 [connection signal="frame_changed" from="Direction/AnimatedSprite2D" to="." method="_on_frame_changed"]
+[connection signal="frame_changed" from="Direction/BladeAnimatedSprite2D" to="." method="_on_frame_changed"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

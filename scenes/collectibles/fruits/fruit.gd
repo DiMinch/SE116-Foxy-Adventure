@@ -7,9 +7,7 @@ class_name Fruit
 @export var coins_reward: int = 2
 @export var value: int = 1
 
-const RESPAWN_TIME: float = 5.0
-
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+const RESPAWN_TIME: float = 10.0
 
 var is_active: bool = true
 
@@ -31,7 +29,7 @@ func collect() -> void:
 	GameManager.inventory_system.add_consumable("fruits", 1)
 	# Add coin reward
 	if coins_reward > 0:
-		GameManager.inventory_system.add_consumable("coins", coins_reward)
+		GameManager.inventory_system.add_currency("coins", coins_reward)
 	# Apply power-up
 	if fruit_type == "Apple":
 		GameManager.player.restore_health(value)
@@ -44,7 +42,7 @@ func collect() -> void:
 
 func hide_and_start_timer():
 	animated_sprite.visible = false
-	collision_shape.disabled = true
+	collision_shape.set_deferred("disabled", true)
 	
 	var timer: Timer = get_node("RespawnTimer")
 	timer.start(RESPAWN_TIME)

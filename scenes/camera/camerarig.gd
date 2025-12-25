@@ -128,9 +128,9 @@ func _physics_process(delta: float) -> void:
 	# nhưng vẫn rung kiểu cũ (cộng offset rung)
 	# =========================
 	if _is_shaking:
-		var desired := _freeze_pos + _shake_offset
-		var dir := desired - global_position
-		velocity = dir * follow_speed
+		var shake_target := _freeze_pos + _shake_offset
+		var direction := shake_target - global_position
+		velocity = direction * follow_speed
 		move_and_slide()
 		return
 

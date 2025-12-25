@@ -20,7 +20,7 @@ func _ready():
 	skip_button.visible = true
 	skip_button.disabled = false
 	skip_button.mouse_filter = Control.MOUSE_FILTER_STOP
-	skip_button.pressed.connect(_on_skip_button_pressed)
+	#skip_button.pressed.connect(_on_skip_button_pressed)
 	
 	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -107,7 +107,7 @@ func _on_dialogic_signal(argument: String):
 		_:
 			_handle_custom_signal(argument)
 
-func _handle_custom_signal(argument: String):
+func _handle_custom_signal(_argument: String):
 	pass
 
 func _reset_image_transform():

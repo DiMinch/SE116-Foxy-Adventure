@@ -12,6 +12,8 @@ func _enter() -> void:
 	obj.sprite.stop()
 	obj.sprite.frame = 0
 	_fading = true
+	GameManager.inventory_system.add_currency("keys", 1)
+	GameManager.inventory_system.add_currency("coins", 10)
 	
 	AudioManager.play_sound("war_lord_dead")
 

@@ -5,6 +5,8 @@ func _enter() -> void:
 	obj.change_animation("run")
 
 func _update(_delta: float) -> void:
+	# Check if in water
+	check_swim_transition()
 	control_invulnerable()
 	control_swap_weapon()
 	#Control jump

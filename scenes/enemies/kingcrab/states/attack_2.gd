@@ -1,12 +1,12 @@
 extends EnemyState
 
-@export var atk_range: float =200
-@export var pincers_speed:float=200
+@export var pincers_speed: float = 200
 var pincers_factory: Node2DFactory
 
 const MapScene = "Stage"
 const strPlayer = "Player"
 var pincers : RigidBody2D
+
 func _enter() -> void:
 	AudioManager.play_sound("kingcrab_attack1")
 	obj.velocity = Vector2.ZERO
@@ -20,7 +20,7 @@ func _enter() -> void:
 	# TẠO PINCERS RỒI QUÊN NÓ LUÔN
 	pincers = pincers_factory.create() as RigidBody2D
 	var start_pos := obj.global_position
-	var target_pos := start_pos + Vector2(atk_range * obj.direction, 0.0)
+	var target_pos := start_pos + Vector2(obj.attack_range * obj.direction, 0.0)
 
 	pincers.global_position = start_pos
 	

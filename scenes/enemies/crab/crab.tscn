@@ -1,18 +1,18 @@
 [gd_scene load_steps=18 format=3 uid="uid://pe3jgo1h8wlq"]
 
 [ext_resource type="Script" uid="uid://crwnv5esc6llw" path="res://scenes/enemies/crab/crab.gd" id="1_ep1gc"]
-[ext_resource type="Texture2D" uid="uid://bheixrcxv5gb4" path="res://assets/monsters/crab/crab_hurt_01.png" id="2_ewkck"]
-[ext_resource type="Texture2D" uid="uid://boxmc12qq7a8a" path="res://assets/monsters/crab/crab_hurt_02.png" id="3_ep1gc"]
-[ext_resource type="Texture2D" uid="uid://div7bok06185o" path="res://assets/monsters/crab/crab_01.png" id="4_phqbf"]
-[ext_resource type="Texture2D" uid="uid://d24uce3wqmwe6" path="res://assets/monsters/crab/crab_02.png" id="5_b1gr1"]
-[ext_resource type="Texture2D" uid="uid://dq122qahq1rm2" path="res://assets/monsters/crab/crab_03.png" id="6_rl4in"]
+[ext_resource type="Texture2D" uid="uid://j4iy5wk2je5g" path="res://assets/monsters/crab/crab_hurt_01.png" id="2_ewkck"]
+[ext_resource type="Texture2D" uid="uid://i80bkq48525a" path="res://assets/monsters/crab/crab_hurt_02.png" id="3_ep1gc"]
+[ext_resource type="Texture2D" uid="uid://bcoga16kadbvu" path="res://assets/monsters/crab/crab_01.png" id="4_phqbf"]
+[ext_resource type="Texture2D" uid="uid://16ysvouhwc2a" path="res://assets/monsters/crab/crab_02.png" id="5_b1gr1"]
+[ext_resource type="Texture2D" uid="uid://ctn71hy3mrlwa" path="res://assets/monsters/crab/crab_03.png" id="6_rl4in"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="7_dhdpt"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="8_b1gr1"]
 [ext_resource type="Script" uid="uid://b7g18r857thhi" path="res://scenes/enemies/states/run.gd" id="8_phqbf"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="11_0ud0h"]
 [ext_resource type="Script" uid="uid://2jh7sp0jccqb" path="res://scenes/enemies/states/dead.gd" id="12_0ud0h"]
 [ext_resource type="AudioStream" uid="uid://pdmb75w8l6by" path="res://assets/audio/sfx/enemies/crab_walk.wav" id="12_novun"]
-[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="13_novun"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/ui/hp_bar/hp_minions/EnemyHpBar_Minions.tscn" id="13_novun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gen76"]
 size = Vector2(29, 17)
@@ -62,6 +62,17 @@ size = Vector2(37, 24)
 [node name="Crab" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_ep1gc")
+enemy_type = null
+sight = null
+spike = null
+movement_range = null
+max_health = null
+movement_speed = null
+jump_speed = null
+gravity = null
+attack_damage = null
+attack_speed = null
+direction = null
 metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -72,7 +83,7 @@ shape = SubResource("RectangleShape2D_gen76")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_va7kl")
-animation = &"dead"
+animation = &"run"
 
 [node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
 position = Vector2(13, -6)

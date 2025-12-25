@@ -70,6 +70,14 @@ func play_sound_path(sound_path: String, volume_db: float = 0.0) -> void:
 	
 	play_audio_clip(audio_clip, volume_db, false)
 
+# Stop sound
+func stop_sound(sound_id: String) -> void:
+	var audio_clip = audio_database.get_clip(sound_id)
+	if not audio_clip:
+		return
+	for player in sfx_players:
+		if player.playing and player.stream == audio_clip.stream:
+			player.stop()
 
 ## Play music
 func play_music(music_id: String, volume_db: float = 0.0, fade_in: float = 0.0) -> void:

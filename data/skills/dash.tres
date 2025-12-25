@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://d3mk81tc2ox4g"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://d3mk81tc2ox4g"]
 
 [ext_resource type="Texture2D" uid="uid://bbnmm6og5ox0y" path="res://assets/ui/skill_tree/B1_5.png" id="1_8kid6"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_sl8c3"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_lvnx2"]
 
 [resource]
 script = ExtResource("1_sl8c3")
 skill_id = &"dash"
-skill_name = "Dash"
+skill_name = "Lướt"
 description = "Học được kỹ năng lướt (Dash)."
 icon = ExtResource("1_8kid6")
+cost = 100
 prerequisites = ["double_jump"]
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

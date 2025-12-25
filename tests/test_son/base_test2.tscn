@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_qcg57"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_u5orl"]
-[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="3_usywe"]
+[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/main_ui/background/island_background.tscn" id="3_usywe"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_msorn"]
 [ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="8_nhlmm"]
 

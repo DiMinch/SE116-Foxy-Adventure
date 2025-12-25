@@ -1,3 +1,4 @@
+@tool
 extends UltiData
 class_name BeamUlti
 

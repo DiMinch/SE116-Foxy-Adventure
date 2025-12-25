@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2eh1wtyt67vo" path="res://scenes/weapons/shuriken/shuriken.gd" id="1_inshv"]
 [ext_resource type="Script" uid="uid://cwad6p4ebrsex" path="res://scripts/collision/hit_area_2d.gd" id="2_inshv"]
-[ext_resource type="Texture2D" uid="uid://bqx6l27djxf18" path="res://assets/weapons/shuriken/shuriken_small.png" id="3_51xcp"]
+[ext_resource type="Texture2D" uid="uid://dhxy2g5hscc2r" path="res://assets/weapons/shuriken/shuriken_small.png" id="3_51xcp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u8f5w"]
 

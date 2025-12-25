@@ -24,7 +24,7 @@ animations = [{
 "texture": ExtResource("2_htd84")
 }],
 "loop": false,
-"name": &"cut",
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -123,4 +123,3 @@ position = Vector2(-0.5, -10.5)
 shape = SubResource("RectangleShape2D_f3aon")
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
-[connection signal="body_entered" from="Direction/Area2D" to="." method="_on_area_2d_body_entered"]

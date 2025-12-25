@@ -131,6 +131,7 @@ func _apply_visual_changes():
 		player.modulate = data.color_modulate
 
 func _remove_visual_changes():
+	
 	# Revert sprite
 	if not data.sprite_override.is_empty():
 		player.set_animated_sprite(player.get_node("Direction/AnimatedSprite2D"))

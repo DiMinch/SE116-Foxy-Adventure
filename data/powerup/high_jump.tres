@@ -1,12 +1,16 @@
-[gd_resource type="Resource" script_class="PowerupDecoratorData" load_steps=2 format=3 uid="uid://brlg34sf2kqr"]
+[gd_resource type="Resource" script_class="PowerupDecoratorData" load_steps=4 format=3 uid="uid://brlg34sf2kqr"]
 
 [ext_resource type="Script" uid="uid://bi224x34bsap8" path="res://scripts/powerup/powerup_decorator_data.gd" id="1_2qa4u"]
+[ext_resource type="Script" uid="uid://b4n8mt5cxm3ip" path="res://scripts/powerup/generic_powerup_decorator.gd" id="1_feiv5"]
+[ext_resource type="Texture2D" uid="uid://lhi63rv1anlb" path="res://assets/object/items/fruits/strawberry.png" id="1_qnwis"]
 
 [resource]
 script = ExtResource("1_2qa4u")
 id = "high_jump"
 display_name = "High jump"
 description = "Nhảy cao x2"
+icon = ExtResource("1_qnwis")
+decorator_script = ExtResource("1_feiv5")
 duration = 3.0
 jump_multiplier = 1.5
 metadata/_custom_type_script = "uid://bi224x34bsap8"

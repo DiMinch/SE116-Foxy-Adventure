@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=8 format=3 uid="uid://dohbrictlftlh"]
+
+[ext_resource type="Texture2D" uid="uid://7use3byoolhk" path="res://assets/ui/skill_tree/B1_6.png" id="1_tqouk"]
+[ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_q2j31"]
+[ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="3_lmk5a"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_sywjh"]
+[ext_resource type="Resource" uid="uid://bjylauwcv3j2v" path="res://data/weapons/boomerang.tres" id="5_j7kga"]
+[ext_resource type="Resource" uid="uid://crvstkxcclwnr" path="res://data/weapons/shuriken.tres" id="6_seiaj"]
+[ext_resource type="Resource" uid="uid://caprsarj7awm7" path="res://data/weapons/spear.tres" id="7_he7uq"]
+
+[resource]
+script = ExtResource("2_q2j31")
+skill_id = &"weapon_plus"
+skill_name = "Weapon++"
+description = "Nâng cấp vũ khí, mở khóa nội tại++"
+icon = ExtResource("1_tqouk")
+cost = 150
+type = "W"
+prerequisites = ["passive"]
+weapons_to_unlock = Array[ExtResource("3_sywjh")]([ExtResource("3_lmk5a"), ExtResource("5_j7kga"), ExtResource("6_seiaj"), ExtResource("7_he7uq")])
+target_weapon_names = Array[String](["Blade", "Spear", "Shuriken", "Boomerang"])
+metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

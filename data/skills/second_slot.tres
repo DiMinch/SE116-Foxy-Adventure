@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=8 format=3 uid="uid://xd6c1bwlnf04"]
+
+[ext_resource type="Texture2D" uid="uid://dw6845lkhbnep" path="res://assets/ui/skill_tree/B1_7.png" id="1_1uhls"]
+[ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_r80do"]
+[ext_resource type="Resource" uid="uid://caprsarj7awm7" path="res://data/weapons/spear.tres" id="3_0k712"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_yfu1t"]
+[ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="4_hjmk1"]
+[ext_resource type="Resource" uid="uid://bjylauwcv3j2v" path="res://data/weapons/boomerang.tres" id="5_0bnt5"]
+[ext_resource type="Resource" uid="uid://crvstkxcclwnr" path="res://data/weapons/shuriken.tres" id="6_sfgwv"]
+
+[resource]
+script = ExtResource("1_r80do")
+skill_id = &"second_slot"
+skill_name = "Second Slot"
+description = "Mở slot weapon số 2, có thể dùng luân phiên."
+icon = ExtResource("1_1uhls")
+cost = 200
+type = "W"
+prerequisites = ["weapon_plus", "block", "dash"]
+weapons_to_unlock = Array[ExtResource("3_yfu1t")]([ExtResource("4_hjmk1"), ExtResource("5_0bnt5"), ExtResource("6_sfgwv"), ExtResource("3_0k712")])
+metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

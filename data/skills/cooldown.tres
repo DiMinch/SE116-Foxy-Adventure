@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dplcic5i5iwr7" path="res://assets/ui/skill_tree/B2_4.png" id="1_4adds"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_4jakm"]
-[ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="3_5oaf5"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_4adds"]
 
 [resource]
 script = ExtResource("2_4jakm")
@@ -11,9 +11,9 @@ skill_name = "Cooldown"
 description = "Giảm cooldown Ultimate Skills 50%"
 icon = ExtResource("1_4adds")
 tier = 2
-cost = 4
+cost = 250
 type = "W"
-prerequisites = ["invulnerable", "ultimate"]
-weapon_to_unlock = ExtResource("3_5oaf5")
+prerequisites = ["ultimate"]
+target_weapon_names = Array[String](["Blade", "Spear", "Shuriken", "Boomerang"])
 de_cooldown = 0.5
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

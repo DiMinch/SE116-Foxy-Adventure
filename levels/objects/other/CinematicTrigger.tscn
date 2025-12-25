@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://hrcnc0indhbm"]
 
 [ext_resource type="Script" uid="uid://dm0qlimwul1kv" path="res://levels/objects/other/cinematic_trigger.gd" id="1_030pd"]
-[ext_resource type="Texture2D" uid="uid://fglbdisawtyj" path="res://assets/ui/wood_paper/Prefabs/6.png" id="2_3bsrm"]
+[ext_resource type="Texture2D" uid="uid://fglbdisawtyj" path="res://assets/ui/Prefabs/6.png" id="2_3bsrm"]
 [ext_resource type="Shader" uid="uid://canf4yi5nu5bf" path="res://assets/shader/speed_lines.gdshader" id="2_k7fbl"]
 [ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="4_der34"]
 
@@ -58,6 +58,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="BossCard" type="Control" parent="CinematicUI"]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 128.0

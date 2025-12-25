@@ -24,8 +24,8 @@ func _ready() -> void:
 	if not body_entered.is_connected(_on_body_entered):
 		body_entered.connect(_on_body_entered)
 
-func _physics_process(_delta: float) -> void:
-	sprite.rotation += rotation_speed * _delta
+func _physics_process(delta: float) -> void:
+	sprite.rotation += rotation_speed * delta
 	
 	if current_state == State.OUTBOUND:
 		if start_position.distance_to(global_position) >= max_range:
@@ -35,7 +35,8 @@ func _physics_process(_delta: float) -> void:
 	
 	elif current_state == State.RETURNING:
 		if is_instance_valid(player_target):
-			var dir = (player_target.global_position - global_position).normalized()
+			var player_position = player_target.global_position + Vector2(0, -10)
+			var dir = (player_position - global_position).normalized()
 			var return_speed = travel_speed * 1.2
 			linear_velocity = dir * return_speed
 			
@@ -46,6 +47,7 @@ func _physics_process(_delta: float) -> void:
 			
 			if global_position.distance_to(player_target.global_position) < 20:
 				emit_signal("returned_or_destroyed")
+				AudioManager.stop_sound("player_boomerang")
 				queue_free()
 
 func setup(spawner: Player, direction: Vector2, speed: float, damage: int, _max_range: int, _effect: PackedScene) -> void:
@@ -81,8 +83,3 @@ func _on_body_entered(_body: Node) -> void:
 	elif current_state == State.RETURNING:
 		emit_signal("returned_or_destroyed") 
 		queue_free()
-
-func _on_reached_player():
-	if is_instance_valid(player_target):
-		player_target.check_attack = true
-	queue_free()

@@ -32,9 +32,19 @@ func _load_last_user():
 		
 		if not last_user.is_empty() and user_list.has(last_user):
 			current_username = last_user
-			print("Last user found: ", current_username)
 			_load_meta_data()
-			
+			#Check if time over 4 hours
+			var current_time = Time.get_unix_time_from_system()
+			var last_played = meta_data.get("last_played", 0)
+			if last_played > 0:
+				var seconds_elapsed = current_time - last_played
+				if seconds_elapsed > 4 * 60 * 60:
+					print("[SYSTEM] Your login session has expired (> 4 hours)")
+					current_username = ""
+					_save_last_user("")
+					return
+			# If time is accepted
+			print("[SYSTEM] Last user found: ", current_username)
 			if PlayerData:
 				PlayerData.load_upgrades_for_profile(get_current_upgrade_path())
 
@@ -44,7 +54,6 @@ func _save_last_user(username: String):
 	if file:
 		file.store_string(username)
 		file.close()
-	_load_meta_data()
 
 # User management
 func _load_user_list():
@@ -103,8 +112,9 @@ func login(username: String, password: String) -> String:
 	current_username = username
 	# Save last user
 	_save_last_user(current_username)
-	# Load meta data
+	# Load & save meta data
 	_load_meta_data()
+	_save_meta_data()
 	# Load player upgrades
 	if PlayerData:
 		PlayerData.load_upgrades_for_profile(get_current_upgrade_path())
@@ -167,20 +177,26 @@ func _save_meta_data():
 		file.close()
 
 # Update when passed level
-func record_level_completion(level_id: String, completion_time: float) -> bool:
+func record_level_completion(level_id: int, completion_time: float, collected_coins: int) -> bool:
 	if current_username.is_empty():
 		return false
 	
-	var level_data = meta_data.levels_completed.get(level_id, {})
-	# Save best time
-	if level_data.get("time", INF) > completion_time:
-		level_data["time"] = completion_time
-	
-	# Save first complete time (if not have)
-	if not level_data.has("first_completion_time"):
-		level_data["first_completion_time"] = Time.get_unix_time_from_system()
-		
-	meta_data.levels_completed[level_id] = level_data
+	# Init level data
+	if not meta_data.levels_completed.has(str(level_id)):
+		meta_data.levels_completed[str(level_id)] = {
+			"first_completed": Time.get_unix_time_from_system(),
+			"best_completed": completion_time,
+			"most_coins": collected_coins
+		}
+	else:
+		var level_data = meta_data.levels_completed.get(str(level_id))
+		# Save best time
+		if level_data.get("best_completed", INF) > completion_time:
+			level_data["best_completed"] = completion_time
+		# Update most coins
+		if level_data.get("most_coins", 0) < collected_coins:
+			level_data["most_coins"] = collected_coins
+		meta_data.levels_completed[str(level_id)] = level_data
 	_save_meta_data()
 	print("[SYSTEM] Level completion recorded for ", level_id)
 	return true

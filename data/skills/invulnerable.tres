@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://bm3c80g54vp66"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://bm3c80g54vp66"]
 
 [ext_resource type="Texture2D" uid="uid://m1x4uhiuuvk" path="res://assets/ui/skill_tree/B2_3.png" id="1_1nw7v"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_swgtv"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_swgtv"]
 
 [resource]
 script = ExtResource("2_swgtv")
@@ -10,6 +11,6 @@ skill_name = "Invulnerable"
 description = "Cường hóa invulnearable 2.5s sau khi nhận sát thương"
 icon = ExtResource("1_1nw7v")
 tier = 2
-cost = 4
+cost = 250
 prerequisites = ["wall_movement"]
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

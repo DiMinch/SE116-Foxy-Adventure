@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://b8fwp172uhepf"]
 
 [ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_anej6"]
-[ext_resource type="AudioStream" uid="uid://bnsju6ohqwwf3" path="res://assets/audio/sfx/enemies/enemy_hurt.wav" id="2_phyo6"]
+[ext_resource type="AudioStream" uid="uid://44sadyuqlkht" path="res://assets/audio/sfx/enemies/enemy_hurt.wav" id="2_phyo6"]
 
 [resource]
 script = ExtResource("1_anej6")

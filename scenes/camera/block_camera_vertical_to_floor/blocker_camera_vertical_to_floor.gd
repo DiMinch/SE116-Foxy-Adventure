@@ -7,9 +7,10 @@ var player: Player
 @onready var is_out_of_zone=true
 @onready var Coll=$CollisionShape2D
 @onready var shape := $CollisionShape2D.shape as RectangleShape2D
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	var width: float =  shape.size.x*Coll.scale.x*scale.x
-	var height: float = shape.size.y*Coll.scale.y*scale.y
+	var _height: float = shape.size.y*Coll.scale.y*scale.y
 
 	var stage := find_parent(MapScene)
 	if stage == null:

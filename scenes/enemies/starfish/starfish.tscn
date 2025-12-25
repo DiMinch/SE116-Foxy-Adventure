@@ -1,25 +1,25 @@
 [gd_scene load_steps=25 format=3 uid="uid://xpcinxy6ihd7"]
 
 [ext_resource type="Script" uid="uid://b3jvtdck7uc7w" path="res://scenes/enemies/starfish/starfish.gd" id="1_vyojd"]
-[ext_resource type="Texture2D" uid="uid://div7ykrnkcmbm" path="res://assets/monsters/starfish/starfish_atk_01.png" id="2_f84se"]
-[ext_resource type="Texture2D" uid="uid://b7fyajqfeium5" path="res://assets/monsters/starfish/starfish_atk_02.png" id="3_dy74u"]
-[ext_resource type="Texture2D" uid="uid://kkpwv3jqgs40" path="res://assets/monsters/starfish/starfish_atk_03.png" id="4_vyojd"]
-[ext_resource type="Texture2D" uid="uid://brx56liv83bir" path="res://assets/monsters/starfish/starfish_atk_04.png" id="5_6had3"]
-[ext_resource type="Texture2D" uid="uid://bauqbopb4s1be" path="res://assets/monsters/starfish/starfish_atk_05.png" id="6_1buqx"]
-[ext_resource type="Texture2D" uid="uid://77tvy0q7r4ec" path="res://assets/monsters/starfish/starfish_atk_06.png" id="7_fna4i"]
-[ext_resource type="Texture2D" uid="uid://bohjxisajkyem" path="res://assets/monsters/starfish/starfish_hurt_01.png" id="8_pdgu7"]
-[ext_resource type="Texture2D" uid="uid://dm4exe7w2fi23" path="res://assets/monsters/starfish/starfish_hurt_02.png" id="9_w4e6y"]
-[ext_resource type="Texture2D" uid="uid://c1k5spj3k7htj" path="res://assets/monsters/starfish/starfish_01.png" id="10_t3hsm"]
-[ext_resource type="Texture2D" uid="uid://cqc7ruwipvqko" path="res://assets/monsters/starfish/starfish_02.png" id="11_jphpb"]
-[ext_resource type="Texture2D" uid="uid://dejbsdoig628p" path="res://assets/monsters/starfish/starfish_03.png" id="12_5jn31"]
+[ext_resource type="Texture2D" uid="uid://lp2b48j5vgyx" path="res://assets/monsters/starfish/starfish_atk_01.png" id="2_f84se"]
+[ext_resource type="Texture2D" uid="uid://bm7rqtan8f1ld" path="res://assets/monsters/starfish/starfish_atk_02.png" id="3_dy74u"]
+[ext_resource type="Texture2D" uid="uid://b6y2symv4y6jf" path="res://assets/monsters/starfish/starfish_atk_03.png" id="4_vyojd"]
+[ext_resource type="Texture2D" uid="uid://bait670fafdls" path="res://assets/monsters/starfish/starfish_atk_04.png" id="5_6had3"]
+[ext_resource type="Texture2D" uid="uid://b5wll712tutda" path="res://assets/monsters/starfish/starfish_atk_05.png" id="6_1buqx"]
+[ext_resource type="Texture2D" uid="uid://brytir6fpqhy1" path="res://assets/monsters/starfish/starfish_atk_06.png" id="7_fna4i"]
+[ext_resource type="Texture2D" uid="uid://cdylpoqmc2bxk" path="res://assets/monsters/starfish/starfish_hurt_01.png" id="8_pdgu7"]
+[ext_resource type="Texture2D" uid="uid://c5eltchopr37u" path="res://assets/monsters/starfish/starfish_hurt_02.png" id="9_w4e6y"]
+[ext_resource type="Texture2D" uid="uid://dmvgo84maycfn" path="res://assets/monsters/starfish/starfish_01.png" id="10_t3hsm"]
+[ext_resource type="Texture2D" uid="uid://btqv28onipwu7" path="res://assets/monsters/starfish/starfish_02.png" id="11_jphpb"]
+[ext_resource type="Texture2D" uid="uid://llmksod7t4if" path="res://assets/monsters/starfish/starfish_03.png" id="12_5jn31"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="13_pk7g6"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="14_a711p"]
 [ext_resource type="Script" uid="uid://b38tnnws2v8ub" path="res://scenes/enemies/starfish/states/run.gd" id="15_vyojd"]
 [ext_resource type="Script" uid="uid://cuv7jos77lbga" path="res://scenes/enemies/starfish/states/attack.gd" id="16_6had3"]
 [ext_resource type="Script" uid="uid://8l2mblqoihis" path="res://scenes/enemies/states/hurt.gd" id="17_r5ogx"]
 [ext_resource type="Script" uid="uid://d2r6hnt34qvui" path="res://scenes/enemies/starfish/states/dead.gd" id="18_s8cle"]
-[ext_resource type="AudioStream" uid="uid://tu0in07cca27" path="res://assets/audio/sfx/player/player_walk.wav" id="18_wmhok"]
-[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="20_t00wx"]
+[ext_resource type="AudioStream" uid="uid://c5ryv334sivsf" path="res://assets/audio/sfx/player/player_walk.wav" id="18_wmhok"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/ui/hp_bar/hp_minions/EnemyHpBar_Minions.tscn" id="20_t00wx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eau47"]
 animations = [{
@@ -90,7 +90,7 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_eau47")
-animation = &"hurt"
+animation = &"attack"
 
 [node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
 position = Vector2(6, -5)
@@ -150,6 +150,7 @@ script = ExtResource("18_s8cle")
 stream = ExtResource("18_wmhok")
 max_distance = 300.0
 attenuation = 0.2
+bus = &"SFX"
 
 [node name="EnemyHpBarMinions" parent="." instance=ExtResource("20_t00wx")]
 position = Vector2(-0.57476807, -0.3395729)

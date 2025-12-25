@@ -11,6 +11,8 @@ func _enter() -> void:
 	rise_slow_timer = rise_slow_duration
 
 func _update(_delta: float):
+	# Check if in water
+	check_swim_transition()
 	control_invulnerable()
 	control_swap_weapon()
 	#Control moving

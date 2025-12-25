@@ -6,6 +6,7 @@ var target_portal_name: String = ""
 var current_checkpoint_id: String = ""
 var checkpoint_data: Dictionary = {}
 
+var has_started_session: bool = false
 var current_stage: Node = null
 var player: Player = null
 var inventory_system: InvetorySystem = null
@@ -17,13 +18,15 @@ func _ready() -> void:
 	inventory_system = InvetorySystem.new()
 	add_child(inventory_system)
 
-func clear_level_coins():
+func clear_levels():
 	if inventory_system:
-		inventory_system.reset_level_coins()
+		inventory_system.reset_level_inventory()
 
 #change stage by path and target portal name
 func change_stage(stage_path: String, _target_portal_name: String = "") -> void:
 	target_portal_name = _target_portal_name
+	# stop music
+	MusicManager.stop_music()
 	#change scene to stage path
 	get_tree().change_scene_to_file(stage_path)
 
@@ -134,16 +137,30 @@ func respawn_at_begin() -> bool:
 	print("Player respawned at Begin")
 	return true
 
-func level_completed(level_id: String, elapsed_time: float):
-	# Write time and completed level
-	UserSystem.record_level_completion(level_id, elapsed_time)
-	
+func level_completed(level_id: int, elapsed_time: float, total_coins: int) -> Dictionary:
 	# Update coins for user
-	var coin_reward = calculate_reward(elapsed_time)
-	var player_data: PlayerData = get_node("/root/PlayerData")
-	player_data.player_coins += coin_reward
-	player_data.coins_changed.emit(player_data.player_coins)
-	player_data.save_upgrades()
-
-func calculate_reward(time: float) -> int:
-	return 100 + max(0, int(100/time))
+	var coins_to_add = 0
+	var meta = UserSystem.meta_data.get("levels_completed", {})
+	var record = 0
+	
+	if not meta.has(str(level_id)):
+		coins_to_add = total_coins
+	else:
+		record = meta[str(level_id)].get("most_coins", 0)
+		if total_coins > record:
+			coins_to_add = total_coins - record
+	
+	if coins_to_add > 0:
+		PlayerData.player_coins += coins_to_add
+		PlayerData.coins_changed.emit(PlayerData.player_coins)
+		PlayerData.save_upgrades()
+	
+	# Update reward to User
+	if level_id != 0:
+		UserSystem.record_level_completion(level_id, elapsed_time, total_coins)
+	
+	return {
+		"elapsed_time": elapsed_time,
+		"record": max(record, total_coins),
+		"added": coins_to_add,
+	}

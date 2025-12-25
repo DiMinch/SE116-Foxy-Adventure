@@ -11,5 +11,5 @@ func _ready():
 	queue_free()
 
 func setup_trajectory(facing_dir: int, spear_hitbox: HitArea2D) -> void:
-	rotation = 0 if facing_dir == 1 else PI
+	rotation = 0.0 if facing_dir == 1.0 else PI
 	spear = spear_hitbox

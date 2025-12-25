@@ -67,4 +67,4 @@ func _update_sprite_flip():
 		sail_sprites.flip_h = flip
 
 func _update_raycast_direction():
-	front_ray_cast.target_position.x = 60 * direction
+	front_ray_cast.target_position.x = 50 * direction

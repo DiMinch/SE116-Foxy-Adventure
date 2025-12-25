@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://m6hhsyrlx8fv"]
+
+[ext_resource type="Script" uid="uid://jx25jn1uw3n0" path="res://scenes/collectibles/blade/blade.gd" id="1_w7082"]
+[ext_resource type="Texture2D" uid="uid://dxkcgo463majk" path="res://assets/weapons/blade/blade_anim_1.png" id="2_ok5kb"]
+[ext_resource type="Texture2D" uid="uid://dbtcdfkaqrxq" path="res://assets/weapons/blade/blade_anim_2.png" id="3_yv0gi"]
+[ext_resource type="Texture2D" uid="uid://w24ct457ugun" path="res://assets/weapons/blade/blade_anim_3.png" id="4_81fst"]
+[ext_resource type="Texture2D" uid="uid://cmonhecf0cfqx" path="res://assets/weapons/blade/blade_anim_4.png" id="5_w7082"]
+[ext_resource type="Texture2D" uid="uid://dyhchq65wvmy0" path="res://assets/weapons/blade/blade_anim_5.png" id="6_jxyq5"]
+[ext_resource type="Texture2D" uid="uid://bi7snrj5fw7do" path="res://assets/object/items/coin/effect/01.png" id="7_jxyq5"]
+[ext_resource type="Texture2D" uid="uid://dbu7y48tmf8sk" path="res://assets/object/items/coin/effect/02.png" id="8_g6b4b"]
+[ext_resource type="Texture2D" uid="uid://dvx0voctoj6n7" path="res://assets/object/items/coin/effect/03.png" id="9_8xgkt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6b4b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xgkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ok5kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yv0gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_81fst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w7082")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jxyq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jxyq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g6b4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8xgkt")
+}],
+"loop": false,
+"name": &"pick",
+"speed": 5.0
+}]
+
+[node name="Blade" type="Area2D"]
+script = ExtResource("1_w7082")
+metadata/_custom_type_script = "uid://c3fl6ufpjdlcr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g6b4b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8xgkt")
+animation = &"pick"
+frame = 2
+frame_progress = 1.0

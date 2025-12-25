@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1uk8ghh00ih"]
+
+[ext_resource type="Script" uid="uid://farfwbof2x6t" path="res://scenes/ui/stage_ui/hud/health_bar.gd" id="1_kotvh"]
+[ext_resource type="Texture2D" uid="uid://dpwbs7s5jcven" path="res://assets/ui/hp_bars/bg.png" id="1_wpig4"]
+[ext_resource type="Texture2D" uid="uid://qdxds7u53w61" path="res://assets/ui/hp_bars/red.png" id="2_kotvh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wpig4"]
+font_size = 14
+
+[node name="HealthBar" type="AspectRatioContainer"]
+script = ExtResource("1_kotvh")
+
+[node name="HealthTextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+nine_patch_stretch = true
+stretch_margin_left = 120
+stretch_margin_top = 20
+stretch_margin_right = 120
+stretch_margin_bottom = 20
+texture_under = ExtResource("1_wpig4")
+texture_progress = ExtResource("2_kotvh")
+
+[node name="Label" type="Label" parent="HealthTextureProgressBar"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0/0"
+label_settings = SubResource("LabelSettings_wpig4")
+horizontal_alignment = 1
+vertical_alignment = 1

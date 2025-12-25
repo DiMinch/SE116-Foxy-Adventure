@@ -1,14 +1,14 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://da3t4bdgx6pa4"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://da3t4bdgx6pa4"]
 
 [ext_resource type="Texture2D" uid="uid://cm7xfdtvftkse" path="res://assets/ui/wood_paper/Yellow Button/1.png" id="1_uiit7"]
-[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="2_47hc6"]
+[ext_resource type="FontFile" uid="uid://cvsgvp4g00cx1" path="res://assets/font/SVN-Determination Sans.ttf" id="2_uiit7"]
 [ext_resource type="Texture2D" uid="uid://dmp0r7csisdn1" path="res://assets/ui/button/on_button.png" id="2_yoa6b"]
 [ext_resource type="Texture2D" uid="uid://7eg0bw1eqis6" path="res://assets/ui/button/off_button.png" id="3_e74n4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yoa6b"]
 texture = ExtResource("1_uiit7")
 texture_margin_left = 10.0
-texture_margin_top = 5.0
+texture_margin_top = 8.0
 texture_margin_right = 10.0
 texture_margin_bottom = 8.0
 axis_stretch_horizontal = 1
@@ -18,7 +18,7 @@ modulate_color = Color(1, 0.8901961, 1, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e74n4"]
 texture = ExtResource("1_uiit7")
 texture_margin_left = 10.0
-texture_margin_top = 5.0
+texture_margin_top = 8.0
 texture_margin_right = 10.0
 texture_margin_bottom = 8.0
 axis_stretch_horizontal = 1
@@ -27,7 +27,7 @@ axis_stretch_vertical = 1
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjq4v"]
 texture = ExtResource("1_uiit7")
 texture_margin_left = 10.0
-texture_margin_top = 5.0
+texture_margin_top = 8.0
 texture_margin_right = 10.0
 texture_margin_bottom = 8.0
 expand_margin_left = 2.0
@@ -37,23 +37,27 @@ expand_margin_bottom = 2.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yoa6b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e74n4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjq4v"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_47hc6"]
+content_margin_left = 5.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
 
 [resource]
-default_font = ExtResource("2_47hc6")
-default_font_size = 16
+default_font = ExtResource("2_uiit7")
+default_font_size = 13
 Button/colors/font_color = Color(0.9411765, 0, 0.08235294, 1)
-Button/colors/font_hover_color = Color(0.9411765, 0, 0.08235294, 1)
-Button/colors/font_pressed_color = Color(0.9411765, 0, 0.08235294, 1)
+Button/colors/font_hover_color = Color(0.79324234, 0, 0.06184177, 1)
+Button/colors/font_pressed_color = Color(0.8899818, 0, 0.075230874, 1)
 Button/styles/hover = SubResource("StyleBoxTexture_yoa6b")
 Button/styles/normal = SubResource("StyleBoxTexture_e74n4")
 Button/styles/pressed = SubResource("StyleBoxTexture_vjq4v")
 CheckButton/icons/checked = ExtResource("2_yoa6b")
 CheckButton/icons/unchecked = ExtResource("3_e74n4")
-CheckButton/styles/hover = SubResource("StyleBoxEmpty_yoa6b")
-CheckButton/styles/normal = SubResource("StyleBoxEmpty_e74n4")
-CheckButton/styles/pressed = SubResource("StyleBoxEmpty_vjq4v")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.81960785)
+Label/constants/outline_size = 1
+Label/constants/shadow_offset_x = 2
+Label/constants/shadow_offset_y = 2
+LineEdit/styles/focus = SubResource("StyleBoxLine_47hc6")
+LineEdit/styles/normal = SubResource("StyleBoxLine_47hc6")

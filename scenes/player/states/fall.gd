@@ -14,7 +14,8 @@ func _update(_delta: float) -> void:
 	control_invulnerable()
 	control_swap_weapon()
 	control_jump()
-	
+	# Check if in water
+	check_swim_transition()
 	var is_moving = control_moving()
 
 	# --- Gravity cho rơi tự do ---
@@ -27,8 +28,8 @@ func _update(_delta: float) -> void:
 
 	# --- Wall slide ---
 	if not obj.is_on_floor() and obj.is_on_wall() and obj.can_wall_move and (Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right")):
-		if obj.velocity.y > obj.WALL_SLIDE_SPEED:
-			obj.velocity.y = obj.WALL_SLIDE_SPEED
+		if obj.velocity.y > obj.wall_slide_speed:
+			obj.velocity.y = obj.wall_slide_speed
 		# obj.change_animation("wall_slide")
 
 	# --- Push out wall ---
@@ -36,7 +37,7 @@ func _update(_delta: float) -> void:
 		if obj.flag_push:
 			obj.velocity.y = -220
 			obj.flag_push = false
-		obj.velocity.x += obj.speed_push * obj.direction
+		obj.velocity.x += obj.fall_speed * obj.direction
 
 	# --- Reset jumps khi chạm đất ---
 	if obj.is_on_floor() and was_airborne and not landed:

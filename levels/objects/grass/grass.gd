@@ -31,9 +31,5 @@ func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
 		dead_anima.play("idle")
 	pass
 
-
-func _on_area_2d_body_entered(body: Player) -> void:
-	if body == null:
-		return
-
+func _on_area_2d_body_entered(_body: Player) -> void:
 	pass

@@ -1,21 +1,21 @@
 [gd_scene load_steps=32 format=3 uid="uid://c0x6h6duldrqu"]
 
-[ext_resource type="Texture2D" uid="uid://q13wi3rfw24i" path="res://assets/ui/result/rainbow_5.png" id="2_jr72v"]
-[ext_resource type="Texture2D" uid="uid://vwdtn4ob7urd" path="res://assets/ui/result/rainbow_4.png" id="3_3ixmh"]
-[ext_resource type="Texture2D" uid="uid://cyfe64sdxip3w" path="res://assets/ui/result/rainbow_3.png" id="4_cpudk"]
-[ext_resource type="Texture2D" uid="uid://dj03ydsw82vhj" path="res://assets/ui/result/rainbow_2.png" id="5_eykav"]
-[ext_resource type="Texture2D" uid="uid://bra2sg24sdlms" path="res://assets/ui/result/rainbow_1.png" id="6_mhg1f"]
-[ext_resource type="Texture2D" uid="uid://cfyt85w4nbsuq" path="res://assets/ui/result/cloud_bg.png" id="7_vilfh"]
-[ext_resource type="Texture2D" uid="uid://cx1do1pr5jq6x" path="res://assets/ui/result/wheel.png" id="8_3dsdt"]
-[ext_resource type="Texture2D" uid="uid://ctjsjkppoyhpi" path="res://assets/ui/result/gun.png" id="9_3375t"]
-[ext_resource type="Texture2D" uid="uid://no2qdg1me4do" path="res://assets/ui/result/foxy.png" id="10_c1hq8"]
-[ext_resource type="Texture2D" uid="uid://cm6x6c03dj03" path="res://assets/ui/result/fx_spark.png" id="11_2k16r"]
-[ext_resource type="Texture2D" uid="uid://v6r4ybanfawx" path="res://assets/ui/result/banner.png" id="12_3hsye"]
-[ext_resource type="Texture2D" uid="uid://dpkh6adnwgkcu" path="res://assets/ui/result/light_bg.png" id="13_fjp1p"]
-[ext_resource type="Texture2D" uid="uid://bdkqpne8paxy5" path="res://assets/ui/result/star_trail_1.png" id="14_t2fg7"]
-[ext_resource type="Texture2D" uid="uid://bgnc68qb62pp6" path="res://assets/ui/result/star_1.png" id="15_lmkr6"]
-[ext_resource type="Texture2D" uid="uid://bfskynekv5rbd" path="res://assets/ui/result/star_2.png" id="16_wjg3h"]
-[ext_resource type="Texture2D" uid="uid://k00g5ydayqh7" path="res://assets/ui/result/star_trail_2.png" id="17_cyqur"]
+[ext_resource type="Texture2D" uid="uid://m7fooy727376" path="res://assets/ui/result/rainbow_5.png" id="2_jr72v"]
+[ext_resource type="Texture2D" uid="uid://b1fhedib5avd5" path="res://assets/ui/result/rainbow_4.png" id="3_3ixmh"]
+[ext_resource type="Texture2D" uid="uid://vpax6s6v2m4b" path="res://assets/ui/result/rainbow_3.png" id="4_cpudk"]
+[ext_resource type="Texture2D" uid="uid://bbhlsuovg0cg1" path="res://assets/ui/result/rainbow_2.png" id="5_eykav"]
+[ext_resource type="Texture2D" uid="uid://dlv8hpop4iokm" path="res://assets/ui/result/rainbow_1.png" id="6_mhg1f"]
+[ext_resource type="Texture2D" uid="uid://dsdvnf17qm5gx" path="res://assets/ui/result/cloud_bg.png" id="7_vilfh"]
+[ext_resource type="Texture2D" uid="uid://ci0ndjaguib2c" path="res://assets/ui/result/wheel.png" id="8_3dsdt"]
+[ext_resource type="Texture2D" uid="uid://ddf3mvva5y678" path="res://assets/ui/result/gun.png" id="9_3375t"]
+[ext_resource type="Texture2D" uid="uid://bcstclcv5jplj" path="res://assets/ui/result/foxy.png" id="10_c1hq8"]
+[ext_resource type="Texture2D" uid="uid://dhgvfwpo12clv" path="res://assets/ui/result/fx_spark.png" id="11_2k16r"]
+[ext_resource type="Texture2D" uid="uid://jvw6glwfdqet" path="res://assets/ui/result/banner.png" id="12_3hsye"]
+[ext_resource type="Texture2D" uid="uid://c5c7hpppb3bmv" path="res://assets/ui/result/light_bg.png" id="13_fjp1p"]
+[ext_resource type="Texture2D" uid="uid://bpea6vdwj7w46" path="res://assets/ui/result/star_trail_1.png" id="14_t2fg7"]
+[ext_resource type="Texture2D" uid="uid://mcv3bafwxnwv" path="res://assets/ui/result/star_1.png" id="15_lmkr6"]
+[ext_resource type="Texture2D" uid="uid://uqhelx1npi2y" path="res://assets/ui/result/star_2.png" id="16_wjg3h"]
+[ext_resource type="Texture2D" uid="uid://cfuuyt5ikk2g2" path="res://assets/ui/result/star_trail_2.png" id="17_cyqur"]
 
 [sub_resource type="GDScript" id="GDScript_1ir25"]
 script/source = "extends Node2D
@@ -1194,35 +1194,35 @@ _data = {
 &"victory_banner": SubResource("Animation_vi8y8")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uf50f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uayp5"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5evc2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrrq5"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqeq5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hby5f"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f166j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncpsj"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hltx7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oha3s"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_shsg8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0su5"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ikdaa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pipy4"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(128, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7144"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_emv27"]
 atlas = ExtResource("11_2k16r")
 region = Rect2(192, 64, 64, 64)
 
@@ -1231,28 +1231,28 @@ resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uf50f")
+"texture": SubResource("AtlasTexture_uayp5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5evc2")
+"texture": SubResource("AtlasTexture_hrrq5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iqeq5")
+"texture": SubResource("AtlasTexture_hby5f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f166j")
+"texture": SubResource("AtlasTexture_ncpsj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hltx7")
+"texture": SubResource("AtlasTexture_oha3s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_shsg8")
+"texture": SubResource("AtlasTexture_f0su5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ikdaa")
+"texture": SubResource("AtlasTexture_pipy4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v7144")
+"texture": SubResource("AtlasTexture_emv27")
 }],
 "loop": false,
 "name": &"fx_sparks",

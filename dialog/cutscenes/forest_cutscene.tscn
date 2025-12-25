@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://x8077hywqcoi"]
 
-[ext_resource type="PackedScene" uid="uid://c3jtgg2ler42j" path="res://dialog/cutscenes/base_cutscene.tscn" id="1_jqbrk"]
+[ext_resource type="PackedScene" uid="uid://xh5nlhou488s" path="res://dialog/cutscenes/base_cutscene.tscn" id="1_jqbrk"]
 [ext_resource type="Script" uid="uid://ggtjtjcym8x4" path="res://dialog/cutscenes/forest_cutscene.gd" id="2_50tli"]
 [ext_resource type="Texture2D" uid="uid://h5p6q185pjtf" path="res://assets/cutscenes/forest_1.png" id="3_lno5g"]
 [ext_resource type="Texture2D" uid="uid://dvhbq0ongftae" path="res://assets/cutscenes/forest_2.png" id="4_2jkh1"]

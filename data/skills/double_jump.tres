@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://b3auoc4elcn3j"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://b3auoc4elcn3j"]
 
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_3cfnb"]
 [ext_resource type="Texture2D" uid="uid://iypt76kysim3" path="res://assets/ui/skill_tree/B1_2.png" id="1_kpni2"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_44vyv"]
 
 [resource]
 script = ExtResource("1_3cfnb")
@@ -9,5 +10,6 @@ skill_id = &"double_jump"
 skill_name = "Double Jump"
 description = "Học được Double Jump để nhảy hai lần."
 icon = ExtResource("1_kpni2")
-prerequisites = ["Blade"]
+cost = 100
+prerequisites = ["weapons"]
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

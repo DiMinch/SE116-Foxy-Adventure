@@ -11,11 +11,11 @@ func _update(_delta: float) -> void:
 	control_jump()
 	# Control moving
 	control_moving()
+	# Check if in water
+	check_swim_transition()
 	# If not on floor change to fall
 	control_attack()
 	control_ultimate()
-	## Control throw blade: UNUSE
-	#control_throw()
 	control_utility_skills()
 	if not obj.is_on_floor():
 		change_state(fsm.states.fall)

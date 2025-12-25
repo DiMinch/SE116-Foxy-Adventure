@@ -2,8 +2,6 @@ class_name DecoratorManager
 extends Node
 
 ## Manage decorator chain with data-driven approach
-const POWERUP_DATABASE_RES = preload("res://data/powerup/powerup_database.tres")
-
 var player: Player
 var powerup_database: PowerupDatabase
 var decorator_chain_head: PowerupDecorator = null
@@ -11,7 +9,7 @@ var active_decorators: Array[PowerupDecorator] = []
 
 func _ready():
 	# Load database
-	powerup_database = POWERUP_DATABASE_RES
+	powerup_database = load("res://data/powerup/powerup_database.tres")
 	if not powerup_database:
 		push_error("PowerupDatabase not found!")
 

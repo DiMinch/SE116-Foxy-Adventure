@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6h2kdx3u18fq"]
+
+[ext_resource type="Script" uid="uid://0ua75603nhga" path="res://scenes/ui/skill_tree/skill_tree_ui.gd" id="1_ef1ca"]
+[ext_resource type="PackedScene" uid="uid://c0tfkw5xw1hev" path="res://scenes/ui/skill_tree/skill_tree.tscn" id="1_kjyl8"]
+[ext_resource type="Texture2D" uid="uid://ck6jl13ouf7ol" path="res://assets/ui/button/close_normal.png" id="3_trb1m"]
+[ext_resource type="Texture2D" uid="uid://2snfbakud06d" path="res://assets/ui/button/close_hover.png" id="4_2s5r4"]
+[ext_resource type="Texture2D" uid="uid://csanhy2wsc1jq" path="res://assets/object/items/coin/01.png" id="4_kjyl8"]
+[ext_resource type="Script" uid="uid://jcd23h7qg4nk" path="res://scenes/ui/skill_tree/skill_tooltip.gd" id="6_trb1m"]
+
+[node name="SkillTreeUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ef1ca")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+follow_focus = true
+draw_focus_border = true
+
+[node name="SkillTree" parent="ScrollContainer" instance=ExtResource("1_kjyl8")]
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="CloseTextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = 10.0
+offset_bottom = 32.0
+grow_horizontal = 0
+size_flags_vertical = 8
+toggle_mode = true
+texture_normal = ExtResource("3_trb1m")
+texture_hover = ExtResource("4_2s5r4")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_kjyl8")
+stretch_mode = 1
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "0"
+vertical_alignment = 1
+
+[node name="SkillTooltip" type="Control" parent="CanvasLayer" groups=["skill_tooltip"]]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.470158, 0.817944)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("6_trb1m")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/SkillTooltip"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.01887, 1)
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SkillTooltip/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="InfoLabel" type="RichTextLabel" parent="CanvasLayer/SkillTooltip/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_separation = 6
+theme_override_constants/paragraph_separation = 6
+theme_override_constants/table_h_separation = 5
+theme_override_constants/table_v_separation = 5
+bbcode_enabled = true
+text = "Kĩ năng: Weapons
+Tier:	 1
+Cost: 100
+
+Yêu cầu: không
+Mô tả: Mở khóa vũ khí"
+fit_content = true
+context_menu_enabled = true
+
+[connection signal="pressed" from="CanvasLayer/CloseTextureButton" to="." method="_on_close_texture_button_pressed"]

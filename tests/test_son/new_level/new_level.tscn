@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dfskoxxxcb01m" path="res://scripts/levels/stage.gd" id="1_t1xou"]
 [ext_resource type="TileSet" uid="uid://b7b7mx8uru2eh" path="res://assets/terrain/tile_set.tres" id="2_l8qjs"]
-[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/background/island_background.tscn" id="3_d2jmw"]
+[ext_resource type="PackedScene" uid="uid://8jet2mws41u1" path="res://scenes/ui/main_ui/background/island_background.tscn" id="3_d2jmw"]
 [ext_resource type="PackedScene" uid="uid://d0jou4iuydvkg" path="res://scenes/player/player.tscn" id="4_kv3b1"]
 [ext_resource type="PackedScene" uid="uid://ver0k38lhd7w" path="res://scenes/enemies/kingcrab/king_crab.tscn" id="6_c5hp6"]
-[ext_resource type="PackedScene" uid="uid://cyq6x0ll4udb5" path="res://scenes/enemies/pelican2/pelican2.tscn" id="7_2yqlh"]
+[ext_resource type="PackedScene" uid="uid://cyq6x0ll4udb5" path="res://scenes/enemies/pelican/pelican.tscn" id="7_2yqlh"]
 [ext_resource type="PackedScene" uid="uid://d2tphol6b0v3i" path="res://scenes/enemies/war_lord/war_lord.tscn" id="8_j6jbw"]
 [ext_resource type="PackedScene" uid="uid://cad4u5uuwol7h" path="res://scenes/camera/block_camera_vertical_to_floor/blocker_camera_vertical_to_floor.tscn" id="11_2yqlh"]
 [ext_resource type="PackedScene" uid="uid://tl36e8swlx70" path="res://scenes/camera/camerarig.tscn" id="11_c5hp6"]

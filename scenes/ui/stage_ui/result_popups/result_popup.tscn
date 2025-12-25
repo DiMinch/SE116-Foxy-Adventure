@@ -1,0 +1,158 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfk6rhx681at"]
+
+[ext_resource type="Script" uid="uid://2d0vgvr1cik" path="res://scenes/ui/stage_ui/result_popups/result_popup.gd" id="1_g7ivs"]
+[ext_resource type="Texture2D" uid="uid://tl407oweef1v" path="res://assets/ui/Prefabs/3.png" id="1_mcapw"]
+
+[node name="ResultPopup" type="MarginContainer"]
+custom_minimum_size = Vector2(250, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_g7ivs")
+home_path = "uid://c0vwuk4wpbayx"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.03529412, 0.54901963, 0.87058824, 0.40392157)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_mcapw")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.20392157, 1)
+theme_override_font_sizes/font_size = 24
+text = "VICTORY"
+horizontal_alignment = 1
+
+[node name="VictoryCointainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VictoryCointainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TimeLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/Label"]
+layout_mode = 2
+text = "Thời gian qua ải:"
+
+[node name="CoinLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/Label"]
+layout_mode = 2
+text = "Số xu thu thập:"
+
+[node name="ExtraCoinLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/Label"]
+layout_mode = 2
+text = "Số xu thưởng:"
+
+[node name="BestLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/Label"]
+layout_mode = 2
+text = "Số xu kỷ lục:"
+
+[node name="CoinRewardLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/Label"]
+layout_mode = 2
+text = "Số xu nhận được:"
+
+[node name="ResultContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/VictoryCointainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="TimeLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.02745098, 1)
+text = "5:00"
+horizontal_alignment = 2
+
+[node name="CoinLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.02745098, 1)
+text = "100"
+horizontal_alignment = 2
+
+[node name="ExtraCoinLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.02745098, 1)
+text = "100"
+horizontal_alignment = 2
+
+[node name="BestLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.02745098, 1)
+text = "100"
+horizontal_alignment = 2
+
+[node name="CoinRewardLabel" type="Label" parent="NinePatchRect/VBoxContainer/VictoryCointainer/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.02745098, 1)
+text = "100"
+horizontal_alignment = 2
+
+[node name="DefeatContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ResultContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/DefeatContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="CoinLabel" type="Label" parent="NinePatchRect/VBoxContainer/DefeatContainer/ResultContainer"]
+layout_mode = 2
+text = "Số xu thu thập:"
+
+[node name="ReasonLabel" type="Label" parent="NinePatchRect/VBoxContainer/DefeatContainer/ResultContainer"]
+layout_mode = 2
+text = "Lí do thua:"
+
+[node name="DefeatReason" type="Label" parent="NinePatchRect/VBoxContainer/DefeatContainer/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.20392157, 1)
+text = "Quái giết"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="NinePatchRect/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="HomeButton" type="Button" parent="NinePatchRect/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Home
+"
+
+[node name="NextButton" type="Button" parent="NinePatchRect/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Next"

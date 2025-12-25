@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://bvptym0nrnx0n"]
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://bvptym0nrnx0n"]
 
 [ext_resource type="Texture2D" uid="uid://dhws6xoqcrwtq" path="res://assets/ui/skill_tree/B1_4.png" id="1_ej632"]
 [ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="1_q8ei1"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_46qax"]
 
 [resource]
 script = ExtResource("1_q8ei1")
 skill_id = &"block"
-skill_name = "Skill Block"
+skill_name = "Chặn"
 description = "Học được kỹ năng chặn (Block)."
 icon = ExtResource("1_ej632")
+cost = 100
 prerequisites = ["double_jump"]
 metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

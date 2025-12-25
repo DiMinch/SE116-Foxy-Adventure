@@ -1,12 +1,16 @@
-[gd_resource type="Resource" script_class="PowerupDecoratorData" load_steps=2 format=3 uid="uid://oamt0sj5rtop"]
+[gd_resource type="Resource" script_class="PowerupDecoratorData" load_steps=4 format=3 uid="uid://oamt0sj5rtop"]
 
 [ext_resource type="Script" uid="uid://bi224x34bsap8" path="res://scripts/powerup/powerup_decorator_data.gd" id="1_bjx6a"]
+[ext_resource type="Script" uid="uid://b4n8mt5cxm3ip" path="res://scripts/powerup/generic_powerup_decorator.gd" id="1_cjw1t"]
+[ext_resource type="Texture2D" uid="uid://cm7llm666n5b2" path="res://assets/object/items/fruits/grape.png" id="1_flixx"]
 
 [resource]
 script = ExtResource("1_bjx6a")
 id = "speed_up"
 display_name = "Speed up"
 description = "Tăng tốc x2"
+icon = ExtResource("1_flixx")
+decorator_script = ExtResource("1_cjw1t")
 duration = 3.0
 speed_multiplier = 2.0
 metadata/_custom_type_script = "uid://bi224x34bsap8"

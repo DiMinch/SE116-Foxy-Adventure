@@ -1,5 +1,6 @@
 extends RigidBody2D
-@onready var Hit =$HitArea2D
+
+@onready var Hit = $HitArea2D
 @export var upward_speed: float = 350.0          # lực hất lên cơ bản
 # 3 tham số để điều chỉnh tầm xa
 @export var full_range: float = 600.0            # khoảng cách ngang mà tại đó sẽ dùng buff tối đa
@@ -21,8 +22,8 @@ func _ready() -> void:
 # direction: tao chỉ lấy hướng ngang (trái / phải)
 # speed: Attack_Speed
 func start_throw(direction: Vector2, speed: float, damage: int) -> void:
-	print("damage",damage)
-	Hit.damage=damage/2
+	print("damage", damage)
+	Hit.damage = 1.0 * damage / 2
 	print("hit.damage",damage)
 	# nếu không tìm được player thì bắn kiểu cũ (ngang + hất lên)
 	if player == null or not is_instance_valid(player):

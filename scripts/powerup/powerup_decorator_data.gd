@@ -10,7 +10,7 @@ extends Resource
 
 @export_group("Decorator Settings")
 # Script of decorator
-@export var decorator_script: Script  = GenericPowerupDecorator
+@export var decorator_script: Script = GenericPowerupDecorator
 @export var priority: int = 0
 # Duration of the power-up in seconds, -1 = permanent, 0 = instant
 @export var duration: float = -1.0
@@ -45,7 +45,12 @@ extends Resource
 # Factory method to create decorator instance
 func create_decorator(player: Player) -> PowerupDecorator:
 	if not decorator_script:
+		push_error("Missing decorator_script in Resource!")
 		return null
 	
 	var decorator = decorator_script.new(player, self)
-	return decorator
+	if decorator:
+		if decorator.has_method("_init"):
+			decorator._init(player, self)
+		return decorator
+	return null

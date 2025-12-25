@@ -9,7 +9,12 @@ func _enter() -> void:
 	timer = 0.3
 	if obj.melee_hitbox.monitoring:
 		obj.melee_hitbox.update_stat_attack()
-		
+	
+	if obj.decorator_manager.can_blade_attack():
+		AudioManager.play_sound("player_sword")
+		print("Decorator manager can blade attack")
+		return
+	
 	if obj.current_weapon_data.weapon_name == "Blade":
 		play_slash()
 		AudioManager.play_sound("player_sword")
@@ -22,26 +27,22 @@ func _enter() -> void:
 		
 	if obj.current_weapon_data.weapon_name=="Shuriken":
 		AudioManager.play_sound("player_shuriken")
-		
-	
 
 func _update(delta: float) -> void:
 	if update_timer(delta):
 		change_state(fsm.previous_state)
 
-
-
 func play_slash():
 	anim = obj.slash
-	anim.visible=true
-	anim.position = Vector2(5 ,anim.position.y)
-	if count==1:
-		anim.scale = Vector2(0.15,0.15)
-		anim.play("thin")	
+	anim.visible = true
+	anim.position = Vector2(5, anim.position.y)
+	if count == 1:
+		anim.scale = Vector2(0.15, 0.15)
+		anim.play("thin")
 		await anim.animation_finished
-		anim.visible=false
-		count+=1
-	elif count==2:
+		anim.visible = false
+		count += 1
+	elif count == 2:
 		anim.scale =Vector2(0.15,0.15)
 		anim.play("wide")
 		await anim.animation_finished

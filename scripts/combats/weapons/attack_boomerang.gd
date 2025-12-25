@@ -6,7 +6,7 @@ var level: int = 1
 var max_boomerang: int = 1
 var fly_speed: int
 var damage: int
-var max_range: int
+var max_range: float
 var angles_to_fire: Array[int] = [0]
 
 func execute_action(player: Player, weapon_data: WeaponData) -> void:

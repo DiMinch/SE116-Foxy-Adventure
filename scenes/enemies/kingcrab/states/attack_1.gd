@@ -1,25 +1,27 @@
 extends EnemyState
 
-@export var speed_moment:float
-@export var moment_screen: float = 150.0   # đi bao nhiêu pixel thì dừng
+@export var movement_speed: float
+@export var movement_range: float = 150.0 # đi bao nhiêu pixel thì dừng
 
 const MapScene = "Stage"
 const strPlayer = "Player"
-var _anim: AnimatedSprite2D
 
+var _anim: AnimatedSprite2D
 var start_x: float
+
 func _enter() -> void:
-	speed_moment=obj.movement_speed
+	movement_speed = obj.movement_speed
+	movement_range = obj.movement_range
 	# lấy vị trí bắt đầu
 	start_x = obj.global_position.x
 	#if is_opposite()==false:
 		#obj.turn_around()
 	obj.change_animation("attack1")
-	obj.velocity.x = obj.direction * speed_moment
+	obj.velocity.x = obj.direction * movement_speed
 	
 	AudioManager.play_sound("kingcrab_attack1")
 	
-func _update(delta: float) -> void:
+func _update(_delta: float) -> void:
 	if _should_turn_around():
 		obj.turn_around()
 		change_state(fsm.states.run)
@@ -28,7 +30,7 @@ func _update(delta: float) -> void:
 	
 	var dist = abs(obj.global_position.x - start_x)
 
-	if dist >= moment_screen:
+	if dist >= movement_range:
 		# dừng lại
 		obj.change_animation("stop")
 		obj.velocity.x = 0

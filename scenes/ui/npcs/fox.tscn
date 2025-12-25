@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8e4kgtcawl0l"]
+
+[ext_resource type="Script" uid="uid://fncdg4w4pyl4" path="res://scenes/ui/npcs/fox.gd" id="1_kqhct"]
+[ext_resource type="Texture2D" uid="uid://ccanlhcm7rxfp" path="res://assets/foxy/hp70/fox_hp70_spear/fox_idle_1.png" id="1_sj1ya"]
+[ext_resource type="PackedScene" uid="uid://c6h2kdx3u18fq" path="res://scenes/ui/skill_tree/skill_tree_ui.tscn" id="2_1gcmw"]
+[ext_resource type="Texture2D" uid="uid://df7vsgw8h64uy" path="res://assets/foxy/hp70/fox_hp70_spear/fox_idle_2.png" id="2_cnobf"]
+[ext_resource type="PackedScene" uid="uid://dhsdd3xkpp8g2" path="res://scripts/collision/interactive_area_2d.tscn" id="3_58rar"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knq1b"]
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58rar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sj1ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cnobf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flrea"]
+size = Vector2(35, 33)
+
+[node name="Fox" type="StaticBody2D"]
+collision_layer = 0
+script = ExtResource("1_kqhct")
+fox_name = "Skill tree"
+popup_scene = ExtResource("2_1gcmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_knq1b")
+
+[node name="NameLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -30.0
+offset_right = 25.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skill tree"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_58rar")
+frame = 1
+frame_progress = 0.9469692
+
+[node name="InteractiveArea2D" parent="." instance=ExtResource("3_58rar")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea2D"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_flrea")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = -19.0
+offset_right = 10.0
+offset_bottom = -6.0
+text = "[F]"
+horizontal_alignment = 1

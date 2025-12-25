@@ -1,15 +1,15 @@
 [gd_scene load_steps=23 format=3 uid="uid://86tw5wmdnbc4"]
 
 [ext_resource type="Script" uid="uid://ju1egbeufwdo" path="res://scenes/enemies/barrel/barrel.gd" id="1_ytd36"]
-[ext_resource type="Texture2D" uid="uid://ch0hp25m7evv1" path="res://assets/monsters/barrel/barrel_hurt_01.png" id="2_5r3rq"]
-[ext_resource type="Texture2D" uid="uid://ckjp4ccybo5i6" path="res://assets/monsters/barrel/barrel_hurt_02.png" id="3_g06c0"]
-[ext_resource type="Texture2D" uid="uid://dfnk2rp7cs1vg" path="res://assets/monsters/barrel/barrel_01.png" id="4_hiur0"]
-[ext_resource type="Texture2D" uid="uid://bwg8hpav3cy74" path="res://assets/monsters/barrel/barrel_02.png" id="5_rmp46"]
-[ext_resource type="Texture2D" uid="uid://de0p6wfv2rc7g" path="res://assets/monsters/barrel/barrel_atk_01.png" id="6_5is43"]
-[ext_resource type="Texture2D" uid="uid://2igv4kkux8c6" path="res://assets/monsters/barrel/barrel_atk_02.png" id="7_mo8r7"]
-[ext_resource type="Texture2D" uid="uid://lxyxy6hj6rja" path="res://assets/monsters/barrel/barrel_atk_03.png" id="8_wm22s"]
-[ext_resource type="Texture2D" uid="uid://c2c1sjpl4vgrq" path="res://assets/monsters/barrel/barrel_atk_04.png" id="9_7q3ux"]
-[ext_resource type="Texture2D" uid="uid://b564c7jpiwbh0" path="res://assets/monsters/barrel/barrel_atk_05.png" id="10_wpi75"]
+[ext_resource type="Texture2D" uid="uid://dyb6k1t5tup4q" path="res://assets/monsters/barrel/barrel_hurt_01.png" id="2_5r3rq"]
+[ext_resource type="Texture2D" uid="uid://ce0evhb05wm4y" path="res://assets/monsters/barrel/barrel_hurt_02.png" id="3_g06c0"]
+[ext_resource type="Texture2D" uid="uid://bp6odiy5ylf51" path="res://assets/monsters/barrel/barrel_01.png" id="4_hiur0"]
+[ext_resource type="Texture2D" uid="uid://5tkiebehe0lx" path="res://assets/monsters/barrel/barrel_02.png" id="5_rmp46"]
+[ext_resource type="Texture2D" uid="uid://dd7u4sr4e18ye" path="res://assets/monsters/barrel/barrel_atk_01.png" id="6_5is43"]
+[ext_resource type="Texture2D" uid="uid://dq4qnbaqunlk0" path="res://assets/monsters/barrel/barrel_atk_02.png" id="7_mo8r7"]
+[ext_resource type="Texture2D" uid="uid://3ujbcoggkbb3" path="res://assets/monsters/barrel/barrel_atk_03.png" id="8_wm22s"]
+[ext_resource type="Texture2D" uid="uid://mn3oh2f43m20" path="res://assets/monsters/barrel/barrel_atk_04.png" id="9_7q3ux"]
+[ext_resource type="Texture2D" uid="uid://dft64qqgc2cyx" path="res://assets/monsters/barrel/barrel_atk_05.png" id="10_wpi75"]
 [ext_resource type="Script" uid="uid://c1lgf5lgnrcat" path="res://scripts/factories/node2d_factory.gd" id="11_kdm2j"]
 [ext_resource type="PackedScene" uid="uid://dc5tes2lxwao5" path="res://scenes/enemies/barrel/bullet/barrel_bullet.tscn" id="12_5r3rq"]
 [ext_resource type="PackedScene" uid="uid://ct1tqxgwkuvbe" path="res://scripts/collision/hurt_area_2d.tscn" id="12_jgjiv"]
@@ -17,8 +17,8 @@
 [ext_resource type="Script" uid="uid://cl23eidiikdgv" path="res://scenes/enemies/barrel/states/shoot.gd" id="14_tofd5"]
 [ext_resource type="Script" uid="uid://diwib3136kdvi" path="res://scenes/enemies/barrel/states/hurt.gd" id="16_cx43u"]
 [ext_resource type="Script" uid="uid://b0a52kt4t0qnm" path="res://scenes/enemies/barrel/states/dead.gd" id="17_sq6do"]
-[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/HP_UI/hp_minions/EnemyHpBar_Minions.tscn" id="18_sq6do"]
-[ext_resource type="AudioStream" uid="uid://cpqbkorf4k21w" path="res://assets/audio/sfx/enemies/barrel_shoot.wav" id="19_bh1st"]
+[ext_resource type="PackedScene" uid="uid://brydasimv17q6" path="res://scenes/ui/hp_bar/hp_minions/EnemyHpBar_Minions.tscn" id="18_sq6do"]
+[ext_resource type="AudioStream" uid="uid://dig0i0ku7xubt" path="res://assets/audio/sfx/enemies/barrel_shoot.wav" id="19_bh1st"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72a2k"]
 animations = [{
@@ -87,7 +87,7 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_72a2k")
-animation = &"dead"
+animation = &"shoot"
 
 [node name="BulletFactory" type="Marker2D" parent="Direction"]
 script = ExtResource("11_kdm2j")
@@ -130,5 +130,6 @@ stream = ExtResource("19_bh1st")
 volume_db = -2.22
 max_distance = 300.0
 attenuation = 0.2
+bus = &"SFX"
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

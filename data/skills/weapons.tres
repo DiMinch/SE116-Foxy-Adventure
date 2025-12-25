@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=8 format=3 uid="uid://doguvkkvepna0"]
+
+[ext_resource type="Texture2D" uid="uid://v405dewipa2w" path="res://assets/ui/skill_tree/B1_1.png" id="1_yw8eh"]
+[ext_resource type="Script" uid="uid://bbdv8flk4k6ew" path="res://scripts/systems/skill_data.gd" id="2_pmycs"]
+[ext_resource type="Script" uid="uid://crb5ppa6t5gns" path="res://scripts/systems/weapon_data.gd" id="3_owosh"]
+[ext_resource type="Resource" uid="uid://dkxudnx38pk1e" path="res://data/weapons/blade.tres" id="4_05r42"]
+[ext_resource type="Resource" uid="uid://caprsarj7awm7" path="res://data/weapons/spear.tres" id="5_f1ap0"]
+[ext_resource type="Resource" uid="uid://crvstkxcclwnr" path="res://data/weapons/shuriken.tres" id="6_isuwi"]
+[ext_resource type="Resource" uid="uid://bjylauwcv3j2v" path="res://data/weapons/boomerang.tres" id="7_d14ei"]
+
+[resource]
+script = ExtResource("2_pmycs")
+skill_id = &"weapons"
+skill_name = "Vũ khí"
+description = "Mở khóa tất cả vũ khí: Blade, Spear, Shuriken, Boomerang"
+icon = ExtResource("1_yw8eh")
+cost = 50
+type = "W"
+default_unlocked = true
+weapons_to_unlock = Array[ExtResource("3_owosh")]([ExtResource("4_05r42"), ExtResource("5_f1ap0"), ExtResource("6_isuwi"), ExtResource("7_d14ei")])
+metadata/_custom_type_script = "uid://bbdv8flk4k6ew"

@@ -9,6 +9,7 @@ var is_music_looping: bool = true
 
 func _ready():
 	music_player = AudioStreamPlayer.new()
+	music_player.bus = "Music"
 	add_child(music_player)
 	target_volume_db = music_player.volume_db
 	process_mode = Node.PROCESS_MODE_ALWAYS

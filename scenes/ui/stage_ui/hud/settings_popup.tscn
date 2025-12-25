@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://db82ftu2sobir"]
+[gd_scene load_steps=13 format=3 uid="uid://db82ftu2sobir"]
 
 [ext_resource type="Script" uid="uid://bnie1lvcvimwj" path="res://scenes/ui/stage_ui/hud/settings_popup.gd" id="1_pvuhu"]
 [ext_resource type="Texture2D" uid="uid://clp158nfrjn5n" path="res://assets/ui/Prefabs/2.png" id="2_f53xw"]
@@ -8,17 +8,20 @@
 [ext_resource type="FontFile" uid="uid://chlnx10evtm4v" path="res://assets/font/big_font.fnt" id="6_hpvrd"]
 [ext_resource type="Texture2D" uid="uid://dmp0r7csisdn1" path="res://assets/ui/button/on_button.png" id="7_ggnuh"]
 [ext_resource type="Texture2D" uid="uid://7eg0bw1eqis6" path="res://assets/ui/button/off_button.png" id="8_lv1fg"]
+[ext_resource type="Texture2D" uid="uid://cjnxd1frk6oui" path="res://assets/ui/wood_paper/Small Text/Small Icons/15.png" id="9_u4eow"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m50xv"]
-font = ExtResource("5_lowcy")
-font_size = 18
+font = ExtResource("6_hpvrd")
+font_size = 20
 font_color = Color(0, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6a5er"]
+line_spacing = 0.0
 font = ExtResource("6_hpvrd")
 font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_x0ywr"]
+line_spacing = 0.0
 font = ExtResource("6_hpvrd")
 font_size = 20
 
@@ -29,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 script = ExtResource("1_pvuhu")
 
 [node name="OverlayColorRect" type="ColorRect" parent="."]
@@ -75,9 +79,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
-text = "CÀI ĐẶT"
+text = "SETTINGS"
 label_settings = SubResource("LabelSettings_m50xv")
 horizontal_alignment = 1
+uppercase = true
 
 [node name="MusicHBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -87,11 +92,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "MUSIC"
 label_settings = SubResource("LabelSettings_6a5er")
+vertical_alignment = 1
 
 [node name="MusicCheckButton" type="CheckButton" parent="NinePatchRect/VBoxContainer/MusicHBoxContainer"]
 layout_mode = 2
 theme_override_icons/checked = ExtResource("7_ggnuh")
 theme_override_icons/unchecked = ExtResource("8_lv1fg")
+flat = true
 
 [node name="SoundHBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -101,9 +108,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "SOUND FX"
 label_settings = SubResource("LabelSettings_x0ywr")
+vertical_alignment = 1
 
 [node name="SoundCheckButton" type="CheckButton" parent="NinePatchRect/VBoxContainer/SoundHBoxContainer"]
 layout_mode = 2
+flat = true
 
 [node name="ButtonHBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -112,7 +121,7 @@ alignment = 1
 [node name="TurnBackButton" type="Button" parent="NinePatchRect/VBoxContainer/ButtonHBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_lowcy")
-text = "QUAY LẠI"
+icon = ExtResource("9_u4eow")
 
 [connection signal="gui_input" from="OverlayColorRect" to="." method="_on_overlay_color_rect_gui_input"]
 [connection signal="pressed" from="NinePatchRect/CloseTextureButton" to="." method="_on_close_texture_button_pressed"]

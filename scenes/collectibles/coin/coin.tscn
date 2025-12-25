@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://etjasl5llyv8"]
 
 [ext_resource type="Script" uid="uid://o1bs1lit8p1q" path="res://scenes/collectibles/coin/coin.gd" id="1_3i6ca"]
-[ext_resource type="Texture2D" uid="uid://dtwnvoh5jfgsn" path="res://assets/object/items/coin/01.png" id="2_64ecx"]
-[ext_resource type="Texture2D" uid="uid://b66ku1hcmsevy" path="res://assets/object/items/coin/02.png" id="3_bp5sd"]
-[ext_resource type="Texture2D" uid="uid://bt5c3w1sy3vbv" path="res://assets/object/items/coin/03.png" id="4_6dm7w"]
-[ext_resource type="Texture2D" uid="uid://ccpkv1gb3fyy1" path="res://assets/object/items/coin/04.png" id="5_6d2e1"]
-[ext_resource type="Texture2D" uid="uid://2pes1nx6fi6o" path="res://assets/object/items/coin/effect/01.png" id="6_ibywa"]
-[ext_resource type="Texture2D" uid="uid://dpjbvwlbcjnhb" path="res://assets/object/items/coin/effect/02.png" id="7_60v3x"]
-[ext_resource type="Texture2D" uid="uid://d07c5s5nnlnj0" path="res://assets/object/items/coin/effect/03.png" id="8_wapsd"]
+[ext_resource type="Texture2D" uid="uid://csanhy2wsc1jq" path="res://assets/object/items/coin/01.png" id="2_64ecx"]
+[ext_resource type="Texture2D" uid="uid://dtc8enwir14rf" path="res://assets/object/items/coin/02.png" id="3_bp5sd"]
+[ext_resource type="Texture2D" uid="uid://copbuk4s2ufb5" path="res://assets/object/items/coin/03.png" id="4_6dm7w"]
+[ext_resource type="Texture2D" uid="uid://cetxagel204vc" path="res://assets/object/items/coin/04.png" id="5_6d2e1"]
+[ext_resource type="Texture2D" uid="uid://bi7snrj5fw7do" path="res://assets/object/items/coin/effect/01.png" id="6_ibywa"]
+[ext_resource type="Texture2D" uid="uid://dbu7y48tmf8sk" path="res://assets/object/items/coin/effect/02.png" id="7_60v3x"]
+[ext_resource type="Texture2D" uid="uid://dvx0voctoj6n7" path="res://assets/object/items/coin/effect/03.png" id="8_wapsd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5sqeu"]
 
@@ -55,4 +55,3 @@ shape = SubResource("CircleShape2D_5sqeu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bj1nq")
-animation = &"pick"

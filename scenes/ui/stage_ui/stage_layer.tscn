@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cos1xhye61oa"]
+
+[ext_resource type="Script" uid="uid://devrr1ny10oio" path="res://scenes/ui/stage_ui/stage_layer.gd" id="1_g1vvq"]
+[ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/ui/stage_ui/hud/hud.tscn" id="2_o0sjt"]
+[ext_resource type="PackedScene" uid="uid://d21hokqc8yvte" path="res://scenes/ui/stage_ui/result_popups/defeat_popup.tscn" id="3_3f5gr"]
+[ext_resource type="PackedScene" uid="uid://itkp4b55ris6" path="res://scenes/ui/stage_ui/result_popups/victory_popup.tscn" id="4_xhngv"]
+[ext_resource type="PackedScene" uid="uid://cfk6rhx681at" path="res://scenes/ui/stage_ui/result_popups/result_popup.tscn" id="5_i0qlg"]
+
+[node name="StageLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_g1vvq")
+
+[node name="HUD" parent="." instance=ExtResource("2_o0sjt")]
+offset_bottom = 52.0
+size_flags_vertical = 8
+
+[node name="DefeatPopup" parent="." instance=ExtResource("3_3f5gr")]
+visible = false
+
+[node name="VictoryPopup" parent="." instance=ExtResource("4_xhngv")]
+visible = false
+
+[node name="ResultPopup" parent="." instance=ExtResource("5_i0qlg")]
+visible = false

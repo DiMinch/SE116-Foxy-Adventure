@@ -28,5 +28,5 @@ func _on_close_texture_button_pressed() -> void:
 	hide_popup()
 
 func _on_turn_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_screen/select_level_screen.tscn")
+	GameManager.change_stage("res://scenes/screens/main_screen.tscn", "Begin2")
 	hide_popup()

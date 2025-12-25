@@ -119,5 +119,6 @@ offset_bottom = 31.0
 grow_horizontal = 0
 shortcut = SubResource("Shortcut_6xvsu")
 text = "SKIP >>>"
+flat = true
 
 [connection signal="pressed" from="UI/SkipButton" to="." method="_on_skip_button_pressed"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://dn3a7knx6ld0t"]
 
 [ext_resource type="Script" uid="uid://beyfewxe4fg4e" path="res://scenes/enemies/turtle/turtle.gd" id="1_3xsye"]
-[ext_resource type="Texture2D" uid="uid://dlj776gx12cyt" path="res://assets/monsters/turtle/turtle_blue_01.png" id="2_ttgbu"]
-[ext_resource type="Texture2D" uid="uid://b3kdaawt5fksa" path="res://assets/monsters/turtle/turtle_blue_02.png" id="3_8py4k"]
-[ext_resource type="Texture2D" uid="uid://vip534rthk0" path="res://assets/monsters/turtle/turtle_blue_03.png" id="4_3tpwr"]
-[ext_resource type="Texture2D" uid="uid://eauicsmv8dat" path="res://assets/monsters/turtle/turtle_blue_04.png" id="5_is8ke"]
-[ext_resource type="Texture2D" uid="uid://gpaq440tl8l5" path="res://assets/monsters/turtle/turtle_blue_05.png" id="6_2d2ji"]
-[ext_resource type="Texture2D" uid="uid://c68ghrsqlqvkj" path="res://assets/monsters/turtle/turtle_blue_walk_01.png" id="7_75qw4"]
-[ext_resource type="Texture2D" uid="uid://dlb8h7ibkodp8" path="res://assets/monsters/turtle/turtle_blue_walk_02.png" id="8_cvcit"]
+[ext_resource type="Texture2D" uid="uid://c041pi32wal12" path="res://assets/monsters/turtle/turtle_blue_01.png" id="2_ttgbu"]
+[ext_resource type="Texture2D" uid="uid://dgme4wuc5khg7" path="res://assets/monsters/turtle/turtle_blue_02.png" id="3_8py4k"]
+[ext_resource type="Texture2D" uid="uid://ib7rfqgoi8s2" path="res://assets/monsters/turtle/turtle_blue_03.png" id="4_3tpwr"]
+[ext_resource type="Texture2D" uid="uid://bfvikcb6obgmx" path="res://assets/monsters/turtle/turtle_blue_04.png" id="5_is8ke"]
+[ext_resource type="Texture2D" uid="uid://b8j82mc0sdvhv" path="res://assets/monsters/turtle/turtle_blue_05.png" id="6_2d2ji"]
+[ext_resource type="Texture2D" uid="uid://1w1icxovr6i4" path="res://assets/monsters/turtle/turtle_blue_walk_01.png" id="7_75qw4"]
+[ext_resource type="Texture2D" uid="uid://bpimxnvumd3px" path="res://assets/monsters/turtle/turtle_blue_walk_02.png" id="8_cvcit"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="9_g5ys5"]
 [ext_resource type="Script" uid="uid://bxgbgd1plvcwq" path="res://scenes/enemies/turtle/states/run.gd" id="10_qbokc"]
 [ext_resource type="Script" uid="uid://doirwlb7sbrbc" path="res://scenes/enemies/turtle/states/into_shell.gd" id="11_r4cnp"]
@@ -67,7 +67,7 @@ metadata/_custom_type_script = "uid://s4xx82espxdt"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_rb3tl")
-animation = &"into_shell"
+animation = &"run"
 
 [node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
 target_position = Vector2(23, 0)

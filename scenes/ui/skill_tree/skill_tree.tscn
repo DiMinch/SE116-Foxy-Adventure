@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0tfkw5xw1hev"]
+
+[ext_resource type="Script" uid="uid://dxv1b8oslgbmm" path="res://scenes/ui/skill_tree/skill_tree.gd" id="1_g1wak"]
+[ext_resource type="PackedScene" uid="uid://ciedqnjh53j5u" path="res://scenes/ui/skill_tree/skill_node.tscn" id="3_uqyy5"]
+[ext_resource type="Resource" uid="uid://doguvkkvepna0" path="res://data/skills/weapons.tres" id="4_jhm5s"]
+[ext_resource type="Resource" uid="uid://btjfg06lqdg6o" path="res://data/skills/passive.tres" id="5_jahnf"]
+[ext_resource type="Resource" uid="uid://dohbrictlftlh" path="res://data/skills/weapon_plus.tres" id="6_y6tn7"]
+[ext_resource type="Resource" uid="uid://bvptym0nrnx0n" path="res://data/skills/block.tres" id="7_o1ei4"]
+[ext_resource type="Resource" uid="uid://d3mk81tc2ox4g" path="res://data/skills/dash.tres" id="8_ggtut"]
+[ext_resource type="Resource" uid="uid://xd6c1bwlnf04" path="res://data/skills/second_slot.tres" id="9_1ggqn"]
+[ext_resource type="Resource" uid="uid://civltnpindj77" path="res://data/skills/wall_movement.tres" id="10_mn155"]
+[ext_resource type="Resource" uid="uid://cwfafnbls503p" path="res://data/skills/ultimate.tres" id="11_lx78c"]
+[ext_resource type="Resource" uid="uid://bm3c80g54vp66" path="res://data/skills/invulnerable.tres" id="12_3kan5"]
+[ext_resource type="Resource" uid="uid://m0evddljpims" path="res://data/skills/cooldown.tres" id="13_jtsd2"]
+
+[node name="SkillTree" type="Control"]
+custom_minimum_size = Vector2(675, 310)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -155.0
+offset_right = 675.0
+offset_bottom = 155.0
+grow_vertical = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_g1wak")
+unlocked_color = Color(1, 0.960784, 0.313726, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03529412, 0.54901963, 0.87058824, 0.69411767)
+
+[node name="Node1" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 3.0
+mouse_filter = 1
+
+[node name="Weapons" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 98.0
+offset_right = 72.0
+offset_bottom = 153.0
+skill_data = ExtResource("4_jhm5s")
+
+[node name="Passive" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 15.0
+offset_right = 176.0
+offset_bottom = 70.0
+skill_data = ExtResource("5_jahnf")
+
+[node name="WeaponPlus" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 15.0
+offset_right = 269.0
+offset_bottom = 70.0
+skill_data = ExtResource("6_y6tn7")
+
+[node name="DoubleJump" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 189.0
+offset_right = 176.0
+offset_bottom = 244.0
+
+[node name="Block" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 205.0
+offset_top = 152.0
+offset_right = 269.0
+offset_bottom = 207.0
+skill_data = ExtResource("7_o1ei4")
+
+[node name="Dash" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 205.0
+offset_top = 232.0
+offset_right = 269.0
+offset_bottom = 287.0
+skill_data = ExtResource("8_ggtut")
+
+[node name="SecondSlot" parent="Node1" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 120.0
+offset_right = 383.0
+offset_bottom = 175.0
+skill_data = ExtResource("9_1ggqn")
+
+[node name="Node2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 3.0
+mouse_filter = 1
+
+[node name="wall_movement" parent="Node2" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 165.0
+offset_right = 478.0
+offset_bottom = 220.0
+skill_data = ExtResource("10_mn155")
+
+[node name="ultimate" parent="Node2" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 58.0
+offset_right = 479.0
+offset_bottom = 113.0
+skill_data = ExtResource("11_lx78c")
+
+[node name="invulnerable" parent="Node2" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 167.0
+offset_right = 606.0
+offset_bottom = 222.0
+skill_data = ExtResource("12_3kan5")
+
+[node name="cooldown" parent="Node2" instance=ExtResource("3_uqyy5")]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 61.0
+offset_right = 596.0
+offset_bottom = 116.0
+skill_data = ExtResource("13_jtsd2")

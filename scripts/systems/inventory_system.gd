@@ -23,7 +23,6 @@ func add_currency(type: String, amount: int = 1) -> void:
 	
 	currencies[type] += amount
 	item_changed.emit(type, currencies[type])
-	debug("add", type, amount)
 
 func get_currency(type: String) -> int:
 	return currencies.get(type, 0)
@@ -34,7 +33,6 @@ func use_currency(type: String, amount: int) -> bool:
 	
 	currencies[type] -= amount
 	item_changed.emit(type, currencies[type])
-	debug("use", type, amount)
 	return true
 
 func add_consumable(type: String, amount: int = 1) -> void:
@@ -44,7 +42,6 @@ func add_consumable(type: String, amount: int = 1) -> void:
 	
 	consumables[type] += amount
 	item_changed.emit(type, amount)
-	debug("add", type, amount)
 
 func use_consumable(type: String, amount: int = 1) -> bool:
 	if consumables.get(type, 0) < amount:
@@ -52,26 +49,18 @@ func use_consumable(type: String, amount: int = 1) -> bool:
 	
 	consumables[type] -= amount
 	item_changed.emit(type, consumables[type])
-	debug("use", type, amount)
 	return true
 
 func has_key() -> bool:
 	return currencies.keys > 0
 
-func reset_level_coins():
+func reset_level_inventory():
 	if currencies.has("coins"):
 		currencies["coins"] = 0
 		item_changed.emit("coins", 0)
-		print("[INVENTORY] Level Coins cleared.")
-
-func debug(debug_type: String, item_type: String, amount: int) -> void:
-	var current_amount = 0
-	if item_type == "fruits":
-		current_amount = consumables[item_type]
-	else:
-		current_amount = currencies[item_type]
-	
-	if debug_type == "add":
-		print("[INVENTORY] Collected %d %s. Total: %d" % [amount, item_type, current_amount])
-	if debug_type == "use":
-		print("[INVENTORY] Used %d %s. Remainder: %d" % [amount, item_type, current_amount])
+	if currencies.has("keys"):
+		currencies["keys"] = 0
+		item_changed.emit("keys", 0)
+	if consumables.has("fruits"):
+		consumables["fruits"] = 0
+		item_changed.emit("fruits", 0)

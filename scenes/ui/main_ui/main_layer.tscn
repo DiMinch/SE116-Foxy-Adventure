@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://e48ceneuanwk"]
+
+[ext_resource type="Texture2D" uid="uid://s0xtrmudu7a2" path="res://assets/ui/logo.png" id="1_16y5j"]
+[ext_resource type="Script" uid="uid://ccwp4jd0gufmg" path="res://scenes/ui/main_ui/main_layer.gd" id="1_gpbss"]
+[ext_resource type="Theme" uid="uid://da3t4bdgx6pa4" path="res://data/default_theme.tres" id="2_gpbss"]
+[ext_resource type="Texture2D" uid="uid://tl407oweef1v" path="res://assets/ui/Prefabs/3.png" id="3_a02aj"]
+[ext_resource type="PackedScene" uid="uid://b4dctguu0xyf5" path="res://scenes/ui/main_ui/main_hud/main_hud.tscn" id="3_eyncb"]
+
+[node name="MainLayer" type="CanvasLayer"]
+script = ExtResource("1_gpbss")
+
+[node name="StartContainer" type="MarginContainer" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="StartContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_a02aj")
+
+[node name="ColorRect" type="ColorRect" parent="StartContainer"]
+layout_mode = 2
+color = Color(0, 0.39215687, 0.78431374, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="TextureRect" parent="StartContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_16y5j")
+stretch_mode = 3
+
+[node name="GameStart" type="Button" parent="StartContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gpbss")
+theme_override_colors/font_color = Color(0.9411765, 0, 0.08235294, 1)
+theme_override_colors/font_pressed_color = Color(0.9411765, 0, 0.08235294, 1)
+theme_override_colors/font_hover_color = Color(0.9411765, 0, 0.08235294, 1)
+text = "Game Start"
+
+[node name="HUD" parent="." instance=ExtResource("3_eyncb")]
+process_mode = 3
+offset_bottom = 52.0
+size_flags_vertical = 0

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://c2r2q4gwmdr5o"]
 
 [ext_resource type="Script" uid="uid://doqlkjqpo8vog" path="res://scripts/audio/audio_clip.gd" id="1_85ox3"]
-[ext_resource type="AudioStream" uid="uid://sfdk46c8u42s" path="res://assets/audio/sfx/objects/door.wav" id="2_n0m17"]
+[ext_resource type="AudioStream" uid="uid://t5fk42whcty2" path="res://assets/audio/sfx/objects/door.wav" id="2_n0m17"]
 
 [resource]
 script = ExtResource("1_85ox3")

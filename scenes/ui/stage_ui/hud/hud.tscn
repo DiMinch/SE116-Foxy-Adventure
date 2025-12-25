@@ -1,24 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://dytm3c86oshmd"]
+[gd_scene load_steps=7 format=3 uid="uid://dytm3c86oshmd"]
 
 [ext_resource type="Script" uid="uid://dyp0x8fd7upg8" path="res://scenes/ui/stage_ui/hud/hud.gd" id="1_bngdn"]
 [ext_resource type="Texture2D" uid="uid://chr488ku04fax" path="res://assets/ui/button/settings_button.png" id="2_qao66"]
+[ext_resource type="PackedScene" uid="uid://b1uk8ghh00ih" path="res://scenes/ui/stage_ui/hud/health_bar.tscn" id="3_1keq1"]
+[ext_resource type="Texture2D" uid="uid://csanhy2wsc1jq" path="res://assets/object/items/coin/01.png" id="5_exqv0"]
+[ext_resource type="PackedScene" uid="uid://btsx6evwvt360" path="res://scenes/ui/stage_ui/hud/skill_slot.tscn" id="6_fq0by"]
+[ext_resource type="Texture2D" uid="uid://vtedebv18ni7" path="res://assets/object/items/key/key_1.png" id="6_ulakt"]
 
 [node name="HUD" type="MarginContainer"]
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 80.0
 grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 script = ExtResource("1_bngdn")
+skill_slot = ExtResource("6_fq0by")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HealthBar" parent="HBoxContainer/VBoxContainer/BoxContainer" instance=ExtResource("3_1keq1")]
+layout_mode = 2
+
+[node name="ItemsHBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="CoinTextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/BoxContainer/ItemsHBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Collected coin"
+texture = ExtResource("5_exqv0")
+
+[node name="CoinLabel" type="Label" parent="HBoxContainer/VBoxContainer/BoxContainer/ItemsHBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="KeyTextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/BoxContainer/ItemsHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_ulakt")
+
+[node name="KeyLabel" type="Label" parent="HBoxContainer/VBoxContainer/BoxContainer/ItemsHBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer/VBoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "05:00"
+horizontal_alignment = 1
+
+[node name="SkillBar" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="DashSkillSlot" parent="HBoxContainer/VBoxContainer/SkillBar" instance=ExtResource("6_fq0by")]
+layout_mode = 2
+
+[node name="BlockSkillSlot" parent="HBoxContainer/VBoxContainer/SkillBar" instance=ExtResource("6_fq0by")]
+layout_mode = 2
+
+[node name="UltiSkillSlot" parent="HBoxContainer/VBoxContainer/SkillBar" instance=ExtResource("6_fq0by")]
+visible = false
+layout_mode = 2
 
 [node name="SettingsTextureButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2

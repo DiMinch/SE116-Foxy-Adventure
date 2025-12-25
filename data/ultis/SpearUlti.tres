@@ -7,6 +7,6 @@ script = ExtResource("1_8ovdd")
 timer = 0.2
 damage_unit = 300
 cool_down = 20.0
-range = Vector2(100, 20)
+attack_range = Vector2(100, 20)
 speed = 400.0
 metadata/_custom_type_script = "uid://bgdeb3y38gjp2"

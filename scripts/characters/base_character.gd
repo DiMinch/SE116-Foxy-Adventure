@@ -1,6 +1,8 @@
 class_name BaseCharacter
 extends CharacterBody2D
 
+signal health_changed(current: int, max_val: int)
+
 ## Base character class that provides common functionality for all characters
 @export var max_health: int = 3
 @export var movement_speed: float = 200.0
@@ -10,6 +12,7 @@ extends CharacterBody2D
 @export var attack_speed: int = 100
 @export var direction: int = 1
 var health: int = max_health
+var use_gravity: bool = true
 
 var fsm: FSM = null
 var current_animation = null
@@ -38,8 +41,9 @@ func _physics_process(delta: float) -> void:
 	_check_changed_direction()
 
 func _update_movement(delta: float) -> void:
-	velocity.y += gravity * delta
-	move_and_slide()
+	if use_gravity:
+		velocity.y += gravity * delta
+		move_and_slide()
 
 func _ensure_stats_component():
 	if get_node_or_null("Stats"):
@@ -84,6 +88,7 @@ func stop_move() -> void:
 
 func take_damage(damage: int) -> void:
 	health -= damage
+	health_changed.emit(health, max_health)
 
 # Change the animation of the character on the next frame
 func change_animation(new_animation: String) -> void:

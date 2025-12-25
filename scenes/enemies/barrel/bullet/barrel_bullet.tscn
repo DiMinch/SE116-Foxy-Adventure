@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dc5tes2lxwao5"]
 
 [ext_resource type="Script" uid="uid://c5sgwan0c1a77" path="res://scenes/enemies/barrel/bullet/barrel_bullet.gd" id="1_pb07v"]
-[ext_resource type="Texture2D" uid="uid://bh8lwuu75mk5h" path="res://assets/monsters/barrel/barrel_bullet.png" id="2_25t17"]
+[ext_resource type="Texture2D" uid="uid://dnfyfdo3kjoye" path="res://assets/monsters/barrel/barrel_bullet.png" id="2_25t17"]
 [ext_resource type="PackedScene" uid="uid://cbjbo6gtyss6f" path="res://scripts/collision/hit_area_2d.tscn" id="3_vefl5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02ywo"]

@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://ocdotvp518co" path="res://levels/objects/signpost/sign_post.gd" id="1_wn883"]
 [ext_resource type="Texture2D" uid="uid://pabwu5xq783" path="res://assets/object/post/sign_post.png" id="1_wy04f"]
 [ext_resource type="PackedScene" uid="uid://dhsdd3xkpp8g2" path="res://scripts/collision/interactive_area_2d.tscn" id="2_wn883"]
-[ext_resource type="FontFile" uid="uid://54p5uev3vyaw" path="res://assets/font/ThaleahFat.ttf" id="4_mcxvb"]
+[ext_resource type="FontFile" uid="uid://cvsgvp4g00cx1" path="res://assets/font/SVN-Determination Sans.ttf" id="4_mcxvb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wy04f"]
 size = Vector2(23, 21)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wy04f"]
+line_spacing = 10.0
+paragraph_spacing = 10.0
 font = ExtResource("4_mcxvb")
 font_size = 13
 shadow_size = 0
